@@ -22,7 +22,7 @@
       color: var(--input-text);
       width: 100%;
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  .report-form input,
+  }
   .report-form textarea {
       padding: 10px;
       border-radius: 5px;
@@ -65,9 +65,10 @@
   /* Report List */
   .report-list {
       max-width: 600px;
-      margin: 0 auto;
+      margin-left: 10%;
       list-style: disc;
       padding-left: 20px;
+      text-align: left;
       color: var(--report-list-text);
       transition: color 0.3s ease;
       color: #333;
