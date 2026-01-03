@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endangered Animals Database - EcoLife</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/home.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+    <link rel="stylesheet" href="../css/components/card.css">
+    <style>
+        .search-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: #ffffff;
+            color: #1a1a2e;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #2e7d32;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 50%, #004d40 100%);
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-50%) translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #2e7d32;
+            background: transparent;
+            color: #2e7d32;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 50%, #004d40 100%);
+            color: #ffffff;
+            border-color: #2e7d32;
+            box-shadow: 0 10px 40px rgba(46, 125, 50, 0.3);
+        }
+        
+        .filter-btn:hover {
+            background: #2e7d32;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        
+        .animals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .animal-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(46, 125, 50, 0.1);
+        }
+        
+        .animal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+        
+        .animal-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .animal-content {
+            padding: 1.5rem;
+        }
+        
+        .animal-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .scientific-name {
+            font-style: italic;
+            color: #555555;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-CR { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+        .status-EN { background: linear-gradient(135deg, #ea580c, #c2410c); }
+        .status-VU { background: linear-gradient(135deg, #d97706, #b45309); }
+        .status-NT { background: linear-gradient(135deg, #ca8a04, #a16207); }
+        .status-LC { background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 50%, #004d40 100%); }
+        
+        .animal-description {
+            color: #555555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .animal-population {
+            font-size: 0.9rem;
+            color: #888888;
+            margin-bottom: 1rem;
+        }
+        
+        .animal-population strong {
+            color: #2e7d32;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: #ffffff;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #e8f5e9;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2e7d32;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: #2e7d32;
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .threats-list, .facts-list, .locations-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .threats-list li::before {
+            content: "⚠️ ";
+            margin-right: 0.5rem;
+        }
+        
+        .facts-list li::before {
+            content: "💡 ";
+            margin-right: 0.5rem;
+        }
+        
+        .locations-list li::before {
+            content: "📍 ";
+            margin-right: 0.5rem;
+        }
+        
+        .organizations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .org-card {
+            border: 1px solid #e5e7eb;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .org-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .org-link {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .visit-link {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #2e7d32;
+        }
+        
+        .visit-link:hover {
+            background: #2e7d32;
+            color: #ffffff;
+        }
+        
+        .donate-link {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 50%, #004d40 100%);
+            color: #ffffff;
+            box-shadow: 0 10px 40px rgba(46, 125, 50, 0.3);
+        }
+        
+        .donate-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(46, 125, 50, 0.15);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #888888;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .no-results h3 {
+            color: #555555;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .animals-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>🌍 Endangered Animals Database</h1>
+                <p>Learn about endangered species and how you can help protect them</p>
+            </div>
+        </section>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search animals by name or scientific name...">
+                <button class="search-btn" onclick="searchAnimals()">🔍</button>
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterByStatus('all')">All</button>
+                <button class="filter-btn" onclick="filterByStatus('CR')">Critically Endangered</button>
+                <button class="filter-btn" onclick="filterByStatus('EN')">Endangered</button>
+                <button class="filter-btn" onclick="filterByStatus('VU')">Vulnerable</button>
+            </div>
+        </div>
+
+        <div id="animalsGrid" class="animals-grid"></div>
+        <div id="noResults" class="no-results" style="display: none;">
+            <h3>No animals found</h3>
+            <p>Try adjusting your search or filters</p>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="animalModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script src="../js/components/navbar-loader.js"></script>
+    <script src="../js/components/footer-loader.js"></script>
+    <script src="../js/pages/endangered-animals.js"></script>
+</body>
+</html>

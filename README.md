@@ -1,3 +1,22 @@
+🚨 Mandatory Contributor Registration
+
+Before starting any contribution, you MUST complete the registration form.
+
+👉 Registration Form: https://forms.gle/2aVtenoaHg65qi4G7
+
+⚠️ Pull Requests without registration will be closed. ⚠️ Submitted data is confidential and visible only to the Project Admin.
+
+🧑‍💻 Open Source Contributors Welcome!
+
+Join our official Discord server to:
+
+Ask and clear doubts
+Discuss issues and Pull Requests
+Get guidance from mentors
+Collaborate with contributors
+👉 Discord: https://discord.gg/3FKndgyuJp
+
+
 # 🌍 EcoLife – Environment & Animal Safety Hub
 
 EcoLife is an interactive and visually engaging platform created to promote
