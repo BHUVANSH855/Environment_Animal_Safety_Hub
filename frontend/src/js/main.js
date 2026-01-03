@@ -938,3 +938,36 @@ showEcoFact();
 
 // Change fact every 5 seconds
 setInterval(showEcoFact, 5000);
+
+const plants = document.querySelectorAll(".plant");
+const garden = document.getElementById("garden-plot");
+const oxygenFill = document.getElementById("oxygen-fill");
+
+let oxygen = 0;
+
+plants.forEach(plant => {
+  plant.addEventListener("dragstart", e => {
+    e.dataTransfer.setData("plant", plant.outerHTML);
+    e.dataTransfer.setData("oxygen", plant.dataset.oxygen);
+  });
+});
+
+garden.addEventListener("dragover", e => e.preventDefault());
+
+garden.addEventListener("drop", e => {
+  e.preventDefault();
+
+  const plantHTML = e.dataTransfer.getData("plant");
+  const oxygenValue = parseInt(e.dataTransfer.getData("oxygen"));
+
+  const placeholder = garden.querySelector("p");
+  if (placeholder) placeholder.remove();
+
+  garden.innerHTML += plantHTML;
+
+  oxygen += oxygenValue;
+  if (oxygen > 100) oxygen = 100;
+
+  oxygenFill.style.width = oxygen + "%";
+  oxygenFill.textContent = oxygen + "%";
+});

@@ -622,3 +622,71 @@ body {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.garden-game {
+  background: #eafaf1;
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.oxygen-meter {
+  margin: 20px 0;
+}
+
+.meter-bg {
+  width: 80%;
+  height: 25px;
+  background: #c8e6c9;
+  margin: 10px auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 10px;
+  line-height: 25px;
+  transition: width 0.5s ease;
+}
+
+.plant-palette {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.plant {
+  cursor: grab;
+}
+
+.garden-plot {
+  min-height: 220px;
+  width: 80%;
+  margin: auto;
+  background: #d0f0c0;
+  border: 2px dashed #4caf50;
+  border-radius: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.garden-plot .plant {
+  margin: 5px;
+  animation: grow 0.5s ease forwards;
+}
+
+@keyframes grow {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
