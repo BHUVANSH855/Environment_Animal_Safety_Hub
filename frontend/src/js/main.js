@@ -1083,3 +1083,34 @@ window.addEventListener("scroll", revealTimeline);
 
 // Initial check
 revealTimeline();
+
+
+
+function showFuture(year) {
+  const box = document.getElementById("futureDisplay");
+
+  if (year === "present") {
+    box.innerHTML = `
+      🌍
+      <h3>Earth Today</h3>
+      <p>Nature is still healing. Our actions matter.</p>`;
+    box.style.background = "#c8e6c9";
+  }
+
+  if (year === "2050") {
+    box.innerHTML = `
+      🌎
+      <h3>Earth in 2050</h3>
+      <p>Less trees 🌳, hotter climate 🌡️, rising seas 🌊</p>`;
+    box.style.background = "#fff3cd";
+  }
+
+  if (year === "2100") {
+    box.innerHTML = `
+      🌑
+      <h3>Earth in 2100</h3>
+      <p>Extreme heat ☠️, wildlife loss 🐾, water scarcity 💧</p>`;
+    box.style.background = "#f8d7da";
+  }
+}
+
