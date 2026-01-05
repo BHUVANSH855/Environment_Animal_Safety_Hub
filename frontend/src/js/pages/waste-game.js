@@ -44,6 +44,7 @@ const modal = document.getElementById('gameOverModal');
 const finalScoreEl = document.getElementById('finalScore');
 const finalScoreText = document.getElementById('finalScoreText');
 const bins = document.querySelectorAll('.bin');
+const pointSound = document.getElementById('pointSound');
 
 let gameTimerInterval;
 let spawnInterval;
@@ -223,6 +224,11 @@ function checkAnswer(bin, itemCategory, itemEl) {
         game.score = Math.max(0, game.score - 5);
         game.currentCombo = 0;
         showFeedback(itemEl, '-5', 'incorrect');
+    }
+
+    if (pointSound) {
+        pointSound.currentTime = 0; 
+        pointSound.play();
     }
 
     updateDisplay();
