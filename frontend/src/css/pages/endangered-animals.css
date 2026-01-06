@@ -227,6 +227,59 @@ body {
   font-size: 0.95rem;
   transition: var(--transition-normal);
 }
+/* ===== RESPONSIVE CARDS ===== */
+@media (max-width: 1200px) {
+  .animals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 40px;
+  }
+
+  .card-image {
+    height: 220px;
+  }
+}
+@media (max-width: 992px) {
+  .animals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 0 30px;
+  }
+}
+@media (max-width: 768px) {
+  .animals-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .animal-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+
 
 /* ===============================
    HELP SECTION
