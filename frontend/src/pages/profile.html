@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  <link rel="icon" type="image/png" href="/envirnoment-logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="assets/FAVICON.png">
+  <title>Profile</title>
+  <meta name="description"
+    content="Join EcoLife to protect animals, save the environment, and create a greener future for all." />
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../css/global/variables.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components/navbar.css" />
+  <link rel="stylesheet" href="../css/pages/profile.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="EcoLife Logo" class="logo-img" />
+        <span>EcoLife</span>
+      </a>
+
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#animal" class="nav-link">Animals</a></li>
+        <li><a href="pages/visual-mueseum.html" class="nav-link">🏛️ Virtual Museum</a></li>
+        <li><a href="pages/endangered-animals.html" class="nav-link">🐾 Endangered Animals</a></li>
+        <li><a href="pages/sos.html" class="nav-link">🆘 SOS Emergency</a></li>
+        <li><a href="./pages/environment.html" class="nav-link">Environment</a></li>
+        <li><a href="./pages/kids-zone.html" class="nav-link">Kids Zone</a></li>
+        <li><a href="./pages/report.html" class="nav-link">Report</a></li>
+        <li><a href="../src/pages/contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-auth">
+          <a href="/frontend/src/pages/Login.html" class="btn-login">Login</a>
+          <a href="/frontend/src/pages/Signup.html" class="btn-signup">Sign Up</a>
+          <div class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </div>
+        </li>
+        <li>
+            <select id="profile">
+                <option value="profile">Profile</option>
+                <option value="community">Community</a></option>
+                <option value="logout">Logout</option>
+            </select>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+
+  <!-- Left Sidebar -->
+  <div class="sidebar">
+    <img src="https://cdn.pixabay.com/photo/2015/02/11/13/54/children-632431_1280.jpg" id="profilePic" alt="Profile Pic">
+    <h2 id="usernameDisplay">Joshi</h2>
+    <p id="emailDisplay">josh@example.com</p>
+
+    <input type="text" id="usernameInput">
+    <input type="email" id="emailInput">
+
+    <button class="edit-btn" id="editBtn">Edit Profile</button>
+    <button class="signout-btn">Sign Out</button>
+    <button class="delete-btn">Delete Account</button>
+  </div>
+
+  <!-- Right Content -->
+  <div class="right">
+    <!-- Top Grid: Badges -->
+    <div class="badges">
+      <h3>Badges</h3>
+      <div class="badge-list">
+        <img src="../assets/badges/ocean.png" alt="Badge1">
+        <img src="../assets/badges/energy.png" alt="Badge2">
+      </div>
+    </div>
+
+    <!-- Bottom Grids -->
+    <div class="bottom-grids">
+      <!-- Change Password -->
+      <div class="card">
+        <h3>Change Password</h3>
+        <input type="password" placeholder="Current Password">
+        <input type="password" placeholder="New Password">
+        <button>Change Password</button>
+      </div>
+
+      <!-- Settings -->
+      <div class="card">
+        <h3>Settings</h3>
+        <div class="setting-item">
+          <span>Email Notifications</span>
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <span>Dark Mode</span>
+          <label class="toggle-switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <span>Reminders</span>
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/global/theme-toggle.js"></script>
+  <script src="../js/pages/profile.js"></script>
+
+  <script>
+    function handleProfileChange(value) {
+  if(value === "community") {
+    window.location.href = "./community/index.html";
+  } else if(value === "logout") {
+    // You can handle logout logic here
+    alert("Logging out...");
+    // Example: redirect to login page
+    window.location.href = "./login.html";
+  } else if(value === "profile") {
+    window.location.href = "./pages/profile.html"; // or wherever your profile page is
+  }
+}
+  </script>
+
+
+</body>
+
+</html>
