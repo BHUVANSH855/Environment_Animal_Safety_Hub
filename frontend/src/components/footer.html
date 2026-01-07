@@ -1,118 +1,79 @@
-<!-- Footer Component -->
-<footer id="contact" class="eco-footer">
-  <div class="footer-top">
-    <div class="footer-container">
-      <!-- Logo & About -->
-      <div class="footer-col footer-about">
-        <div class="footer-logo-wrapper">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
-            class="footer-logo"
-            alt="Eco Logo"
-          />
-          <span class="footer-brand">EcoLife</span>
-        </div>
-        <p class="footer-desc">
-          EcoLife is dedicated to spreading awareness for animals, plants,
-          and creating a cleaner environment for future generations.
-        </p>
-        <div class="footer-social">
-          <a href="#" class="social" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" class="social" aria-label="Twitter">
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-          <a href="#" class="social" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="#" class="social" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="#" class="social" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#animal">Animal Welfare</a></li>
-          <li><a href="#environment">Environment</a></li>
-          <li><a href="#quiz">Kids Quiz</a></li>
-          <li><a href="#report">Report Issue</a></li>
-        </ul>
-      </div>
-
-      <!-- Animals -->
-      <div class="footer-col">
-        <h4>Animals</h4>
-        <ul>
-          <li><a href="#">Missing Pets</a></li>
-          <li><a href="#">Recently Found</a></li>
-          <li><a href="#">Pet Adoption</a></li>
-          <li><a href="#">Animal Safety Tips</a></li>
-          <li><a href="#">Shelter Locations</a></li>
-        </ul>
-      </div>
-
-      <!-- Environment -->
-      <div class="footer-col">
-        <h4>Environment</h4>
-        <ul>
-          <li><a href="#">Climate Awareness</a></li>
-          <li><a href="#">Plant Care Guide</a></li>
-          <li><a href="#">Waste Segregation</a></li>
-          <li><a href="#">Recycling Tips</a></li>
-          <li><a href="#">Join Clean-Up Drives</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <ul class="footer-contact">
-          <li>
-            <i class="fa-solid fa-location-dot"></i>
-            <span>Rajasthan, India</span>
-          </li>
-          <li>
-            <i class="fa-solid fa-phone"></i>
-            <span>+91 123 456 789</span>
-          </li>
-          <li>
-            <i class="fa-solid fa-envelope"></i>
-            <span>info@ecolife.com</span>
-          </li>
-          <li>
-            <i class="fa-solid fa-clock"></i>
-            <span>Mon - Sat: 9AM - 6PM</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="footer-container">
-      <p>
-        Made with ❤️ by <strong>Jagrati</strong> | © 2026 EcoLife. All
-        rights reserved.
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+    <div class="newsletter-content">
+      <h2 class="newsletter-title">Stay Updated with Our Initiatives</h2>
+      <p class="newsletter-description">
+        Subscribe to receive updates about environmental awareness and animal safety campaigns
       </p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Policy</a>
-      </div>
+      
+      <form class="newsletter-form" id="newsletterForm">
+        <div class="newsletter-input-group">
+          <input 
+            type="email" 
+            class="newsletter-email-input" 
+            placeholder="Enter your email address"
+            required
+            aria-label="Email address for newsletter subscription"
+          />
+          <button 
+            type="submit" 
+            class="newsletter-subscribe-btn"
+            aria-label="Subscribe to newsletter"
+          >
+            Subscribe
+          </button>
+        </div>
+        <div class="newsletter-message" id="newsletterMessage"></div>
+      </form>
+      
+      <p class="newsletter-privacy">
+        We respect your privacy. Unsubscribe at any time.
+      </p>
+    </div>
+
+    <div class="newsletter-icon">
+      <i class="fas fa-bell"></i>
     </div>
   </div>
-</footer>
+</section>
 
-<!-- Back to Top Button -->
-<button class="back-to-top" id="backToTop" aria-label="Back to Top">
-  <i class="fa-solid fa-arrow-up"></i>
-</button>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterMessage = document.getElementById('newsletterMessage');
+    
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailInput = this.querySelector('.newsletter-email-input');
+        const email = emailInput.value.trim();
+        
+        if (email) {
+          // Store email in localStorage (for UI-only implementation)
+          let subscribers = JSON.parse(localStorage.getItem('newsletterSubscribers') || '[]');
+          
+          if (!subscribers.includes(email)) {
+            subscribers.push(email);
+            localStorage.setItem('newsletterSubscribers', JSON.stringify(subscribers));
+            
+            // Show success message
+            newsletterMessage.textContent = '✓ Successfully subscribed! Thank you.';
+            newsletterMessage.className = 'newsletter-message success';
+            emailInput.value = '';
+            
+            // Clear message after 5 seconds
+            setTimeout(() => {
+              newsletterMessage.textContent = '';
+              newsletterMessage.className = 'newsletter-message';
+            }, 5000);
+          } else {
+            newsletterMessage.textContent = '📧 This email is already subscribed.';
+            newsletterMessage.className = 'newsletter-message info';
+          }
+        }
+      });
+    }
+  });
+</script>
