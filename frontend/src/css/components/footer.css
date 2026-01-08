@@ -13,7 +13,7 @@
 .eco-footer {
   background: var(--footer-bg-solid);
   color: #ffffff;
-  padding: 80px 0 30px;
+  padding: 100px 0 40px; /* Increased top padding */
   font-family: inherit;
   position: relative;
   overflow: hidden;
@@ -31,16 +31,16 @@
 }
 
 .footer-top {
-  padding-bottom: 60px;
+  padding-bottom: 80px; /* Increased spacing between top and bottom */
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1300px; /* Slightly wider container for more breathing room */
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px; /* More sides padding */
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
-  gap: 40px;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr 2fr; /* Adjusted column ratios */
+  gap: 60px; /* Increased gap between columns */
 }
 
 /* Branding Column */
@@ -69,9 +69,9 @@
 
 .footer-desc {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.8; /* Increased line height for better readability */
   color: var(--footer-text-muted);
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 /* Column Headings */
@@ -118,13 +118,14 @@
 }
 
 .footer-links-list li {
-  margin-bottom: 15px;
+  margin-bottom: 18px; /* Slightly more space between links */
 }
 
 .footer-links-list a {
   color: var(--footer-text-muted);
   text-decoration: none;
   font-size: 0.95rem;
+  line-height: 1.5; /* Better line height */
   transition: all 0.2s ease;
   display: inline-block;
 }
@@ -150,7 +151,7 @@
 
 /* Newsletter Section */
 .footer-newsletter-col {
-  padding-left: 20px;
+  padding-left: 40px; /* Increased padding */
   border-left: 1px solid var(--footer-border);
 }
 
@@ -214,21 +215,25 @@
 
 /* Footer Bottom */
 .footer-bottom {
-  padding: 30px 0;
+  padding: 40px 0; /* More vertical space */
   border-top: 1px solid var(--footer-border);
-  background: rgba(0, 0, 0, 0.15); /* More distinct bottom bar */
+  background: rgba(0, 0, 0, 0.2); 
 }
 
 .footer-bottom-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
   display: flex;
-  justify-content: space-between; /* Professional distributed layout */
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
 }
 
 .footer-bottom p {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--footer-text-muted);
   margin: 0;
 }
@@ -239,7 +244,7 @@
 
 .footer-legal-links {
   display: flex;
-  gap: 25px;
+  gap: 35px; /* More space between legal links */
 }
 
 .footer-legal-links a {
@@ -247,6 +252,7 @@
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 500;
+  letter-spacing: 0.5px;
   transition: all 0.2s ease;
 }
 
