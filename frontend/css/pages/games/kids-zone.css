@@ -234,7 +234,20 @@
     }
 
     /* ===== GAMES GRID ===== */
-    .games-grid {
+    .games-grid{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap:20px;
+    }
+
+    .games-grid h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-left: 40px;
+    }
+    .learning-section, .quiz-section, .game-section {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 30px;
