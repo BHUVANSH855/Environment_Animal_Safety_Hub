@@ -1,33 +1,237 @@
 let blogsData = [
-  {title: "Eco Gardening Tips", author: "User12", category: "environment", img: "https://picsum.photos/seed/blog1/300/200"},
-  {title: "Plastic-Free Living", author: "User34", category: "diy", img: "https://picsum.photos/seed/blog2/300/200"},
-  {title: "Solar Power Ideas", author: "User56", category: "energy", img: "https://picsum.photos/seed/blog3/300/200"},
-  {title: "Tech for Nature", author: "User78", category: "technology", img: "https://picsum.photos/seed/blog4/300/200"},
-  {title: "Composting at Home", author: "User90", category: "environment", img: "https://picsum.photos/seed/blog5/300/200"},
-  {title: "DIY Birdhouses", author: "User21", category: "diy", img: "https://picsum.photos/seed/blog6/300/200"},
-  {title: "Energy Efficient Homes", author: "User33", category: "energy", img: "https://picsum.photos/seed/blog7/300/200"},
-  {title: "Urban Gardening Hacks", author: "User45", category: "environment", img: "https://picsum.photos/seed/blog8/300/200"},
-  {title: "Rainwater Harvesting", author: "User11", category: "environment", img: "https://picsum.photos/seed/blog9/300/200"},
-  {title: "Minimalist Home Decor", author: "User22", category: "diy", img: "https://picsum.photos/seed/blog10/300/200"},
-  {title: "Wind Energy Explained", author: "User35", category: "energy", img: "https://picsum.photos/seed/blog11/300/200"},
-  {title: "Smart Irrigation Systems", author: "User46", category: "technology", img: "https://picsum.photos/seed/blog12/300/200"},
-  {title: "Plant-Based Recipes", author: "User57", category: "diy", img: "https://picsum.photos/seed/blog13/300/200"},
-  {title: "Green Roof Benefits", author: "User68", category: "environment", img: "https://picsum.photos/seed/blog14/300/200"},
-  {title: "Solar Panel Maintenance", author: "User79", category: "energy", img: "https://picsum.photos/seed/blog15/300/200"},
-  {title: "Home Automation for Energy Saving", author: "User80", category: "technology", img: "https://picsum.photos/seed/blog16/300/200"},
-  {title: "Recycled Crafts Ideas", author: "User81", category: "diy", img: "https://picsum.photos/seed/blog17/300/200"},
-  {title: "Organic Vegetable Gardening", author: "User82", category: "environment", img: "https://picsum.photos/seed/blog18/300/200"},
-  {title: "LED Lighting Upgrades", author: "User83", category: "energy", img: "https://picsum.photos/seed/blog19/300/200"},
-  {title: "Sustainable Tech Gadgets", author: "User84", category: "technology", img: "https://picsum.photos/seed/blog20/300/200"},
-  {title: "DIY Herb Garden", author: "User85", category: "diy", img: "https://picsum.photos/seed/blog21/300/200"},
-  {title: "Compostable Kitchen Waste", author: "User86", category: "environment", img: "https://picsum.photos/seed/blog22/300/200"},
-  {title: "Geothermal Energy Basics", author: "User87", category: "energy", img: "https://picsum.photos/seed/blog23/300/200"},
-  {title: "Tech for Urban Farming", author: "User88", category: "technology", img: "https://picsum.photos/seed/blog24/300/200"},
-  {title: "Upcycled Furniture Ideas", author: "User89", category: "diy", img: "https://picsum.photos/seed/blog25/300/200"},
-  {title: "Indoor Air Quality Tips", author: "User90", category: "environment", img: "https://picsum.photos/seed/blog26/300/200"},
-  {title: "Energy Star Appliances", author: "User91", category: "energy", img: "https://picsum.photos/seed/blog27/300/200"},
-  {title: "Wearable Eco-Tech", author: "User92", category: "technology", img: "https://picsum.photos/seed/blog28/300/200"},
-  {title: "DIY Natural Cleaning Products", author: "User93", category: "diy", img: "https://picsum.photos/seed/blog29/300/200"}
+  {
+    id: 1,
+    title: "Eco Gardening Tips",
+    author: "User12",
+    category: "environment",
+    img: "https://picsum.photos/seed/blog1/300/200",
+    content: "Eco gardening promotes natural growing methods using compost, native plants, and water conservation to protect the environment and improve soil health."
+  },
+  {
+    id: 2,
+    title: "Plastic-Free Living",
+    author: "User34",
+    category: "diy",
+    img: "https://picsum.photos/seed/blog2/300/200",
+    content: "Plastic-free living focuses on reducing single-use plastics by switching to reusable products like cloth bags, metal bottles, and glass containers."
+  },
+  {
+    id: 3,
+    title: "Solar Power Ideas",
+    author: "User56",
+    category: "energy",
+    img: "https://picsum.photos/seed/blog3/300/200",
+    content: "Solar energy is a clean and renewable power source. Using solar panels and solar-powered devices helps reduce electricity bills and carbon emissions."
+  },
+  {
+    id: 4,
+    title: "Tech for Nature",
+    author: "User78",
+    category: "technology",
+    img: "https://picsum.photos/seed/blog4/300/200",
+    content: "Technology helps protect nature through tools like wildlife tracking, environmental sensors, and data-driven conservation efforts."
+  },
+  {
+    id: 5,
+    title: "Composting at Home",
+    author: "User90",
+    category: "environment",
+    img: "https://picsum.photos/seed/blog5/300/200",
+    content: "Home composting turns kitchen waste into organic fertilizer, reducing landfill waste and improving soil quality naturally."
+  },
+  {
+    id: 6,
+    title: "DIY Birdhouses",
+    author: "User21",
+    category: "diy",
+    img: "https://picsum.photos/seed/blog6/300/200",
+    content: "DIY birdhouses provide safe shelters for birds and support biodiversity. They are simple projects made using recycled materials."
+  },
+  {
+    id: 7,
+    title: "Energy Efficient Homes",
+    author: "User33",
+    category: "energy",
+    img: "https://picsum.photos/seed/blog7/300/200",
+    content: "Energy-efficient homes use insulation, LED lighting, and smart appliances to reduce power usage and save money."
+  },
+  {
+    id: 8,
+    title: "Urban Gardening Hacks",
+    author: "User45",
+    category: "environment",
+    img: "https://picsum.photos/seed/blog8/300/200",
+    content: "Urban gardening uses balconies, rooftops, and small spaces to grow plants using containers and vertical gardening techniques."
+  },
+  {
+    id: 9,
+    title: "Rainwater Harvesting",
+    author: "User11",
+    category: "environment",
+    img: "https://picsum.photos/seed/blog9/300/200",
+    content: "Rainwater harvesting collects rainwater for reuse, reducing water bills and conserving groundwater resources."
+  },
+  {
+    id: 10,
+    title: "Minimalist Home Decor",
+    author: "User22",
+    category: "diy",
+    img: "https://picsum.photos/seed/blog10/300/200",
+    content: "Minimalist decor focuses on simplicity, functionality, and natural materials to create calm and eco-friendly spaces."
+  },
+  {
+    id: 11,
+    title: "Wind Energy Explained",
+    author: "User35",
+    category: "energy",
+    img: "https://picsum.photos/seed/blog11/300/200",
+    content: "Wind energy uses turbines to convert wind into electricity and is one of the most sustainable power sources."
+  },
+  {
+    id: 12,
+    title: "Smart Irrigation Systems",
+    author: "User46",
+    category: "technology",
+    img: "https://picsum.photos/seed/blog12/300/200",
+    content: "Smart irrigation systems optimize water usage using sensors and weather data, reducing waste and improving plant growth."
+  },
+  {
+    id: 13,
+    title: "Plant-Based Recipes",
+    author: "User57",
+    category: "diy",
+    img: "https://picsum.photos/seed/blog13/300/200",
+    content: "Plant-based diets rely on vegetables, grains, and legumes, offering health benefits and reducing environmental impact."
+  },
+  {
+    id: 14,
+    title: "Green Roof Benefits",
+    author: "User68",
+    category: "environment",
+    img: "https://picsum.photos/seed/blog14/300/200",
+    content: "Green roofs reduce heat, manage rainwater, improve air quality, and create habitats for birds and insects."
+  },
+  {
+    id: 15,
+    title: "Solar Panel Maintenance",
+    author: "User79",
+    category: "energy",
+    img: "https://picsum.photos/seed/blog15/300/200",
+    content: "Maintaining solar panels by cleaning and inspections ensures better efficiency and longer lifespan."
+  },
+  {
+    id: 16,
+    title: "Home Automation for Energy Saving",
+    author: "User80",
+    category: "technology",
+    img: "https://picsum.photos/seed/blog16/300/200",
+    content: "Home automation controls lighting, temperature, and devices automatically to reduce energy usage."
+  },
+  {
+    id: 17,
+    title: "Recycled Crafts Ideas",
+    author: "User81",
+    category: "diy",
+    img: "https://picsum.photos/seed/blog17/300/200",
+    content: "Recycled crafts transform waste materials into creative and useful products, helping reduce pollution."
+  },
+  {
+    id: 18,
+    title: "Organic Vegetable Gardening",
+    author: "User82",
+    category: "environment",
+    img: "https://picsum.photos/seed/blog18/300/200",
+    content: "Organic vegetable gardening avoids chemicals and promotes healthy soil for safer and nutritious food."
+  },
+  {
+    id: 19,
+    title: "LED Lighting Upgrades",
+    author: "User83",
+    category: "energy",
+    img: "https://picsum.photos/seed/blog19/300/200",
+    content: "LED lighting consumes less power, lasts longer, and reduces electricity bills compared to traditional bulbs."
+  },
+  {
+    id: 20,
+    title: "Sustainable Tech Gadgets",
+    author: "User84",
+    category: "technology",
+    img: "https://picsum.photos/seed/blog20/300/200",
+    content: "Eco-friendly tech gadgets use less energy and are designed with sustainability in mind."
+  },
+  {
+    id: 21,
+    title: "DIY Herb Garden",
+    author: "User85",
+    category: "diy",
+    img: "https://picsum.photos/seed/blog21/300/200",
+    content: "DIY herb gardens are easy to build at home and provide fresh herbs while promoting green living."
+  },
+  {
+    id: 22,
+    title: "Compostable Kitchen Waste",
+    author: "User86",
+    category: "environment",
+    img: "https://picsum.photos/seed/blog22/300/200",
+    content: "Kitchen waste like fruit peels and leftovers can be composted to reduce garbage and enrich soil."
+  },
+  {
+    id: 23,
+    title: "Geothermal Energy Basics",
+    author: "User87",
+    category: "energy",
+    img: "https://picsum.photos/seed/blog23/300/200",
+    content: "Geothermal energy uses heat from the earth to generate power and is a reliable renewable source."
+  },
+  {
+    id: 24,
+    title: "Tech for Urban Farming",
+    author: "User88",
+    category: "technology",
+    img: "https://picsum.photos/seed/blog24/300/200",
+    content: "Urban farming technology helps grow food efficiently using hydroponics, sensors, and automation."
+  },
+  {
+    id: 25,
+    title: "Upcycled Furniture Ideas",
+    author: "User89",
+    category: "diy",
+    img: "https://picsum.photos/seed/blog25/300/200",
+    content: "Upcycling furniture gives old items new life, reducing waste and adding unique style."
+  },
+  {
+    id: 26,
+    title: "Indoor Air Quality Tips",
+    author: "User90",
+    category: "environment",
+    img: "https://picsum.photos/seed/blog26/300/200",
+    content: "Improving indoor air quality involves plants, ventilation, and reducing chemical pollutants."
+  },
+  {
+    id: 27,
+    title: "Energy Star Appliances",
+    author: "User91",
+    category: "energy",
+    img: "https://picsum.photos/seed/blog27/300/200",
+    content: "Energy Star appliances consume less electricity and help save energy without losing performance."
+  },
+  {
+    id: 28,
+    title: "Wearable Eco-Tech",
+    author: "User92",
+    category: "technology",
+    img: "https://picsum.photos/seed/blog28/300/200",
+    content: "Wearable eco-tech includes smart devices designed to be energy-efficient and environmentally friendly."
+  },
+  {
+  id: 29,
+  title: "DIY Natural Cleaning Products",
+  author: "User93",
+  category: "diy",
+  img: "https://picsum.photos/seed/blog29/300/200",
+  content: "DIY natural cleaning products use simple ingredients like vinegar, baking soda, and lemon to keep homes clean without harmful chemicals."
+}
+
 ];
 
 
@@ -59,12 +263,67 @@ function renderBlogs(filter = "all", search = "") {
       <div class="blog-actions row">
         <i class="fa-regular fa-heart upvote-btn" title="Upvote"></i>
         <i class="fa-regular fa-comment comment-btn" title="Comment"></i>
-        <button class="read-btn">Read More</button>
+        <button class="read-btn" data-id="${blog.id}">Read More</button>
       </div>
     `;
     container.appendChild(blogCard);
   });
 }
+
+// ------------------------------
+// Read More Button Click
+// ------------------------------
+    document.addEventListener("click",(e)=>{
+    if(e.target.classList.contains("read-btn")){
+    const blogId=Number(e.target.dataset.id);
+    openBlogDetail(blogId);
+    }
+    });
+
+
+    function openBlogDetail(blogId){
+      const blog=blogsData.find(b=>b.id===blogId);
+      if(!blog)
+        {return ;}
+      const modelcontent=document.getElementById("blogModalContent");
+      modelcontent.innerHTML=`
+       <div class="modal-image-wrapper">
+       <img src="${blog.img}" alt="${blog.title}">
+       </div>
+       <div class="modal-content-wrapper">
+       <div class="modal-header">
+      <h2>${blog.title}</h2>
+      <span class="category-badge">${blog.category}</span>
+     </div>
+       <div class="modal-meta">
+       <p><strong>Author:</strong> ${blog.author}</p>
+       </div>
+       </div>
+
+      <hr style="margin: 16px 0">
+
+      <p style="line-height: 1.6;">
+        ${blog.content}
+      </p>`;
+      document.getElementById("blogModal").style.display="flex";
+      document.body.style.overflow="hidden";
+    }
+    function closeBlogModal(){
+      document.getElementById("blogModal").style.display="none";
+      document.body.style.overflow="auto";
+    }
+
+document.getElementById("blogModal").addEventListener("click", function (e) {
+  if (e.target === this) {
+    closeBlogModal();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeBlogModal();
+});
+document.getElementById("blogModal").setAttribute("tabindex", "-1");
+document.getElementById("blogModal").focus();
 
 // Initial render
 renderBlogs();
