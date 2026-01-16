@@ -7,12 +7,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="assets/images/others/envirnoment-logo.png">
+  <link rel="manifest" href="manifest.json">
   <title>EcoLife | Protect Our Planet & Animals</title>
   <meta name="description"
     content="Join EcoLife to protect animals, save the environment, and create a greener future for all." />
 
   <!-- CSS Files -->
   <link rel="stylesheet" href="css/global/variables.css" />
+  <link rel="stylesheet" href="css/global/utilities.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/components/navbar.css" />
   <link rel="stylesheet" href="css/components/card.css" />
@@ -111,6 +113,10 @@
           <span class="hero-badge">
             <i class="fa-solid fa-globe"></i> Join 50,000+ Eco Warriors
           </span>
+          <!-- Page View Counter -->
+          <span class="hero-badge page-view-counter" id="page-view-counter">
+            <i class="fa-solid fa-eye"></i> <span id="page-view-count">0</span> Page Views
+          </span>
           <h1 class="hero-title">
             Protect Our <span class="gradient-text">Planet</span> &
             <span class="gradient-text">Animals</span>
@@ -162,6 +168,24 @@
           <div class="wheel"></div>
         </div>
         <span>Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- Daily Quote Section -->
+    <section class="daily-quote-section">
+      <div class="quote-container">
+        <div class="quote-icon">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+        <div class="quote-content">
+          <blockquote class="quote-text" id="dailyQuote">
+            "The greatest threat to our planet is the belief that someone else will save it."
+          </blockquote>
+          <cite class="quote-author" id="quoteAuthor">— Robert Swan</cite>
+        </div>
+        <div class="quote-icon quote-right">
+          <i class="fa-solid fa-quote-right"></i>
+        </div>
       </div>
     </section>
 
@@ -841,10 +865,10 @@
 
             <a href="pages/quizzes/quiz.html" class="quiz-btn">
               <i class="fa-solid fa-play"></i> Start Quiz Now</a>
-              <a href="../frontend/pages/games/waste-game.html" class="quiz-btn"
-                style="background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); margin-left: 15px;">
-                <i class="fa-solid fa-gamepad"></i> Play Waste Game
-              </a>
+            <a href="../frontend/pages/games/waste-game.html" class="quiz-btn"
+              style="background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); margin-left: 15px;">
+              <i class="fa-solid fa-gamepad"></i> Play Waste Game
+            </a>
           </div>
 
           <div class="quiz-image" data-aos="fade-left">
@@ -1638,6 +1662,12 @@
       });
     }
   </script>
+
+  <!-- Global JavaScript for Live Clock -->
+  <script src="js/global/main.js"></script>
+
+  <!-- Home Page Parallax Script -->
+  <script src="js/pages/home.js"></script>
 </body>
 
 </html>

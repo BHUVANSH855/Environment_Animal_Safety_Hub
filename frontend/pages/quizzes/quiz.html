@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../../css/pages/quizzes/quiz.css">
-
+<link rel="stylesheet" href="../../css/global/utilities.css" />
     <link rel="stylesheet" href="../../css/pages/environment/quiz.css">
 
     <link rel="icon" type="image/png" href="/envirnoment-logo.png">
@@ -79,6 +79,14 @@
             <button class="btn-primary nextBtn" onclick="nextQuestion()">Next Question ➡️</button>
         </div>
 
+        <div id="loadingScreen">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <h3>Calculating Results...</h3>
+                <p>Please wait while we process your answers</p>
+            </div>
+        </div>
+
         <div id="resultScreen">
             <h2>🎉 Adventure Complete!</h2>
             <div class="score-circle">
@@ -111,7 +119,7 @@
     
 
  <script src="/frontend/js/components/footer-loader.js"></script>
-
+<script src="../../js/components/component-loader.js"></script>
     <script src="../../js/components/navbar-loader.js"></script>
 </body>
 </html>

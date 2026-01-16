@@ -29,10 +29,14 @@ function loadPost(count = 3) {
 
     const postCard = document.createElement("div");
     postCard.className = "post-card";
+    postCard.dataset.postId = `post-${postIndex}-${Date.now()}`;
     postCard.innerHTML = `
       <div class="post-header">
         <img src="${post.avatar}" alt="${post.username}">
-        <span class="username">${post.username}</span>
+        <div class="post-user-info">
+          <span class="username">${post.username}</span>
+          ${post.lastUpdated ? `<span class="post-timestamp"><i class="fa-regular fa-clock"></i> Last updated: ${post.lastUpdated}</span>` : ''}
+        </div>
       </div>
 
       <div class="post-image">
@@ -47,11 +51,23 @@ function loadPost(count = 3) {
         <i class="fa-regular fa-heart like-btn"></i>
         <i class="fa-regular fa-comment comment-btn"></i>
         <i class="fa-regular fa-bookmark save-btn"></i>
+        <i class="fa-solid fa-volume-high tts-btn" title="Read Aloud"></i>
       </div>
 
       <div class="post-stats">
         <span class="likes-count">${post.likes}</span> likes • 
         <span class="comments-count">${post.comments}</span> comments
+      </div>
+
+      <div class="emoji-reactions">
+        <div class="emoji-reaction" data-emoji="thumbsup">
+          <span class="emoji-icon">👍</span>
+          <span class="emoji-count">0</span>
+        </div>
+        <div class="emoji-reaction" data-emoji="thumbsdown">
+          <span class="emoji-icon">👎</span>
+          <span class="emoji-count">0</span>
+        </div>
       </div>
 
       <div class="comment-panel column" style="display:none;">
@@ -69,6 +85,8 @@ function loadPost(count = 3) {
     const likeBtn = postCard.querySelector(".like-btn");
     const saveBtn = postCard.querySelector(".save-btn");
     const commentBtn = postCard.querySelector(".comment-btn");
+    const ttsBtn = postCard.querySelector(".tts-btn");
+    const postDesc = postCard.querySelector(".post-desc");
     const commentPanel = postCard.querySelector(".comment-panel");
     const addCommentBtn = postCard.querySelector(".add-comment-btn");
     const commentInput = postCard.querySelector(".comment-input");
@@ -80,7 +98,7 @@ function loadPost(count = 3) {
     // Like
     likeBtn.addEventListener("click", () => {
       likeBtn.classList.toggle("active");
-      likeBtn.classList.contains("active") 
+      likeBtn.classList.contains("active")
         ? likeBtn.classList.replace("fa-regular", "fa-solid")
         : likeBtn.classList.replace("fa-solid", "fa-regular");
 
@@ -106,7 +124,7 @@ function loadPost(count = 3) {
     // Add comment
     addCommentBtn.addEventListener("click", () => {
       const text = commentInput.value.trim();
-      if(text !== "") {
+      if (text !== "") {
         const commentEl = document.createElement("div");
         commentEl.classList.add("comment-item");
         commentEl.textContent = text;
@@ -120,6 +138,58 @@ function loadPost(count = 3) {
         commentInput.value = "";
         updateNoCommentText();
       }
+    });
+
+    // Text-to-Speech
+    let currentUtterance = null;
+    ttsBtn.addEventListener("click", () => {
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        ttsBtn.classList.remove("active");
+        ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+      } else {
+        const text = postDesc.textContent.trim();
+        if (text !== "") {
+          currentUtterance = new SpeechSynthesisUtterance(text);
+          currentUtterance.lang = "en-US";
+          currentUtterance.rate = 1.0;
+          currentUtterance.pitch = 1.0;
+
+          currentUtterance.onend = () => {
+            ttsBtn.classList.remove("active");
+            ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+          };
+
+          currentUtterance.onerror = () => {
+            ttsBtn.classList.remove("active");
+            ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+          };
+
+          window.speechSynthesis.speak(currentUtterance);
+          ttsBtn.classList.add("active");
+          ttsBtn.classList.replace("fa-volume-high", "fa-stop");
+        }
+      }
+    });
+
+    // Emoji Reactions
+    const emojiReactions = postCard.querySelectorAll(".emoji-reaction");
+    emojiReactions.forEach(reaction => {
+      reaction.addEventListener("click", () => {
+        const emojiCount = reaction.querySelector(".emoji-count");
+        let count = parseInt(emojiCount.textContent);
+
+        // Toggle reaction - if already clicked, decrease count, else increase
+        if (reaction.classList.contains("active")) {
+          count = Math.max(0, count - 1);
+          reaction.classList.remove("active");
+        } else {
+          count += 1;
+          reaction.classList.add("active");
+        }
+
+        emojiCount.textContent = count;
+      });
     });
 
     function updateNoCommentText() {
@@ -156,7 +226,7 @@ closeModal.addEventListener("click", () => {
 });
 
 window.addEventListener("click", (e) => {
-  if(e.target === modal){
+  if (e.target === modal) {
     modal.style.display = "none";
   }
 });
@@ -166,7 +236,7 @@ submitPostBtn.addEventListener("click", () => {
   const desc = postDescInput.value.trim();
   const imageFile = postImageInput.files[0];
 
-  if(!desc && !imageFile) return alert("Add description or image");
+  if (!desc && !imageFile) return alert("Add description or image");
 
   const postCard = document.createElement("div");
   postCard.className = "post-card";
@@ -185,10 +255,23 @@ submitPostBtn.addEventListener("click", () => {
       <i class="fa-regular fa-heart like-btn"></i>
       <i class="fa-regular fa-comment comment-btn"></i>
       <i class="fa-regular fa-bookmark save-btn"></i>
+      <i class="fa-solid fa-volume-high tts-btn" title="Read Aloud"></i>
+      <i class="fa-regular fa-flag flag-btn" title="Flag Post"></i>
+      <i class="fa-regular fa-flag flag-btn" title="Flag Post"></i>
     </div>
     <div class="post-stats">
       <span class="likes-count">0</span> likes • 
       <span class="comments-count">0</span> comments
+    </div>
+    <div class="emoji-reactions">
+      <div class="emoji-reaction" data-emoji="thumbsup">
+        <span class="emoji-icon">👍</span>
+        <span class="emoji-count">0</span>
+      </div>
+      <div class="emoji-reaction" data-emoji="thumbsdown">
+        <span class="emoji-icon">👎</span>
+        <span class="emoji-count">0</span>
+      </div>
     </div>
     <div class="comment-panel column" style="display:none;">
       <div class="comments-list column"></div>
@@ -210,10 +293,13 @@ submitPostBtn.addEventListener("click", () => {
 });
 
 // Function to attach likes/comments/save listeners
-function attachPostListeners(postCard){
+function attachPostListeners(postCard) {
   const likeBtn = postCard.querySelector(".like-btn");
   const saveBtn = postCard.querySelector(".save-btn");
   const commentBtn = postCard.querySelector(".comment-btn");
+  const ttsBtn = postCard.querySelector(".tts-btn");
+  const flagBtn = postCard.querySelector(".flag-btn");
+  const postDesc = postCard.querySelector(".post-desc");
   const commentPanel = postCard.querySelector(".comment-panel");
   const addCommentBtn = postCard.querySelector(".add-comment-btn");
   const commentInput = postCard.querySelector(".comment-input");
@@ -237,6 +323,32 @@ function attachPostListeners(postCard){
     saveBtn.style.color = saveBtn.classList.contains("active") ? "green" : "var(--primary-color)";
   });
 
+  // Flag
+  flagBtn.addEventListener("click", () => {
+    const postId = postCard.dataset.postId || Date.now().toString();
+    postCard.dataset.postId = postId;
+
+    if (flagBtn.classList.contains("flagged")) {
+      // Unflag the post
+      flagBtn.classList.remove("flagged");
+      flagBtn.style.color = "var(--primary-color)";
+      unflagPost(postId);
+    } else {
+      // Flag the post
+      flagBtn.classList.add("flagged");
+      flagBtn.style.color = "orange";
+      flagPost(postCard, postId);
+    }
+  });
+
+  // Check if post is already flagged
+  const flaggedPosts = JSON.parse(localStorage.getItem('flaggedPosts') || '[]');
+  const postId = postCard.dataset.postId;
+  if (flaggedPosts.find(p => p.id === postId && p.status === 'flagged')) {
+    flagBtn.classList.add("flagged");
+    flagBtn.style.color = "orange";
+  }
+
   // Comment toggle
   commentBtn.addEventListener("click", () => {
     commentPanel.style.display = commentPanel.style.display === "flex" ? "none" : "flex";
@@ -246,7 +358,7 @@ function attachPostListeners(postCard){
   // Add comment
   addCommentBtn.addEventListener("click", () => {
     const text = commentInput.value.trim();
-    if(text !== ""){
+    if (text !== "") {
       const commentEl = document.createElement("div");
       commentEl.classList.add("comment-item");
       commentEl.textContent = text;
@@ -259,5 +371,202 @@ function attachPostListeners(postCard){
       commentInput.value = "";
       noComment.style.display = "none";
     }
+  });
+
+  // Text-to-Speech
+  let currentUtterance = null;
+  ttsBtn.addEventListener("click", () => {
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+      ttsBtn.classList.remove("active");
+      ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+    } else {
+      const text = postDesc.textContent.trim();
+      if (text !== "") {
+        currentUtterance = new SpeechSynthesisUtterance(text);
+        currentUtterance.lang = "en-US";
+        currentUtterance.rate = 1.0;
+        currentUtterance.pitch = 1.0;
+
+        currentUtterance.onend = () => {
+          ttsBtn.classList.remove("active");
+          ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+        };
+
+        currentUtterance.onerror = () => {
+          ttsBtn.classList.remove("active");
+          ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+        };
+
+        window.speechSynthesis.speak(currentUtterance);
+        ttsBtn.classList.add("active");
+        ttsBtn.classList.replace("fa-volume-high", "fa-stop");
+      }
+    }
+  });
+
+  // Emoji Reactions
+  const emojiReactions = postCard.querySelectorAll(".emoji-reaction");
+  emojiReactions.forEach(reaction => {
+    reaction.addEventListener("click", () => {
+      const emojiCount = reaction.querySelector(".emoji-count");
+      let count = parseInt(emojiCount.textContent);
+
+      // Toggle reaction - if already clicked, decrease count, else increase
+      if (reaction.classList.contains("active")) {
+        count = Math.max(0, count - 1);
+        reaction.classList.remove("active");
+      } else {
+        count += 1;
+        reaction.classList.add("active");
+      }
+
+      emojiCount.textContent = count;
+    });
+  });
+}
+
+// Moderation Functions
+function flagPost(postCard, postId) {
+  const flaggedPosts = JSON.parse(localStorage.getItem('flaggedPosts') || '[]');
+  const postData = {
+    id: postId,
+    username: postCard.querySelector('.username').textContent,
+    description: postCard.querySelector('.post-desc').textContent,
+    image: postCard.querySelector('.post-image img')?.src || '',
+    timestamp: new Date().toISOString(),
+    status: 'flagged'
+  };
+
+  // Check if already flagged
+  if (!flaggedPosts.find(p => p.id === postId)) {
+    flaggedPosts.push(postData);
+    localStorage.setItem('flaggedPosts', JSON.stringify(flaggedPosts));
+  }
+}
+
+function unflagPost(postId) {
+  const flaggedPosts = JSON.parse(localStorage.getItem('flaggedPosts') || '[]');
+  const updatedPosts = flaggedPosts.filter(p => p.id !== postId);
+  localStorage.setItem('flaggedPosts', JSON.stringify(updatedPosts));
+}
+
+function approvePost(postId) {
+  const flaggedPosts = JSON.parse(localStorage.getItem('flaggedPosts') || '[]');
+  const postIndex = flaggedPosts.findIndex(p => p.id === postId);
+  if (postIndex !== -1) {
+    flaggedPosts[postIndex].status = 'approved';
+    localStorage.setItem('flaggedPosts', JSON.stringify(flaggedPosts));
+  }
+}
+
+function rejectPost(postId) {
+  const flaggedPosts = JSON.parse(localStorage.getItem('flaggedPosts') || '[]');
+  const postIndex = flaggedPosts.findIndex(p => p.id === postId);
+  if (postIndex !== -1) {
+    flaggedPosts[postIndex].status = 'rejected';
+    localStorage.setItem('flaggedPosts', JSON.stringify(flaggedPosts));
+  }
+}
+
+// Moderation Panel
+const moderationBtn = document.querySelector(".moderation-btn");
+const moderationModal = document.getElementById("moderationModal");
+const moderationClose = moderationModal.querySelector(".close-modal");
+const tabBtns = moderationModal.querySelectorAll(".tab-btn");
+const tabContents = moderationModal.querySelectorAll(".tab-content");
+
+moderationBtn.addEventListener("click", () => {
+  loadModerationData();
+  moderationModal.style.display = "flex";
+});
+
+moderationClose.addEventListener("click", () => {
+  moderationModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === moderationModal) {
+    moderationModal.style.display = "none";
+  }
+});
+
+// Tab switching
+tabBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    tabBtns.forEach(b => b.classList.remove("active"));
+    tabContents.forEach(c => c.classList.remove("active"));
+
+    btn.classList.add("active");
+    const tabId = btn.dataset.tab;
+    document.getElementById(`${tabId}-posts`).classList.add("active");
+    loadModerationData(tabId);
+  });
+});
+
+function loadModerationData(activeTab = 'flagged') {
+  const flaggedPosts = JSON.parse(localStorage.getItem('flaggedPosts') || '[]');
+
+  // Clear all tabs
+  ['flagged', 'approved', 'rejected'].forEach(status => {
+    const container = document.getElementById(`${status}-posts`);
+    container.innerHTML = '';
+  });
+
+  // Group posts by status
+  const postsByStatus = {
+    flagged: flaggedPosts.filter(p => p.status === 'flagged'),
+    approved: flaggedPosts.filter(p => p.status === 'approved'),
+    rejected: flaggedPosts.filter(p => p.status === 'rejected')
+  };
+
+  // Load posts for each status
+  Object.keys(postsByStatus).forEach(status => {
+    const container = document.getElementById(`${status}-posts`);
+    const posts = postsByStatus[status];
+
+    if (posts.length === 0) {
+      container.innerHTML = `<p class="no-posts">No ${status} posts</p>`;
+      return;
+    }
+
+    posts.forEach(post => {
+      const postEl = document.createElement('div');
+      postEl.className = 'moderation-post-card';
+      postEl.innerHTML = `
+        <div class="post-header">
+          <span class="username">${post.username}</span>
+          <span class="timestamp">${new Date(post.timestamp).toLocaleString()}</span>
+        </div>
+        ${post.image ? `<div class="post-image"><img src="${post.image}" alt="Post image"></div>` : ''}
+        <div class="post-desc">${post.description}</div>
+        <div class="moderation-actions">
+          ${status === 'flagged' ? `
+            <button class="btn approve-btn" data-post-id="${post.id}">Approve</button>
+            <button class="btn reject-btn" data-post-id="${post.id}">Reject</button>
+          ` : `
+            <span class="status-badge ${status}">${status.charAt(0).toUpperCase() + status.slice(1)}</span>
+          `}
+        </div>
+      `;
+      container.appendChild(postEl);
+    });
+  });
+
+  // Attach event listeners for approve/reject buttons
+  document.querySelectorAll('.approve-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const postId = e.target.dataset.postId;
+      approvePost(postId);
+      loadModerationData(activeTab);
+    });
+  });
+
+  document.querySelectorAll('.reject-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const postId = e.target.dataset.postId;
+      rejectPost(postId);
+      loadModerationData(activeTab);
+    });
   });
 }

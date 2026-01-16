@@ -74,6 +74,7 @@ function clearProgress() {
 // DOM Elements
 const startScreen = document.getElementById('startScreen');
 const quizScreen = document.getElementById('quizScreen');
+const loadingScreen = document.getElementById('loadingScreen');
 const resultScreen = document.getElementById('resultScreen');
 const reviewScreen = document.getElementById('reviewScreen');
 const timeEl = document.getElementById('time');
@@ -194,15 +195,22 @@ function showResult() {
     clearInterval(timer);
     clearProgress(); // Clear progress when quiz is completed
     quizScreen.style.display = "none";
-    resultScreen.style.display = "block";
-    resultScreen.classList.add('slide-up');
-    
-    document.getElementById('finalScore').textContent = score;
-    
-    const remarkEl = document.getElementById('remark');
-    if(score >= 8) remarkEl.textContent = "🌟 Amazing! You're an Eco Hero!";
-    else if(score >= 5) remarkEl.textContent = "👍 Good Job! Keep it green!";
-    else remarkEl.textContent = "🌱 Nice try! Learn more & play again!";
+    loadingScreen.style.display = "block";
+    loadingScreen.classList.add('slide-up');
+
+    // Simulate processing time (you can adjust this duration)
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+        resultScreen.style.display = "block";
+        resultScreen.classList.add('slide-up');
+
+        document.getElementById('finalScore').textContent = score;
+
+        const remarkEl = document.getElementById('remark');
+        if(score >= 8) remarkEl.textContent = "🌟 Amazing! You're an Eco Hero!";
+        else if(score >= 5) remarkEl.textContent = "👍 Good Job! Keep it green!";
+        else remarkEl.textContent = "🌱 Nice try! Learn more & play again!";
+    }, 2000); // 2 second loading time
 }
 
 function showReview() {
