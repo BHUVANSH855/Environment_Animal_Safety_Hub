@@ -47,6 +47,7 @@ function loadPost(count = 3) {
         <i class="fa-regular fa-heart like-btn"></i>
         <i class="fa-regular fa-comment comment-btn"></i>
         <i class="fa-regular fa-bookmark save-btn"></i>
+        <i class="fa-solid fa-volume-high tts-btn" title="Read Aloud"></i>
       </div>
 
       <div class="post-stats">
@@ -80,6 +81,8 @@ function loadPost(count = 3) {
     const likeBtn = postCard.querySelector(".like-btn");
     const saveBtn = postCard.querySelector(".save-btn");
     const commentBtn = postCard.querySelector(".comment-btn");
+    const ttsBtn = postCard.querySelector(".tts-btn");
+    const postDesc = postCard.querySelector(".post-desc");
     const commentPanel = postCard.querySelector(".comment-panel");
     const addCommentBtn = postCard.querySelector(".add-comment-btn");
     const commentInput = postCard.querySelector(".comment-input");
@@ -130,6 +133,38 @@ function loadPost(count = 3) {
 
         commentInput.value = "";
         updateNoCommentText();
+      }
+    });
+
+    // Text-to-Speech
+    let currentUtterance = null;
+    ttsBtn.addEventListener("click", () => {
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        ttsBtn.classList.remove("active");
+        ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+      } else {
+        const text = postDesc.textContent.trim();
+        if (text !== "") {
+          currentUtterance = new SpeechSynthesisUtterance(text);
+          currentUtterance.lang = "en-US";
+          currentUtterance.rate = 1.0;
+          currentUtterance.pitch = 1.0;
+
+          currentUtterance.onend = () => {
+            ttsBtn.classList.remove("active");
+            ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+          };
+
+          currentUtterance.onerror = () => {
+            ttsBtn.classList.remove("active");
+            ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+          };
+
+          window.speechSynthesis.speak(currentUtterance);
+          ttsBtn.classList.add("active");
+          ttsBtn.classList.replace("fa-volume-high", "fa-stop");
+        }
       }
     });
 
@@ -216,6 +251,7 @@ submitPostBtn.addEventListener("click", () => {
       <i class="fa-regular fa-heart like-btn"></i>
       <i class="fa-regular fa-comment comment-btn"></i>
       <i class="fa-regular fa-bookmark save-btn"></i>
+      <i class="fa-solid fa-volume-high tts-btn" title="Read Aloud"></i>
     </div>
     <div class="post-stats">
       <span class="likes-count">0</span> likes • 
@@ -255,6 +291,8 @@ function attachPostListeners(postCard) {
   const likeBtn = postCard.querySelector(".like-btn");
   const saveBtn = postCard.querySelector(".save-btn");
   const commentBtn = postCard.querySelector(".comment-btn");
+  const ttsBtn = postCard.querySelector(".tts-btn");
+  const postDesc = postCard.querySelector(".post-desc");
   const commentPanel = postCard.querySelector(".comment-panel");
   const addCommentBtn = postCard.querySelector(".add-comment-btn");
   const commentInput = postCard.querySelector(".comment-input");
@@ -299,6 +337,38 @@ function attachPostListeners(postCard) {
 
       commentInput.value = "";
       noComment.style.display = "none";
+    }
+  });
+
+  // Text-to-Speech
+  let currentUtterance = null;
+  ttsBtn.addEventListener("click", () => {
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+      ttsBtn.classList.remove("active");
+      ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+    } else {
+      const text = postDesc.textContent.trim();
+      if (text !== "") {
+        currentUtterance = new SpeechSynthesisUtterance(text);
+        currentUtterance.lang = "en-US";
+        currentUtterance.rate = 1.0;
+        currentUtterance.pitch = 1.0;
+
+        currentUtterance.onend = () => {
+          ttsBtn.classList.remove("active");
+          ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+        };
+
+        currentUtterance.onerror = () => {
+          ttsBtn.classList.remove("active");
+          ttsBtn.classList.replace("fa-stop", "fa-volume-high");
+        };
+
+        window.speechSynthesis.speak(currentUtterance);
+        ttsBtn.classList.add("active");
+        ttsBtn.classList.replace("fa-volume-high", "fa-stop");
+      }
     }
   });
 
