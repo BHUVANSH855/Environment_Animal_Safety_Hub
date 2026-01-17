@@ -391,24 +391,35 @@ class EcoDashboard {
   }
 
   setupThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        const isDark = document.body.classList.contains('dark-theme');
-        localStorage.setItem('dashboard-theme', isDark ? 'dark' : 'light');
-      });
+  const themeToggle = document.getElementById("themeToggle");
+  if (!themeToggle) return;
 
-      // Load saved theme
-      const savedTheme = localStorage.getItem('dashboard-theme');
-      if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-      }
-    }
+  // Load saved theme
+  const savedTheme = localStorage.getItem("dashboard-theme");
+  if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+    themeToggle.textContent = "🌞";
+  } else {
+    themeToggle.textContent = "🌙";
   }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+
+    if (document.body.classList.contains("light-theme")) {
+      localStorage.setItem("dashboard-theme", "light");
+      themeToggle.textContent = "🌞";
+    } else {
+      localStorage.setItem("dashboard-theme", "dark");
+      themeToggle.textContent = "🌙";
+    }
+  });
+}
 }
 
 // Initialize dashboard when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   window.ecoDashboard = new EcoDashboard();
 });
+
+
