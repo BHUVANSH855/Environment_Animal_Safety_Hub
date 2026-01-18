@@ -4,23 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Forums - EcoLife</title>
-    <link rel="stylesheet" href="../../css/global/variables.css">
-    <link rel="stylesheet" href="../../css/global/reset.css">
-    <link rel="stylesheet" href="../../css/global/layout.css">
-    <link rel="stylesheet" href="../../css/global/theme.css">
-    <link rel="stylesheet" href="../../css/global/utilities.css">
-    <link rel="stylesheet" href="../../css/global/accessibility.css">
-    <link rel="stylesheet" href="../../css/components/navbar.css">
-    <link rel="stylesheet" href="../../css/components/footer.css">
-    <link rel="stylesheet" href="../../css/components/card.css">
-    <link rel="stylesheet" href="../../css/components/modal.css">
-    <link rel="stylesheet" href="../../css/components/scrollBar.css">
-    <link rel="stylesheet" href="../../css/pages/community.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <link rel="stylesheet" href="../../css/pages/community.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/global/utilities.css" />
+    <link rel="stylesheet" href="../../css/components/navbar.css" />
 </head>
 <body>
     <!-- Navbar -->
     <div id="navbar-container"></div>
+    <div class="theme-toggle" id="themeToggle" title="Toggle Dark Mode"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar column">
+        <a href="profile.html" class="sidebar-icon" data-tooltip="Profile">
+            <i class="fa-solid fa-user"></i>
+        </a>
+        <a href="blog.html" class="sidebar-icon" data-tooltip="Blogs">
+            <i class="fa-solid fa-blog"></i>
+        </a>
+        <a href="channel.html" class="sidebar-icon" data-tooltip="Channels">
+            <i class="fa-solid fa-users"></i>
+        </a>
+        <a href="#" class="sidebar-icon" data-tooltip="Chat">
+            <i class="fa-solid fa-comment"></i>
+        </a>
+        <a href="post.html" class="sidebar-icon" data-tooltip="Posts">
+            <i class="fa-solid fa-newspaper"></i>
+        </a>
+        <a href="forums.html" class="sidebar-icon active" data-tooltip="Forums">
+          <i class="fa-solid fa-comments"></i>
+        </a>
+        <a href="dashboard.html" class="sidebar-icon" data-tooltip="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+        <a href="../../index.html" class="sidebar-icon" data-tooltip="Logout">
+            <i class="fa-solid fa-door-open"></i>
+        </a>
+  </aside>
 
     <!-- Main Content -->
     <main class="page">
@@ -190,7 +210,7 @@
     <script src="../../js/components/component-loader.js"></script>
     <script src="../../js/components/navbar-loader.js"></script>
     <script src="../../js/components/footer-loader.js"></script>
-    <script src="../../js/components/modal.js"></script>
     <script src="../../js/pages/community/forums.js"></script>
+    <script src="../../js/pages/community/theme.js"></script>
 </body>
 </html>
