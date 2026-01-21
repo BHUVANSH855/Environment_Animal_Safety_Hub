@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="assets/FAVICON.png">
-  <title>EcoLife | Protect Our Planet & Animals</title>
+  <title>EcoLife | Report Stray Dog in Danger</title>
   <meta name="description"
-    content="Join EcoLife to protect animals, save the environment, and create a greener future for all." />
+    content="Report stray dogs in danger that need immediate attention. Help save lives by providing quick assistance to vulnerable animals." />
 <link rel="icon" type="image/png" href="/envirnoment-logo.png">
   <!-- CSS Files -->
   <link rel="stylesheet" href="../../css/global/variables.css" />
@@ -231,10 +231,10 @@
             <div class="hero-image" data-aos="fade-right"></div>
 
             <div class="hero-content" data-aos="fade-left">
-            <h1>🐾 Report a Stray Pet</h1>
+            <h1>🐾 Report a Stray Dog in Danger</h1>
             <p>
-                Be the voice for those who cannot speak.  
-                Your kindness can save a life 💚
+                Be the voice for stray dogs that need immediate attention.  
+                Your quick action can save a life in danger 💚
             </p>
             </div>
         </div>
@@ -247,7 +247,7 @@
 
             <div class="step-card" data-aos="zoom-in">
                 <div class="step-circle">🐕</div>
-                <p>Found a stray pet</p>
+                <p>Found a stray dog in danger</p>
             </div>
 
             <div class="step-card" data-aos="zoom-in">
@@ -277,15 +277,15 @@
         <div class="form-bg">
             <div class="container">
             <div class="form-card" data-aos="fade-up">
-                <h2>🧾 Report a Stray Pet</h2>
+                <h2>🧾 Report a Stray Dog in Danger</h2>
 
                 <form id="reportForm">
 
                 <div class="field">
                     <label>🐾 Pet Type</label>
-                    <select required>
+                    <select name="petType" required>
                     <option value="">Select</option>
-                    <option>Dog</option>
+                    <option selected>Dog</option>
                     <option>Cat</option>
                     <option>Other</option>
                     </select>
@@ -293,12 +293,12 @@
                 
                 <div class="field">
                     <label>🪪 Name</label>
-                    <input type="text" placeholder="Mark">
+                    <input name="petName" type="text" placeholder="Mark">
                 </div>
                 
                 <div class="field">
                     <label>⚧️ Gender</label>
-                    <select required>
+                    <select name="gender" required>
                     <option value="">Select</option>
                     <option>Male</option>
                     <option>Female</option>
@@ -307,17 +307,17 @@
 
                 <div class="field">
                     <label>🎨 Color / Markings</label>
-                    <input type="text" placeholder="Brown with white spots">
+                    <input name="color" type="text" placeholder="Brown with white spots">
                 </div>
 
                 <div class="field">
                     <label>📍 Location Found</label>
-                    <input type="text" placeholder="Street / Area / City" required>
+                    <input name="location" type="text" placeholder="Street / Area / City" required>
                 </div>
 
                 <div class="field">
                     <label>⚕️ Condition</label>
-                    <select>
+                    <select name="condition">
                     <option>Healthy</option>
                     <option>Injured</option>
                     <option>Sick</option>
@@ -326,13 +326,23 @@
                 </div>
 
                 <div class="field">
-                    <label>📝 Additional Details</label>
-                    <textarea placeholder="Describe behavior, injuries, or urgency"></textarea>
+                    <label>� Urgency Level</label>
+                    <select name="urgency" required>
+                    <option value="">Select Urgency</option>
+                    <option value="normal">Normal - General report</option>
+                    <option value="urgent">Urgent - Needs attention soon</option>
+                    <option value="emergency">Emergency - Immediate danger</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>�📝 Additional Details</label>
+                    <textarea name="details" placeholder="Describe behavior, injuries, or urgency"></textarea>
                 </div>
 
                 <div class="field">
                     <label>📸 Upload Photos</label>
-                    <input type="file" multiple>
+                    <input name="photos" type="file" multiple>
                 </div>
 
                 <button type="submit">🚀 Submit Report</button>

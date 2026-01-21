@@ -132,6 +132,16 @@
   font-size: 1rem;
 }
 
+.field select[required] {
+  border-color: #f59e0b;
+  background: #fef3c7;
+}
+
+.field select[required]:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
 .field textarea {
   min-height: 130px;
 }

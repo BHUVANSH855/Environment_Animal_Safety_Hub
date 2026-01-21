@@ -44,8 +44,32 @@ reportForm.addEventListener("submit", function (e) {
     // Prevent default form submission
     e.preventDefault();
 
-    // Show success message with emoji
-    alert("🦊 Thank you! Your report has been submitted successfully 💚");
+    // Get form data
+    const formData = new FormData(this);
+    const urgency = formData.get('urgency');
+    const details = formData.get('details')?.trim() || '';
+
+    // Basic validation
+    if (!urgency) {
+        alert("⚠️ Please select an urgency level for the report.");
+        return;
+    }
+
+    // For emergency cases, require more details
+    if (urgency === "emergency" && details.length < 10) {
+        alert("🚨 For emergency reports, please provide more details about the danger situation (at least 10 characters).");
+        return;
+    }
+
+    // Show appropriate success message based on urgency
+    let message = "🦊 Thank you! Your report has been submitted successfully 💚";
+    if (urgency === "emergency") {
+        message = "🚨 EMERGENCY REPORT SUBMITTED! Help is on the way for this stray dog in danger 🐕‍🦺";
+    } else if (urgency === "urgent") {
+        message = "⚡ URGENT REPORT SUBMITTED! We'll prioritize assistance for this stray dog 🐕";
+    }
+
+    alert(message);
 
     // Reset form to clear all fields
     this.reset();
