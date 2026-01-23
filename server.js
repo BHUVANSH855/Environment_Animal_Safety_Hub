@@ -17,6 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/quiz', require('./backend/routes/quiz'));
 app.use('/api/animals', require('./backend/routes/animals'));
 app.use('/api/users', require('./backend/routes/users'));
+app.use('/api/reports', require('./backend/routes/reports'));
+app.use('/api/contact', require('./backend/routes/contact'));
+app.use('/api/auth', require('./backend/routes/auth'));
+app.use('/api/events', require('./backend/routes/events'));
 
 // Middleware to log all requests
 app.use((req, res, next) => {
@@ -75,6 +79,13 @@ app.listen(PORT, () => {
     console.log(`🔍 Quality Control: http://localhost:${PORT}/quality-control`);
     console.log(`🏆 Contributor Recognition: http://localhost:${PORT}/contributor-recognition`);
     console.log(`🏠 Main Site: http://localhost:${PORT}`);
+    console.log('\n🚀 REST API Endpoints:');
+    console.log(`📝 Reports: http://localhost:${PORT}/api/reports`);
+    console.log(`📞 Contact: http://localhost:${PORT}/api/contact`);
+    console.log(`🔐 Auth: http://localhost:${PORT}/api/auth`);
+    console.log(`🎯 Quiz: http://localhost:${PORT}/api/quiz`);
+    console.log(`🐾 Animals: http://localhost:${PORT}/api/animals`);
+    console.log(`📅 Events: http://localhost:${PORT}/api/events`);
     console.log('='.repeat(60));
     console.log('📊 Request Logs:');
     console.log('='.repeat(60));
