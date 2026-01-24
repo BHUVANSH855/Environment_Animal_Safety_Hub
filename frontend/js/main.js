@@ -489,21 +489,27 @@ function initCounterAnimation() {
 }
 
 /**
- * Initialize particle animation system
+ * Initialize particle animation system - Memory Safe Version
  * Creates floating particles for visual enhancement
  */
 function initParticles() {
   const particlesContainer = document.getElementById("particles");
   if (!particlesContainer) return;
 
-  const particleCount = 50;
+  const particleCount = 30; // Reduced from 50
+  const particles = new Set();
+  
   for (let i = 0; i < particleCount; i++) {
-    createParticle(particlesContainer);
+    const particle = createParticle(particlesContainer);
+    particles.add(particle);
   }
+  
+  // Store particles for cleanup
+  particlesContainer._particles = particles;
 }
 
 /**
- * Create individual particle element
+ * Create individual particle element - Memory Safe Version
  * @param {HTMLElement} container - Container element for particles
  */
 function createParticle(container) {
@@ -511,11 +517,11 @@ function createParticle(container) {
   particle.className = "particle";
 
   // Random properties
-  const size = Math.random() * 5 + 2;
+  const size = Math.random() * 3 + 1; // Reduced size
   const left = Math.random() * 100;
   const delay = Math.random() * 20;
-  const duration = Math.random() * 20 + 10;
-  const opacity = Math.random() * 0.5 + 0.1;
+  const duration = Math.random() * 15 + 8; // Shorter duration
+  const opacity = Math.random() * 0.3 + 0.1; // Lower opacity
 
   particle.style.cssText = `
     position: absolute;
@@ -526,9 +532,11 @@ function createParticle(container) {
     left: ${left}%;
     bottom: -10px;
     animation: particleFloat ${duration}s linear ${delay}s infinite;
+    pointer-events: none;
   `;
 
   container.appendChild(particle);
+  return particle;
 }
 
 // Add particle animation to stylesheet

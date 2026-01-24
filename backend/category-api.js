@@ -263,7 +263,9 @@ app.post('/api/projects/auto-categorize', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Category Management API running on port ${PORT}`);
+    console.log('\n' + '='.repeat(60));
+    console.log(`🚀 Category Management API running on port ${PORT}`);
+    console.log('='.repeat(60));
 });
 
 module.exports = app;
