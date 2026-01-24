@@ -2830,6 +2830,29 @@ img {
    =========================================== */
 
 
+
+
+   /* Mobile responsiveness */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container,
+  .card,
+  section {
+    width: 100%;
+    padding: 12px;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
    button {
   transition: all 0.3s ease;
 }
@@ -2837,4 +2860,5 @@ img {
 button:hover {
   transform: scale(1.05);
   opacity: 0.9;
+
 }
