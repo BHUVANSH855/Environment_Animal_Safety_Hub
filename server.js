@@ -66,14 +66,6 @@ app.get('/quality-control', (req, res) => {
     res.sendFile(filePath);
 });
 
-// Contributor Recognition route
-app.get('/contributor-recognition', (req, res) => {
-    console.log('Contributor recognition requested');
-    const filePath = path.join(__dirname, 'frontend/pages/admin/contributor-recognition.html');
-    console.log('File path:', filePath);
-    res.sendFile(filePath);
-});
-
 // Main site route - force index.html
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'frontend/index.html'));
@@ -84,10 +76,7 @@ app.use(require('./backend/middleware/errorHandler'));
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
-    console.log('\n' + '='.repeat(60));
     console.log(`🚀 Server running at http://localhost:${PORT}`);
-    console.log('='.repeat(60));
-    console.log('📋 Available APIs:');
     console.log(`📁 Category Management: http://localhost:${PORT}/category-management`);
     console.log(`🔍 Quality Control: http://localhost:${PORT}/quality-control`);
     console.log(`🏆 Contributor Recognition: http://localhost:${PORT}/contributor-recognition`);
