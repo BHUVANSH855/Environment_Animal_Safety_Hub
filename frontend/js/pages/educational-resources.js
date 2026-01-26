@@ -314,6 +314,33 @@ const resourcesData = [
                 </div>
             </div>
         `
+    },
+    {
+        id: 'traditional-farming-biodiversity',
+        title: 'Traditional Farming & Biodiversity',
+        description: 'Explore how low-intensity traditional agriculture supports wildlife and maintains ecological balance.',
+        type: 'article',
+        category: 'environment',
+        duration: '10 min read',
+        icon: 'fas fa-seedling',
+        featured: false,
+        content: `
+            <div class="resource-detail">
+                <div class="resource-info">
+                    <h4>Highlighting Low-Intensity Agriculture</h4>
+                    <p>Traditional farming systems provide vital ecosystems that support biodiversity. In this article, you will learn about:</p>
+                    <ul>
+                        <li>The benefits of crop rotation and polyculture</li>
+                        <li>Maintaining soil health and natural pest control</li>
+                        <li>How traditional landscapes serve as wildlife corridors</li>
+                        <li>Supporting local biodiversity through sustainable choices</li>
+                    </ul>
+                    <div class="resource-actions">
+                        <a href="traditional-farming-biodiversity.html" class="btn-primary">Read Full Article</a>
+                    </div>
+                </div>
+            </div>
+        `
     }
 ];
 
