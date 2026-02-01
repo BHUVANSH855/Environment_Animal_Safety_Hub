@@ -5,7 +5,13 @@
       <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="EcoLife Logo" class="logo-img" />
       <span>EcoLife</span>
     </a>
-    
+
+    <!-- Hamburger Menu Button -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
     <ul class="nav-links" id="navLinks">
 
@@ -114,11 +120,10 @@
           <li><a href="pages/community/groups.html">Community Groups</a></li>
           <li><a href="pages/community/dashboard.html">My Dashboard</a></li>
           <li><a href="pages/community/events.html">Community Events</a></li>
-           <li><a href="pages/community/eco-swap.html">🔄 Eco-Swap Marketplace</a></li>
+          <li><a href="pages/community/eco-swap.html">🔄 Eco-Swap Marketplace</a></li>
           <li><a href="pages/community/blog.html">Community Blog</a></li>
           <li><a href="pages/community/chat.html">Community Chat</a></li>
           <li><a href="pages/contributor.html">Contributors</a></li>
-
         </ul>
       </li>
 
@@ -127,23 +132,23 @@
       <li class="nav-auth">
         <!-- Font Size Controls -->
         <div class="font-size-controls">
-          <button class="font-size-btn font-size-decrease" aria-label="Decrease font size" role="button" title="Decrease Font Size">
+          <button class="font-size-btn font-size-decrease" aria-label="Decrease font size" title="Decrease Font Size">
             <i class="fas fa-minus"></i>
           </button>
-          <button class="font-size-btn font-size-increase" aria-label="Increase font size" role="button" title="Increase Font Size">
+          <button class="font-size-btn font-size-increase" aria-label="Increase font size" title="Increase Font Size">
             <i class="fas fa-plus"></i>
           </button>
         </div>
 
-        <div class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode" role="button">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">
           <i class="fa-solid fa-moon"></i>
-        </div>
+        </button>
 
         <!-- Mute Toggle -->
-        <div class="mute-toggle-btn" id="muteToggle" role="button" tabindex="0" aria-label="Toggle audio mute"
-          aria-pressed="false" title="Toggle Audio Mute">
+        <button class="mute-toggle-btn" id="muteToggle" aria-label="Toggle audio mute" aria-pressed="false"
+          title="Toggle Audio Mute">
           <i class="fa-solid fa-volume-up"></i>
-        </div>
+        </button>
 
         <!-- Auth Buttons (Hidden when logged in) -->
         <div class="auth-guest-only">
@@ -156,61 +161,5 @@
       </li>
 
     </ul>
-    </div>
   </div>
 </nav>
-<script>
-  // Navbar Scroll Effect
-  window.addEventListener("scroll", function () {
-    const navbar = document.getElementById("navbar");
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
-
-  // Mobile Menu Toggle
-  const navToggle = document.getElementById("navToggle");
-  const navLinks = document.getElementById("navLinks");
-
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    navToggle.classList.toggle("active");
-    const isExpanded = navLinks.classList.contains("active");
-    navToggle.setAttribute("aria-expanded", isExpanded);
-  });
-
-  // Search Functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const searchForm = document.getElementById('searchForm');
-    const searchInput = document.getElementById('searchInput');
-    const mobileSearchForm = document.getElementById('mobileSearchForm');
-    const mobileSearchInput = document.getElementById('mobileSearchInput');
-
-    const handleSearch = (query) => {
-      if (query.trim()) {
-        // Redirect to search results page
-        window.location.href = `pages/search.html?q=${encodeURIComponent(query)}`;
-      }
-    };
-
-    if (searchForm && searchInput) {
-      searchForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        handleSearch(searchInput.value);
-      });
-    }
-
-    if (mobileSearchForm && mobileSearchInput) {
-      mobileSearchForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        handleSearch(mobileSearchInput.value);
-        // Close mobile menu after search
-        navLinks.classList.remove('active');
-        navToggle.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', false);
-      });
-    }
-  });
-</script>
