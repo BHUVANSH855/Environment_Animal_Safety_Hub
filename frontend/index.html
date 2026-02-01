@@ -2230,71 +2230,7 @@
   </script>
 
   <!-- Scroll Scripts -->
-  <script>
-    class ScrollManager {
-      constructor() {
-        this.scrollToBottomBtn = null;
-        this.backToTopBtn = null;
-        this.scrollHandler = null;
-      }
-
-      init() {
-        this.scrollToBottomBtn = document.getElementById("scrollToBottom");
-        this.backToTopBtn = document.getElementById("backToTop");
-
-        // Throttled scroll handler to prevent excessive calls
-        this.scrollHandler = this.throttle(() => {
-          const scrollTop = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight;
-          const winHeight = window.innerHeight;
-
-          if (this.backToTopBtn) {
-            this.backToTopBtn.style.display = scrollTop > 300 ? "flex" : "none";
-          }
-
-          if (this.scrollToBottomBtn) {
-            this.scrollToBottomBtn.style.display =
-              scrollTop < docHeight - winHeight - 200 ? "flex" : "none";
-          }
-        }, 100);
-
-        window.addEventListener("scroll", this.scrollHandler);
-
-        if (this.scrollToBottomBtn) {
-          this.scrollToBottomBtn.addEventListener("click", () => {
-            window.scrollTo({
-              top: document.documentElement.scrollHeight,
-              behavior: "smooth",
-            });
-          });
-        }
-
-        if (this.backToTopBtn) {
-          this.backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          });
-        }
-      }
-
-      throttle(func, limit) {
-        let inThrottle;
-        return function (...args) {
-          if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => (inThrottle = false), limit);
-          }
-        };
-      }
-
-      cleanup() {
-        if (this.scrollHandler) {
-          window.removeEventListener("scroll", this.scrollHandler);
-        }
-      }
-    }
-
-  </script>
+ window.scrollY
   <!-- Global JavaScript for Live Clock -->
   <script src="js/global/main.js"></script>
 
