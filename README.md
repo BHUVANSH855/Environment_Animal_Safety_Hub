@@ -1,4 +1,8 @@
-🚨 Mandatory Contributor Registration
+# 🌍 EcoLife – Environment & Animal Safety Hub
+
+EcoLife is an interactive and educational platform focused on environmental protection, animal safety, waste management, and climate awareness.
+
+## 🚨 Mandatory Contributor Registration
 
 Before starting any contribution, you MUST complete the registration form.
 
@@ -9,11 +13,10 @@ Before starting any contribution, you MUST complete the registration form.
 🧑‍💻 Open Source Contributors Welcome!
 
 Join our official Discord server to:
-
-Ask and clear doubts
-Discuss issues and Pull Requests
-Get guidance from mentors
-Collaborate with contributors
+- Ask and clear doubts
+- Discuss issues and Pull Requests
+- Get guidance from mentors
+- Collaborate with contributors
 👉 Discord: https://discord.gg/3FKndgyuJp
 
 
@@ -91,11 +94,19 @@ For detailed information, see: [Deep-Sea Biodiversity Study](MD/DEEP_SEA_BIODIVE
 
 ---
 
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Open `index.html` in your browser
+3. Explore different modules and features
+
+---
+
 ## 📸 UI Preview
 
-![alt text](frontend/src/assets/images/Readme/IMG_1.png)
-![alt text](frontend/src/assets/images/Readme/IMG_2.png)  
-![alt text](frontend/src/assets/images/Readme/IMG_3.png)
+![Homepage UI Preview](frontend/src/assets/images/Readme/IMG_1.png)
+![Features Section Preview](frontend/src/assets/images/Readme/IMG_2.png)  
+![Quiz Section Preview](frontend/src/assets/images/Readme/IMG_3.png)
 
 ---
 
@@ -168,7 +179,7 @@ For detailed information, see: [Urban Stress Evolution Study](MD/URBAN_STRESS_EV
 ---
 
 ## 📜 License
-This project is created for education & awareness purposes only.
+This project is created for educational & awareness purposes only.
 
 ---
 
