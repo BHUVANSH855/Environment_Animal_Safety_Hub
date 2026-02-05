@@ -1372,33 +1372,75 @@ function initSurvivalScore() {
  * Handles light/dark theme switching with localStorage persistence
  */
 function initThemeToggle() {
-  if (typeof window.initThemeToggle === 'function') {
-    window.initThemeToggle();
-    return;
-  }
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme", theme);
+    document.body.classList.toggle("dark-theme", theme === "dark");
+    localStorage.setItem("theme", theme);
+  };
 
-  // Minimal fallback if global theme-toggle.js is not loaded
-  const toggle = document.getElementById("themeToggle");
-  if (!toggle) return;
+  const setupToggle = () => {
+    const toggle = document.getElementById("themeToggle");
+    if (!toggle) return;
 
-  const icon = toggle.querySelector("i");
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-theme");
-    if (icon) icon.classList.replace("fa-moon", "fa-sun");
-  }
+    // Prevent duplicate listeners
+    if (toggle.dataset.bound === "true") return;
+    toggle.dataset.bound = "true";
 
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    const isDark = document.body.classList.contains("dark-theme");
+    const icon = toggle.querySelector("i");
+
+    // Apply saved theme
+    const savedTheme = localStorage.getItem("theme") || "light";
+    applyTheme(savedTheme);
 
     if (icon) {
-      icon.classList.toggle("fa-moon", !isDark);
-      icon.classList.toggle("fa-sun", isDark);
+      icon.classList.toggle("fa-sun", savedTheme === "dark");
+      icon.classList.toggle("fa-moon", savedTheme === "light");
     }
 
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  });
+    toggle.addEventListener("click", () => {
+      const isDark =
+        document.documentElement.getAttribute("data-theme") === "dark";
+      const newTheme = isDark ? "light" : "dark";
+
+      applyTheme(newTheme);
+
+      if (icon) {
+        icon.classList.toggle("fa-sun", newTheme === "dark");
+        icon.classList.toggle("fa-moon", newTheme === "light");
+      }
+
+      // Accessibility feedback
+      toggle.setAttribute(
+        "aria-label",
+        `Switch to ${newTheme === "dark" ? "light" : "dark"} mode`
+      );
+    });
+  };
+
+  // If navbar already exists
+  if (document.getElementById("themeToggle")) {
+    setupToggle();
+  } else {
+    // Wait for navbar injection
+    window.addEventListener("navbarLoaded", setupToggle);
+  }
 }
+
+// ===============================
+// REMOVE DUPLICATE FLOATING THEME TOGGLE
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const navbarToggle = document.getElementById("themeToggle");
+
+  // Common selectors used for floating toggles
+  const floatingToggles = document.querySelectorAll(
+    ".theme-toggle, .floating-theme-toggle, .theme-fab"
+  );
+
+  if (navbarToggle && floatingToggles.length > 0) {
+    floatingToggles.forEach(toggle => toggle.remove());
+  }
+});
 
 /**
  * Initialize scroll to bottom button
