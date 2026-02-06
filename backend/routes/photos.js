@@ -138,6 +138,7 @@ router.post('/analyze', upload.single('photo'), async (req, res) => {
             error: error.message
         });
     }
+});
 
 /**
  * @route   GET /api/photos/gallery
