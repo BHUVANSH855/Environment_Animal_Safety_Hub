@@ -2,11 +2,16 @@ const OWNER = "Jagrati3";
 const REPO = "Environment_Animal_Safety_Hub";
 
 /* ================================
-   CONFIG: ADD YOUR MENTORS HERE
+   CONFIG: ADMIN & MENTOR
 ================================ */
 const mentors = [
   {
     username: "Jagrati3",
+    role: "Project Admin",
+    badge: "Admin"
+  },
+  {
+    username: "NikhilrSingh",
     role: "Project Mentor",
     badge: "Mentor"
   }
@@ -38,7 +43,7 @@ async function fetchContributors() {
 }
 
 /* ================================
-   FETCH ALL MERGED PRs (CORRECT WAY)
+   FETCH ALL MERGED PRs
 ================================ */
 async function fetchAllMergedPRs() {
   let page = 1;
@@ -62,12 +67,11 @@ async function fetchAllMergedPRs() {
     }
   }
 
-  // Only merged PRs
   return allPRs.filter(pr => pr.merged_at !== null);
 }
 
 /* ================================
-   LOAD MENTORS
+   LOAD ADMIN & MENTOR CARDS
 ================================ */
 async function loadMentors() {
   mentorsSection.innerHTML = "";
@@ -97,7 +101,7 @@ async function loadMentors() {
 }
 
 /* ================================
-   LOAD CONTRIBUTORS (OPTIMIZED)
+   LOAD CONTRIBUTORS
 ================================ */
 async function loadContributors() {
   try {
@@ -106,7 +110,6 @@ async function loadContributors() {
     const contributors = await fetchContributors();
     const mergedPRs = await fetchAllMergedPRs();
 
-    // Count merged PRs per author
     const prCountMap = {};
 
     mergedPRs.forEach(pr => {
@@ -122,7 +125,6 @@ async function loadContributors() {
       mergedPRs: prCountMap[contributor.login] || 0
     }));
 
-    // Sort by merged PRs first, then commits
     contributorsData.sort((a, b) => {
       if (b.mergedPRs !== a.mergedPRs) {
         return b.mergedPRs - a.mergedPRs;
@@ -154,7 +156,6 @@ function displayContributors(data) {
     const card = document.createElement("div");
     card.className = "contributor-card";
 
-    // Crown for top contributor
     const crown = index === 0 ? "👑" : "";
 
     card.innerHTML = `
