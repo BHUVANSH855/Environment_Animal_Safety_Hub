@@ -240,7 +240,6 @@ const ECO_FACTS = [
  */
 document.addEventListener("DOMContentLoaded", function () {
   // Core navigation and UI components
-  initNavbar();
   initSmoothScroll();
   initBackToTop();
   initScrollProgress();
@@ -285,7 +284,7 @@ function initAdditionalFeatures() {
   initSurvivalScore();
 
   // Theme and accessibility
-  initThemeToggle();
+  // initThemeToggle(); // Handled by theme-toggle.js
   initScrollBottomButton();
 
   // Earth visualization
@@ -309,52 +308,12 @@ function initAdditionalFeatures() {
  * Handles navbar toggling and smooth scrolling
  */
 function initNavbar() {
-  const setupNavListeners = () => {
-    const navbar = document.getElementById("navbar");
-    const navLinks = document.getElementById("navLinks");
-    const mobileBtn = document.getElementById("navToggle");
-
-    // Mobile Menu Toggle
-    if (mobileBtn && navLinks) {
-      mobileBtn.addEventListener("click", () => {
-        const isExpanded = mobileBtn.getAttribute("aria-expanded") === "true";
-        mobileBtn.setAttribute("aria-expanded", !isExpanded);
-
-        navLinks.classList.toggle("active");
-        mobileBtn.classList.toggle("active");
-        document.body.classList.toggle("no-scroll");
-      });
-
-      // Close menu when clicking a link
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-          mobileBtn.classList.remove("active");
-          mobileBtn.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("no-scroll");
-        });
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (mobileBtn && navLinks && !mobileBtn.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains("active")) {
-          navLinks.classList.remove("active");
-          mobileBtn.classList.remove("active");
-          mobileBtn.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("no-scroll");
-        }
-      });
-    }
-  };
-
-  // If navbar is already in DOM, setup immediately
-  if (document.getElementById("navToggle")) {
-    setupNavListeners();
-  } else {
-    // Wait for event from component-loader
-    window.addEventListener("navbarLoaded", setupNavListeners);
-  }
+  // Navbar is now fully handled by component-loader.js
+  // This function is intentionally disabled to prevent
+  // duplicate listeners and auto-closing bugs.
+  return;
 }
+
 
 /**
  * Initialize navbar active state based on scroll position
@@ -1367,38 +1326,23 @@ function initSurvivalScore() {
 // THEME & ACCESSIBILITY FEATURES
 // ===========================================
 
-/**
- * Initialize theme toggle functionality
- * Handles light/dark theme switching with localStorage persistence
- */
-function initThemeToggle() {
-  if (typeof window.initThemeToggle === 'function') {
-    window.initThemeToggle();
-    return;
+
+
+// ===============================
+// REMOVE DUPLICATE FLOATING THEME TOGGLE
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const navbarToggle = document.getElementById("themeToggle");
+
+  // Common selectors used for floating toggles
+  const floatingToggles = document.querySelectorAll(
+    ".theme-toggle, .floating-theme-toggle, .theme-fab"
+  );
+
+  if (navbarToggle && floatingToggles.length > 0) {
+    floatingToggles.forEach(toggle => toggle.remove());
   }
-
-  // Minimal fallback if global theme-toggle.js is not loaded
-  const toggle = document.getElementById("themeToggle");
-  if (!toggle) return;
-
-  const icon = toggle.querySelector("i");
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-theme");
-    if (icon) icon.classList.replace("fa-moon", "fa-sun");
-  }
-
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    const isDark = document.body.classList.contains("dark-theme");
-
-    if (icon) {
-      icon.classList.toggle("fa-moon", !isDark);
-      icon.classList.toggle("fa-sun", isDark);
-    }
-
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  });
-}
+});
 
 /**
  * Initialize scroll to bottom button
@@ -1905,7 +1849,7 @@ function initFlipCards() {
 // ===========================================
 // END OF MAIN.JS
 // ===========================================function closeNoiseCrisisAlert() {
-  function closeNoiseCrisisAlert() {
+function closeNoiseCrisisAlert() {
   const banner = document.getElementById("noise-crisis-alert-banner");
 
   if (banner) {
