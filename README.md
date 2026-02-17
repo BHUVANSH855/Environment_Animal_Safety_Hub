@@ -108,6 +108,23 @@ Before you begin, ensure you have the following installed:
 
 ---
 
+## 🖥 Backend Server Entry Clarification
+
+The official and primary backend entry point for this project is:
+
+`server.js` (root directory)
+
+This file is used by:
+- `npm start`
+- `npm run dev`
+- Production deployments
+
+A previously existing file (`backend/server.js`) was reviewed and removed to eliminate duplication and architectural ambiguity.
+
+All backend routes, middleware, and configurations are centralized and managed through the root-level `server.js` file.
+
+---
+
 ## 📁 Project Structure
 
 ```text
@@ -131,7 +148,7 @@ Environment_Animal_Safety_Hub/
 │   │   └── style-guide.html   # 📚 Design System Reference
 │   ├── index.html             # Main entry point
 │   └── manifest.json          # PWA manifest
-├── 📂 backend/                # Backend server code
+├── 📂 backend/                # Backend routes, models & configuration
 │   ├── 📂 api/                # API routes
 │   ├── 📂 models/             # Database models
 │   └── init-db.js             # Database initialization
@@ -271,7 +288,8 @@ _Thanks to everyone supporting this initiative!_ 💚
 
 ## 🚀 Future Enhancements
 
-For a detailed roadmap of planned features for v2.0, see [ROADMAP.md](ROADMAP.md).
+For a detailed roadmap of planned features for v2.0, see [ROADMAP.md](docs/ROADMAP.md).
+
 
 - Admin dashboard to manage content
 - User login & save quiz score feature
