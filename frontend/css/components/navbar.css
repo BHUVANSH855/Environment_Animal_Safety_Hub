@@ -347,45 +347,65 @@
 }
 
 /* Login Button */
+/* Login Button - 3D White */
 .btn-login {
   padding: 8px 16px;
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  background-color: var(--white);
+  color: var(--eco-dark);
+  border: none; /* Removed border for 3D effect */
   border-radius: var(--radius-xl);
-  color: var(--white);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.85rem;
-  transition: var(--transition-normal);
+  transition: all 0.1s ease;
   white-space: nowrap;
   text-decoration: none;
   margin-left: 6px;
+  position: relative;
+  box-shadow: 0 4px 0 #cccccc, 0 5px 10px rgba(0,0,0,0.1);
+  transform: translateY(0);
 }
 
 .btn-login:hover {
-  background: var(--white);
+  background-color: #f0f0f0;
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #cccccc, 0 3px 5px rgba(0,0,0,0.1);
   color: var(--eco-dark);
-  border-color: var(--white);
-  transform: translateY(-2px);
+  border-color: transparent;
+}
+
+.btn-login:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #cccccc, 0 0 0 rgba(0,0,0,0.1);
 }
 
 /* Sign Up Button */
+/* Sign Up Button - 3D Green */
 .btn-signup {
-  padding: 8px 16px;        /* slightly tighter */
-  background: linear-gradient(135deg, var(--eco-light), var(--eco-primary));
+  padding: 8px 16px;
+  background: var(--eco-primary);
   color: var(--white);
   border-radius: var(--radius-xl);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.85rem;
-  transition: var(--transition-normal);
+  transition: all 0.1s ease;
   white-space: nowrap;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  margin-left: 10px;        /* ensures it never clips */
+  margin-left: 10px;
+  position: relative;
+  box-shadow: 0 4px 0 #1b5e20, 0 5px 10px rgba(0,0,0,0.2);
+  transform: translateY(0);
 }
 
 .btn-signup:hover {
-  background: linear-gradient(135deg, var(--eco-primary), var(--eco-dark));
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  background: var(--eco-light);
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #1b5e20, 0 3px 5px rgba(0,0,0,0.2);
+  color: var(--white);
+}
+
+.btn-signup:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #1b5e20, 0 0 0 rgba(0,0,0,0.2);
 }
 
 
