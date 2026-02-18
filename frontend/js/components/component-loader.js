@@ -60,23 +60,28 @@
      * Initializes the PreferencesManager before other components
      * Loads preferences-manager.js script if not already present
      */
-    function initPreferencesManager() {
+    async function initGlobals() {
         return new Promise((resolve) => {
+            const loadI18n = async () => {
+                if (!window.I18nManager) {
+                    const i18nScript = document.createElement('script');
+                    i18nScript.src = prefix + 'i18n/i18n-manager.js';
+                    i18nScript.onload = async () => {
+                        if (window.I18nManager) {
+                            await window.I18nManager.init(window.PreferencesManager.getLanguage());
+                        }
+                        resolve();
+                    };
+                    document.head.appendChild(i18nScript);
+                } else {
+                    await window.I18nManager.init(window.PreferencesManager.getLanguage());
+                    resolve();
+                }
+            };
+
             if (window.PreferencesManager) {
                 window.PreferencesManager.init();
-                resolve();
-                return;
-            }
-
-            if (document.querySelector('script[src*="preferences-manager.js"]')) {
-                // Script exists, wait for it to load
-                const checkInterval = setInterval(() => {
-                    if (window.PreferencesManager) {
-                        clearInterval(checkInterval);
-                        window.PreferencesManager.init();
-                        resolve();
-                    }
-                }, 50);
+                loadI18n();
                 return;
             }
 
@@ -86,7 +91,7 @@
                 if (window.PreferencesManager) {
                     window.PreferencesManager.init();
                 }
-                resolve();
+                loadI18n();
             };
             document.head.appendChild(prefScript);
         });
@@ -155,7 +160,7 @@
 
             links.forEach(link => {
                 const href = link.getAttribute('href');
-                        
+
                 if (
                     href &&
                     !href.startsWith('http') &&
@@ -166,7 +171,7 @@
                     link.setAttribute('href', prefix + href);
                 }
             });
-            
+
             images.forEach(img => {
                 const src = img.getAttribute('src');
                 if (src && !src.startsWith('http')) {
@@ -175,96 +180,110 @@
             });
         }
 
+        // Initialize Language Switcher
+        const languageSelect = navbarContainer.querySelector('#languageSelect');
+        if (languageSelect && window.PreferencesManager) {
+            languageSelect.value = window.PreferencesManager.getLanguage();
+            languageSelect.addEventListener('change', (e) => {
+                window.PreferencesManager.setLanguage(e.target.value);
+            });
+        }
+
+        // Initialize I18n for Navbar (since it was just loaded)
+        if (window.I18nManager) {
+            window.I18nManager.refresh();
+        }
+
         // Dispatch event that navbar is ready
         window.dispatchEvent(new CustomEvent('navbarLoaded'));
     }
 
-        /**
-     * Initializes mobile navbar interactions
-     * Handles hamburger toggle, submenu expand/collapse, and scroll safety
-     */
+    /**
+ * Initializes mobile navbar interactions
+ * Handles hamburger toggle, submenu expand/collapse, and scroll safety
+ */
     function initMobileNavbar() {
-    const navbarContainer = document.getElementById('navbar-container');
-    if (!navbarContainer) return;
+        const navbarContainer = document.getElementById('navbar-container');
+        if (!navbarContainer) return;
 
-    const menuToggle = navbarContainer.querySelector('#navToggle');
-    const navMenu = navbarContainer.querySelector('#navLinks');
+        const menuToggle = navbarContainer.querySelector('#navToggle');
+        const navMenu = navbarContainer.querySelector('#navLinks');
 
-    if (!menuToggle || !navMenu) return;
+        if (!menuToggle || !navMenu) return;
 
-    let menuJustOpened = false;
+        let menuJustOpened = false;
 
-    // ======================
-    // MAIN MENU TOGGLE
-    // ======================
-    menuToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        const isOpening = !navMenu.classList.contains('active');
-
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-        document.body.classList.toggle('nav-open');
-
-        if (isOpening) {
-            menuJustOpened = true;
-            requestAnimationFrame(() => {
-                menuJustOpened = false;
-            });
-        }
-    });
-
-    // Prevent clicks inside menu
-    navMenu.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-
-    // ======================
-    // OUTSIDE CLICK CLOSE
-    // ======================
-    document.addEventListener('click', (e) => {
-        if (menuJustOpened) return;
-
-        if (
-            navMenu.classList.contains('active') &&
-            !navbarContainer.contains(e.target)
-        ) {
-            navMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-            document.body.classList.remove('nav-open');
-
-            navbarContainer
-                .querySelectorAll('.nav-group.open')
-                .forEach(item => item.classList.remove('open'));
-        }
-    });
-
-    // ======================
-    // SUBMENU ACCORDION
-    // ======================
-    const submenuButtons = navbarContainer.querySelectorAll('.submenu-toggle');
-
-    submenuButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
+        // ======================
+        // MAIN MENU TOGGLE
+        // ======================
+        menuToggle.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
 
-            const parent = button.closest('.nav-group');
-            if (!parent) return;
+            const isOpening = !navMenu.classList.contains('active');
 
-            const isOpen = parent.classList.contains('open');
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
 
-            navbarContainer
-                .querySelectorAll('.nav-group.open')
-                .forEach(item => item.classList.remove('open'));
-
-            if (!isOpen) {
-                parent.classList.add('open');
+            if (isOpening) {
+                menuJustOpened = true;
+                requestAnimationFrame(() => {
+                    menuJustOpened = false;
+                });
             }
         });
-    });
-}
+
+        // Prevent clicks inside menu
+        navMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        // ======================
+        // OUTSIDE CLICK CLOSE
+        // ======================
+        document.addEventListener('click', (e) => {
+            if (menuJustOpened) return;
+
+            if (
+                navMenu.classList.contains('active') &&
+                !navbarContainer.contains(e.target)
+            ) {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.classList.remove('nav-open');
+
+                navbarContainer
+                    .querySelectorAll('.nav-group.open')
+                    .forEach(item => item.classList.remove('open'));
+            }
+        });
+
+        // ======================
+        // SUBMENU ACCORDION
+        // ======================
+        const submenuButtons = navbarContainer.querySelectorAll('.submenu-toggle');
+
+        submenuButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parent = button.closest('.nav-group');
+                if (!parent) return;
+
+                const isOpen = parent.classList.contains('open');
+
+                navbarContainer
+                    .querySelectorAll('.nav-group.open')
+                    .forEach(item => item.classList.remove('open'));
+
+                if (!isOpen) {
+                    parent.classList.add('open');
+                }
+            });
+        });
+    }
 
     /**
      * Sets up the footer component and loads associated CSS
@@ -314,8 +333,8 @@
 
     // Run when DOM is ready
     document.addEventListener('DOMContentLoaded', async () => {
-        // Initialize PreferencesManager first (single source of truth)
-        await initPreferencesManager();
+        // Initialize Globals first (Preferences and I18n)
+        await initGlobals();
 
         // Set up components
         await setupNavbar();

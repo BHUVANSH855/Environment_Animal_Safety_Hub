@@ -27,7 +27,10 @@
 
     // Valid values
     const VALID_THEMES = ['light', 'dark'];
-    const VALID_LANGUAGES = ['en', 'es', 'fr', 'de', 'hi', 'zh'];
+    const VALID_LANGUAGES = [
+        'en', 'hi', 'bn', 'es', 'fr', 'de', 'zh', 'mr', 'te', 'ta', 'gu', 'kn', 'ml', 'or', 'pa', 'as', 'mai', 'sat', 'ks', 'gom', 'sd', 'doi', 'mni', 'sa', 'ur', 'ne', 'si',
+        'ar', 'pt', 'ru', 'ja', 'ko', 'it', 'tr', 'vi', 'pl', 'nl', 'th', 'id', 'fa', 'el', 'he', 'sv', 'no', 'da', 'fi', 'ro', 'hu', 'cs', 'sk', 'uk', 'bg', 'hr', 'sr', 'ms', 'tl', 'sw', 'am', 'zu', 'af', 'ga'
+    ];
 
     // Default values
     const DEFAULTS = {
@@ -270,11 +273,57 @@
         getAvailableLanguages() {
             return [
                 { code: 'en', name: 'English' },
+                { code: 'hi', name: 'हिन्दी' },
+                { code: 'bn', name: 'বাংলা' },
+                { code: 'mr', name: 'मराठी' },
+                { code: 'te', name: 'తెలుగు' },
+                { code: 'ta', name: 'தமிழ்' },
+                { code: 'gu', name: 'ગુજરાતી' },
+                { code: 'kn', name: 'ಕನ್ನಡ' },
+                { code: 'ml', name: 'മലയാളം' },
+                { code: 'or', name: 'ଓଡ଼ିଆ' },
+                { code: 'pa', name: 'ਪੰਜਾਬੀ' },
+                { code: 'as', name: 'অসমীয়া' },
+                { code: 'ur', name: 'اردو' },
+                { code: 'sa', name: 'संस्कृतम्' },
                 { code: 'es', name: 'Español' },
                 { code: 'fr', name: 'Français' },
                 { code: 'de', name: 'Deutsch' },
-                { code: 'hi', name: 'हिन्दी' },
-                { code: 'zh', name: '中文' }
+                { code: 'zh', name: '中文' },
+                { code: 'ar', name: 'العربية' },
+                { code: 'pt', name: 'Português' },
+                { code: 'ru', name: 'Русский' },
+                { code: 'ja', name: '日本語' },
+                { code: 'ko', name: '한국어' },
+                { code: 'it', name: 'Italiano' },
+                { code: 'tr', name: 'Türkçe' },
+                { code: 'vi', name: 'Tiếng Việt' },
+                { code: 'pl', name: 'Polski' },
+                { code: 'nl', name: 'Nederlands' },
+                { code: 'th', name: 'ไทย' },
+                { code: 'id', name: 'Bahasa Indonesia' },
+                { code: 'fa', name: 'فارسی' },
+                { code: 'el', name: 'Ελληνικά' },
+                { code: 'he', name: 'עברית' },
+                { code: 'sv', name: 'Svenska' },
+                { code: 'no', name: 'Norsk' },
+                { code: 'da', name: 'Dansk' },
+                { code: 'fi', name: 'Suomi' },
+                { code: 'ro', name: 'Română' },
+                { code: 'hu', name: 'Magyar' },
+                { code: 'cs', name: 'Čeština' },
+                { code: 'sk', name: 'Slovenčina' },
+                { code: 'uk', name: 'Українська' },
+                { code: 'bg', name: 'Български' },
+                { code: 'hr', name: 'Hrvatski' },
+                { code: 'sr', name: 'Српски' },
+                { code: 'ms', name: 'Bahasa Melayu' },
+                { code: 'tl', name: 'Filipino' },
+                { code: 'sw', name: 'Kiswahili' },
+                { code: 'am', name: 'አማርኛ' },
+                { code: 'zu', name: 'isiZulu' },
+                { code: 'af', name: 'Afrikaans' },
+                { code: 'ga', name: 'Gaeilge' }
             ];
         },
 
