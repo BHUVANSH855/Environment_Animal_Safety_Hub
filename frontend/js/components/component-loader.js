@@ -19,27 +19,24 @@
     function getRelativePrefix() {
     const path = window.location.pathname;
 
-    // If inside frontend/pages/
-    if (path.includes('/frontend/pages/')) {
-        const afterPages = path.split('/frontend/pages/')[1];
+    const frontendIndex = path.indexOf('/frontend/');
+    if (frontendIndex === -1) return '';
 
-        // If nested (example: pages/community/donation.html)
-        if (afterPages.includes('/')) {
-            return '../../';
-        }
+    const relativePath = path.substring(frontendIndex + '/frontend/'.length);
 
-        // Direct page like pages/about.html
-        return '../';
+    // If inside pages folder
+    if (relativePath.startsWith('pages/')) {
+        const parts = relativePath.split('/');
+
+        // Remove "pages" and filename
+        const depth = parts.length - 2;
+
+        return '../'.repeat(depth + 1);
     }
 
-    // If inside frontend root (index.html)
-    if (path.includes('/frontend/')) {
-        return '';
-    }
-
+    // Root frontend (index.html)
     return '';
 }
-
     const prefix = getRelativePrefix();
 
     /**
