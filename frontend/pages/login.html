@@ -18,6 +18,24 @@
 
   <link rel="stylesheet" href="css/components/footer.css" />
   <link rel="stylesheet" href="css/components/navbar.css" />
+
+  <!-- Handling Dark mode toggle using already set preference -->
+  <script>
+    (function () {
+      let theme = 'light';
+    
+      if (window.PreferencesManager) {
+        theme = window.PreferencesManager.getTheme();
+      } else {
+        theme = localStorage.getItem('ecolife_theme') || 'light';
+      }
+    
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
   <style>
     /* ============================= */
 /* EcoLife Login - Green Theme  */
@@ -27,10 +45,41 @@
   --primary-green: #2e7d32;
   --light-green: #4caf50;
   --soft-green: #a5d6a7;
+
   --bg-gradient: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  --bg-card: #ffffff;
+  --bg-input: #e2e6e4;
+  --bg-btn: #f1f8f4;
+
   --text-dark: #1b5e20;
   --text-light: #ffffff;
+  --text-lighter: #555;
+  --text-subtitle:  #666;
+
+  --border-color: #c8e6c9;
+  --box-shadow: rgba(46, 125, 50, 0.3);
   --shadow: 0 10px 30px rgba(46, 125, 50, 0.15);
+}
+
+.dark {
+  --primary-green: #4caf50;
+  --light-green: #66bb6a;
+  --soft-green: #1b5e20;
+
+  --bg-gradient: linear-gradient(135deg, #0f1a14, #16251d);
+  --bg-card: #1a2a22;
+  --bg-input: #24352c;
+  --bg-btn: #24352c;
+
+  --text-dark: #e6f2ec;
+  --text-light: #ffffff;
+  --text-lighter: #b0c4b8;
+  --text-subtitle: #9fb7ab;
+
+  --border-color: #355f4a;
+
+  --box-shadow: rgba(0, 0, 0, 0.6);
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Body Background */
@@ -67,7 +116,7 @@ body {
 
 /* Card Container */
 .auth-container {
-  background: #ffffff;
+  background: var(--bg-card);
   border-radius: 20px;
   box-shadow: var(--shadow);
   padding: 40px;
@@ -95,7 +144,7 @@ body {
 .auth-subtitle {
   text-align: center;
   font-size: 14px;
-  color: #555;
+  color: var(--text-lighter);
   margin-bottom: 25px;
 }
 
@@ -115,7 +164,8 @@ body {
 .auth-form input[type="password"] {
   width: 100%;
   padding: 12px 14px;
-  border: 2px solid #c8e6c9;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-input);
   border-radius: 10px;
   outline: none;
   transition: 0.3s ease;
@@ -166,7 +216,7 @@ body {
   font-size: 12px;
   text-align: center;
   margin-bottom: 15px;
-  color: #666;
+  color: var(--text-subtitle);
 }
 
 /* Login Button */
@@ -186,7 +236,7 @@ body {
 .auth-btn:hover {
   background: var(--light-green);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+  box-shadow: 0 8px 20px var(--box-shadow);
 }
 
 /* Divider */
@@ -195,11 +245,11 @@ body {
   margin: 20px 0;
   position: relative;
   font-size: 12px;
-  color: #777;
+  color: var(--text-subtitle);
 }
 
 .auth-divider span {
-  background: #fff;
+  background: var(--bg-card);
   padding: 0 10px;
   position: relative;
   z-index: 1;
@@ -210,7 +260,7 @@ body {
   position: absolute;
   height: 1px;
   width: 100%;
-  background: #ddd;
+  background: var(--text-subtitle);
   top: 50%;
   left: 0;
   z-index: 0;
@@ -228,7 +278,8 @@ body {
   padding: 10px;
   border-radius: 10px;
   border: 2px solid var(--soft-green);
-  background: #f1f8f4;
+  background: var(--bg-btn);
+  color: var(--text-lighter);
   cursor: pointer;
   transition: 0.3s ease;
   font-size: 14px;
@@ -236,13 +287,13 @@ body {
 
 .social-btn:hover {
   background: var(--soft-green);
-  color: var(--primary-green);
 }
 
 /* Switch */
 .auth-switch {
   text-align: center;
   font-size: 14px;
+  color: var(--text-subtitle);
 }
 
 .auth-switch a {
