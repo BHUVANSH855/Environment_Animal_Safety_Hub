@@ -96,14 +96,6 @@
       box-sizing: border-box;
     }
     
-    body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      position: relative;
-      background-color: #f0f9f0;
-    }
-    
     /* Fix for any potential pseudo-element black lines */
     .hero-section::before,
     .hero-section::after,
@@ -128,14 +120,42 @@
     .hero-video-overlay {
       background: linear-gradient(135deg, rgba(0,40,0,0.4) 0%, rgba(0,80,0,0.2) 100%);
     }
+   
+:root {
+  /* Light Theme Variables */
+  --primary-color: #2e7d32;      /* main green */
+  --primary-dark: #1b5e20;       /* dark green */
+  --primary-light: #4caf50;      /* light green */
+  --secondary-color: #ff9800;
+  --accent-color: #00bcd4;
+  --text-color: #000000;         /* text dark for light bg */
+  --bg-color: #dcfadb;           /* light background */
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Variables */
+  --primary-color: #4ade80;
+  --primary-dark: #018a33;
+  --primary-light: #86efac;
+  --secondary-color: #fbbf24;
+  --accent-color: #38bdf8;
+  --text-color: #ffffff;         /* white text for dark bg */
+  --bg-color: #01200c;           /* dark background */
+  --border-color: #475569;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
   </style>
+  
   <!-- 🌗 THEME TOGGLE -->
   <script src="js/global/theme-toggle.js"></script>
 </head>
-
-<body>
+<body 
+  id="mainBody" 
+  style="background-color: var(--bg-color) !important; color: var(--text-color) !important; transition: background-color 0.3s ease !important;">
   <!-- Noise Pollution Crisis Alert Banner -->
-  <div class="noise-crisis-alert-banner" id="noise-crisis-alert-banner" style="display: none;">
+  <div class="noise-crisis-alert-banner" id="noise-crisis-alert-banner" >
     <div class="noise-crisis-alert-content">
       <div class="noise-crisis-icon">
         <i class="fas fa-volume-up noise-pulse"></i>
@@ -218,16 +238,6 @@
   <div aria-atomic="true" aria-live="polite" class="live-region" id="status-messages"></div>
   <div aria-atomic="true" aria-live="assertive" class="live-region" id="error-messages"></div>
   
-  <!-- Background Animations -->
-  <div aria-hidden="true" class="eco-sky">
-    <div class="cloud cloud1"></div>
-    <div class="cloud cloud2"></div>
-    <div class="cloud cloud3"></div>
-  </div>
-  <div aria-hidden="true" class="birds-layer"></div>
-  <div aria-hidden="true" class="rain-layer"></div>
-  <div aria-hidden="true" class="leaves-layer"></div>
-  <div aria-hidden="true" class="sun-glow"></div>
   
   <div aria-label="Page scroll progress" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="scroll-progress" id="scrollProgress" role="progressbar"></div>
   
@@ -245,16 +255,7 @@
       </div>
       <div aria-hidden="true" class="hero-video-overlay"></div>
       
-      <!-- Animated Background Elements -->
-      <div aria-hidden="true" class="hero-bg-elements">
-        <div class="floating-element leaf1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="floating-element leaf2"><i class="fa-solid fa-seedling"></i></div>
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-      </div>
-
-      <!-- Particle Effect -->
-      <div aria-hidden="true" class="particles" id="particles"></div>
+   
 
       <div class="hero-container">
         <!-- Left Content -->
@@ -301,11 +302,11 @@
     </section>
 
     <!-- Daily Quote Section -->
-    <section class="daily-quote-section">
-      <div class="quote-container">
+    <section class="daily-quote-section" >
+      <div class="quote-container" >
         <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
         <div class="quote-content">
-          <blockquote class="quote-text" id="dailyQuote" data-i18n="quotes.default_quote">
+          <blockquote class="quote-text" id="dailyQuote" data-i18n="quotes.default_quote" >
             "The greatest threat to our planet is the belief that someone else will save it."
           </blockquote>
           <cite class="quote-author" id="quoteAuthor" data-i18n="quotes.default_author">— Robert Swan</cite>
@@ -315,7 +316,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about-section" id="about">
+    <section class="about-section" id="about" >
       <div class="section-container">
         <div class="about-content">
           <div class="about-images" data-aos="fade-right">
@@ -390,7 +391,7 @@
     </section>
 
     <!-- Daily Quote Section (Second) - Fixed spacing -->
-    <section class="daily-quote-section">
+    <section class="daily-quote-section" >
       <div class="quote-container">
         <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
         <div class="quote-content">
@@ -404,7 +405,7 @@
     </section>
 
     <!-- About Section (Second) - Fixed spacing -->
-    <section class="about-section" id="about2">
+    <section class="about-section" id="about2" >
       <div class="section-container">
         <div class="about-content">
           <div class="about-images" data-aos="fade-right">
@@ -454,263 +455,304 @@
       </div>
     </section>
 
-    <!-- Services/What We Do Section -->
-    <section class="services-section">
-      <div class="section-container">
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag"><i class="fa-solid fa-hand-holding-heart"></i>What We Do</span>
-          <h2 class="section-title">Our Mission Areas</h2>
-          <p class="section-subtitle">We focus on multiple areas to create maximum positive impact on our planet</p>
+<section class="services-section" style="background-color: var(--bg-color) !important; color: var(--text-color) !important;" id="animal" >
+  <div class="section-container" >
+    <div class="section-header" data-aos="fade-up" >
+      <span class="section-tag" ><i class="fa-solid fa-hand-holding-heart"></i>What We Do</span>
+      <h2 class="section-title" >Our Mission Areas</h2>
+      <p class="section-subtitle" >We focus on multiple areas to create maximum positive impact on our planet</p>
+    </div>
+
+    <div class="services-grid" style="display: flexbox;">
+
+      <!-- Animal Rescue -->
+      <article class="service-card" data-tilt="">
+        <div class="service-card-inner" >
+          <div class="service-card-front" >
+            <div class="service-icon-3d" >
+              <img alt="Animal Rescue" loading="lazy" src="assets/images/3d/building_animal_shelter.webp" />
+            </div>
+            <h3 >Animal Rescue</h3>
+            <p >We rescue, treat, and rehabilitate injured and abandoned animals, giving them a second chance at life.</p>
+          </div>
+          <div class="service-card-back" >
+            <a class="service-link open-modal-btn" data-id="animal-rescue" href="javascript:void(0)" >Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </div>
-        <div class="services-grid">
-          <!-- Animal Rescue -->
-          <article class="service-card" data-tilt="">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="service-icon-3d">
-                  <img alt="Animal Rescue" loading="lazy" src="assets/images/3d/building_animal_shelter.webp" />
-                </div>
-                <h3>Animal Rescue</h3>
-                <p>We rescue, treat, and rehabilitate injured and abandoned animals, giving them a second chance at life.</p>
-              </div>
-              <div class="service-card-back">
-                <a class="service-link open-modal-btn" data-id="animal-rescue" href="javascript:void(0)">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
+      </article>
+
+      <!-- Waste Management -->
+      <article class="service-card" data-tilt="" >
+        <div class="service-card-inner" >
+          <div class="service-card-front" >
+            <div class="service-icon-3d" >
+              <img alt="Waste Management" loading="lazy" src="assets/images/3d/building_recycling_center.webp" />
             </div>
-          </article>
-          
-          <!-- Waste Management -->
-          <article class="service-card" data-tilt="">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="service-icon-3d">
-                  <img alt="Waste Management" loading="lazy" src="assets/images/3d/building_recycling_center.webp" />
-                </div>
-                <h3>Waste Management</h3>
-                <p>Promoting proper waste segregation, recycling, and reducing plastic usage in communities.</p>
-              </div>
-              <div class="service-card-back">
-                <a class="service-link open-modal-btn" data-id="waste-mgmt" href="javascript:void(0)">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Climate Action -->
-          <article class="service-card" data-tilt="">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="service-icon-3d">
-                  <img alt="Climate Action" loading="lazy" src="assets/images/3d/building_green_energy.webp" />
-                </div>
-                <h3>Climate Action <span class="crisis-urgent-text" style="color: #ff0000; font-size: 0.8rem; font-weight: 900; text-shadow: 0 0 10px #ff0000;">[LEVEL 3 CRISIS]</span></h3>
-                <p>Raising awareness about climate change and promoting sustainable lifestyle choices. <strong style="color: #ff4500; background: rgba(255,69,0,0.1); padding: 2px 6px; border-radius: 4px;">URGENT: Fire regime shifts causing wildlife adaptation failure.</strong></p>
-              </div>
-              <div class="service-card-back">
-                <a class="service-link" href="pages/environment/fire-regime-shifts.html" style="background: linear-gradient(45deg, #ff4500, #ff0000); color: white; font-weight: bold; text-shadow: 0 0 10px rgba(0,0,0,0.5);" title="View Level 3 Crisis Details">🔥 Crisis Level 3 <i class="fa-solid fa-arrow-right"></i></a>
-                <h3>
-                  Climate Action
-                  <span class="crisis-urgent-text"
-                    style="color: #ff0000; font-size: 0.8rem; font-weight: 900; text-shadow: 0 0 10px #ff0000;">
-                    [LEVEL 3 CRISIS]
-                  </span>
-                </h3>
-                <p>
-                  Raising awareness about climate change and promoting sustainable
-                  lifestyle choices.
-                  <strong style="color: #ff4500; background: rgba(255,69,0,0.1); padding: 2px 6px; border-radius: 4px;">
-                    URGENT:
-                    Polar albedo loss is amplifying warming through ice-ocean feedback loops.
-                  </strong>
-                </p>
-              </div>
-              <div class="service-card-back">
-                <a class="service-link" href="pages/environment/polar-albedo-feedback-loop.html"
-                  style="background: linear-gradient(45deg, #ff4500, #ff0000); color: white; font-weight: bold; text-shadow: 0 0 10px rgba(0,0,0,0.5);"
-                  title="View Level 3 Crisis Details">
-                  🧊 Crisis Level 3
-                  <i class="fa-solid fa-arrow-right">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Tree Plantation -->
-          <article class="service-card" data-tilt="">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="service-icon-3d">
-                  <img alt="Tree Plantation" loading="lazy" src="assets/images/3d/building_tree_park.webp" />
-                </div>
-                <h3>Tree Plantation</h3>
-                <p>Organizing community drives to plant trees and create urban green spaces.</p>
-              </div>
-              <div class="service-card-back">
-                <a class="service-link open-modal-btn" data-id="tree-plant" href="javascript:void(0)">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Emergency Wildlife Help -->
-          <article class="service-card" data-tilt="">
-            <div class="service-card-inner">
-              <div class="service-card-front">
-                <div class="service-icon-3d">
-                  <img alt="Emergency Help" loading="lazy" src="assets/images/3d/building_vet_clinic.webp" />
-                </div>
-                <h3>Emergency Wildlife Help</h3>
-                <p>24/7 emergency contacts and tips for injured wildlife and animal accidents.</p>
-              </div>
-              <div class="service-card-back">
-                <a class="service-link" href="pages/report/sos.html">Get Help <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </article>
+            <h3 >Waste Management</h3>
+            <p >Promoting proper waste segregation, recycling, and reducing plastic usage in communities.</p>
+          </div>
+          <div class="service-card-back" >
+            <a class="service-link open-modal-btn" data-id="waste-mgmt" href="javascript:void(0)" >Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- Donation Section -->
-    <section class="donation-section" id="donation">
-      <div class="donation-container">
-        <div class="donation-header">
-          <span class="section-tag">🌱 Eco-Fund</span>
-          <h2>Support Environmental Causes</h2>
-          <p>Help verified NGOs and community-driven environmental campaigns.</p>
+      <!-- Climate Action -->
+      <article class="service-card" data-tilt="" >
+        <div class="service-card-inner" >
+          <div class="service-card-front" >
+            <div class="service-icon-3d" >
+              <img alt="Climate Action" loading="lazy" src="assets/images/3d/building_green_energy.webp" />
+            </div>
+            <h3 >
+              Climate Action 
+              <span class="crisis-urgent-text" style="background: transparent; color: #ff0000; font-size: 0.8rem; font-weight: 900; text-shadow: 0 0 10px #ff0000;">[LEVEL 3 CRISIS]</span>
+            </h3>
+            <p >
+              Raising awareness about climate change and promoting sustainable lifestyle choices. 
+              <strong style="background: transparent; color: #ff4500; background: rgba(255,69,0,0.1); padding: 2px 6px; border-radius: 4px;">
+                URGENT: Fire regime shifts causing wildlife adaptation failure.
+              </strong>
+            </p>
+          </div>
+
+          <div class="service-card-back" >
+            <a class="service-link" href="pages/environment/fire-regime-shifts.html" style="background: linear-gradient(45deg, #ff4500, #ff0000); color: white; font-weight: bold; text-shadow: 0 0 10px rgba(0,0,0,0.5);" title="View Level 3 Crisis Details">
+              🔥 Crisis Level 3 <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <h3 >
+              Climate Action
+              <span class="crisis-urgent-text" style="background: transparent; color: #ff0000; font-size: 0.8rem; font-weight: 900; text-shadow: 0 0 10px #ff0000;">
+                [LEVEL 3 CRISIS]
+              </span>
+            </h3>
+<!-- services - what we do section-->
+            <p >
+              Raising awareness about climate change and promoting sustainable lifestyle choices.
+              <strong style="background: transparent; color: #ff4500; background: rgba(255,69,0,0.1); padding: 2px 6px; border-radius: 4px;">
+                URGENT: Polar albedo loss is amplifying warming through ice-ocean feedback loops.
+              </strong>
+            </p>
+          </div>
+
+          <div class="service-card-back" >
+            <a class="service-link" href="pages/environment/polar-albedo-feedback-loop.html"
+              style="background: linear-gradient(45deg, #ff4500, #ff0000); color: white; font-weight: bold; text-shadow: 0 0 10px rgba(0,0,0,0.5);"
+              title="View Level 3 Crisis Details">
+              🧊 Crisis Level 3
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tree Plantation -->
+      <article class="service-card" data-tilt="" >
+        <div class="service-card-inner" >
+          <div class="service-card-front" >
+            <div class="service-icon-3d" >
+              <img alt="Tree Plantation" loading="lazy" src="assets/images/3d/building_tree_park.webp" />
+            </div>
+            <h3 >Tree Plantation</h3>
+            <p >Organizing community drives to plant trees and create urban green spaces.</p>
+          </div>
+          <div class="service-card-back" >
+            <a class="service-link open-modal-btn" data-id="tree-plant" href="javascript:void(0)" >Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Emergency Wildlife Help -->
+      <article class="service-card" data-tilt="" >
+        <div class="service-card-inner" >
+          <div class="service-card-front" >
+            <div class="service-icon-3d" >
+              <img alt="Emergency Help" loading="lazy" src="assets/images/3d/building_vet_clinic.webp" />
+            </div>
+            <h3 >Emergency Wildlife Help</h3>
+            <p >24/7 emergency contacts and tips for injured wildlife and animal accidents.</p>
+          </div>
+          <div class="service-card-back" >
+            <a class="service-link" href="pages/report/sos.html" >Get Help <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Donation Section -->
+<section class="donation-section" id="donation" style="background-color: var(--bg-color);">
+  <div class="donation-container" >
+    <div class="donation-header" >
+      <span class="section-tag" >🌱 Eco-Fund</span>
+      <h2 >Support Environmental Causes</h2>
+      <p >Help verified NGOs and community-driven environmental campaigns.</p>
+    </div>
+
+    <div class="campaigns-grid" id="campaigns-container" ></div>
+
+    <div class="donation-form" >
+      <h3 >Make a Donation</h3>
+
+      <form id="donation-form" >
+        <label >Select Campaign</label>
+        <select id="donation-campaign" required >
+          <option value="">Choose campaign...</option>
+        </select>
+
+        <label >Donation Amount ($)</label>
+
+        <div class="amount-buttons" >
+          <button type="button" class="amount-button" data-amount="10">$10</button>
+          <button type="button" class="amount-button" data-amount="25">$25</button>
+          <button type="button" class="amount-button" data-amount="50">$50</button>
+          <button type="button" class="amount-button" data-amount="100">$100</button>
         </div>
 
-        <!-- Campaign Cards -->
-        <div class="campaigns-grid" id="campaigns-container"></div>
+        <input type="number" id="donation-amount" placeholder="Enter custom amount" min="1" required>
 
-        <!-- Donation Form -->
-        <div class="donation-form">
-          <h3>Make a Donation</h3>
+        <label >Your Name (optional)</label>
+        <input type="text" id="donor-name" placeholder="Anonymous">
 
-          <form id="donation-form">
-            <label>Select Campaign</label>
-            <select id="donation-campaign" required>
-              <option value="">Choose campaign...</option>
-            </select>
+        <button class="donation-btn" type="submit">Donate Securely</button>
+      </form>
+    </div>
+  </div>
 
-            <label>Donation Amount ($)</label>
+  <div class="modal" id="donation-modal" >
+    <div class="modal-content" >
+      <span class="close-modal" id="close-donation-modal">&times;</span>
+      <h3>🎉 Thank You!</h3>
+      <p id="donation-thanks"></p>
+    </div>
+  </div>
+</section>
 
-            <div class="amount-buttons">
-              <button type="button" class="amount-button" data-amount="10">$10</button>
-              <button type="button" class="amount-button" data-amount="25">$25</button>
-              <button type="button" class="amount-button" data-amount="50">$50</button>
-              <button type="button" class="amount-button" data-amount="100">$100</button>
-            </div>
+   <!-- Animal Section -->
+<section class="cards-section" id="animal" >
+  <div class="section-container" >
+    <div class="section-header" data-aos="fade-up" >
+      <span class="section-tag" ><i class="fa-solid fa-paw"></i>Animal Welfare</span>
+      <h2 class="section-title" >Animal Protection &amp; Adoption</h2>
+      <p class="section-subtitle" >Help us save lives. Every animal deserves love, care, and a forever home.</p>
+    </div>
 
-            <input type="number" id="donation-amount" placeholder="Enter custom amount" min="1" required>
+    <div class="cards-grid" >
 
-            <label>Your Name (optional)</label>
-            <input type="text" id="donor-name" placeholder="Anonymous">
-
-            <button class="donation-btn" type="submit">Donate Securely</button>
-          </form>
+      <article class="feature-card" data-aos="fade-up" data-aos-delay="0" >
+        <div class="card-image" >
+          <img alt="Adopt Pets" loading="lazy" src="assets/images/3d/adopt_pets.webp" />
+          <div class="card-overlay" >
+            <span class="card-tag" >Adoption</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Modal -->
-      <div class="modal" id="donation-modal">
-        <div class="modal-content">
-          <span class="close-modal" id="close-donation-modal">&times;</span>
-          <h3>🎉 Thank You!</h3>
-          <p id="donation-thanks"></p>
-        </div>
-      </div>
-    </section>
+        <div class="card-content" >
+          <h3 >Adopt Pets</h3>
+          <p >Help stray animals find loving homes. Open your heart and home to a furry friend in need.</p>
 
-    <!-- Animal Section -->
-    <section class="cards-section" id="animal">
-      <div class="section-container">
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag"><i class="fa-solid fa-paw"></i>Animal Welfare</span>
-          <h2 class="section-title">Animal Protection &amp; Adoption</h2>
-          <p class="section-subtitle">Help us save lives. Every animal deserves love, care, and a forever home.</p>
+          <div class="card-footer" >
+            <a class="card-btn" href="pages/animal-care/adoption-management.html" >
+              Adopt Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="card-stats" >
+              <i class="fa-solid fa-heart"></i>1.2K adopted
+            </div>
+          </div>
         </div>
-        <div class="cards-grid">
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="card-image">
-              <img alt="Adopt Pets" loading="lazy" src="assets/images/3d/adopt_pets.webp" />
-              <div class="card-overlay"><span class="card-tag">Adoption</span></div>
-            </div>
-            <div class="card-content">
-              <h3>Adopt Pets</h3>
-              <p>Help stray animals find loving homes. Open your heart and home to a furry friend in need.</p>
-              <div class="card-footer">
-                <a class="card-btn" href="pages/animal-care/adoption-management.html">Adopt Now <i class="fa-solid fa-arrow-right"></i></a>
-                <div class="card-stats"><i class="fa-solid fa-heart"></i>1.2K adopted</div>
-              </div>
-            </div>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-image">
-              <img alt="Wildlife Protection" loading="lazy" src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg" />
-              <div class="card-overlay"><span class="card-tag">Conservation</span></div>
-            </div>
-            <div class="card-content">
-              <h3>Protect Wildlife</h3>
-              <p>Learn how to protect endangered species and preserve their natural habitats.</p>
-              <div class="card-footer">
-                <a class="card-btn" href="pages/animal-care/animal-welfare-education.html">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                <div class="card-stats"><i class="fa-solid fa-shield-heart"></i>500+ protected</div>
-              </div>
-            </div>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-image">
-              <img alt="Feed Animals" loading="lazy" src="assets/images/3d/feed_animals.webp" />
-              <div class="card-overlay"><span class="card-tag">Feeding</span></div>
-            </div>
-            <div class="card-content">
-              <h3>Feed Stray Animals</h3>
-              <p>Learn safe ways to feed stray animals and join our community feeding programs.</p>
-              <div class="card-footer">
-                <a class="card-btn" href="pages/animal-safety/animal-nutrition-feeding.html">Join Program <i class="fa-solid fa-arrow-right"></i></a>
-                <div class="card-stats"><i class="fa-solid fa-bowl-food"></i>5K+ fed daily</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- Quiz Section -->
-    <section class="quiz-section" id="climate-quiz">
-      <h2 class="quiz-title">🌍 Climate Quiz Battle ⚔️</h2>
-      <p class="quiz-subtitle">Answer fast. Build combos. Beat the AI.</p>
-      <div class="quiz-card">
-        <div class="quiz-header">
-          <div>⏱️ <span id="timer">10</span> s</div>
-          <div>🔥 Combo: <span id="combo">0</span></div>
-          <div>⭐ Score: <span id="score">0</span></div>
+      <article class="feature-card" data-aos="fade-up" data-aos-delay="100" >
+        <div class="card-image" >
+          <img alt="Wildlife Protection" loading="lazy" src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg" />
+          <div class="card-overlay" >
+            <span class="card-tag" >Conservation</span>
+          </div>
         </div>
-        <h3 id="question">Loading...</h3>
-        <div class="options">
-          <button class="option">A</button>
-          <button class="option">B</button>
-          <button class="option">C</button>
-          <button class="option">D</button>
-        </div>
-        <p class="ai-status">🤖 AI: <span id="ai-result">Thinking...</span></p>
-        <button class="next-btn" id="nextBtn">Next ➜</button>
-      </div>
-    </section>
 
+        <div class="card-content" >
+          <h3 >Protect Wildlife</h3>
+          <p >Learn how to protect endangered species and preserve their natural habitats.</p>
+
+          <div class="card-footer" >
+            <a class="card-btn" href="pages/animal-care/animal-welfare-education.html" >
+              Learn More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="card-stats" >
+              <i class="fa-solid fa-shield-heart"></i>500+ protected
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature-card" data-aos="fade-up" data-aos-delay="200" >
+        <div class="card-image" >
+          <img alt="Feed Animals" loading="lazy" src="assets/images/3d/feed_animals.webp" />
+          <div class="card-overlay" >
+            <span class="card-tag" >Feeding</span>
+          </div>
+        </div>
+
+        <div class="card-content" >
+          <h3 >Feed Stray Animals</h3>
+          <p >Learn safe ways to feed stray animals and join our community feeding programs.</p>
+
+          <div class="card-footer" >
+            <a class="card-btn" href="pages/animal-safety/animal-nutrition-feeding.html" >
+              Join Program <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="card-stats" >
+              <i class="fa-solid fa-bowl-food"></i>5K+ fed daily
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+   <!-- Quiz Section -->
+<section class="quiz-section" id="climate-quiz" >
+  <h2 class="quiz-title" >🌍 Climate Quiz Battle ⚔️</h2>
+  <p class="quiz-subtitle" >Answer fast. Build combos. Beat the AI.</p>
+
+  <div class="quiz-card" >
+    <div class="quiz-header" >
+      <div >⏱️ <span id="timer">10</span> s</div>
+      <div >🔥 Combo: <span id="combo">0</span></div>
+      <div >⭐ Score: <span id="score">0</span></div>
+    </div>
+
+    <h3 id="question" >Loading...</h3>
+
+    <div class="options" >
+      <button class="option" >A</button>
+      <button class="option" >B</button>
+      <button class="option" >C</button>
+      <button class="option" >D</button>
+    </div>
+
+    <p class="ai-status" >
+      🤖 AI: <span id="ai-result">Thinking...</span>
+    </p>
+
+    <button class="next-btn" id="nextBtn" >Next ➜</button>
+  </div>
+</section>
     <!-- Environmental Conservation Section -->
-    <section class="cards-section alt-bg" id="environment">
-      <div class="section-container">
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag"><i class="fa-solid fa-earth-americas"></i>Environment</span>
-          <h2 class="section-title">Environmental Conservation</h2>
-          <p class="section-subtitle">Small changes lead to big impacts. Start your eco-friendly journey today.</p>
-        </div>
-        <div class="cards-grid">
+    <section class="cards-section alt-bg" id="environment" >
+  <div class="section-container" >
+    <div class="section-header" data-aos="fade-up" >
+      <span class="section-tag"><i class="fa-solid fa-earth-americas"></i>Environment</span>
+      <h2 class="section-title">Environmental Conservation</h2>
+      <p class="section-subtitle">Small changes lead to big impacts. Start your eco-friendly journey today.</p>
+    </div>
+        <div class="cards-grid" >
           <!-- Card 1: Reduce Plastic -->
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="0" >
             <div class="card-3d-icon">
               <img alt="3D Recycling Bin with Plastic" class="animate-float-3d" loading="lazy" src="assets/images/3d/recycling_bin.webp" />
               <div class="card-overlay"><span class="card-tag">Recycling</span></div>
@@ -726,7 +768,7 @@
           </article>
           
           <!-- Card 2: Save Energy -->
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="100" >
             <div class="card-3d-icon">
               <img alt="3D Energy Saving Bulb" class="animate-float-3d" loading="lazy" src="assets/images/3d/energy_bulb.webp" />
               <div class="card-overlay"><span class="card-tag">Climate</span></div>
@@ -1025,7 +1067,7 @@
     </section>
 
     <!-- How It Works Section -->
-    <section class="how-it-works-section">
+    <section class="how-it-works-section"  >
       <div class="section-container">
         <div class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-route"></i>How It Works</span>
@@ -1061,7 +1103,7 @@
     </section>
 
     <!-- Eco Challenges Section -->
-    <section class="eco-challenges-section">
+    <section class="eco-challenges-section" >
       <div class="section-container">
         <div class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-seedling"></i>Eco Challenges</span>
@@ -1137,7 +1179,7 @@
     </section>
 
     <!-- Plant Care Section -->
-    <section class="plant-care-section" id="plants">
+    <section class="plant-care-section" id="plants" >
       <div class="section-container">
         <div class="plant-care-content">
           <div class="plant-care-text" data-aos="fade-right">
@@ -1177,7 +1219,7 @@
     </section>
 
     <!-- Garden Game Section -->
-    <section class="garden-game" data-aos="fade-up">
+    <section class="garden-game" data-aos="fade-up" >
       <div class="garden-game-overlay reveal">
         <h2 data-aos="fade-up">Build Your Garden 🌱</h2>
         <p data-aos="fade-up">Drag plants into the garden to increase oxygen!</p>
@@ -1203,7 +1245,7 @@
     </section>
 
     <!-- Kids Quiz Section -->
-    <section class="kids-quiz-section" id="quiz">
+    <section class="kids-quiz-section" id="quiz" >
       <div class="quiz-bg-elements">
         <div class="quiz-shape shape-1"></div>
         <div class="quiz-shape shape-2"></div>
@@ -1239,7 +1281,7 @@
             </div>
 
             <!-- ACTION BUTTONS -->
-            <div class="quiz-actions">
+            <div class="quiz-actions" >
               <a href="js/quizzes/quiz.html" class="quiz-btn btn-primary-quiz"><i class="fa-solid fa-play"></i> Start Quiz Now</a>
               <a href="js/games/waste-game.html" class="quiz-btn btn-secondary-quiz"><i class="fa-solid fa-gamepad"></i> Play Waste Game</a>
               <a href="../frontend/pages/animal-safety/animal-first-aid.html" class="quiz-btn btn-primary-quiz">
@@ -1253,7 +1295,7 @@
           </div>
 
           <!-- RIGHT IMAGE -->
-          <div class="quiz-image" data-aos="fade-left">
+          <div class="quiz-image" data-aos="fade-left" >
             <div class="quiz-image-wrapper">
               <img src="assets/images/3d/quiz_mascot.png" alt="Kids Learning" />
               <div class="quiz-floating-badge badge-1"><i class="fa-solid fa-star"></i> Fun!</div>
@@ -1433,7 +1475,7 @@ setInterval(updateSurvivalScore, 8000);
     </section>
 
     <!-- Museum Preview Section -->
-    <section class="museum-preview">
+    <section class="museum-preview" >
       <div class="museum-banner" data-aos="fade-up">
         <div class="museum-text">
           <span class="tag">🏛️ Explore the Past</span>
@@ -1464,7 +1506,7 @@ setInterval(updateSurvivalScore, 8000);
     </section>
 
     <!-- Myth Fact Section -->
-    <section class="myth-fact-section">
+    <section class="myth-fact-section" >
       <div class="section-container" data-aos="fade-up" data-aos-delay="300">
         <div class="section-header">
           <span class="section-tag">🌱 Knowledge Roots</span>
@@ -1564,7 +1606,7 @@ setInterval(updateSurvivalScore, 8000);
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section">
+    <section class="testimonials-section" >
       <div class="section-container">
         <div class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-quote-left"></i>Testimonials</span>
@@ -1618,7 +1660,7 @@ setInterval(updateSurvivalScore, 8000);
     </section>
 
     <!-- Report Section -->
-    <section class="report-section" id="report">
+    <section class="report-section" id="report" >
       <div class="section-container">
         <div class="report-content">
           <div class="report-info">
@@ -2299,6 +2341,27 @@ setInterval(updateSurvivalScore, 8000);
     document.addEventListener("DOMContentLoaded", () => {
       new EcoVoiceAssistant();
     });
+
+  
+  const body = document.getElementById('mainBody');
+  let currentTheme = 'light'; // default theme
+
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    if(currentTheme === 'light'){
+      document.documentElement.setAttribute('data-theme', 'dark');
+      currentTheme = 'dark';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      currentTheme = 'light';
+    }
+
+    // Inline body style update (important for inline priority)
+    body.style.backgroundColor = getComputedStyle(document.documentElement)
+                                  .getPropertyValue('--bg-color').trim();
+    body.style.color = getComputedStyle(document.documentElement)
+                       .getPropertyValue('--text-color').trim();
+  });
+
   </script>
 
   <!-- PWA Script -->
