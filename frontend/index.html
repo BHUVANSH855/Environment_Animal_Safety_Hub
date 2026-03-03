@@ -164,6 +164,30 @@
       background: #22c55e;
       color: white;
     }
+    .scroll-toggle-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 100px; /* Safe distance from chatbot */
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: white;
+      border: none;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+      z-index: 999; /* Below chatbot but visible */
+    }
+
+    .scroll-toggle-btn:hover {
+      transform: translateY(-4px);
+      background: #16a34a;
+    }
    
 :root {
   /* Light Theme Variables */
@@ -1893,9 +1917,12 @@ setInterval(updateSurvivalScore, 8000);
     <!-- Mic Button (Eco Assistant) -->
     <button aria-label="Eco Assistant" class="mic-btn" title="Voice Assistant"><i class="fa-solid fa-microphone"></i></button>
     <!-- Scroll to Top Button -->
-    <button aria-label="Back to Top" class="back-to-top" id="backToTop" title="Scroll to Top"><i class="fa-solid fa-arrow-up"></i></button>
-    <!-- Scroll to Bottom Button -->
-    <button aria-label="Scroll to Bottom" class="scroll-to-bottom" id="scrollToBottom" title="Scroll to Bottom"><i class="fa-solid fa-arrow-down"></i></button>
+    <button aria-label="Scroll Toggle"
+        class="scroll-toggle-btn"
+        id="scrollToggle"
+        title="Scroll">
+        <i class="fa-solid fa-arrow-down" id="scrollIcon"></i>
+    </button>
   </div>
 
   <!-- Info Modal -->
@@ -2259,67 +2286,45 @@ setInterval(updateSurvivalScore, 8000);
 
   <!-- Scroll Manager Script -->
   <script>
-    class ScrollManager {
-      constructor() {
-        this.scrollToBottomBtn = null;
-        this.backToTopBtn = null;
-        this.scrollHandler = null;
-      }
-
-      init() {
-        this.scrollToBottomBtn = document.getElementById("scrollToBottom");
-        this.backToTopBtn = document.getElementById("backToTop");
-
-        this.scrollHandler = this.throttle(() => {
-          const scrollTop = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight;
-          const winHeight = window.innerHeight;
-
-          if (this.backToTopBtn) {
-            this.backToTopBtn.style.display = scrollTop > 300 ? "flex" : "none";
-          }
-
-          if (this.scrollToBottomBtn) {
-            this.scrollToBottomBtn.style.display = scrollTop < docHeight - winHeight - 200 ? "flex" : "none";
-          }
-        }, 100);
-
-        window.addEventListener("scroll", this.scrollHandler);
-
-        if (this.scrollToBottomBtn) {
-          this.scrollToBottomBtn.addEventListener("click", () => {
-            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
-          });
+    document.addEventListener("DOMContentLoaded", function () {
+    
+      const scrollBtn = document.getElementById("scrollToggle");
+      const scrollIcon = document.getElementById("scrollIcon");
+    
+      function updateButton() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        const winHeight = window.innerHeight;
+      
+        if (scrollTop > 300) {
+          scrollBtn.style.display = "flex";
+        } else {
+          scrollBtn.style.display = "none";
         }
-
-        if (this.backToTopBtn) {
-          this.backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          });
+      
+        if (scrollTop < docHeight - winHeight - 200) {
+          scrollIcon.className = "fa-solid fa-arrow-down";
+          scrollBtn.title = "Scroll to Bottom";
+        } else {
+          scrollIcon.className = "fa-solid fa-arrow-up";
+          scrollBtn.title = "Scroll to Top";
         }
       }
-
-      throttle(func, limit) {
-        let inThrottle;
-        return function (...args) {
-          if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => (inThrottle = false), limit);
-          }
-        };
-      }
-
-      cleanup() {
-        if (this.scrollHandler) {
-          window.removeEventListener("scroll", this.scrollHandler);
+    
+      window.addEventListener("scroll", updateButton);
+    
+      scrollBtn.addEventListener("click", function () {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        const winHeight = window.innerHeight;
+      
+        if (scrollTop < docHeight - winHeight - 200) {
+          window.scrollTo({ top: docHeight, behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const scrollManager = new ScrollManager();
-      scrollManager.init();
+      });
+    
     });
   </script>
 
