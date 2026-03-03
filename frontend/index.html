@@ -121,6 +121,49 @@
     .hero-video-overlay {
       background: linear-gradient(135deg, rgba(0,40,0,0.4) 0%, rgba(0,80,0,0.2) 100%);
     }
+    .pagination-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .page-btn {
+      padding: 8px 16px;
+      border: none;
+      background: #22c55e;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .page-btn:hover {
+      background: #16a34a;
+    }
+
+    .page-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .page-numbers {
+      display: flex;
+      gap: 8px;
+    }
+
+    .page-number {
+      padding: 6px 12px;
+      background: #e5e7eb;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .page-number.active {
+      background: #22c55e;
+      color: white;
+    }
    
 :root {
   /* Light Theme Variables */
@@ -815,14 +858,14 @@
   </div>
 </section>
     <!-- Environmental Conservation Section -->
-    <section class="cards-section alt-bg" id="environment" >
-  <div class="section-container" >
-    <div class="section-header" data-aos="fade-up" >
-      <span class="section-tag"><i class="fa-solid fa-earth-americas"></i>Environment</span>
-      <h2 class="section-title">Environmental Conservation</h2>
-      <p class="section-subtitle">Small changes lead to big impacts. Start your eco-friendly journey today.</p>
-    </div>
-        <div class="cards-grid" >
+    <section class="cards-section alt-bg" id="environment">
+      <div class="section-container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag"><i class="fa-solid fa-earth-americas"></i>Environment</span>
+          <h2 class="section-title">Environmental Conservation</h2>
+          <p class="section-subtitle">Small changes lead to big impacts. Start your eco-friendly journey today.</p>
+        </div>
+        <div class="cards-grid" id="environmentCards">
           <!-- Card 1: Reduce Plastic -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="0" >
             <div class="card-3d-icon">
@@ -1134,6 +1177,11 @@
               </div>
             </div>
           </article>
+        </div>
+        <div class="pagination-container">
+          <button id="prevPage" class="page-btn">Previous</button>   
+          <div id="pageNumbers" class="page-numbers"></div>    
+          <button id="nextPage" class="page-btn">Next</button>
         </div>
       </div>
     </section>
@@ -2444,5 +2492,74 @@ setInterval(updateSurvivalScore, 8000);
   <script src="js/pwa.js"></script>
   <!-- Eco Assistant Script -->
   <script src="js/components/eco-assistant.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+      const cards = document.querySelectorAll("#environmentCards .feature-card");
+      const cardsPerPage = 3;
+      const totalPages = Math.ceil(cards.length / cardsPerPage);
+    
+      let currentPage = 1;
+    
+      const pageNumbersContainer = document.getElementById("pageNumbers");
+      const prevBtn = document.getElementById("prevPage");
+      const nextBtn = document.getElementById("nextPage");
+    
+      function showPage(page) {
+        currentPage = page;
+      
+        // Hide all cards
+        cards.forEach(card => card.style.display = "none");
+      
+        // Show only 3 cards
+        const start = (page - 1) * cardsPerPage;
+        const end = start + cardsPerPage;
+      
+        for (let i = start; i < end && i < cards.length; i++) {
+          cards[i].style.display = "block";
+        }
+      
+        updatePaginationUI();
+      }
+    
+      function updatePaginationUI() {
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+      
+        document.querySelectorAll(".page-number").forEach(btn => {
+          btn.classList.remove("active");
+          if (parseInt(btn.textContent) === currentPage) {
+            btn.classList.add("active");
+          }
+        });
+      }
+    
+      function createPageNumbers() {
+        pageNumbersContainer.innerHTML = "";
+      
+        for (let i = 1; i <= totalPages; i++) {
+          const pageBtn = document.createElement("div");
+          pageBtn.textContent = i;
+          pageBtn.classList.add("page-number");
+        
+          pageBtn.addEventListener("click", () => showPage(i));
+        
+          pageNumbersContainer.appendChild(pageBtn);
+        }
+      }
+    
+      prevBtn.addEventListener("click", () => {
+        if (currentPage > 1) showPage(currentPage - 1);
+      });
+    
+      nextBtn.addEventListener("click", () => {
+        if (currentPage < totalPages) showPage(currentPage + 1);
+      });
+    
+      createPageNumbers();
+      showPage(1); // Show first 3 cards initially
+    
+    });
+  </script>
 </body>
 </html>
