@@ -88,6 +88,73 @@
   <link href="css/pwa.css" rel="stylesheet" />
   <link href="css/components/cards-3d.css" rel="stylesheet" />
   <style>
+    /* ===== All Crisis Banners Sticky Top ===== */
+.noise-crisis-alert-banner,
+.indigenous-crisis-alert-banner,
+.crisis-alert-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #1b5e20; /* Deep green */
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: slideDown 0.4s ease-in-out;
+}
+
+/* Content Layout */
+.noise-crisis-alert-content,
+.indigenous-crisis-alert-content,
+.crisis-alert-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.noise-crisis-btn,
+.indigenous-crisis-btn,
+.crisis-btn {
+  background: #4caf50;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.noise-crisis-btn:hover,
+.indigenous-crisis-btn:hover,
+.crisis-btn:hover {
+  background: #66bb6a;
+}
+
+/* Close Button */
+.noise-crisis-close,
+.indigenous-crisis-dismiss,
+.crisis-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Slide animation */
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* Prevent content hiding under banner */
+body {
+  padding-top: 80px;
+}
     /* Fix for black line issue */
     body::before,
     body::after,
@@ -2659,7 +2726,17 @@
     body.style.color = getComputedStyle(document.documentElement)
                        .getPropertyValue('--text-color').trim();
   });
+function closeNoiseCrisisAlert() {
+  document.getElementById("noise-crisis-alert-banner").style.display = "none";
+}
 
+function closeIndigenousCrisisAlert() {
+  document.getElementById("indigenous-crisis-alert-banner").style.display = "none";
+}
+
+function closeCrisisAlert() {
+  document.getElementById("crisisAlert").style.display = "none";
+}
   </script>
 
   <!-- PWA Script -->
