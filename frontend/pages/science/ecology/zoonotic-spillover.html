@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deforestation & Zoonotic Disease Spillover - EcoLife</title>
+    <!-- Assuming standard theme links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../css/pages/zoonotic-spillover.css">
+    <link rel="icon" href="../../../../assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar" style="background:#2b4c2b; padding:1rem; display:flex; justify-content:space-between;">
+        <div class="nav-container"
+            style="display:flex; width:100%; max-width:1200px; margin:0 auto; align-items:center;">
+            <a href="../../index.html" class="nav-logo"
+                style="color:white; text-decoration:none; font-size:1.5rem; font-weight:bold;">
+                <i class="fas fa-leaf"></i>
+                EcoLife
+            </a>
+            <div class="nav-links" style="display:flex; gap:1.5rem; margin-left:auto;">
+                <a href="../../index.html" style="color:white; text-decoration:none;">Home</a>
+                <a href="../../learn-more.html" style="color:white; text-decoration:none;">Learn More</a>
+                <a href="../../wildlife-conservation.html" style="color:white; text-decoration:none;">Conservation</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Deforestation & Zoonotic Spillover</h1>
+            <p>The Rapid Destruction of Pristine Forests is a Direct Threat to Global Human Health.</p>
+        </section>
+
+        <section class="container">
+            <!-- Problem Statement -->
+            <div class="visualizer-card" style="text-align: center;">
+                <h2 class="section-title">The Buffer is Gone</h2>
+                <p>As human activities push deeper into untouched ecosystems, the buffer zone between wildlife and human
+                    populations vanishes. Viruses that circulate harmlessly in reservoir species now find literal clear
+                    paths to livestock, and inevitably, to humans.</p>
+            </div>
+
+            <!-- Edge Effect Visualizer -->
+            <div class="visualizer-card">
+                <h2 class="section-title"><i class="fas fa-tree"></i> The "Edge Effect" Visualizer</h2>
+                <p style="text-align:center; margin-bottom:2rem;">Drag the slider to "clear cut" the forest. Notice how
+                    fragmentation creates glowing red zones where wild bats and humans collide.</p>
+                <div class="visualizer-wrapper">
+                    <div class="map-container" id="mapContainer"></div>
+                    <div class="slider-container">
+                        <input type="range" id="deforestationSlider" min="0" max="100" value="0">
+                        <div style="display:flex; justify-content:space-between; margin-top:0.5rem;">
+                            <span>Pristine Forest</span>
+                            <span id="spilloverRiskMetric" style="font-weight:bold;">Risk: Very Low</span>
+                            <span>Fully Fragmented Edge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pathogen Pathway Diagram -->
+            <div class="diagram-card">
+                <h2 class="section-title"><i class="fas fa-vial"></i> Pathogen Pathway</h2>
+                <p style="text-align:center; margin-bottom:2rem;">How does a virus move from a deep-forest bat to human
+                    society? Click each step to follow the spillovers.</p>
+
+                <div class="pathway-diagram">
+                    <div class="pathway-step" id="step1">
+                        <i class="fas fa-bat">🦇</i>
+                        <h3>1. Reservoir Host</h3>
+                        <p>Fruit bat carrying ancient virus displaced by logging.</p>
+                    </div>
+                    <i class="fas fa-arrow-right pathway-arrow"></i>
+                    <div class="pathway-step" id="step2">
+                        <i class="fas fa-pig">🐷</i>
+                        <h3>2. Intermediate Livestock</h3>
+                        <p>Stress-shedding bat droppings infect domestic pigs near the forest edge.</p>
+                    </div>
+                    <i class="fas fa-arrow-right pathway-arrow"></i>
+                    <div class="pathway-step" id="step3">
+                        <i class="fas fa-user-injured">🤒</i>
+                        <h3>3. Farm Worker</h3>
+                        <p>Close contact allows the mutating virus to jump into humans.</p>
+                    </div>
+                    <i class="fas fa-arrow-right pathway-arrow"></i>
+                    <div class="pathway-step" id="step4">
+                        <i class="fas fa-globe">🌍</i>
+                        <h3>4. Global Pandemic</h3>
+                        <p>Infected worker travels, causing an uncontainable global crisis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Prevention Economics -->
+            <div class="economics-card">
+                <h2 class="section-title"><i class="fas fa-chart-line"></i> The Prevention Economics</h2>
+                <p style="text-align:center; margin-bottom:2rem;">Preserving forests costs a fraction of managing a
+                    single global pandemic.</p>
+
+                <div class="economics-stats">
+                    <div class="stat-box">
+                        <span class="stat-number">$22B</span>
+                        <span class="stat-label">Estimated Annual Cost to Stop Deforestation</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">10 Yrs</span>
+                        <span class="stat-label">Time to build critical buffer zones</span>
+                    </div>
+                    <div class="stat-box danger">
+                        <span class="stat-number" style="color:var(--theme-danger)">$16T+</span>
+                        <span class="stat-label">Economic Loss from a single Pandemic (COVID-19)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- One Health Approach -->
+            <div class="one-health-card">
+                <h2 class="section-title"><i class="fas fa-globe"></i> Adopt the "One Health" Approach</h2>
+
+                <div class="one-health-content">
+                    <div class="one-health-text">
+                        <p>The "One Health" concept recognizes that human health is tightly linked to the health of
+                            animals and our shared environment. We cannot have a healthy human society on a dying
+                            planet.</p>
+                        <ul>
+                            <li><strong>Ecosystem Health:</strong> Intact forests safely contain diverse wildlife and
+                                pathogens.</li>
+                            <li><strong>Animal Health:</strong> Minimal stress and natural habitats prevent uncontrolled
+                                disease replication.</li>
+                            <li><strong>Human Health:</strong> Sustainable land management is the ultimate vaccine
+                                against future pandemics.</li>
+                        </ul>
+                    </div>
+
+                    <div class="one-health-graphic">
+                        <div class="venn-container">
+                            <div class="circle-venn circle-human">Human</div>
+                            <div class="circle-venn circle-animal" style="top:100px; left:0;">Animal</div>
+                            <div class="circle-venn" style="background-color:#2b4c2b; top:100px; right:0;">Ecosystem
+                            </div>
+
+                            <div
+                                style="position:absolute; top:120px; left:50%; transform:translateX(-50%); font-weight:bold; color:white; z-index:10;">
+                                One Health
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../../../js/pages/zoonotic-spillover.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+:root {
+  --theme-forest: #2b4c2b;
+  --theme-earth: #4a3c31;
+  --theme-def-bg: #8b5a2b;
+  --theme-warning: #c2b810;
+  --theme-biohazard: #e6b800;
+  --theme-danger: #d94545;
+  --theme-text-light: #f5f5f5;
+  --theme-text-dark: #333333;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--theme-forest);
+  color: var(--theme-text-light);
+  margin: 0;
+  line-height: 1.6;
+  transition: background-color 0.5s ease;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(43, 76, 43, 0.9), rgba(74, 60, 49, 0.9)), url('../../../../assets/forest-bg.jpg') no-repeat center center/cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--theme-warning);
+}
+
+.visualizer-card, .diagram-card, .economics-card, .one-health-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+/* Edge Effect Visualizer */
+.visualizer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+input[type=range] {
+  width: 100%;
+  accent-color: var(--theme-danger);
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  background-color: var(--theme-forest);
+  border: 4px solid var(--theme-earth);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+
+.forest-island {
+  position: absolute;
+  background-color: #1e3b1e;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.contact-zone {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217,69,69,0.8) 0%, rgba(217,69,69,0) 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Pathogen Pathway Diagram */
+.pathway-diagram {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pathway-step {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--theme-earth);
+  border-radius: 8px;
+  min-width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.pathway-step:hover {
+  transform: translateY(-5px);
+  background-color: #5c4a3d;
+}
+
+.pathway-step.active {
+  background-color: var(--theme-danger);
+}
+
+.pathway-step i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--theme-warning);
+}
+
+.pathway-step.active i {
+  color: #fff;
+}
+
+.pathway-arrow {
+  font-size: 2rem;
+  color: var(--theme-warning);
+}
+
+/* Prevention Economics */
+.economics-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-box {
+  background-color: #fff;
+  color: var(--theme-text-dark);
+  padding: 2rem;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 6px solid var(--theme-forest);
+  transition: border-color 0.5s;
+}
+
+.stat-box.danger {
+  border-color: var(--theme-danger);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* One Health */
+.one-health-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.one-health-text {
+  flex: 1;
+}
+.one-health-graphic {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.circle-venn {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: inline-block;
+  mix-blend-mode: screen;
+  position: absolute;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+}
+.circle-human { background-color: #4a90e2; top: 0; left: 50%; transform: translateX(-50%); }
+.circle-animal { background-color: #d94545; top: 100px; left: 20%; }
+.circle-eco { background-color: #2b4c2b; top: 100px; left: 80%; transform: translateX(-100%); }
+.venn-container { position: relative; height: 300px; margin: 0 auto; width: 300px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pathway-diagram {
+    flex-direction: column;
+  }
+  .pathway-arrow {
+    transform: rotate(90deg);
+  }
+  .one-health-content {
+    flex-direction: column;
+  }
+}
