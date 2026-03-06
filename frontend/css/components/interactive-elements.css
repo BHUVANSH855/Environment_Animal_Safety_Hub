@@ -224,6 +224,8 @@ a:hover {
 /* Navigation Links */
 nav a,
 .nav-link {
+  background: transparent;
+    color: var(--navbar-text);
   padding: 12px 16px;
   min-height: 44px;
   display: flex;
