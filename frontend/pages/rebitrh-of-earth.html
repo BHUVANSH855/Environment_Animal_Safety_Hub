@@ -2,125 +2,426 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rebirth of Earth</title>
 
 <style>
+
+/* GLOBAL */
+
 :root{
-  --dark1:#3a0ca3;
-  --dark2:#240046;
-  --heal1:#80ed99;
-  --heal2:#38b000;
+--dark1:#2c3e50;
+--dark2:#1b263b;
+--green1:#52b788;
+--green2:#2d6a4f;
+--light:#ecfdf5;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
 }
 
 body{
-  margin:0;
-  min-height:100vh;
-  background:linear-gradient(135deg,var(--dark1),var(--dark2));
-  font-family:Segoe UI, sans-serif;
-  color:#f1faee;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  transition:background 1s ease;
+background:linear-gradient(135deg,var(--dark1),var(--dark2));
+color:white;
+overflow-x:hidden;
 }
 
-h1{
-  margin-top:30px;
-  font-size:3rem;
-  text-align:center;
+
+/* HEADER */
+
+header{
+text-align:center;
+padding:60px 20px;
 }
+
+header h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+header p{
+opacity:0.85;
+font-size:1.1rem;
+}
+
+
+/* HERO */
+
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+}
+
 
 /* EARTH */
+
 .earth{
-  margin-top:60px;
-  font-size:140px;
-  filter:grayscale(80%);
-  transition:filter 0.8s ease, transform 0.8s ease;
+font-size:140px;
+animation:rotateEarth 18s linear infinite;
+filter:grayscale(80%);
+transition:all 0.6s;
 }
 
+@keyframes rotateEarth{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+
+/* BUTTON */
+
+.restore-btn{
+margin-top:30px;
+padding:14px 36px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,var(--green1),var(--green2));
+color:white;
+font-size:1rem;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 6px 20px rgba(0,0,0,0.25);
+}
+
+.restore-btn:hover{
+transform:scale(1.07);
+box-shadow:0 8px 25px rgba(0,0,0,0.35);
+}
+
+
 /* MESSAGE */
+
 .message{
-  margin-top:30px;
-  max-width:650px;
-  background:rgba(255,255,255,0.12);
-  padding:20px 24px;
-  border-radius:18px;
-  animation:fadeUp 0.6s ease;
-  line-height:1.6;
+margin-top:20px;
+max-width:650px;
+background:rgba(255,255,255,0.1);
+padding:18px 22px;
+border-radius:15px;
+animation:fadeUp 0.5s ease;
 }
 
 @keyframes fadeUp{
-  from{opacity:0; transform:translateY(20px)}
-  to{opacity:1; transform:translateY(0)}
+from{
+opacity:0;
+transform:translateY(20px)
+}
+to{
+opacity:1;
+transform:translateY(0)
+}
 }
 
-/* BUTTON */
-button{
-  margin-top:40px;
-  padding:14px 36px;
-  font-size:1rem;
-  background:#80ed99;
-  color:#081c15;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-  transition:0.3s;
-}
-button:hover{
-  transform:scale(1.05);
+
+/* ABOUT SECTION */
+
+.section{
+padding:70px 20px;
+text-align:center;
 }
 
-.footer{
-  margin-top:20px;
-  font-size:0.9rem;
-  opacity:0.8;
+.section h2{
+margin-bottom:15px;
+font-size:2rem;
 }
+
+.section p{
+max-width:700px;
+margin:auto;
+opacity:0.85;
+}
+
+
+/* CARDS */
+
+.cards{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:25px;
+border-radius:15px;
+width:250px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,0.15);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+
+/* STATS */
+
+.stats{
+display:flex;
+gap:40px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.stat{
+font-size:2rem;
+font-weight:bold;
+}
+
+.stat-label{
+font-size:0.9rem;
+opacity:0.8;
+}
+
+
+/* PROGRESS */
+
+.progress-container{
+margin-top:40px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.progress-bar{
+width:100%;
+height:12px;
+background:#444;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+width:20%;
+background:linear-gradient(90deg,#52b788,#2d6a4f);
+transition:width 0.6s;
+}
+
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.7;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>⚪ Rebirth of Earth</h1>
+
+<header>
+<h1>🌍 Rebirth of Earth</h1>
+<p>Restoring our planet through sustainable actions and collective impact</p>
+</header>
+
+
+<section class="hero">
 
 <div class="earth" id="earth">🌍</div>
 
+<button class="restore-btn" onclick="healPlanet()">
+Restore the Planet
+</button>
+
 <div id="messages"></div>
 
-<button onclick="heal()">Restore the Planet</button>
+</section>
 
-<p class="footer">Healing is still possible.</p>
+
+
+<section class="section">
+
+<h2>🌱 About the Project</h2>
+
+<p>
+Rebirth of Earth is a digital initiative designed to raise awareness about
+environmental restoration. By tracking sustainable actions, educating users,
+and visualizing the impact of collective efforts, we aim to inspire people
+to participate in healing our planet.
+</p>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>🌍 Environmental Impact</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌳 Forest Protection</h3>
+<p>Reforestation and tree protection help rebuild ecosystems.</p>
+</div>
+
+<div class="card">
+<h3>💧 Clean Water</h3>
+<p>Reducing pollution ensures safe water for communities.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Renewable Energy</h3>
+<p>Transitioning to clean energy reduces carbon emissions.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>📊 Global Impact Statistics</h2>
+
+<div class="stats">
+
+<div>
+<div class="stat" id="trees">0</div>
+<div class="stat-label">Trees Planted</div>
+</div>
+
+<div>
+<div class="stat" id="co2">0</div>
+<div class="stat-label">CO₂ Saved (tons)</div>
+</div>
+
+<div>
+<div class="stat" id="water">0</div>
+<div class="stat-label">Water Saved (L)</div>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>🌎 Planet Restoration Progress</h2>
+
+<div class="progress-container">
+
+<div class="progress-bar">
+<div class="progress-fill" id="progress"></div>
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+Healing is still possible. 🌱
+</footer>
+
+
 
 <script>
-const messages = [
-  "Renewable energy reduces environmental damage.",
-  "Protecting forests restores ecosystems.",
-  "Clean water initiatives save lives.",
-  "Sustainable choices heal the planet.",
-  "Earth can recover when we act together."
+
+/* MESSAGE SYSTEM */
+
+const messages=[
+"Renewable energy reduces environmental damage.",
+"Protecting forests restores ecosystems.",
+"Clean water initiatives save lives.",
+"Sustainable choices heal the planet.",
+"Earth can recover when we act together."
 ];
 
-let step = 0;
-const earth = document.getElementById("earth");
+let step=0;
 
-function heal(){
-  if(step < messages.length){
-    const msg = document.createElement("div");
-    msg.className = "message";
-    msg.textContent = messages[step];
-    document.getElementById("messages").appendChild(msg);
+function healPlanet(){
 
-    // Gradual healing visuals
-    earth.style.filter = `grayscale(${80 - step * 20}%)`;
-    earth.style.transform = `scale(${1 + step * 0.05})`;
+const earth=document.getElementById("earth");
 
-    document.body.style.background =
-      "linear-gradient(135deg,var(--heal1),var(--heal2))";
+if(step<messages.length){
 
-    step++;
-  } else {
-    alert("🌍 The planet is healing. Now protect it.");
-  }
+const msg=document.createElement("div");
+msg.className="message";
+msg.textContent=messages[step];
+
+document.getElementById("messages").appendChild(msg);
+
+/* visual healing */
+
+earth.style.filter=`grayscale(${80-step*20}%)`;
+earth.style.transform=`scale(${1+step*0.05})`;
+
+/* progress */
+
+const progress=document.getElementById("progress");
+progress.style.width=`${20+step*15}%`;
+
+step++;
+
+}else{
+
+alert("🌍 The planet is healing. Now protect it.");
+
 }
+
+}
+
+
+/* STATS COUNTER */
+
+function animateCounter(id,target){
+
+let count=0;
+const element=document.getElementById(id);
+
+const interval=setInterval(()=>{
+
+count+=Math.ceil(target/50);
+
+if(count>=target){
+count=target;
+clearInterval(interval);
+}
+
+element.textContent=count.toLocaleString();
+
+},40);
+
+}
+
+animateCounter("trees",12500);
+animateCounter("co2",850);
+animateCounter("water",420000);
+
 </script>
 
 </body>
