@@ -1,4 +1,4 @@
-/* Food Waste Tracker Styles */
+﻿/* Food Waste Tracker Styles */
 
 :root {
   --primary-green: #10b981;
@@ -32,7 +32,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
   background: linear-gradient(135deg, #ecfdf5 0%, #fffbeb 100%);
   color: var(--text-dark);
   line-height: 1.6;

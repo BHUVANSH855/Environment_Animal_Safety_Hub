@@ -1,4 +1,4 @@
-/* Dark Sky Conservation Page Styles */
+﻿/* Dark Sky Conservation Page Styles */
 
 :root {
   --primary-color: #1a1a2e;
@@ -26,7 +26,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-secondary);

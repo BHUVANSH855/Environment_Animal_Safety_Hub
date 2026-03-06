@@ -1,4 +1,4 @@
-/* Soil Acidification from Acid Rain Recovery Lag - CSS */
+﻿/* Soil Acidification from Acid Rain Recovery Lag - CSS */
 /* Theme: Acidic oranges/reds, earth tones, recovery gradients */
 
 :root {
@@ -90,7 +90,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--background-light);
@@ -837,7 +837,7 @@ body {
 }
 
 .policy-item li::before {
-    content: '✓';
+    content: 'âœ“';
     position: absolute;
     left: 0;
     color: var(--recovery-calcium);

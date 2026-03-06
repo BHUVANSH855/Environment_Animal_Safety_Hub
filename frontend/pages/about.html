@@ -20,40 +20,44 @@
     
     /* ----- CSS VARIABLES (Light/Dark) ----- */
     :root {
-      --primary-color: #2ecc71;
-      --primary-dark: #27ae60;
-      --primary-rgb: 46, 204, 113;
-      --secondary-color: #3498db;
-      --accent-color: #e67e22;
-      --bg-primary: #ffffff;
-      --bg-secondary: #f8fafc;
-      --bg-card: #ffffff;
-      --bg-input: #f1f5f9;
-      --text-primary: #1e293b;
-      --text-secondary: #475569;
-      --border-color: #e2e8f0;
-      --bg-hover: #f1f5f9;
-      --shadow-sm: 0 5px 15px rgba(0,0,0,0.1);
-      --shadow-md: 0 10px 30px rgba(0,0,0,0.15);
-      --shadow-lg: 0 20px 50px rgba(0,0,0,0.2);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --max-width: 1400px;
-      --border-radius-lg: 50px;
-      --border-radius-md: 30px;
-      --border-radius-sm: 15px;
-    }
+  --primary-color: #2ecc71;       /* bright green */
+  --primary-dark: #27ae60;        /* darker green */
+  --primary-rgb: 46, 204, 113;    /* for shadows */
+  --secondary-color: #27ae60;     /* slightly darker green for gradient */
+  --accent-color: #2ed573;        /* accent green for gradients */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-input: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+  --bg-hover: #f1f5f9;
+  --shadow-sm: 0 5px 15px rgba(0,0,0,0.1);
+  --shadow-md: 0 10px 30px rgba(0,0,0,0.15);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,0.2);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-width: 1400px;
+  --border-radius-lg: 50px;
+  --border-radius-md: 30px;
+  --border-radius-sm: 15px;
+}
     
     [data-theme="dark"] {
-      --bg-primary: #0f172a;
-      --bg-secondary: #1e293b;
-      --bg-card: #1e293b;
+      --bg-primary: #075201;
+      --bg-secondary: #015308;
+      --bg-card: #001d02;
       --bg-input: #334155;
       --text-primary: #f1f5f9;
       --text-secondary: #cbd5e1;
-      --border-color: #334155;
-      --bg-hover: #2d3a4f;
+      --border-color: #335535;
+      --bg-hover: #2d4f37;
     }
-    
+    .hero-text h1 {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
     /* ----- RESET & BASE ----- */
     * {
       margin: 0;

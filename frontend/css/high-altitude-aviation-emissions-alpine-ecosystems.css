@@ -1,4 +1,4 @@
-/* High-Altitude Aviation Emissions & Alpine Ecosystems - CSS */
+﻿/* High-Altitude Aviation Emissions & Alpine Ecosystems - CSS */
 /* Theme: Alpine Mountains with Aviation Elements */
 
 :root {
@@ -56,7 +56,7 @@
 }
 
 body {
-    font-family: var(--font-primary);
+    
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     color: var(--contrail-white);
@@ -654,7 +654,7 @@ body {
 }
 
 .pollutant-effects li::before {
-    content: '⚠️';
+    content: 'âš ï¸';
     position: absolute;
     left: 0;
     color: var(--warning-red);
@@ -856,7 +856,7 @@ body {
 }
 
 .scenario li::before {
-    content: '→';
+    content: 'â†’';
     position: absolute;
     left: 0;
     color: var(--glacier-blue);
@@ -902,7 +902,7 @@ body {
 }
 
 .timeline-phase li::before {
-    content: '✓';
+    content: 'âœ“';
     position: absolute;
     left: 0;
     color: var(--success-green);

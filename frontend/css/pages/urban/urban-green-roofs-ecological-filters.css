@@ -1,4 +1,4 @@
-/* Urban Green Roofs Ecological Filters Styles */
+﻿/* Urban Green Roofs Ecological Filters Styles */
 
 :root {
     --primary-green: #2d5a3d;
@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     line-height: 1.6;
     color: #333;
     margin: 0;

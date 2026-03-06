@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   /* Light Theme */
   --primary-bg: #ffffff;
   --secondary-bg: #f8fdf9;
@@ -39,7 +39,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   background: var(--primary-bg);
   color: var(--text-primary);
   min-height: 100vh;
@@ -147,12 +147,12 @@ body {
 }
 
 .theme-btn::before {
-  content: '🌙';
+  content: 'ðŸŒ™';
   font-size: 1.5rem;
 }
 
 [data-theme="dark"] .theme-btn::before {
-  content: '☀️';
+  content: 'â˜€ï¸';
 }
 
 .theme-btn:hover {

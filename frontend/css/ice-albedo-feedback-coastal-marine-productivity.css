@@ -1,4 +1,4 @@
-/* Ice-Albedo Feedback and Coastal Marine Productivity - CSS */
+﻿/* Ice-Albedo Feedback and Coastal Marine Productivity - CSS */
 /* Theme: Arctic whites, ocean blues, productivity greens */
 
 :root {
@@ -93,7 +93,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--background-light);
@@ -810,7 +810,7 @@ body {
 }
 
 .policy-item li::before {
-    content: '🔵';
+    content: 'ðŸ”µ';
     position: absolute;
     left: 0;
     color: var(--productivity-boost);

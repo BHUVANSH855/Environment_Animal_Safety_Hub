@@ -1,4 +1,4 @@
-/* Reptile Gender Imbalance Page Styles */
+﻿/* Reptile Gender Imbalance Page Styles */
 :root {
     --primary-color: #2c5530;
     --secondary-color: #8b5a3c;
@@ -26,7 +26,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     line-height: 1.6;
     color: var(--text-color);
     background: var(--light-bg);

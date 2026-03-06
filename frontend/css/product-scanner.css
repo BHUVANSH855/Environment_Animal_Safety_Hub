@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary-color: #2ecc71;
     --secondary-color: #27ae60;
     --accent-color: #e67e22;
@@ -12,7 +12,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    
     background-color: var(--background-light);
     color: var(--text-dark);
     margin: 0;
@@ -66,7 +66,7 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    
     margin-top: 10px;
 }
 

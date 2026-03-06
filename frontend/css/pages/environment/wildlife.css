@@ -39,7 +39,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   background: var(--primary-bg);
   color: var(--text-primary);
   min-height: 100vh;
@@ -231,7 +231,7 @@ body {
 }
 
 .hero-title {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 4.5rem;
   font-weight: 900;
   margin-bottom: 20px;

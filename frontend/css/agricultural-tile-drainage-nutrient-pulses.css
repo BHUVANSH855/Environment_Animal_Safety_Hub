@@ -1,4 +1,4 @@
-/* Agricultural Tile Drainage and Nutrient Pulses - CSS */
+﻿/* Agricultural Tile Drainage and Nutrient Pulses - CSS */
 /* Theme: Earth tones, water blues, nutrient gradients */
 
 :root {
@@ -90,7 +90,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--background-light);
@@ -774,7 +774,7 @@ body {
 }
 
 .policy-item li::before {
-    content: '✓';
+    content: 'âœ“';
     position: absolute;
     left: 0;
     color: var(--nitrate-green);

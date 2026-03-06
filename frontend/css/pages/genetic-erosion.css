@@ -1,4 +1,4 @@
-/* Genetic Erosion Styles */
+﻿/* Genetic Erosion Styles */
 
 :root {
   --primary-color: #8e44ad;
@@ -21,7 +21,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #f5f0ff 0%, #f8f9fa 100%);

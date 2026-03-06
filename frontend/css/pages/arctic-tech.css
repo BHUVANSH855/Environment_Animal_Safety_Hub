@@ -1,4 +1,4 @@
-/* ===== Arctic Background ===== */
+﻿/* ===== Arctic Background ===== */
 .arctic-background {
     position: fixed;
     top: 0;
@@ -159,7 +159,7 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-family: 'Roboto Slab', serif;
+    
 }
 
 .gradient-text {
@@ -397,7 +397,7 @@
 }
 
 .shipping-threat::before {
-    content: '🚢';
+    content: 'ðŸš¢';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -879,7 +879,7 @@
 }
 
 .virtual-lab::before {
-    content: '💻';
+    content: 'ðŸ’»';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -894,7 +894,7 @@
 }
 
 .carbon-tracker::before {
-    content: '📊';
+    content: 'ðŸ“Š';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -909,7 +909,7 @@
 }
 
 .polar-education::before {
-    content: '📚';
+    content: 'ðŸ“š';
     position: absolute;
     top: 50%;
     left: 50%;

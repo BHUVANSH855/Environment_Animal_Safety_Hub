@@ -1,4 +1,4 @@
-/* Atmospheric Heavy Metal Deposition Styles */
+﻿/* Atmospheric Heavy Metal Deposition Styles */
 
 :root {
   --primary-color: #8e44ad;
@@ -21,7 +21,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);

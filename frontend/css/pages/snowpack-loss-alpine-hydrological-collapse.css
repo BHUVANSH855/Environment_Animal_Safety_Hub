@@ -1,4 +1,4 @@
-/* Snowpack Loss and Alpine Hydrological Collapse Styles */
+﻿/* Snowpack Loss and Alpine Hydrological Collapse Styles */
 
 :root {
   --primary-color: #3498db;
@@ -23,7 +23,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
@@ -183,7 +183,7 @@ body {
 }
 
 .biodiversity-card li::before {
-  content: '❄';
+  content: 'â„';
   position: absolute;
   left: 0;
   color: var(--ice-blue);
@@ -332,7 +332,7 @@ body {
 }
 
 .strategy-card li::before {
-  content: '✓';
+  content: 'âœ“';
   position: absolute;
   left: 0;
   color: var(--success-color);

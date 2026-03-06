@@ -1,4 +1,4 @@
-/* Sustainable Livestock Feed Page Styles */
+﻿/* Sustainable Livestock Feed Page Styles */
 
 :root {
   --primary-green: #2A9D8F;
@@ -15,7 +15,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  
   margin: 0;
   padding: 0;
 }

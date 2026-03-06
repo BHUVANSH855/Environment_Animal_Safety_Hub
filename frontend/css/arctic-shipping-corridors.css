@@ -1,4 +1,4 @@
-/* Arctic Shipping Corridors Styles */
+﻿/* Arctic Shipping Corridors Styles */
 
 :root {
     --primary-color: #1565c0;
@@ -23,7 +23,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
@@ -413,7 +413,7 @@ body {
 }
 
 .solution-card li:before {
-    content: "✓";
+    content: "âœ“";
     position: absolute;
     left: 0;
     color: var(--secondary-color);

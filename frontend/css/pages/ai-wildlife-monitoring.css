@@ -1,4 +1,4 @@
-/* AI Wildlife Monitoring Page Styles */
+﻿/* AI Wildlife Monitoring Page Styles */
 
 :root {
   --ai-primary: #2563EB;
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: var(--ai-text-primary);
   background-color: var(--ai-light);
@@ -196,7 +196,7 @@ body {
 }
 
 .application-card li:before {
-  content: '✓';
+  content: 'âœ“';
   color: var(--ai-secondary);
   font-weight: bold;
   margin-right: 0.5rem;
@@ -539,7 +539,7 @@ body {
 }
 
 .challenge-card li:before {
-  content: '⚠️';
+  content: 'âš ï¸';
   margin-right: 0.5rem;
 }
 

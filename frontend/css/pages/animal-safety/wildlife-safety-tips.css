@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --primary-color: #2e7d32;
   --secondary-color: #a5d6a7;
   --accent-color: #ffb74d;
@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;

@@ -1,4 +1,4 @@
-/* Wildlife Reproductive Timing Compression Styles */
+﻿/* Wildlife Reproductive Timing Compression Styles */
 
 :root {
   --primary-color: #8B4513;
@@ -21,7 +21,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #FFF8DC 0%, #f8f9fa 100%);
@@ -532,7 +532,7 @@ body {
 }
 
 .model-insights li:before {
-  content: "📊";
+  content: "ðŸ“Š";
   margin-right: 10px;
 }
 

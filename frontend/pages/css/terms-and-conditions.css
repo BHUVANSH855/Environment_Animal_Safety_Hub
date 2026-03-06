@@ -1,0 +1,308 @@
+/* ===============================
+   GLOBAL PAGE STYLING
+================================ */
+
+body{
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+margin:0;
+background:#f6f9f6;
+color:#333;
+line-height:1.6;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+header{
+background:linear-gradient(135deg,#2e7d32,#4caf50);
+color:white;
+padding:80px 0 60px 0;
+text-align:center;
+}
+
+header h1{
+font-size:2.6rem;
+margin-top:15px;
+}
+
+.subtitle{
+opacity:.9;
+margin-top:10px;
+font-size:1rem;
+}
+
+/* Badge */
+
+.badge{
+display:inline-block;
+background:rgba(255,255,255,0.2);
+padding:8px 18px;
+border-radius:30px;
+font-size:.9rem;
+}
+
+/* ===============================
+   QUICK NAVIGATION
+================================ */
+
+.quick-nav{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+margin-bottom:30px;
+}
+
+.quick-nav h3{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:1.2rem;
+margin-bottom:20px;
+}
+
+.nav-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+}
+
+.nav-item{
+display:flex;
+align-items:center;
+gap:8px;
+padding:10px 14px;
+border-radius:8px;
+background:#f3f7f3;
+text-decoration:none;
+color:#2e7d32;
+font-weight:500;
+transition:.2s;
+}
+
+.nav-item:hover{
+background:#e6f3e6;
+transform:translateY(-2px);
+}
+
+/* Collapse state */
+
+.quick-nav.collapsed .nav-grid{
+display:none;
+}
+
+/* ===============================
+   TERMS SECTIONS
+================================ */
+
+.terms-section{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+transition:.3s;
+}
+
+.terms-section:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Section Header */
+
+.section-header{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:15px;
+}
+
+.section-icon{
+width:45px;
+height:45px;
+border-radius:10px;
+background:linear-gradient(135deg,#2e7d32,#4caf50);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:18px;
+}
+
+.section-number{
+margin-left:auto;
+font-weight:bold;
+color:#4caf50;
+font-size:1.3rem;
+}
+
+/* ===============================
+   CONTENT CARDS
+================================ */
+
+.content-card{
+background:#f3f7f3;
+padding:18px;
+border-radius:10px;
+margin-top:15px;
+}
+
+.warning{
+background:#fff3cd;
+border-left:4px solid #f1c40f;
+padding:15px;
+margin-top:15px;
+border-radius:6px;
+}
+
+/* ===============================
+   ACCEPT TERMS
+================================ */
+
+.acceptance{
+background:linear-gradient(135deg,#2e7d32,#4caf50);
+color:white;
+padding:35px;
+border-radius:14px;
+text-align:center;
+margin-top:40px;
+}
+
+.acceptance h2{
+margin-bottom:10px;
+}
+
+.accept-btn{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:8px;
+background:white;
+color:#2e7d32;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.accept-btn:hover{
+background:#e8f5e9;
+}
+
+/* ===============================
+   BACK TO TOP
+================================ */
+
+.back-to-top{
+position:fixed;
+bottom:30px;
+right:30px;
+width:45px;
+height:45px;
+border-radius:50%;
+background:#2e7d32;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+opacity:0;
+pointer-events:none;
+transition:.3s;
+}
+
+.back-to-top.visible{
+opacity:1;
+pointer-events:auto;
+}
+
+/* ===============================
+   PRINT BUTTON
+================================ */
+
+.print-btn{
+position:fixed;
+bottom:90px;
+right:30px;
+width:45px;
+height:45px;
+border:none;
+border-radius:50%;
+background:#4caf50;
+color:white;
+cursor:pointer;
+font-size:16px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:.3s;
+}
+
+.print-btn:hover{
+background:#2e7d32;
+}
+
+/* ===============================
+   THEME TOGGLE
+================================ */
+
+.theme-toggle{
+position:fixed;
+top:20px;
+right:20px;
+width:45px;
+height:45px;
+border:none;
+border-radius:50%;
+background:#2e7d32;
+color:white;
+cursor:pointer;
+font-size:16px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width:768px){
+
+header h1{
+font-size:2rem;
+}
+
+.nav-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.section-header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.section-number{
+margin-left:0;
+}
+
+}
+
+@media (max-width:500px){
+
+.nav-grid{
+grid-template-columns:1fr;
+}
+
+.container{
+padding:25px 15px;
+}
+
+}

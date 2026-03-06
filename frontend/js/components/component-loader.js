@@ -279,7 +279,7 @@ document.head.appendChild(prefScript);
                     .forEach(item => item.classList.remove('open'));
             }
         });
-
+document.querySelector('a[href="pages/water-wastage-tracker.html"]')?.addEventListener('click', e => e.stopPropagation());
         // ======================
         // SUBMENU ACCORDION
         // ======================

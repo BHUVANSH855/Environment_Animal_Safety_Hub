@@ -1,4 +1,4 @@
-/* Thermal Stratification in Freshwater Lakes Styles */
+﻿/* Thermal Stratification in Freshwater Lakes Styles */
 
 :root {
     --primary-color: #1976d2;
@@ -27,7 +27,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);

@@ -1,4 +1,4 @@
-/* ========================================
+﻿/* ========================================
    Air Quality Dashboard Styles
    Issue #1101 - Real-Time Air Quality & Pollution Dashboard
    ======================================== */
@@ -1290,7 +1290,7 @@
 /* Leaflet Map Custom Styles */
 .leaflet-container {
     border-radius: 16px;
-    font-family: 'Poppins', sans-serif;
+    
 }
 
 .leaflet-popup-content-wrapper {

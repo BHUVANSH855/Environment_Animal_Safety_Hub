@@ -1,7 +1,7 @@
-/* Shrub Encroachment into Grasslands Page Styles */
+﻿/* Shrub Encroachment into Grasslands Page Styles */
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #8B7355 0%, #A0916B 50%, #8B7355 100%);
@@ -245,7 +245,7 @@ body {
 }
 
 .mechanism-details li::before {
-  content: '✓';
+  content: 'âœ“';
   position: absolute;
   left: 0;
   color: #6B7F3F;
@@ -492,7 +492,7 @@ body {
 }
 
 .management-card li::before {
-  content: '•';
+  content: 'â€¢';
   position: absolute;
   left: 0;
   color: #6B7F3F;

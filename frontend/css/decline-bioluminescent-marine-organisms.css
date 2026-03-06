@@ -1,4 +1,4 @@
-/* Decline of Bioluminescent Marine Organisms Styles */
+﻿/* Decline of Bioluminescent Marine Organisms Styles */
 
 :root {
     --deep-ocean: #0a0f1a;
@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     line-height: 1.6;
     color: #e0e6ed;
     margin: 0;

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microplastics in the Food Chain - Interactive Journey</title>
+    <link rel="stylesheet" href="css/microplastic-food-web.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ============================
+         NAVIGATION BAR
+    ============================ -->
+    <nav class="top-nav">
+        <a href="#" class="nav-brand">
+            <i class="fas fa-biohazard"></i>
+            <span>Microplastics Journey</span>
+        </a>
+        <div class="nav-links">
+            <a href="#journey" class="nav-link active" data-section="journey">
+                <i class="fas fa-route"></i> The Journey
+            </a>
+            <a href="#pyramid" class="nav-link" data-section="pyramid">
+                <i class="fas fa-layer-group"></i> Biomagnification
+            </a>
+            <a href="#calculator" class="nav-link" data-section="calculator">
+                <i class="fas fa-calculator"></i> Impact Calculator
+            </a>
+            <a href="#mitigation" class="nav-link" data-section="mitigation">
+                <i class="fas fa-shield-halved"></i> Solutions
+            </a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </button>
+    </nav>
+
+    <!-- ============================
+         HERO SECTION
+    ============================ -->
+    <header class="hero-section" id="hero">
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-microscope"></i>
+                <span>Interactive Educational Experience</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Microplastics in the</span>
+                <span class="title-line gradient-text">Food Chain</span>
+            </h1>
+            <p class="hero-subtitle">
+                Follow the invisible journey of plastic particles — from discarded bottles 
+                to your dinner plate. Discover how bioaccumulation and biomagnification 
+                silently threaten ecosystems and human health.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="14">0</span><span class="stat-suffix">M</span>
+                    <span class="stat-label">Tons of microplastics on the ocean floor</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span><span class="stat-suffix">g</span>
+                    <span class="stat-label">Plastic ingested per person per week</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="83">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Of tap water contains microplastics</span>
+                </div>
+            </div>
+            <a href="#journey" class="hero-cta">
+                <span>Begin the Journey</span>
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============================
+         SECTION 1: JOURNEY OF A PLASTIC BOTTLE
+    ============================ -->
+    <section class="section journey-section" id="journey">
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-route"></i> Part 1</span>
+            <h2 class="section-title">The Journey of a Plastic Bottle</h2>
+            <p class="section-desc">Click through each stage to see how UV light and wave action 
+            break down a single plastic bottle into billions of micro- and nano-particles.</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-progress">
+                <div class="timeline-progress-bar" id="timelineBar"></div>
+            </div>
+            <div class="timeline-stages">
+                <!-- Stage 1: Discarded -->
+                <div class="timeline-stage active" data-stage="1">
+                    <div class="stage-marker">
+                        <div class="marker-icon"><i class="fas fa-bottle-water"></i></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-visual">
+                            <div class="bottle-animation" id="bottleAnim">
+                                <div class="plastic-bottle">
+                                    <div class="bottle-cap"></div>
+                                    <div class="bottle-body">
+                                        <div class="bottle-label">PET</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stage-info">
+                            <span class="stage-number">Stage 01</span>
+                            <h3>Discarded</h3>
+                            <p>A single plastic bottle is carelessly discarded. It enters waterways 
+                            through storm drains, rivers, or direct littering on beaches. 
+                            <strong>8 million tons</strong> of plastic enter oceans annually.</p>
+                            <div class="stage-fact">
+                                <i class="fas fa-info-circle"></i>
+                                <span>A plastic bottle takes 450+ years to decompose</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 2: UV Degradation -->
+                <div class="timeline-stage" data-stage="2">
+                    <div class="stage-marker">
+                        <div class="marker-icon"><i class="fas fa-sun"></i></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-visual">
+                            <div class="uv-animation" id="uvAnim">
+                                <div class="sun-rays">
+                                    <div class="ray"></div><div class="ray"></div>
+                                    <div class="ray"></div><div class="ray"></div>
+                                </div>
+                                <div class="degrading-plastic">
+                                    <div class="crack"></div>
+                                    <div class="crack"></div>
+                                    <div class="crack"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stage-info">
+                            <span class="stage-number">Stage 02</span>
+                            <h3>UV Photodegradation</h3>
+                            <p>Sunlight's UV radiation breaks the polymer chains. The plastic becomes 
+                            brittle and yellowed, developing surface cracks. This process — 
+                            <strong>photodegradation</strong> — is the first step of fragmentation.</p>
+                            <div class="stage-fact">
+                                <i class="fas fa-info-circle"></i>
+                                <span>UV light breaks C-C and C-H bonds in polymer chains</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 3: Wave Fragmentation -->
+                <div class="timeline-stage" data-stage="3">
+                    <div class="stage-marker">
+                        <div class="marker-icon"><i class="fas fa-water"></i></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-visual">
+                            <div class="wave-animation" id="waveAnim">
+                                <div class="wave wave-1"></div>
+                                <div class="wave wave-2"></div>
+                                <div class="wave wave-3"></div>
+                                <div class="fragments">
+                                    <span class="fragment"></span>
+                                    <span class="fragment"></span>
+                                    <span class="fragment"></span>
+                                    <span class="fragment"></span>
+                                    <span class="fragment"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stage-info">
+                            <span class="stage-number">Stage 03</span>
+                            <h3>Mechanical Fragmentation</h3>
+                            <p>Waves, wind, and abrasion from sand and rocks physically break the 
+                            weakened plastic into smaller pieces. What was one bottle becomes 
+                            <strong>thousands of fragments</strong>, each less than 5mm.</p>
+                            <div class="stage-fact">
+                                <i class="fas fa-info-circle"></i>
+                                <span>One bottle can produce over 10,000 microplastic pieces</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 4: Microplastics -->
+                <div class="timeline-stage" data-stage="4">
+                    <div class="stage-marker">
+                        <div class="marker-icon"><i class="fas fa-circle-nodes"></i></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-visual">
+                            <div class="micro-animation" id="microAnim">
+                                <div class="micro-particle" style="--delay: 0s; --x: -30px; --y: -20px;"></div>
+                                <div class="micro-particle" style="--delay: 0.5s; --x: 20px; --y: -35px;"></div>
+                                <div class="micro-particle" style="--delay: 1s; --x: -15px; --y: 25px;"></div>
+                                <div class="micro-particle" style="--delay: 1.5s; --x: 35px; --y: 10px;"></div>
+                                <div class="micro-particle" style="--delay: 2s; --x: -5px; --y: -10px;"></div>
+                                <div class="micro-particle toxic" style="--delay: 0.3s; --x: 10px; --y: -30px;"></div>
+                                <div class="micro-particle toxic" style="--delay: 1.2s; --x: -25px; --y: 15px;"></div>
+                            </div>
+                        </div>
+                        <div class="stage-info">
+                            <span class="stage-number">Stage 04</span>
+                            <h3>Microplastics &amp; Nanoplastics</h3>
+                            <p>Particles under 5mm are classified as <strong>microplastics</strong>. 
+                            Further degradation creates <strong>nanoplastics</strong> (&lt;1μm) 
+                            that can penetrate cell membranes. These absorb toxic chemicals 
+                            like DDT, PCBs, and heavy metals from the water.</p>
+                            <div class="stage-fact">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Nanoplastics can cross the blood-brain barrier</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 5: Enters Food Chain -->
+                <div class="timeline-stage" data-stage="5">
+                    <div class="stage-marker">
+                        <div class="marker-icon"><i class="fas fa-fish"></i></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-visual">
+                            <div class="foodchain-animation" id="foodchainAnim">
+                                <div class="plankton-group">
+                                    <div class="plankton"><div class="ingested-plastic"></div></div>
+                                    <div class="plankton"><div class="ingested-plastic"></div></div>
+                                    <div class="plankton"><div class="ingested-plastic"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stage-info">
+                            <span class="stage-number">Stage 05</span>
+                            <h3>Entering the Food Web</h3>
+                            <p>Zooplankton and filter feeders mistake microplastics for food. 
+                            These tiny organisms form the base of the marine food web. 
+                            <strong>Every organism</strong> that feeds on them 
+                            now consumes plastic — and the toxins attached to it.</p>
+                            <div class="stage-fact">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Over 700 marine species are affected by plastic pollution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SECTION 2: BIOMAGNIFICATION PYRAMID
+    ============================ -->
+    <section class="section pyramid-section" id="pyramid">
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-layer-group"></i> Part 2</span>
+            <h2 class="section-title">Biomagnification Pyramid</h2>
+            <p class="section-desc">Click each level to see how microplastic concentration 
+            <em>multiplies</em> as it moves up the food chain. Watch toxins accumulate.</p>
+        </div>
+
+        <div class="pyramid-wrapper">
+            <div class="toxicity-meter">
+                <div class="meter-label">Toxicity Level</div>
+                <div class="meter-bar">
+                    <div class="meter-fill" id="toxicityFill"></div>
+                </div>
+                <div class="meter-value" id="toxicityValue">0x</div>
+            </div>
+
+            <div class="pyramid-container" id="pyramidContainer">
+                <!-- Level 5: Humans (top) -->
+                <div class="pyramid-level" data-level="5" data-concentration="10000" data-name="Humans">
+                    <div class="level-shape level-5">
+                        <div class="level-icon"><i class="fas fa-person"></i></div>
+                        <div class="level-particles"></div>
+                    </div>
+                    <div class="level-info">
+                        <h3>Apex: Humans</h3>
+                        <div class="concentration-bar">
+                            <div class="conc-fill"></div>
+                            <span class="conc-label">~10,000x base concentration</span>
+                        </div>
+                        <p>Through consuming seafood, drinking water, and even breathing air, 
+                        humans accumulate microplastics from multiple pathways. Studies have 
+                        found microplastics in human blood, lungs, and placenta.</p>
+                        <div class="level-stats">
+                            <div class="level-stat">
+                                <span class="stat-val">5g</span>
+                                <span class="stat-desc">plastic ingested/week</span>
+                            </div>
+                            <div class="level-stat">
+                                <span class="stat-val">121K</span>
+                                <span class="stat-desc">particles/year inhaled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 4: Marine Mammals -->
+                <div class="pyramid-level" data-level="4" data-concentration="5000" data-name="Marine Mammals">
+                    <div class="level-shape level-4">
+                        <div class="level-icon"><i class="fas fa-otter"></i></div>
+                        <div class="level-particles"></div>
+                    </div>
+                    <div class="level-info">
+                        <h3>Tertiary Consumers: Marine Mammals</h3>
+                        <div class="concentration-bar">
+                            <div class="conc-fill"></div>
+                            <span class="conc-label">~5,000x base concentration</span>
+                        </div>
+                        <p>Dolphins, seals, and whales consume large quantities of contaminated 
+                        fish. Their long lifespans mean decades of plastic accumulation. 
+                        Necropsies reveal stomachs filled with plastic debris.</p>
+                        <div class="level-stats">
+                            <div class="level-stat">
+                                <span class="stat-val">100+</span>
+                                <span class="stat-desc">particles per gram of tissue</span>
+                            </div>
+                            <div class="level-stat">
+                                <span class="stat-val">56%</span>
+                                <span class="stat-desc">of whale species affected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 3: Large Fish -->
+                <div class="pyramid-level" data-level="3" data-concentration="1000" data-name="Large Fish">
+                    <div class="level-shape level-3">
+                        <div class="level-icon"><i class="fas fa-fish"></i></div>
+                        <div class="level-particles"></div>
+                    </div>
+                    <div class="level-info">
+                        <h3>Secondary Consumers: Large Fish</h3>
+                        <div class="concentration-bar">
+                            <div class="conc-fill"></div>
+                            <span class="conc-label">~1,000x base concentration</span>
+                        </div>
+                        <p>Tuna, swordfish, and other predatory fish eat hundreds of smaller fish, 
+                        each carrying their load of microplastics. The toxins — PCBs, mercury, 
+                        and flame retardants — concentrate in fatty tissues.</p>
+                        <div class="level-stats">
+                            <div class="level-stat">
+                                <span class="stat-val">1-7</span>
+                                <span class="stat-desc">particles per individual</span>
+                            </div>
+                            <div class="level-stat">
+                                <span class="stat-val">73%</span>
+                                <span class="stat-desc">of deep-sea fish have microplastics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 2: Small Fish -->
+                <div class="pyramid-level" data-level="2" data-concentration="100" data-name="Small Fish">
+                    <div class="level-shape level-2">
+                        <div class="level-icon"><i class="fas fa-shrimp"></i></div>
+                        <div class="level-particles"></div>
+                    </div>
+                    <div class="level-info">
+                        <h3>Primary Consumers: Small Fish &amp; Shellfish</h3>
+                        <div class="concentration-bar">
+                            <div class="conc-fill"></div>
+                            <span class="conc-label">~100x base concentration</span>
+                        </div>
+                        <p>Anchovies, sardines, shrimp, and mussels filter enormous volumes of water, 
+                        ingesting microplastics directly. Mussels can contain up to 
+                        <strong>90 particles per serving</strong>.</p>
+                        <div class="level-stats">
+                            <div class="level-stat">
+                                <span class="stat-val">1-2</span>
+                                <span class="stat-desc">particles per organism</span>
+                            </div>
+                            <div class="level-stat">
+                                <span class="stat-val">90</span>
+                                <span class="stat-desc">particles per mussel serving</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 1: Plankton (base) -->
+                <div class="pyramid-level" data-level="1" data-concentration="1" data-name="Plankton">
+                    <div class="level-shape level-1">
+                        <div class="level-icon"><i class="fas fa-bacterium"></i></div>
+                        <div class="level-particles"></div>
+                    </div>
+                    <div class="level-info">
+                        <h3>Base: Plankton &amp; Zooplankton</h3>
+                        <div class="concentration-bar">
+                            <div class="conc-fill"></div>
+                            <span class="conc-label">1x base concentration</span>
+                        </div>
+                        <p>Microscopic organisms absorb nanoplastics directly from the water column. 
+                        Even at this base level, microplastics disrupt feeding behavior, reduce 
+                        reproductive rates, and transfer adsorbed pollutants.</p>
+                        <div class="level-stats">
+                            <div class="level-stat">
+                                <span class="stat-val">51T</span>
+                                <span class="stat-desc">particles in ocean surface</span>
+                            </div>
+                            <div class="level-stat">
+                                <span class="stat-val">1x</span>
+                                <span class="stat-desc">baseline toxin level</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pyramid-legend">
+                <div class="legend-item">
+                    <span class="legend-dot safe"></span>
+                    <span>Low Concentration</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot moderate"></span>
+                    <span>Moderate</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot high"></span>
+                    <span>High</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot critical"></span>
+                    <span>Critical</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SECTION 3: HUMAN IMPACT CALCULATOR
+    ============================ -->
+    <section class="section calculator-section" id="calculator">
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-calculator"></i> Part 3</span>
+            <h2 class="section-title">Your Microplastic Intake</h2>
+            <p class="section-desc">Input your habits below to estimate how much plastic 
+            you may be consuming — the results might shock you.</p>
+        </div>
+
+        <div class="calculator-container">
+            <div class="calc-inputs">
+                <div class="calc-group">
+                    <label class="calc-label">
+                        <i class="fas fa-fish"></i>
+                        Seafood Meals Per Week
+                    </label>
+                    <div class="calc-slider-wrap">
+                        <input type="range" class="calc-slider" id="seafoodSlider" 
+                               min="0" max="14" value="3" step="1">
+                        <div class="slider-value" id="seafoodValue">3</div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>None</span><span>Daily x2</span>
+                    </div>
+                </div>
+
+                <div class="calc-group">
+                    <label class="calc-label">
+                        <i class="fas fa-bottle-water"></i>
+                        Bottled Water (Liters/Day)
+                    </label>
+                    <div class="calc-slider-wrap">
+                        <input type="range" class="calc-slider" id="bottledWaterSlider" 
+                               min="0" max="4" value="1" step="0.5">
+                        <div class="slider-value" id="bottledWaterValue">1</div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>None</span><span>4L</span>
+                    </div>
+                </div>
+
+                <div class="calc-group">
+                    <label class="calc-label">
+                        <i class="fas fa-faucet-drip"></i>
+                        Tap Water (Liters/Day)
+                    </label>
+                    <div class="calc-slider-wrap">
+                        <input type="range" class="calc-slider" id="tapWaterSlider" 
+                               min="0" max="4" value="2" step="0.5">
+                        <div class="slider-value" id="tapWaterValue">2</div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>None</span><span>4L</span>
+                    </div>
+                </div>
+
+                <div class="calc-group">
+                    <label class="calc-label">
+                        <i class="fas fa-salt-shaking"></i>
+                        Sea Salt Usage
+                    </label>
+                    <div class="calc-toggle-group">
+                        <button class="calc-toggle active" data-value="yes" id="saltYes">
+                            <i class="fas fa-check"></i> Yes
+                        </button>
+                        <button class="calc-toggle" data-value="no" id="saltNo">
+                            <i class="fas fa-xmark"></i> No
+                        </button>
+                    </div>
+                </div>
+
+                <div class="calc-group">
+                    <label class="calc-label">
+                        <i class="fas fa-mug-hot"></i>
+                        Tea Bags Per Day
+                    </label>
+                    <div class="calc-slider-wrap">
+                        <input type="range" class="calc-slider" id="teaSlider" 
+                               min="0" max="6" value="2" step="1">
+                        <div class="slider-value" id="teaValue">2</div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>None</span><span>6</span>
+                    </div>
+                </div>
+
+                <button class="calc-btn" id="calculateBtn">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate My Intake</span>
+                </button>
+            </div>
+
+            <div class="calc-results" id="calcResults">
+                <div class="result-card main-result">
+                    <div class="result-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="result-content">
+                        <h3>Weekly Plastic Intake</h3>
+                        <div class="result-number" id="weeklyGrams">0g</div>
+                        <p class="result-comparison" id="weeklyComparison">
+                            That's approximately <strong><span id="creditCards">0</span> credit cards</strong> worth of plastic per week
+                        </p>
+                    </div>
+                </div>
+
+                <div class="result-grid">
+                    <div class="result-card mini">
+                        <div class="mini-icon"><i class="fas fa-calendar"></i></div>
+                        <div class="mini-label">Monthly</div>
+                        <div class="mini-value" id="monthlyIntake">0g</div>
+                    </div>
+                    <div class="result-card mini">
+                        <div class="mini-icon"><i class="fas fa-calendar-days"></i></div>
+                        <div class="mini-label">Yearly</div>
+                        <div class="mini-value" id="yearlyIntake">0g</div>
+                    </div>
+                    <div class="result-card mini">
+                        <div class="mini-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="mini-label">Particles / Week</div>
+                        <div class="mini-value" id="particlesWeek">0</div>
+                    </div>
+                    <div class="result-card mini">
+                        <div class="mini-icon"><i class="fas fa-weight-scale"></i></div>
+                        <div class="mini-label">Lifetime (avg)</div>
+                        <div class="mini-value" id="lifetimeIntake">0kg</div>
+                    </div>
+                </div>
+
+                <div class="result-breakdown" id="resultBreakdown">
+                    <h4><i class="fas fa-chart-pie"></i> Breakdown by Source</h4>
+                    <div class="breakdown-bars">
+                        <div class="breakdown-row">
+                            <span class="bd-label">Seafood</span>
+                            <div class="bd-bar"><div class="bd-fill" id="bdSeafood"></div></div>
+                            <span class="bd-pct" id="bdSeafoodPct">0%</span>
+                        </div>
+                        <div class="breakdown-row">
+                            <span class="bd-label">Bottled Water</span>
+                            <div class="bd-bar"><div class="bd-fill" id="bdBottled"></div></div>
+                            <span class="bd-pct" id="bdBottledPct">0%</span>
+                        </div>
+                        <div class="breakdown-row">
+                            <span class="bd-label">Tap Water</span>
+                            <div class="bd-bar"><div class="bd-fill" id="bdTap"></div></div>
+                            <span class="bd-pct" id="bdTapPct">0%</span>
+                        </div>
+                        <div class="breakdown-row">
+                            <span class="bd-label">Sea Salt</span>
+                            <div class="bd-bar"><div class="bd-fill" id="bdSalt"></div></div>
+                            <span class="bd-pct" id="bdSaltPct">0%</span>
+                        </div>
+                        <div class="breakdown-row">
+                            <span class="bd-label">Tea Bags</span>
+                            <div class="bd-bar"><div class="bd-fill" id="bdTea"></div></div>
+                            <span class="bd-pct" id="bdTeaPct">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SECTION 4: MITIGATION TOGGLE
+    ============================ -->
+    <section class="section mitigation-section" id="mitigation">
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-shield-halved"></i> Part 4</span>
+            <h2 class="section-title">Breaking the Chain</h2>
+            <p class="section-desc">Toggle each solution to see its impact on the food chain. 
+            Systemic changes <em>can</em> make a difference.</p>
+        </div>
+
+        <div class="mitigation-dashboard">
+            <div class="impact-score-card">
+                <div class="impact-ring">
+                    <svg viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="54" class="ring-bg"/>
+                        <circle cx="60" cy="60" r="54" class="ring-fill" id="impactRing"/>
+                    </svg>
+                    <div class="impact-number" id="impactNumber">0%</div>
+                </div>
+                <div class="impact-label">Microplastic Reduction</div>
+                <p class="impact-desc" id="impactDesc">Toggle solutions below to see cumulative impact</p>
+            </div>
+
+            <div class="mitigation-toggles">
+                <div class="mitigation-card" data-solution="washing-filter" data-impact="35">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-shirt"></i></div>
+                        <div class="card-toggle">
+                            <label class="switch">
+                                <input type="checkbox" class="solution-toggle">
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <h3>Washing Machine Filters</h3>
+                    <p>Synthetic clothing releases <strong>700,000 microfibers</strong> per wash. 
+                    External filters capture up to 90% of these fibers.</p>
+                    <div class="card-impact">
+                        <span class="impact-badge">-35% microfiber release</span>
+                    </div>
+                </div>
+
+                <div class="mitigation-card" data-solution="microbead-ban" data-impact="25">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-pump-soap"></i></div>
+                        <div class="card-toggle">
+                            <label class="switch">
+                                <input type="checkbox" class="solution-toggle">
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <h3>Banning Microbeads</h3>
+                    <p>Cosmetics and personal care products contain plastic microbeads that 
+                    wash directly into waterways. Bans eliminate this source entirely.</p>
+                    <div class="card-impact">
+                        <span class="impact-badge">-25% cosmetic microplastics</span>
+                    </div>
+                </div>
+
+                <div class="mitigation-card" data-solution="water-treatment" data-impact="20">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-filter"></i></div>
+                        <div class="card-toggle">
+                            <label class="switch">
+                                <input type="checkbox" class="solution-toggle">
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <h3>Advanced Water Treatment</h3>
+                    <p>Upgrading municipal water treatment with membrane filtration and 
+                    advanced oxidation can remove up to <strong>99.9%</strong> of microplastics from drinking water.</p>
+                    <div class="card-impact">
+                        <span class="impact-badge">-20% ingestion via water</span>
+                    </div>
+                </div>
+
+                <div class="mitigation-card" data-solution="packaging-reform" data-impact="30">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-recycle"></i></div>
+                        <div class="card-toggle">
+                            <label class="switch">
+                                <input type="checkbox" class="solution-toggle">
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <h3>Packaging Reform</h3>
+                    <p>Replacing single-use plastics with biodegradable alternatives and 
+                    enforcing Extended Producer Responsibility (EPR) policies can reduce 
+                    plastic entering oceans by <strong>80%</strong>.</p>
+                    <div class="card-impact">
+                        <span class="impact-badge">-30% ocean plastic input</span>
+                    </div>
+                </div>
+
+                <div class="mitigation-card" data-solution="ocean-cleanup" data-impact="15">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-broom"></i></div>
+                        <div class="card-toggle">
+                            <label class="switch">
+                                <input type="checkbox" class="solution-toggle">
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <h3>Ocean Cleanup Systems</h3>
+                    <p>Passive collection systems in ocean gyres and river interceptors 
+                    can capture macroplastics before they fragment into microplastics.</p>
+                    <div class="card-impact">
+                        <span class="impact-badge">-15% ocean surface plastic</span>
+                    </div>
+                </div>
+
+                <div class="mitigation-card" data-solution="consumer-choice" data-impact="10">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <div class="card-toggle">
+                            <label class="switch">
+                                <input type="checkbox" class="solution-toggle">
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <h3>Consumer Awareness</h3>
+                    <p>Choosing natural-fiber clothing, avoiding single-use plastics, 
+                    using water filters, and supporting plastic-free brands reduces individual exposure.</p>
+                    <div class="card-impact">
+                        <span class="impact-badge">-10% personal exposure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         FOOTER
+    ============================ -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3><i class="fas fa-biohazard"></i> Microplastics in the Food Chain</h3>
+                <p>An interactive educational tool by the Environment &amp; Animal Safety Hub. 
+                Data sourced from UNEP, WHO, and peer-reviewed research.</p>
+            </div>
+            <div class="footer-sources">
+                <h4>Sources &amp; References</h4>
+                <ul>
+                    <li><a href="https://www.unep.org/interactives/beat-plastic-pollution/" target="_blank">UNEP - Beat Plastic Pollution</a></li>
+                    <li><a href="https://www.who.int/publications/i/item/9789241516198" target="_blank">WHO - Microplastics in Drinking Water</a></li>
+                    <li><a href="https://www.nature.com/articles/s41467-023-37830-w" target="_blank">Nature - Microplastics in Human Blood</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Environment &amp; Animal Safety Hub. Educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script src="js/microplastic-food-web.js"></script>
+</body>
+</html>

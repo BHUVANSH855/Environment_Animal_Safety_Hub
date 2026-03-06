@@ -1,4 +1,4 @@
-/* Salinity Intrusion Coastal Aquifers Styles */
+﻿/* Salinity Intrusion Coastal Aquifers Styles */
 
 :root {
   --primary-color: #2980b9;
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 100%);
@@ -724,7 +724,7 @@ body {
 }
 
 .case-impacts li:before {
-  content: "•";
+  content: "â€¢";
   color: var(--intrusion-red);
   font-weight: bold;
   position: absolute;

@@ -1,4 +1,4 @@
-/* Animal Behavior Training Page Styles */
+﻿/* Animal Behavior Training Page Styles */
 
 :root {
   --primary-color: #4CAF50;
@@ -29,7 +29,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-secondary);
@@ -561,7 +561,7 @@ body {
 }
 
 .week-card li:before {
-  content: "✓";
+  content: "âœ“";
   color: var(--primary-color);
   font-weight: bold;
   position: absolute;

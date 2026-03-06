@@ -1,4 +1,4 @@
-/* ===== Drone Animation ===== */
+﻿/* ===== Drone Animation ===== */
 .drone-animation {
     position: fixed;
     top: 0;
@@ -107,7 +107,7 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-family: 'Roboto Slab', serif;
+    
 }
 
 .gradient-text {

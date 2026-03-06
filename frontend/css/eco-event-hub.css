@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --primary-color: #10b981;
   --secondary-color: #059669;
   --accent-color: #06b6d4;
@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  
   background-color: #f8fafc;
   color: var(--text-dark);
   line-height: 1.6;

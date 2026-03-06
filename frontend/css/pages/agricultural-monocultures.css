@@ -1,4 +1,4 @@
-/* Agricultural Monocultures Page Styles */
+﻿/* Agricultural Monocultures Page Styles */
 
 :root {
   --primary-color: #228B22;
@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-secondary);

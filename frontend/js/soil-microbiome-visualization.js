@@ -4,14 +4,16 @@
 // Configuration constants
 const CONFIG = {
   CHART_COLORS: {
-    primary: '#667eea',
-    secondary: '#764ba2',
-    accent: '#f093fb',
-    success: '#4caf50',
+    primary: '#2e7d32',
+    secondary: '#43a047',
+    accent: '#66bb6a',
+    success: '#2e7d32',
     warning: '#ff9800',
     error: '#f44336',
-    info: '#2196f3'
+    info: '#388e3c'
   },
+
+  
   ANIMATION_DURATION: 1000,
   RESPONSIVE_BREAKPOINTS: {
     mobile: 480,

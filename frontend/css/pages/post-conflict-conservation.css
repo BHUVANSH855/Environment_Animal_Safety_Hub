@@ -1,4 +1,4 @@
-/* Post-Conflict Conservation Page Styles */
+﻿/* Post-Conflict Conservation Page Styles */
 
 :root {
   --primary-forest: #059669;
@@ -16,7 +16,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  
   margin: 0;
   padding: 0;
 }

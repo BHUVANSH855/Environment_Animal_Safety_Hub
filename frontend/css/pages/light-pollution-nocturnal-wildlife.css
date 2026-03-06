@@ -1,4 +1,4 @@
-/* Light Pollution and Nocturnal Wildlife Disruption Styles */
+﻿/* Light Pollution and Nocturnal Wildlife Disruption Styles */
 
 :root {
   --primary-color: #2c3e50;
@@ -23,7 +23,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
@@ -270,7 +270,7 @@ body {
 }
 
 .rhythm-card li::before {
-  content: '•';
+  content: 'â€¢';
   color: var(--moon-gray);
   font-weight: bold;
   position: absolute;
@@ -473,7 +473,7 @@ body {
 }
 
 .dynamic-card li::before {
-  content: '•';
+  content: 'â€¢';
   color: var(--warning-color);
   font-weight: bold;
   position: absolute;
@@ -605,7 +605,7 @@ body {
 }
 
 .mitigation-card li::before {
-  content: '•';
+  content: 'â€¢';
   color: var(--primary-color);
   font-weight: bold;
   position: absolute;
@@ -681,7 +681,7 @@ body {
 }
 
 .findings li::before {
-  content: '✓';
+  content: 'âœ“';
   color: var(--star-yellow);
   font-weight: bold;
   position: absolute;

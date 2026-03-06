@@ -1,4 +1,4 @@
-/* Coastal Noise from Tourism and Reef Fish Recruitment Styles */
+﻿/* Coastal Noise from Tourism and Reef Fish Recruitment Styles */
 
 :root {
   --primary-color: #3498db;
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #e8f4fd 0%, #d1ecf1 100%);
@@ -508,7 +508,7 @@ body {
 }
 
 .study-card li::before {
-  content: '✓';
+  content: 'âœ“';
   position: absolute;
   left: 0;
   color: var(--success-color);
@@ -576,7 +576,7 @@ body {
 }
 
 .solution-card li::before {
-  content: '→';
+  content: 'â†’';
   position: absolute;
   left: 0;
   color: var(--coral-teal);

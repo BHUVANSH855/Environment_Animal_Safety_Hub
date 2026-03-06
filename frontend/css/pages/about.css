@@ -1,4 +1,4 @@
-    /* ---------------- THEME VARIABLES ---------------- */
+﻿    /* ---------------- THEME VARIABLES ---------------- */
     :root {
       --text-primary: #1e293b;
       --text-secondary: #475569;
@@ -21,7 +21,7 @@
 
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      
       color: var(--text-primary);
       background: linear-gradient(180deg, rgba(67,160,71,0.05), rgba(27,94,32,0.08));
     }

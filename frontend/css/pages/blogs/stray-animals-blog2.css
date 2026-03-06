@@ -49,7 +49,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    
     background: var(--light-bg);
     color: var(--text-dark);
     line-height: 1.8;
@@ -172,7 +172,7 @@ body::before {
 }
 
 .hero-title {
-    font-family: 'Montserrat', sans-serif;
+    
     font-size: 4.2rem;
     font-weight: 800;
     color: white;
@@ -225,7 +225,7 @@ body::before {
 }
 
 .section-title {
-    font-family: 'Montserrat', sans-serif;
+    
     font-size: 3.2rem;
     color: var(--primary-green);
     margin-bottom: 20px;
@@ -540,7 +540,7 @@ body::before {
 }
 
 .cta-title {
-    font-family: 'Montserrat', sans-serif;
+    
     font-size: 3.5rem;
     color: white;
     margin-bottom: 30px;
@@ -623,7 +623,7 @@ body::before {
     color: white;
     margin-bottom: 25px;
     font-size: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
+    
     display: flex;
     align-items: center;
     gap: 10px;

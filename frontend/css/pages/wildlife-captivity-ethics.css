@@ -1,4 +1,4 @@
-/* Wildlife Captivity Ethics Page Styles */
+﻿/* Wildlife Captivity Ethics Page Styles */
 
 :root {
   --primary-color: #4A4A8A;
@@ -29,7 +29,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-secondary);

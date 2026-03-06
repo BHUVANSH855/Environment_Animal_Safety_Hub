@@ -1,4 +1,4 @@
-/* ===== Hero Section ===== */
+﻿/* ===== Hero Section ===== */
 .territorial-hero {
     padding: 120px 5% 80px;
     background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
@@ -94,7 +94,7 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-family: 'Roboto Slab', serif;
+    
 }
 
 .gradient-text {

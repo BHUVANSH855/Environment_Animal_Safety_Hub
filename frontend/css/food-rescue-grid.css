@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary: #2E7D32;
     --primary-dark: #1b5e20;
     --primary-light: #4caf50;
@@ -23,7 +23,7 @@
 }
 
 body {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;

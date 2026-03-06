@@ -1,5 +1,5 @@
-/* Plant Secondary Metabolite Changes Under CO₂ Enrichment - CSS */
-/* Theme: Plant Chemistry & CO₂ Effects */
+﻿/* Plant Secondary Metabolite Changes Under COâ‚‚ Enrichment - CSS */
+/* Theme: Plant Chemistry & COâ‚‚ Effects */
 
 :root {
     /* Plant Chemistry Color Palette */
@@ -9,8 +9,8 @@
     --plant-light: #f5f9f5;        /* Off-white with green tint */
     --plant-dark: #1a3d1a;         /* Dark forest */
 
-    /* CO₂ and Chemical Colors */
-    --co2-blue: #3498db;           /* CO₂ blue */
+    /* COâ‚‚ and Chemical Colors */
+    --co2-blue: #3498db;           /* COâ‚‚ blue */
     --defense-green: #27ae60;      /* Defense compounds */
     --herbivore-orange: #e67e22;   /* Herbivore impact */
     --photosynthesis-yellow: #f1c40f; /* Photosynthesis */
@@ -72,7 +72,7 @@
 }
 
 body {
-    font-family: var(--font-primary);
+    
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     color: var(--plant-dark);
@@ -184,7 +184,7 @@ body {
     font-weight: 500;
 }
 
-/* CO₂ Simulator */
+/* COâ‚‚ Simulator */
 .co2-simulator {
     background: rgba(255, 255, 255, 0.95);
     padding: var(--spacing-xl);
@@ -776,7 +776,7 @@ body {
 }
 
 .priority-item li::before {
-    content: '🔬';
+    content: 'ðŸ”¬';
     position: absolute;
     left: 0;
     color: var(--plant-accent);

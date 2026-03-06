@@ -1,4 +1,4 @@
-/* Pharmaceutical Residues in Aquatic Ecosystems Styles */
+﻿/* Pharmaceutical Residues in Aquatic Ecosystems Styles */
 
 :root {
   --primary-color: #9b59b6;
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);

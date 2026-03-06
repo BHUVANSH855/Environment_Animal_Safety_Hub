@@ -1,4 +1,4 @@
-/* Arctic Freshwater Influx & Marine Salinity Shifts - CSS */
+﻿/* Arctic Freshwater Influx & Marine Salinity Shifts - CSS */
 /* Theme: Arctic Ocean Blues with Ice and Marine Elements */
 
 :root {
@@ -55,7 +55,7 @@
 }
 
 body {
-    font-family: var(--font-primary);
+    
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     color: var(--glacier-white);
@@ -743,7 +743,7 @@ body {
 }
 
 .scenario li::before {
-    content: '→';
+    content: 'â†’';
     position: absolute;
     left: 0;
     color: var(--marine-teal);
@@ -859,7 +859,7 @@ body {
 }
 
 .strategy-phase li::before {
-    content: '•';
+    content: 'â€¢';
     position: absolute;
     left: 0;
     color: var(--marine-teal);
@@ -945,7 +945,7 @@ body {
 }
 
 .policy-card li::before {
-    content: '✓';
+    content: 'âœ“';
     position: absolute;
     left: 0;
     color: var(--marine-teal);

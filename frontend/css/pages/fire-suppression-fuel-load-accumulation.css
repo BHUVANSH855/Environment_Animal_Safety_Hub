@@ -1,4 +1,4 @@
-/* Fire Suppression and Fuel Load Accumulation Styles */
+﻿/* Fire Suppression and Fuel Load Accumulation Styles */
 
 :root {
   --primary-color: #e74c3c;
@@ -23,7 +23,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
@@ -342,7 +342,7 @@ body {
 }
 
 .education-card li:before {
-  content: "🔥";
+  content: "ðŸ”¥";
   margin-right: 10px;
 }
 

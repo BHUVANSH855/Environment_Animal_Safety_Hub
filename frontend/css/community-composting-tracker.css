@@ -1,4 +1,4 @@
-/* Community Composting Tracker Styles */
+﻿/* Community Composting Tracker Styles */
 
 :root {
   --primary-brown: #8b5a3c;
@@ -30,7 +30,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
   background: linear-gradient(135deg, #faf6f1 0%, #f0ebe5 100%);
   color: var(--text-dark);
   line-height: 1.6;

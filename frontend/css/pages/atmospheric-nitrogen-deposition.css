@@ -1,4 +1,4 @@
-/* Atmospheric Nitrogen Deposition Styles */
+﻿/* Atmospheric Nitrogen Deposition Styles */
 
 :root {
   --primary-color: #27ae60;
@@ -21,7 +21,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);

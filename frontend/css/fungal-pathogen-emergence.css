@@ -1,4 +1,4 @@
-/* Fungal Pathogen Emergence Styles */
+﻿/* Fungal Pathogen Emergence Styles */
 
 :root {
     --primary-color: #2e7d32;
@@ -23,7 +23,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
@@ -525,7 +525,7 @@ body {
 }
 
 .solution-category li:before {
-    content: "✓";
+    content: "âœ“";
     position: absolute;
     left: 0;
     color: var(--secondary-color);

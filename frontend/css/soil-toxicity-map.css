@@ -1,61 +1,184 @@
-/* Urban Soil Toxicity Exposure Map Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f9f6f2;
-    color: #222;
+﻿/* Urban Soil Toxicity Exposure Map - Updated Theme */
+
+/* Global Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-header {
-    background: #795548;
-    color: #fff;
-    padding: 1rem 2rem;
-    text-align: center;
+
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:#f4f8f4;
+    color:#2c2c2c;
+    line-height:1.6;
 }
-#map-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 1rem;
+
+/* Header */
+header{
+    background: linear-gradient(135deg,#2e7d32,#43a047);
+    color:white;
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
-#soil-map {
-    flex: 2 1 600px;
-    height: 70vh;
-    min-width: 350px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
+
+header h1{
+    font-size:2.2rem;
+    letter-spacing:.5px;
 }
-#filters-panel {
-    flex: 1 1 250px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 1rem;
-    min-width: 220px;
-    max-width: 320px;
-    margin-bottom: 1rem;
+
+/* Layout */
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
 }
-#risk-details, #gardening-guidance {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin: 1rem;
-    padding: 1rem 2rem;
+
+/* Map Section Layout */
+#map-section{
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+    margin-bottom:30px;
 }
-footer {
-    background: #795548;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem;
-    margin-top: 2rem;
+
+/* Map Container */
+#soil-map{
+    flex:3;
+    height:70vh;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.12);
+    border:3px solid #e5efe5;
 }
-@media (max-width: 900px) {
-    #map-section {
-        flex-direction: column;
+
+/* Filter Panel Card */
+#filters-panel{
+    flex:1;
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    border-left:5px solid #2e7d32;
+}
+
+#filters-panel h2{
+    font-size:1.4rem;
+    margin-bottom:18px;
+    color:#2e7d32;
+}
+
+/* Labels */
+#filters-panel label{
+    display:block;
+    margin-bottom:15px;
+    font-size:14px;
+    font-weight:500;
+}
+
+/* Dropdown */
+#filters-panel select{
+    width:100%;
+    padding:8px 10px;
+    margin-top:5px;
+    border-radius:6px;
+    border:1px solid #d4d4d4;
+    font-size:14px;
+    transition:0.3s;
+}
+
+#filters-panel select:focus{
+    outline:none;
+    border-color:#2e7d32;
+}
+
+/* Button */
+#apply-filters{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    background:#2e7d32;
+    color:white;
+    border-radius:6px;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#apply-filters:hover{
+    background:#1b5e20;
+    transform:translateY(-2px);
+}
+
+/* Information Cards */
+#risk-details,
+#gardening-guidance{
+    background:white;
+    border-radius:12px;
+    padding:25px 30px;
+    margin-bottom:25px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    border-left:5px solid #2e7d32;
+}
+
+/* Section Headings */
+#risk-details h2,
+#gardening-guidance h2{
+    font-size:1.5rem;
+    margin-bottom:15px;
+    color:#2e7d32;
+}
+
+/* Lists */
+#risk-details ul,
+#gardening-guidance ul{
+    padding-left:18px;
+}
+
+#risk-details li,
+#gardening-guidance li{
+    margin-bottom:8px;
+}
+
+/* Footer */
+footer{
+    background:linear-gradient(135deg,#2e7d32,#43a047);
+    color:white;
+    text-align:center;
+    padding:12px;
+    margin-top:40px;
+}
+
+/* Responsive Design */
+@media(max-width:1000px){
+
+    #map-section{
+        flex-direction:column;
     }
-    #soil-map, #filters-panel {
-        min-width: unset;
-        width: 100%;
+
+    #soil-map{
+        height:55vh;
     }
+
+    #filters-panel{
+        width:100%;
+    }
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:1.6rem;
+    }
+
+    #soil-map{
+        height:50vh;
+    }
+
+    main{
+        padding:15px;
+    }
+
 }

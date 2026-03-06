@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary: #6A1B9A;
     --quiet: #4CAF50;
     --moderate: #FFD700;
@@ -14,7 +14,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    
     background: var(--bg);
     color: var(--text);
 }

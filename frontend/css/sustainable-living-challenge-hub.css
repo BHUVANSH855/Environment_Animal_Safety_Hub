@@ -1,4 +1,4 @@
-/* Sustainable Living Challenge Hub Styles */
+﻿/* Sustainable Living Challenge Hub Styles */
 
 :root {
     --primary-color: #10b981;
@@ -34,7 +34,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     background-color: var(--light-bg);
     color: var(--text-primary);
     line-height: 1.6;

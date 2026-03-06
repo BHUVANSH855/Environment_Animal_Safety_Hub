@@ -1,4 +1,4 @@
-/* wildlife-trade.css */
+﻿/* wildlife-trade.css */
 
 /* ===== Hero Section ===== */
 .trade-hero {
@@ -51,7 +51,7 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-family: 'Roboto Slab', serif;
+    
 }
 
 .gradient-text {
@@ -2174,7 +2174,7 @@
 }
 
 .pledge-content li:before {
-    content: '✓';
+    content: 'âœ“';
     color: #2ecc71;
     font-weight: bold;
 }

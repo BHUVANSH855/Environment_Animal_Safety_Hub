@@ -1,4 +1,4 @@
-/* Microbial Community Shifts Page Styles */
+﻿/* Microbial Community Shifts Page Styles */
 
 :root {
     /* Microbial Theme Colors */
@@ -30,7 +30,7 @@
     --spacing-xl: 4rem;
 
     /* Typography */
-    --font-family: 'Poppins', sans-serif;
+    --
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -55,7 +55,7 @@
 }
 
 body {
-    font-family: var(--font-family);
+    
     line-height: 1.6;
     color: #374151;
     background: linear-gradient(135deg, var(--microbial-light) 0%, #ffffff 100%);
