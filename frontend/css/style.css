@@ -1,20 +1,22 @@
+/* Fix navbar alignment to the top */
 #navbar-container {
-  height: 80px;
+  height: auto;
   width: 100%;
   display: block;
 }
 
 .navbar {
-  position: fixed;           /* Lock navbar */
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2000;             /* Higher than other components */
+  z-index: 2000;
 }
 
 body {
   margin: 0;
   padding: 0;
+  padding-top: 0;
 }
 
 :root {
@@ -64,8 +66,9 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 0;
 }
+
 /* Default sections: transparent or light background */
 
 body {
@@ -4947,4 +4950,34 @@ textarea:focus {
   min-height: auto !important;
   height: auto !important;
   padding-top: 40px !important;
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  margin-left: 40px;
+}
+
+/* login & signup */
+.auth-guest-only {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* theme toggle + language */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 12px;
 }

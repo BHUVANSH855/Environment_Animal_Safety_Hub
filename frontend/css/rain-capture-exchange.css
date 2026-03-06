@@ -1,61 +1,215 @@
-﻿/* Neighborhood Rain Capture Exchange Styles */
-body {
-    
-    margin: 0;
-    padding: 0;
-    background: #f0f7fa;
-    color: #222;
+﻿/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
 }
-header {
-    background: #1976d2;
-    color: #fff;
-    padding: 1rem 2rem;
-    text-align: center;
+
+body{
+background:#f3f8f4;
+color:#333;
 }
-#map-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 1rem;
+
+
+/* HEADER */
+
+header{
+background:linear-gradient(135deg,#2e7d32,#43a047);
+color:white;
+text-align:center;
+padding:40px 20px;
 }
-#rain-map {
-    flex: 2 1 600px;
-    height: 70vh;
-    min-width: 350px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
+
+header h1{
+font-size:32px;
+font-weight:600;
 }
-#filters-panel {
-    flex: 1 1 250px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 1rem;
-    min-width: 220px;
-    max-width: 320px;
-    margin-bottom: 1rem;
+
+
+/* CONTAINER */
+
+main{
+max-width:1200px;
+margin:auto;
+padding:30px 20px;
 }
-#asset-registry, #demand-posting, #exchange-coordination, #forecast-analytics, #trust-layer, #reminders-guidelines {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin: 1rem;
-    padding: 1rem 2rem;
+
+
+/* MAP + FILTER LAYOUT */
+
+#map-section{
+display:flex;
+gap:25px;
+align-items:flex-start;
+margin-bottom:30px;
 }
-footer {
-    background: #1976d2;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem;
-    margin-top: 2rem;
+
+
+/* MAP */
+
+#rain-map{
+flex:2;
+height:70vh;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
 }
-@media (max-width: 900px) {
-    #map-section {
-        flex-direction: column;
-    }
-    #rain-map, #filters-panel {
-        min-width: unset;
-        width: 100%;
-    }
+
+
+/* FILTER PANEL */
+
+#filters-panel{
+flex:1;
+background:white;
+border-radius:12px;
+padding:20px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+#filters-panel h2{
+color:#2e7d32;
+margin-bottom:5px;
+}
+
+
+/* FILTER FORM */
+
+#filters-panel label{
+display:flex;
+flex-direction:column;
+font-size:14px;
+gap:6px;
+}
+
+select{
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+transition:0.2s;
+}
+
+select:focus{
+outline:none;
+border-color:#2e7d32;
+}
+
+
+/* BUTTON */
+
+button{
+background:#2e7d32;
+color:white;
+border:none;
+padding:10px;
+border-radius:6px;
+cursor:pointer;
+transition:0.2s;
+font-weight:500;
+}
+
+button:hover{
+background:#1b5e20;
+transform:scale(1.04);
+}
+
+
+/* CARD SECTIONS */
+
+#asset-registry,
+#demand-posting,
+#exchange-coordination,
+#forecast-analytics,
+#trust-layer,
+#reminders-guidelines{
+
+background:white;
+border-radius:12px;
+padding:25px;
+margin-bottom:25px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+#asset-registry:hover,
+#demand-posting:hover,
+#exchange-coordination:hover,
+#forecast-analytics:hover,
+#trust-layer:hover,
+#reminders-guidelines:hover{
+
+transform:translateY(-4px);
+box-shadow:0 10px 24px rgba(0,0,0,0.12);
+}
+
+
+/* SECTION TITLES */
+
+section h2{
+color:#2e7d32;
+margin-bottom:12px;
+}
+
+
+/* FORM STYLING */
+
+form{
+display:grid;
+gap:12px;
+max-width:400px;
+}
+
+input{
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+input:focus{
+outline:none;
+border-color:#2e7d32;
+}
+
+
+/* LISTS */
+
+ul{
+padding-left:18px;
+}
+
+ul li{
+margin-bottom:6px;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#2e7d32;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+#map-section{
+flex-direction:column;
+}
+
+#rain-map{
+height:50vh;
+}
+
+#filters-panel{
+width:100%;
+}
+
 }
