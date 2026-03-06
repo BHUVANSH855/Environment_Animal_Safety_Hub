@@ -7,12 +7,15 @@
   <link rel="icon" type="image/png" href="/envirnoment-logo.png" />
 
   <!-- global & variables (original) -->
-  <link rel="stylesheet" href="css/global/utilities.css" />
-  <link rel="stylesheet" href="../../css/global/variables.css" />
+     <link rel="stylesheet" href="../../css/global/variables.css" />
+  <link rel="stylesheet" href="../../css/global/utilities.css" />
+
   <link rel="stylesheet" href="../../css/components/card.css" />
-  <link rel="stylesheet" href="../../css/components/navbar.css" />
+  <link rel="stylesheet" href="../../css/components/navbar.css"/>
+  <link rel="stylesheet" href="../../css/components/interactive-elements.css" />
   <link rel="stylesheet" href="../../css/components/footer.css" />
-  <link rel="stylesheet" href="../../css/pages/games/kids-zone.css" />
+  <link rel="stylesheet" href="../../css/pages/games/kids-zone.css"/>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
   <!-- AOS & Font Awesome -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -248,9 +251,11 @@
 </head>
 
 <body>
+ 
 
   <div id="cursor-container"></div>
-  <script src="../../js/components/loadComponents.js"></script>
+  <div id="navbar-container"></div>
+  
 
   <!-- Background Particles -->
   <div class="bg-particles" id="particles"></div>
@@ -262,23 +267,11 @@
   </button>
 
   <!-- Breadcrumb -->
-  <nav>
-    <div>
-      <div id="navbar-container"></div>
-    </div>
-  </nav>
 
   <!-- Header -->
   <header class="page-header">
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-      <a href="../../index.html">
-        <i class="fas fa-home"></i>
-        Home
-      </a>
-      <span>/</span>
-      <span>Kids Zone</span>
-    </nav>
+    
     <div class="header-content">
       <h1 style="padding-top: 65px;">🌱 EcoLife Kids Zone</h1>
       <p class="tagline">Where learning meets fun, and sustainability becomes a game!</p>
@@ -1378,6 +1371,6 @@
       });
     })();
   </script>
-  
+  <script src="../../js/components/component-loader.js"></script>
 </body>
 </html>
