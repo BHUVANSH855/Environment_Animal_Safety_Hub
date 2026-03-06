@@ -202,27 +202,6 @@ body {
     .hero-video-overlay {
       background: linear-gradient(135deg, rgba(0, 40, 0, 0.4) 0%, rgba(0, 80, 0, 0.2) 100%);
     }
-    .pagination-container {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .page-btn {
-      padding: 8px 16px;
-      border: none;
-      background: #22c55e;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .page-btn:hover {
-      background: #16a34a;
-    }
 
     .page-btn:disabled {
       background: #ccc;
@@ -348,7 +327,42 @@ body {
     </div>
   </div>
 
-
+  <!-- Fire Regime Crisis Alert -->
+  <div class="crisis-alert-banner" id="crisisAlert" style="display: none;">
+    <div class="crisis-alert-content">
+      <div class="crisis-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <div class="crisis-text">
+        <span class="crisis-level">🔥 LEVEL 3 CRISIS</span>
+        <span class="crisis-title">Fire Regime Shifts Causing Mass Wildlife Adaptation Failure</span>
+        <span class="crisis-action">400% increase in fire frequency - Immediate conservation action required</span>
+      </div>
+      <div class="crisis-actions">
+        <a class="crisis-btn" href="..//frontend/pages/environment/fire-regime-shifts.html">
+          <i class="fas fa-fire"></i> View Crisis Details
+          <span class="crisis-level">
+            🧊 LEVEL 3 CRISIS
+          </span>
+          <span class="crisis-title">
+            Polar Albedo Loss Accelerating Global Warming Feedback Loops
+          </span>
+          <span class="crisis-action">
+            Arctic warming is accelerating - urgent intervention needed before a Blue Ocean Event
+          </span>
+      </div>
+      <div class="crisis-actions">
+        <a class="crisis-btn" href="pages/environment/polar-albedo-feedback-loop.html">
+          <i class="fas fa-snowflake">
+          </i>
+          View Crisis Details
+        </a>
+        <button aria-label="Close crisis alert" class="crisis-close" onclick="closeCrisisAlert()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Permafrost Methane Crisis Alert Banner - Level 3 Emergency (#3128) -->
   <div class="noise-crisis-alert-banner" id="permafrost-crisis-alert-banner" style="display: none;">
@@ -775,7 +789,7 @@ body {
             </div>
           </article>
 
-                    <!-- Emergency Wildlife Help -->
+          <!-- Emergency Wildlife Help -->
           <article class="service-card" data-tilt="">
             <div class="service-card-inner">
               <div class="service-card-front">
@@ -786,9 +800,8 @@ body {
                 <p>24/7 emergency contacts and tips for injured wildlife and animal accidents.</p>
               </div>
               <div class="service-card-back">
-                <a class="service-link" href="pages/report/sos.html">
-                  Get Help <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                <a class="service-link" href="pages/report/sos.html">Get Help <i
+                    class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
@@ -941,22 +954,53 @@ body {
             <span class="card-tag">Conservation</span>
           </div>
         </div>
+        <div class="cards-grid">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-image">
+              <img alt="Adopt Pets" loading="lazy" src="assets/images/3d/adopt_pets.webp" />
+              <div class="card-overlay"><span class="card-tag">Adoption</span></div>
+            </div>
+            <div class="card-content">
+              <h3>Adopt Pets</h3>
+              <p>Help stray animals find loving homes. Open your heart and home to a furry friend in need.</p>
+              <div class="card-footer">
+                <a class="card-btn" href="pages/animal-care/adoption-management.html">Adopt Now <i
+                    class="fa-solid fa-arrow-right"></i></a>
+                <div class="card-stats"><i class="fa-solid fa-heart"></i>1.2K adopted</div>
+              </div>
+            </div>
+          </article>
 
-        <div class="card-content">
-          <h3>Protect Wildlife</h3>
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-image">
+              <img alt="Wildlife Protection" loading="lazy"
+                src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg" />
+              <div class="card-overlay"><span class="card-tag">Conservation</span></div>
+            </div>
+            <div class="card-content">
+              <h3>Protect Wildlife</h3>
+              <p>Learn how to protect endangered species and preserve their natural habitats.</p>
+              <div class="card-footer">
+                <a class="card-btn" href="pages/animal-care/animal-welfare-education.html">Learn More <i
+                    class="fa-solid fa-arrow-right"></i></a>
+                <div class="card-stats"><i class="fa-solid fa-shield-heart"></i>500+ protected</div>
+              </div>
+            </div>
+          </article>
 
-          <p>
-            Learn how to protect endangered species and preserve
-            their natural habitats.
-          </p>
-
-          <div class="card-footer">
-            <a href="pages/animal-care/animal-welfare-education.html" class="card-btn">
-              Learn More <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-            <div class="card-stats">
-              <i class="fa-solid fa-shield-heart"></i> 500+ protected
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-image">
+              <img alt="Feed Animals" loading="lazy" src="assets/images/3d/feed_animals.webp" />
+              <div class="card-overlay"><span class="card-tag">Feeding</span></div>
+            </div>
+            <div class="card-content">
+              <h3>Feed Stray Animals</h3>
+              <p>Learn safe ways to feed stray animals and join our community feeding programs.</p>
+              <div class="card-footer">
+                <a class="card-btn" href="pages/animal-safety/animal-nutrition-feeding.html">Join Program <i
+                    class="fa-solid fa-arrow-right"></i></a>
+                <div class="card-stats"><i class="fa-solid fa-bowl-food"></i>5K+ fed daily</div>
+              </div>
             </div>
           </div>
         </div>
@@ -1599,11 +1643,21 @@ body {
     <!-- Kids Quiz Section -->
 <section class="kids-quiz-section" id="quiz">
 
-  <div class="quiz-bg-elements">
-    <div class="quiz-shape shape-1"></div>
-    <div class="quiz-shape shape-2"></div>
-    <div class="quiz-shape shape-3"></div>
-  </div>
+      <div class="section-container">
+        <div class="quiz-content">
+          <!-- LEFT CONTENT -->
+          <div class="quiz-text" data-aos="fade-right">
+            <span class="quiz-badge"><i class="fa-solid fa-child"></i> For Kids</span>
+            <h2>Kids Quiz Zone 🎮</h2>
+            <p>A fun and interactive way for kids to learn about nature, animals, and the environment. Answer questions,
+              earn badges, and become an eco-champion!</p>
+
+            <!-- FEATURES -->
+            <div class="quiz-features">
+              <div class="quiz-feature" data-tilt>
+                <div class="feature-icon-wrapper icon-game"><i class="fa-solid fa-gamepad"></i></div>
+                <span>Fun Games</span>
+              </div>
 
   <div class="section-container">
 
@@ -1613,7 +1667,15 @@ body {
         <i class="fa-solid fa-child"></i> For Kids
       </span>
 
-      <h2>Kids Quiz Zone 🎮</h2>
+            <!-- ACTION BUTTONS -->
+            <div class="quiz-actions">
+              <a href="js/quizzes/quiz.html" class="quiz-btn btn-primary-quiz"><i class="fa-solid fa-play"></i> Start
+                Quiz Now</a>
+              <a href="js/games/waste-game.html" class="quiz-btn btn-secondary-quiz"><i class="fa-solid fa-gamepad"></i>
+                Play Waste Game</a>
+              <a href="../frontend/pages/animal-safety/animal-first-aid.html" class="quiz-btn btn-primary-quiz">
+                <i class="fa-solid fa-play"></i> Start Quiz Now
+              </a>
 
       <p>
         A fun and interactive way for kids to learn about nature, animals, and
@@ -1996,6 +2058,52 @@ body {
                   <div class="icon-box fact-icon"><i class="fa-solid fa-smog"></i></div>
                   <h3>Fact</h3>
                   <p>Current warming is 10x faster than natural cycles, driven by human emissions.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="myth-card-wrapper">
+            <article class="myth-card">
+              <div class="card-face card-front">
+                <div class="card-shine"></div>
+                <div class="card-content">
+                  <div class="icon-box myth-icon"><i class="fa-solid fa-bolt"></i></div>
+                  <h3>Myth</h3>
+                  <p>"EVs cause zero pollution"</p>
+                  <div class="action-pill">Reveal Truth</div>
+                </div>
+              </div>
+              <div class="card-face card-back">
+                <div class="card-shine"></div>
+                <div class="card-content">
+                  <div class="icon-box fact-icon"><i class="fa-solid fa-battery-full"></i></div>
+                  <h3>Fact</h3>
+                  <p>EVs reduce tailpipe emissions, but power generation and battery manufacturing still have
+                    environmental impacts.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="myth-card-wrapper">
+            <article class="myth-card">
+              <div class="card-face card-front">
+                <div class="card-shine"></div>
+                <div class="card-content">
+                  <div class="icon-box myth-icon"><i class="fa-solid fa-seedling"></i></div>
+                  <h3>Myth</h3>
+                  <p>"Planting trees solves it all"</p>
+                  <div class="action-pill">Reveal Truth</div>
+                </div>
+              </div>
+              <div class="card-face card-back">
+                <div class="card-shine"></div>
+                <div class="card-content">
+                  <div class="icon-box fact-icon"><i class="fa-solid fa-tree"></i></div>
+                  <h3>Fact</h3>
+                  <p>Trees help, but we must also drastically reduce carbon emissions at the source to fight climate
+                    change.</p>
                 </div>
               </div>
             </article>
