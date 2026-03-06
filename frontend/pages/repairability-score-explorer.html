@@ -1,31 +1,98 @@
-<!-- Repairability Score Explorer -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Repairability Score Explorer</title>
-  <link rel="stylesheet" href="repairability-score-explorer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Repairability Score Explorer</title>
+
+<link rel="stylesheet" href="repairability-score-explorer.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+
 <body>
-  <div class="repair-score-container">
-    <h1>Repairability Score Explorer</h1>
-    <div class="repair-score-map" id="repairScoreMap">
-      <span>Product Comparison Visualization</span>
-    </div>
-    <div class="repair-score-visual" id="repairScoreVisual"></div>
-    <div class="repair-score-actions" id="repairScoreActions"></div>
-    <div class="repair-score-impact" id="repairScoreImpact"></div>
-    <div class="repair-score-history" id="repairScoreHistory"></div>
-    <div class="repair-score-feedback" id="repairScoreFeedback">
-      <h2>Feedback</h2>
-      <form id="repairScoreFeedbackForm">
-        <textarea id="repairScoreFeedbackInput" placeholder="Share your thoughts..."></textarea>
-        <button type="submit">Submit Feedback</button>
-      </form>
-      <div id="repairScoreFeedbackList"></div>
-    </div>
-  </div>
-  <script src="repairability-score-explorer.js"></script>
+
+<header class="page-header">
+<h1><i class="fas fa-tools"></i> Repairability Score Explorer</h1>
+<p>Compare products based on repairability and sustainability impact</p>
+</header>
+
+
+<main class="container">
+
+<section class="card map-card">
+
+<h2><i class="fas fa-chart-bar"></i> Product Comparison</h2>
+
+<div id="repairScoreMap" class="map-box">
+Product Comparison Visualization
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2><i class="fas fa-wrench"></i> Repairability Scores</h2>
+
+<div id="repairScoreVisual"></div>
+
+</section>
+
+
+<section class="card">
+
+<h2><i class="fas fa-screwdriver"></i> Repair Actions</h2>
+
+<div id="repairScoreActions"></div>
+
+</section>
+
+
+<section class="card">
+
+<h2><i class="fas fa-leaf"></i> Environmental Impact</h2>
+
+<div id="repairScoreImpact"></div>
+
+</section>
+
+
+<section class="card">
+
+<h2><i class="fas fa-clock"></i> Repair History</h2>
+
+<div id="repairScoreHistory"></div>
+
+</section>
+
+
+<section class="card feedback-card">
+
+<h2><i class="fas fa-comment"></i> Feedback</h2>
+
+<form id="repairScoreFeedbackForm">
+
+<textarea id="repairScoreFeedbackInput"
+placeholder="Share your thoughts..."></textarea>
+
+<button type="submit" class="btn-primary">
+Submit Feedback
+</button>
+
+</form>
+
+<div id="repairScoreFeedbackList"></div>
+
+</section>
+
+</main>
+
+
+<script src="repairability-score-explorer.js"></script>
+
 </body>
 </html>
