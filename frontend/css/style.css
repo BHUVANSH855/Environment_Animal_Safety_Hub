@@ -1,20 +1,21 @@
-
+/* Fix navbar alignment to the top */
 #navbar-container {
-  height: 80px;              /* Reserve exact space */
+  height: auto;
   width: 100%;
 }
 
 .navbar {
-  position: fixed;           /* Lock navbar */
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2000;             /* Higher than other components */
+  z-index: 2000;
 }
 
 body {
-  padding-top: 80px;         /* Push content below navbar */
+  padding-top: 0;
 }
+
 :root {
   /* Light Theme Variables */
   --primary-color: #2e7d32;      /* main green */
@@ -62,8 +63,9 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 0;
 }
+
 /* Default sections: transparent or light background */
 
 body {
