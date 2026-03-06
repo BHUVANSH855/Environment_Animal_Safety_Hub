@@ -31,6 +31,106 @@
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>:root[data-theme="light"] {
+    --primary-color: #2ecc71;        /* main green */
+    --primary-color-hover: #27ae60;  
+    --secondary-color: #1abc9c;      /* tealish accent */
+    --bg-color: #f5fdf8;             /* light green-ish background */
+    --text-color: #1e3a2f;           /* dark green text */
+    --card-bg: #ffffff;               /* white-ish card */
+    --card-shadow: rgba(46, 204, 113, 0.2);
+    --btn-glow: rgba(46, 204, 113, 0.5);
+    --link-color: #2ecc71;
+}
+
+:root[data-theme="dark"] {
+    --primary-color: #27ae60;
+    --primary-color-hover: #2ecc71;
+    --secondary-color: #16a085;
+    --bg-color: #0a1f13;             /* dark green background */
+    --text-color: #a8f0c6;           /* light green text */
+    --card-bg: #14321f;               /* dark card */
+    --card-shadow: rgba(39, 174, 96, 0.3);
+    --btn-glow: rgba(39, 174, 96, 0.6);
+    --link-color: #2ecc71;
+}
+
+.hub-hero {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: var(--text-color);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #2ecc71, #1abc9c);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 0 15px var(--btn-glow);
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color-hover);
+    box-shadow: 0 0 20px var(--btn-glow);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+.map-wrapper {
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+}
+
+/* Legend markers */
+.legend-marker.cleanup { background-color: #2ecc71; }
+.legend-marker.plantation { background-color: #27ae3d; }
+.legend-marker.workshop { background-color: #16a02d; }
+.legend-marker.animal-care { background-color: #1abc9c; }
+.map-wrapper {
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+}
+.how-section{
+    background-color: darkgreen !important;
+}
+
+.step-card {
+    background-color: var( --card-bg) !important;
+    color: var(--text-color);
+    border-left: 4px solid var(--primary-color);
+}
+
+.step-icon i {
+    color: var(--primary-color) !important;
+}
+/* Legend markers */
+.legend-marker.cleanup { background-color: #3bcc2e; }
+.legend-marker.plantation { background-color: #27ae60; }
+.legend-marker.workshop { background-color: #16a085; }
+.legend-marker.animal-care { background-color: #2dbc1a; }
+.modal-container {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.btn-glow {
+    box-shadow: 0 0 10px var(--btn-glow);
+}
+
+.btn-lg {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-lg:hover {
+    background-color: var(--primary-color-hover);
+}</style>
 </head>
 
 <body>
@@ -189,7 +289,7 @@
         </section>
 
         <!-- How It Works Section -->
-        <section class="how-section">
+        <section class="how-section" style="background-color: rgb(0, 139, 0);">
             <div class="section-container">
                 <div class="section-header" data-aos="fade-up">
                     <span class="section-tag">
@@ -396,6 +496,10 @@
 
     <!-- Page Script -->
     <script src="../../js/pages/community-action-hub.js"></script>
+    <script>const toggleTheme = () => {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+}; </script>
 </body>
 
 </html>
