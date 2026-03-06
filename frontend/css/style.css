@@ -1,6 +1,5 @@
 /* Fix navbar alignment to the top */
 #navbar-container {
-  height: auto;
   width: 100%;
   display: block;
 }
