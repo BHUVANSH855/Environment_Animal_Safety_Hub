@@ -10,7 +10,6 @@
 /* ===== NAVBAR FIX - Prevent Layout Shift ===== */
 
 #navbar-container {
-  height: 80px;              /* Reserve exact space */
   width: 100%;
 }
 
