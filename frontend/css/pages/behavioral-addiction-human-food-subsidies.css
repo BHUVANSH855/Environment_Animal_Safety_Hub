@@ -1,4 +1,4 @@
-/* Behavioral Addiction to Human Food Subsidies Styles */
+﻿/* Behavioral Addiction to Human Food Subsidies Styles */
 
 :root {
   --primary-color: #e67e22;
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
@@ -205,7 +205,7 @@ body {
 }
 
 .evidence-list li::before {
-  content: '🍽️';
+  content: 'ðŸ½ï¸';
   position: absolute;
   left: 0;
   top: 0;
@@ -327,7 +327,7 @@ body {
 }
 
 .consequence-list li::before {
-  content: '⚠️';
+  content: 'âš ï¸';
   position: absolute;
   left: 0;
   top: 0;

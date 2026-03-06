@@ -1,4 +1,4 @@
-/* Predator Reintroduction Styles */
+﻿/* Predator Reintroduction Styles */
 
 :root {
     --primary-color: #2c5530;
@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);

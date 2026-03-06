@@ -1,4 +1,4 @@
-/* ===== ROOT THEME VARIABLES ===== */
+﻿/* ===== ROOT THEME VARIABLES ===== */
 :root {
   --primary: #2e7d32;
   --primary-light: #66bb6a;
@@ -11,7 +11,7 @@
 
 /* ===== BODY ===== */
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+  
   background: var(--bg-gradient);
   margin: 0;
   padding: 0;

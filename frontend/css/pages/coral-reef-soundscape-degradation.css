@@ -1,4 +1,4 @@
-/* Coral Reef Soundscape Degradation Styles */
+﻿/* Coral Reef Soundscape Degradation Styles */
 
 :root {
   --primary-color: #3498db;
@@ -21,7 +21,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
@@ -186,7 +186,7 @@ body {
 }
 
 .acoustic-card li::before {
-  content: '🔊';
+  content: 'ðŸ”Š';
   position: absolute;
   left: 0;
   color: var(--secondary-color);
@@ -254,7 +254,7 @@ body {
 }
 
 .noise-source li::before {
-  content: '⚠️';
+  content: 'âš ï¸';
   position: absolute;
   left: 0;
 }
@@ -321,7 +321,7 @@ body {
 }
 
 .mechanism li::before {
-  content: '🔴';
+  content: 'ðŸ”´';
   position: absolute;
   left: 0;
   font-size: 0.8rem;
@@ -505,7 +505,7 @@ body {
 }
 
 .solution-card li::before {
-  content: '✅';
+  content: 'âœ…';
   position: absolute;
   left: 0;
 }

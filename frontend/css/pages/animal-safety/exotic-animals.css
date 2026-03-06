@@ -1,8 +1,8 @@
-/* ========== EXOTIC ANIMALS PAGE STYLES ========== */
+﻿/* ========== EXOTIC ANIMALS PAGE STYLES ========== */
 
 body {
   background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-  font-family: 'Poppins', sans-serif;
+  
   color: #1a1a2e;
 }
 
@@ -268,7 +268,7 @@ body {
 }
 
 .legal-content li::before {
-  content: '•';
+  content: 'â€¢';
   position: absolute;
   left: 0;
   color: #8b5cf6;
@@ -388,7 +388,7 @@ body {
 }
 
 .care-requirements li::before {
-  content: '✓';
+  content: 'âœ“';
   position: absolute;
   left: 0;
   color: #22c55e;

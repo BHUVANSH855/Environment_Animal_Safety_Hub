@@ -1,4 +1,4 @@
-/* trophic-cascades.css */
+﻿/* trophic-cascades.css */
 
 /* Hero Section */
 .cascade-hero {
@@ -46,7 +46,7 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
+    
 }
 
 .gradient-text {
@@ -277,7 +277,7 @@
     font-size: 2.5rem;
     color: #1b5e20;
     margin-bottom: 15px;
-    font-family: 'Montserrat', sans-serif;
+    
 }
 
 .section-header p {
@@ -811,12 +811,12 @@
 }
 
 .node.high .node-label::after {
-    content: ' ↑';
+    content: ' â†‘';
     color: #F44336;
 }
 
 .node.low .node-label::after {
-    content: ' ↓';
+    content: ' â†“';
     color: #2196F3;
 }
 
@@ -825,22 +825,22 @@
 }
 
 .node.balanced .node-label::after {
-    content: ' ✓';
+    content: ' âœ“';
     color: #4CAF50;
 }
 
 .node.thriving .node-label::after {
-    content: ' ↑↑';
+    content: ' â†‘â†‘';
     color: #4CAF50;
 }
 
 .node.degraded .node-label::after {
-    content: ' ↓↓';
+    content: ' â†“â†“';
     color: #F44336;
 }
 
 .node.restored .node-label::after {
-    content: ' ↺';
+    content: ' â†º';
     color: #2196F3;
 }
 
@@ -1339,7 +1339,7 @@
 }
 
 .equation {
-    font-family: monospace;
+    
     font-size: 1.2rem;
     color: #333;
     background: #f8f9fa;
@@ -1476,7 +1476,7 @@
 }
 
 .case-consequences li::before {
-    content: "→";
+    content: "â†’";
     position: absolute;
     left: 0;
     color: #4CAF50;
@@ -2101,7 +2101,7 @@
 }
 
 .action-card li::before {
-    content: "•";
+    content: "â€¢";
     position: absolute;
     left: 0;
     color: #4CAF50;

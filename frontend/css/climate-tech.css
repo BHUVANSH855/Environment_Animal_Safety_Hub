@@ -1,4 +1,4 @@
-/* ===== Weather Animation ===== */
+﻿/* ===== Weather Animation ===== */
 .weather-animation {
     position: fixed;
     top: 0;
@@ -141,7 +141,7 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-family: 'Roboto Slab', serif;
+    
 }
 
 .gradient-text {
@@ -843,7 +843,7 @@
 }
 
 .climate-tips li:before {
-    content: '✓';
+    content: 'âœ“';
     color: #10b981;
     font-weight: bold;
 }

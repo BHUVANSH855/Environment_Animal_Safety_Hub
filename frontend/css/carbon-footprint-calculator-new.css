@@ -1,4 +1,4 @@
-/* Carbon Footprint Calculator - Comprehensive Styling */
+﻿/* Carbon Footprint Calculator - Comprehensive Styling */
 
 :root {
     --primary-color: #10b981;
@@ -40,7 +40,7 @@ body[data-theme="dark"] {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     background-color: var(--bg-secondary);
     color: var(--text-primary);
     transition: var(--transition);

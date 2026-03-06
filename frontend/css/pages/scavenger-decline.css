@@ -1,4 +1,4 @@
-/* Scavenger Decline Page Styles */
+﻿/* Scavenger Decline Page Styles */
 
 :root {
   --primary-color: #8B4513;
@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-secondary);

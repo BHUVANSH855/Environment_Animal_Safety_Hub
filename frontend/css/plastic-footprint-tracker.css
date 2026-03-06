@@ -1,4 +1,4 @@
-/* Reset */
+﻿/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 
 /* Body */
 body {
-    font-family: "Poppins", Arial, sans-serif;
+    
     background: #f4f9f6;
     color: #1f2933;
     line-height: 1.6;

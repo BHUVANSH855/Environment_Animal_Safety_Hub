@@ -1,4 +1,4 @@
-/* Fashion Impact Calculator Styles */
+﻿/* Fashion Impact Calculator Styles */
 :root {
     --primary-color: #d946ef;
     --primary-light: #f3e8ff;
@@ -30,7 +30,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    
     background: linear-gradient(135deg, var(--background) 0%, #f3e8ff) 100%;
     color: var(--text-primary);
     line-height: 1.6;

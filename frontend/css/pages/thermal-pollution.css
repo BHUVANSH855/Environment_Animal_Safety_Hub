@@ -1,4 +1,4 @@
-/* Thermal Pollution Page Styles */
+﻿/* Thermal Pollution Page Styles */
 
 :root {
     /* Color Variables */
@@ -39,7 +39,7 @@
     --spacing-2xl: 3rem;
 
     /* Typography */
-    --font-family: 'Poppins', sans-serif;
+    --
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -78,7 +78,7 @@
 }
 
 body {
-    font-family: var(--font-family);
+    
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
@@ -694,7 +694,7 @@ body {
 }
 
 .solution-pros li::before {
-    content: '✓';
+    content: 'âœ“';
     position: absolute;
     left: 0;
     color: var(--success-color);
@@ -702,7 +702,7 @@ body {
 }
 
 .solution-cons li::before {
-    content: '✗';
+    content: 'âœ—';
     position: absolute;
     left: 0;
     color: var(--danger-color);

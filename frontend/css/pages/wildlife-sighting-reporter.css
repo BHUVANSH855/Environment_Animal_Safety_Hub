@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --wildlife-primary: #059669;
   --wildlife-secondary: #10b981;
   --wildlife-accent: #34d399;
@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  
 }
 
 body {
@@ -253,7 +253,7 @@ body {
   border-radius: 12px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  font-family: "Poppins", sans-serif;
+  
 }
 
 .form-group input:focus,
@@ -505,7 +505,7 @@ body {
 }
 
 .tips-card li::before {
-  content: "✓";
+  content: "âœ“";
   color: var(--wildlife-primary);
   font-weight: 700;
   font-size: 1.2rem;
@@ -548,7 +548,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "Poppins", sans-serif;
+  
 }
 
 .filter-select:focus {

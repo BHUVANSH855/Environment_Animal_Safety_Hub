@@ -1,4 +1,4 @@
-/* animal-pain.css */
+﻿/* animal-pain.css */
 
 /* Hero Section */
 .pain-hero {
@@ -46,7 +46,7 @@ background-color: #c8ffb2;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-family: 'Merriweather', serif;
+    
 }
 
 .gradient-text {
@@ -337,7 +337,7 @@ background-color: #c8ffb2;
     font-size: 2.5rem;
     color: #311b92;
     margin-bottom: 15px;
-    font-family: 'Merriweather', serif;
+    
 }
 
 .section-header p {
@@ -1464,7 +1464,7 @@ blockquote {
 }
 
 .step-card li:before {
-    content: "•";
+    content: "â€¢";
     position: absolute;
     left: 0;
     color: #9C27B0;

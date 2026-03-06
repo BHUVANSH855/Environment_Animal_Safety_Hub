@@ -1,4 +1,4 @@
-/* Urban Shade Deficit Index Styles */
+﻿/* Urban Shade Deficit Index Styles */
 
 :root {
     --primary-green: #2E7D32;
@@ -28,7 +28,7 @@
 }
 
 body {
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     background: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
@@ -735,7 +735,7 @@ canvas {
 
 .leaflet-popup-content {
     margin: 1rem;
-    font-family: 'Poppins', sans-serif;
+    
 }
 
 .popup-title {

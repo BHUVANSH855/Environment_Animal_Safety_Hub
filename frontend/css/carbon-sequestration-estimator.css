@@ -1,4 +1,4 @@
-/* Carbon Sequestration Estimator CSS */
+﻿/* Carbon Sequestration Estimator CSS */
 /* Comprehensive styling with utilities, responsive design, and accessibility */
 
 /* CSS Variables and Root Styles */
@@ -127,7 +127,7 @@ html {
 }
 
 body {
-  font-family: var(--font-family-primary);
+  
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   color: var(--gray-900);
@@ -138,7 +138,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-secondary);
+  
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
   color: var(--gray-900);

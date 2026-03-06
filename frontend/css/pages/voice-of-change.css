@@ -1,4 +1,4 @@
-/* Voice of Change Page Styles */
+﻿/* Voice of Change Page Styles */
 
 :root {
   --primary-color: #2ecc71;
@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   color: var(--text-color);
   background-color: var(--light-bg);
 }

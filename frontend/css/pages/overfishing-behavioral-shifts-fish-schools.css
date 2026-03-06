@@ -1,7 +1,7 @@
-/* Overfishing Behavioral Shifts in Fish Schools Page Styles */
+﻿/* Overfishing Behavioral Shifts in Fish Schools Page Styles */
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e3a8a 100%);
@@ -298,7 +298,7 @@ body {
 }
 
 .mechanism-impact li::before {
-  content: '→';
+  content: 'â†’';
   position: absolute;
   left: 0;
   color: #60a5fa;
@@ -640,7 +640,7 @@ body {
 }
 
 .management-card li::before {
-  content: '✓';
+  content: 'âœ“';
   position: absolute;
   left: 0;
   color: #60a5fa;

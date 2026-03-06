@@ -1,25 +1,30 @@
 // Urban Pollinator Nesting Substrate Shortage - Interactive Dashboard
 
-// Tab switching functionality
+// Tab switching functionality (ID based FIXED)
 function showTab(tabName) {
-    // Hide all tabs
-    const tabs = document.querySelectorAll('.tab-content');
-    tabs.forEach(tab => tab.classList.remove('active'));
 
-    // Remove active class from all buttons
-    const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
+    // Hide all tab sections
+    document.getElementById('overview').classList.remove('active');
+    document.getElementById('analysis').classList.remove('active');
+    document.getElementById('impacts').classList.remove('active');
+    document.getElementById('solutions').classList.remove('active');
 
-    // Show selected tab
+    // Remove active class from buttons
+    document.getElementById('tab-overview').classList.remove('active');
+    document.getElementById('tab-analysis').classList.remove('active');
+    document.getElementById('tab-impacts').classList.remove('active');
+    document.getElementById('tab-solutions').classList.remove('active');
+
+    // Show selected section
     document.getElementById(tabName).classList.add('active');
 
-    // Add active class to clicked button
-    event.target.classList.add('active');
+    // Activate correct button using ID
+    document.getElementById('tab-' + tabName).classList.add('active');
 
     // Update URL hash
     window.location.hash = tabName;
 
-    // Initialize charts for the active tab
+    // Initialize charts if needed
     if (tabName === 'overview') {
         initOverviewCharts();
     } else if (tabName === 'analysis') {

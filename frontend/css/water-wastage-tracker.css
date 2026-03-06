@@ -1,4 +1,4 @@
-/* Water Wastage Tracker Styles - EcoLife Dark Theme */
+﻿/* Water Wastage Tracker Styles - EcoLife Dark Theme */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 :root {
   --primary: #10b981;
@@ -31,7 +31,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Outfit', sans-serif;
+  
   background-color: var(--bg-dark);
   background: radial-gradient(circle at top center, #0f172a 0%, #020617 100%);
   color: var(--text-main);

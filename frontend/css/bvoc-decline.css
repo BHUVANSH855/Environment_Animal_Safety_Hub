@@ -1,4 +1,4 @@
-/* BVOC Decline in Degraded Forests Styles */
+﻿/* BVOC Decline in Degraded Forests Styles */
 
 :root {
     --primary-color: #059669;
@@ -21,7 +21,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;

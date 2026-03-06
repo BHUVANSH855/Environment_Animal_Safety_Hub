@@ -1,4 +1,4 @@
-        .mood-badge {
+﻿        .mood-badge {
             background: #f3e3b0;
             padding: 0.5rem 2rem;
             border-radius: 40px;
@@ -108,7 +108,7 @@
         }
 
         .card-title {
-            font-family: 'Kalam', cursive;
+            
             font-size: 1.9rem;
             color: #21522e;
         }
@@ -151,10 +151,10 @@
 
         .prompt {
             font-size: 2rem;
-            font-family: 'Kalam', cursive;
+            
         }
 
-        /* modal – new entry / view */
+        /* modal â€“ new entry / view */
         .modal {
             display: none; position: fixed; inset:0; background: #264e31e0;
             align-items: center; justify-content: center; z-index:2000;

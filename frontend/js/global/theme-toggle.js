@@ -134,5 +134,4 @@
     isInitialized = false;
     window.__ECO_THEME_TOGGLE_BOUND__ = false;
   };
-
 })();

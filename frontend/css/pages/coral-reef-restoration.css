@@ -1,4 +1,4 @@
-/* Coral Reef Restoration Page Styles - Enhanced UI */
+﻿/* Coral Reef Restoration Page Styles - Enhanced UI */
 
 :root {
   --primary-color: #006994;
@@ -35,7 +35,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: var(--text-primary);
   background: var(--bg-ocean);
@@ -653,7 +653,7 @@ body::before {
 }
 
 .case-study.featured::after {
-  content: '⭐';
+  content: 'â­';
   position: absolute;
   top: 1rem;
   right: 1rem;

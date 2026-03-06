@@ -1,8 +1,8 @@
-/* ========== HABITAT CONSERVATION PAGE STYLES ========== */
+﻿/* ========== HABITAT CONSERVATION PAGE STYLES ========== */
 
 body {
   background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-  font-family: 'Poppins', sans-serif;
+  
   color: #1a1a2e;
 }
 
@@ -493,7 +493,7 @@ body {
 }
 
 .conservation-tips li::before {
-  content: '✓';
+  content: 'âœ“';
   position: absolute;
   left: 0;
   color: #22c55e;
@@ -558,7 +558,7 @@ body {
 }
 
 .action-card li::before {
-  content: '•';
+  content: 'â€¢';
   position: absolute;
   left: 0;
   color: #22c55e;

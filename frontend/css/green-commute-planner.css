@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --primary: #0f766e;
   --primary-dark: #0b5f58;
   --secondary: #0ea5a5;
@@ -15,7 +15,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  
 }
 
 body {

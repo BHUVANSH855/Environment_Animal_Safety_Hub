@@ -1,4 +1,4 @@
-/* Zero-Waste Kitchen Planner Styles */
+﻿/* Zero-Waste Kitchen Planner Styles */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: 'Space Grotesk', sans-serif;
+  
   background: radial-gradient(circle at top, #ecfeff 0%, #fef3c7 45%, #f8fafc 100%);
   color: var(--dark-ink);
   line-height: 1.6;
@@ -92,7 +92,7 @@ body {
 }
 
 .hero-text h1 {
-  font-family: 'Playfair Display', serif;
+  
   font-size: 2.8rem;
   display: flex;
   align-items: center;
@@ -190,7 +190,7 @@ body {
 }
 
 .section-header h2 {
-  font-family: 'Playfair Display', serif;
+  
   font-size: 1.8rem;
   margin-bottom: 8px;
   display: flex;

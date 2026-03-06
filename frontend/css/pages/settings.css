@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Settings Page Styles
  * 
  * Clean, modern styling for the preferences/settings page
@@ -294,7 +294,7 @@
 }
 
 .debug-info code {
-  font-family: 'Monaco', 'Consolas', monospace;
+  
   font-size: 0.85rem;
   color: var(--text-primary, #1a1a2e);
   white-space: pre;

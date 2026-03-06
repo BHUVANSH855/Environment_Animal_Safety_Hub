@@ -1,4 +1,4 @@
-/* Artificial Reefs and Ecological Misrepresentation Styles */
+﻿/* Artificial Reefs and Ecological Misrepresentation Styles */
 
 :root {
   --primary-color: #006994;
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #E3F2FD 0%, #B3E5FC 100%);

@@ -1,4 +1,4 @@
-/* Behavioral Desensitization to Human Presence - CSS */
+﻿/* Behavioral Desensitization to Human Presence - CSS */
 /* Theme: Wildlife Behavior & Conservation */
 
 :root {
@@ -71,7 +71,7 @@
 }
 
 body {
-    font-family: var(--font-primary);
+    
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     color: var(--wildlife-dark);
@@ -454,7 +454,7 @@ body {
 
 .brain-section li::before,
 .body-section li::before {
-    content: '→';
+    content: 'â†’';
     position: absolute;
     left: 0;
     color: var(--wildlife-accent);
@@ -763,7 +763,7 @@ body {
 }
 
 .policy-item li::before {
-    content: '✓';
+    content: 'âœ“';
     position: absolute;
     left: 0;
     color: var(--fitness-green);

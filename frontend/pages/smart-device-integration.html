@@ -1,44 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Device Integration</title>
-  <link rel="stylesheet" href="smart-device-integration.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Device Integration</title>
+
+<link rel="stylesheet" href="smart-device-integration.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+
 <body>
-  <div class="device-container">
-    <h1>Smart Device Integration</h1>
-    <div class="device-guide">
-      <h2>Connect Your Devices</h2>
-      <p>Follow the steps below to connect your smart home devices to the dashboard:</p>
-      <ol>
-        <li>Choose device type (thermostat, plug, light, etc.)</li>
-        <li>Enter device details or scan for devices</li>
-        <li>Authorize connection</li>
-      </ol>
-      <form id="deviceForm">
-        <label for="deviceType">Device Type:</label>
-        <select id="deviceType" required>
-          <option value="">Select</option>
-          <option value="thermostat">Thermostat</option>
-          <option value="plug">Smart Plug</option>
-          <option value="light">Smart Light</option>
-        </select>
-        <label for="deviceName">Device Name:</label>
-        <input type="text" id="deviceName" required>
-        <button type="submit">Connect Device</button>
-      </form>
-    </div>
-    <div class="device-dashboard">
-      <h2>Connected Devices</h2>
-      <div id="devicesList"></div>
-    </div>
-    <div class="device-energy-impact">
-      <h2>Energy Impact</h2>
-      <div id="energyImpact"></div>
-    </div>
-  </div>
-  <script src="smart-device-integration.js"></script>
+
+<header class="page-header">
+<i class="fas fa-microchip"></i>
+<h1>Smart Device Integration</h1>
+<p>Connect and monitor your smart devices efficiently</p>
+</header>
+
+
+<main class="container">
+
+
+<!-- INTRO -->
+
+<section class="card intro-card">
+
+<h2><i class="fas fa-lightbulb"></i> What is Smart Device Integration?</h2>
+
+<p>
+Smart Device Integration allows you to connect and manage smart home devices
+such as thermostats, smart plugs, and lights from a single dashboard.
+</p>
+
+<p>
+By integrating these devices, you can monitor energy usage, control devices
+remotely, and improve overall energy efficiency in your home.
+</p>
+
+</section>
+
+
+<!-- STEPS -->
+
+<section class="card">
+
+<h2><i class="fas fa-list"></i> Steps to Connect Devices</h2>
+
+<div class="steps">
+
+<div class="step">
+<i class="fas fa-check-circle"></i>
+<p>Select device type (Thermostat, Plug, Light)</p>
+</div>
+
+<div class="step">
+<i class="fas fa-keyboard"></i>
+<p>Enter the device details</p>
+</div>
+
+<div class="step">
+<i class="fas fa-shield-check"></i>
+<p>Authorize the connection</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONNECT FORM -->
+
+<section class="card">
+
+<h2><i class="fas fa-link"></i> Connect Your Devices</h2>
+
+<form id="deviceForm" class="device-form">
+
+<div class="form-group">
+
+<label>Device Type</label>
+
+<select id="deviceType" required>
+
+<option value="">Select</option>
+<option value="thermostat">Thermostat</option>
+<option value="plug">Smart Plug</option>
+<option value="light">Smart Light</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Device Name</label>
+
+<input type="text" id="deviceName" required>
+
+</div>
+
+
+<button type="submit" class="btn-primary">
+
+<i class="fas fa-plug"></i> Connect Device
+
+</button>
+
+</form>
+
+</section>
+
+
+<!-- CONNECTED DEVICES -->
+
+<section class="card">
+
+<h2><i class="fas fa-network-wired"></i> Connected Devices</h2>
+
+<div id="devicesList"></div>
+
+</section>
+
+
+<!-- ENERGY IMPACT -->
+
+<section class="card">
+
+<h2><i class="fas fa-bolt"></i> Energy Impact</h2>
+
+<div id="energyImpact"></div>
+
+</section>
+
+</main>
+
+
+<script src="smart-device-integration.js"></script>
+
 </body>
 </html>

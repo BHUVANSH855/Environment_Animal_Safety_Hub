@@ -1,4 +1,4 @@
-/* Compost Quality Analyzer Styles */
+﻿/* Compost Quality Analyzer Styles */
 :root {
     /* Color Palette */
     --primary-color: #4CAF50;
@@ -98,7 +98,7 @@ html {
 }
 
 body {
-    font-family: var(--font-family-primary);
+    
     font-size: var(--font-size-base);
     line-height: var(--line-height-normal);
     color: var(--text-primary);

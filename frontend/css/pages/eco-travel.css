@@ -1,4 +1,4 @@
-/* Eco Travel Route Planner Styles */
+﻿/* Eco Travel Route Planner Styles */
 @import url('../../global/variables.css');
 
 :root {
@@ -20,7 +20,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    
     background-color: var(--background-color, #f0fdf4);
     color: var(--text-dark);
     overflow-x: hidden;

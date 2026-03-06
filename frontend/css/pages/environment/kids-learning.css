@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  
   background: var(--bg-gradient);
   color: var(--text-dark);
   overflow-x: hidden;

@@ -1,6 +1,6 @@
-
+﻿
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%); }
+        body {  background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%); }
         
         .hero { background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%); color: white; padding: 80px 20px 40px; text-align: center; }
         .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }

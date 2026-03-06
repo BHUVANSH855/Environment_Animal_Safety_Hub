@@ -1,4 +1,4 @@
-/* Disease Spillover Page Styles */
+﻿/* Disease Spillover Page Styles */
 
 :root {
   --primary-color: #2D5F2D;
@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-secondary);

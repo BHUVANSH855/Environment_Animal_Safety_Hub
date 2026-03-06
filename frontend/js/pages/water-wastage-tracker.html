@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Tracker</title>
+  <style>
+    :root {
+      --primary-color: #2e7d32; /* dark green */
+      --primary-light: #4caf50;
+      --primary-dark: #1b5e20;
+      --bg-color: #e8f5e9;
+      --text-color: #1b5e20;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+    }
+
+    .tracker {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .progress-container {
+      background-color: #c8e6c9;
+      border-radius: 10px;
+      height: 30px;
+      width: 100%;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      background-color: var(--primary-color);
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    button {
+      background-color: var(--primary-light);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .status {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💧 Water Tracker</h1>
+
+  <div class="tracker">
+    <p>Glasses of water today: <span id="glasses">0</span>/8</p>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <button onclick="addGlass()">Add Glass</button>
+    <button onclick="resetTracker()">Reset</button>
+    <div class="status" id="status">Keep going! 💚</div>
+  </div>
+
+  <script>
+    const glassesEl = document.getElementById('glasses');
+    const progressBar = document.getElementById('progress-bar');
+    const statusEl = document.getElementById('status');
+
+    let glasses = 0;
+    const goal = 8;
+
+    function updateTracker() {
+      glassesEl.textContent = glasses;
+      const progress = (glasses / goal) * 100;
+      progressBar.style.width = progress + '%';
+
+      if(glasses === goal) {
+        statusEl.textContent = "🎉 Goal reached! Stay hydrated!";
+      } else if(glasses > goal) {
+        statusEl.textContent = "You drank extra! 💧";
+      } else {
+        statusEl.textContent = "Keep going! 💚";
+      }
+    }
+
+    function addGlass() {
+      glasses++;
+      updateTracker();
+    }
+
+    function resetTracker() {
+      glasses = 0;
+      updateTracker();
+    }
+
+    // Initialize
+    updateTracker();
+  </script>
+
+</body>
+</html>

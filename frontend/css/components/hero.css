@@ -20,7 +20,7 @@
   justify-content: center;
   padding: 140px 20px 80px;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  
   animation: gradientShift 15s ease infinite;
 }
 

@@ -1,4 +1,4 @@
-/* ===== Forest Background ===== */
+﻿/* ===== Forest Background ===== */
 .forest-background {
     position: fixed;
     top: 0;
@@ -121,7 +121,7 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-family: 'Roboto Slab', serif;
+    
 }
 
 .gradient-text {
@@ -312,7 +312,7 @@
 }
 
 .satellite-orbital::after {
-    content: '🛰️';
+    content: 'ðŸ›°ï¸';
     position: absolute;
     top: 20%;
     left: 30%;
@@ -333,7 +333,7 @@
 }
 
 .drone-flight::before {
-    content: '🚁';
+    content: 'ðŸš';
     position: absolute;
     top: 50%;
     left: 50%;

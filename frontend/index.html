@@ -8,7 +8,9 @@
   <link href="manifest.json" rel="manifest" />
   <link href="css/global/theme.css" rel="stylesheet" />
   <title>EcoLife | Protect Our Planet &amp; Animals</title>
-  <meta content="Join EcoLife to protect animals, save the environment, and create a greener future for all. Access tips, guides, and community features offline." id="meta-description" name="description" />
+  <meta
+    content="Join EcoLife to protect animals, save the environment, and create a greener future for all. Access tips, guides, and community features offline."
+    id="meta-description" name="description" />
   <!-- PWA Meta Tags -->
   <meta content="#22c55e" name="theme-color" />
   <meta content="yes" name="mobile-web-app-capable" />
@@ -27,14 +29,18 @@
   <meta content="website" id="og-type" property="og:type" />
   <meta content="https://ecolife-app.com/" id="og-url" property="og:url" />
   <meta content="EcoLife | Protect Our Planet &amp; Animals" id="og-title" property="og:title" />
-  <meta content="Join EcoLife to protect animals, save the environment, and create a greener future for all." id="og-description" property="og:description" />
-  <meta content="https://ecolife-app.com/assets/images/others/envirnoment-logo.webp" id="og-image" property="og:image" />
+  <meta content="Join EcoLife to protect animals, save the environment, and create a greener future for all."
+    id="og-description" property="og:description" />
+  <meta content="https://ecolife-app.com/assets/images/others/envirnoment-logo.webp" id="og-image"
+    property="og:image" />
   <!-- Twitter -->
   <meta content="summary_large_image" id="twitter-card" property="twitter:card" />
   <meta content="https://ecolife-app.com/" id="twitter-url" property="twitter:url" />
   <meta content="EcoLife | Protect Our Planet &amp; Animals" id="twitter-title" property="twitter:title" />
-  <meta content="Join EcoLife to protect animals, safeguard the environment, and build a greener future for all." id="twitter-description" property="twitter:description" />
-  <meta content="https://ecolife-app.com/assets/images/others/envirnoment-logo.webp" id="twitter-image" property="twitter:image" />
+  <meta content="Join EcoLife to protect animals, safeguard the environment, and build a greener future for all."
+    id="twitter-description" property="twitter:description" />
+  <meta content="https://ecolife-app.com/assets/images/others/envirnoment-logo.webp" id="twitter-image"
+    property="twitter:image" />
   <!-- Preload critical resources -->
   <link as="style" href="css/global/variables.css" rel="preload" />
   <link as="style" href="css/global/utilities.css" rel="preload" />
@@ -59,7 +65,7 @@
   <link href="css/components/sections.css" rel="stylesheet" />
   <link href="css/components/scrollBar.css" rel="stylesheet" />
   <link href="css/components/modal.css" rel="stylesheet" />
-  <link href="css/components/crisis-alert.css" rel="stylesheet" />
+
   <link href="css/components/eco-assistant.css" rel="stylesheet" />
   <link href="css/components/responsive-images.css" rel="stylesheet" />
   <link href="css/components/image-loading.css" rel="stylesheet" />
@@ -82,6 +88,73 @@
   <link href="css/pwa.css" rel="stylesheet" />
   <link href="css/components/cards-3d.css" rel="stylesheet" />
   <style>
+    /* ===== All Crisis Banners Sticky Top ===== */
+.noise-crisis-alert-banner,
+.indigenous-crisis-alert-banner,
+.crisis-alert-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #1b5e20; /* Deep green */
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: slideDown 0.4s ease-in-out;
+}
+
+/* Content Layout */
+.noise-crisis-alert-content,
+.indigenous-crisis-alert-content,
+.crisis-alert-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.noise-crisis-btn,
+.indigenous-crisis-btn,
+.crisis-btn {
+  background: #4caf50;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.noise-crisis-btn:hover,
+.indigenous-crisis-btn:hover,
+.crisis-btn:hover {
+  background: #66bb6a;
+}
+
+/* Close Button */
+.noise-crisis-close,
+.indigenous-crisis-dismiss,
+.crisis-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Slide animation */
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* Prevent content hiding under banner */
+body {
+  padding-top: 80px;
+}
     /* Fix for black line issue */
     body::before,
     body::after,
@@ -90,13 +163,13 @@
       display: none !important;
       content: none !important;
     }
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       margin: 0;
       padding: 0;
@@ -104,7 +177,7 @@
       position: relative;
       background-color: #f0f9f0;
     }
-    
+
     /* Fix for any potential pseudo-element black lines */
     .hero-section::before,
     .hero-section::after,
@@ -113,49 +186,123 @@
       display: none !important;
       content: none !important;
     }
-    
+
     /* Remove extra spacing */
     section {
       margin: 0;
       padding: 4rem 0;
     }
-    
+
     .section-container {
       margin: 0 auto;
       padding: 0 1.5rem;
     }
-    
+
     /* Fix for any leftover black lines from background elements */
     .hero-video-overlay {
-      background: linear-gradient(135deg, rgba(0,40,0,0.4) 0%, rgba(0,80,0,0.2) 100%);
+      background: linear-gradient(135deg, rgba(0, 40, 0, 0.4) 0%, rgba(0, 80, 0, 0.2) 100%);
     }
+    .pagination-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .page-btn {
+      padding: 8px 16px;
+      border: none;
+      background: #22c55e;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .page-btn:hover {
+      background: #16a34a;
+    }
+
+    .page-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .page-numbers {
+      display: flex;
+      gap: 8px;
+    }
+
+    .page-number {
+      padding: 6px 12px;
+      background: #e5e7eb;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .page-number.active {
+      background: #22c55e;
+      color: white;
+    }
+    .scroll-toggle-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 100px; /* Safe distance from chatbot */
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: white;
+      border: none;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+      z-index: 999; /* Below chatbot but visible */
+    }
+
+    .scroll-toggle-btn:hover {
+      transform: translateY(-4px);
+      background: #16a34a;
+    }
+   
+:root {
+  /* Light Theme Variables */
+  --primary-color: #2e7d32;      /* main green */
+  --primary-dark: #1b5e20;       /* dark green */
+  --primary-light: #4caf50;      /* light green */
+  --secondary-color: #ff9800;
+  --accent-color: #00bcd4;
+  --text-color: #000000;         /* text dark for light bg */
+  --bg-color: #dcfadb;           /* light background */
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Variables */
+  --primary-color: #4ade80;
+  --primary-dark: #018a33;
+  --primary-light: #86efac;
+  --secondary-color: #fbbf24;
+  --accent-color: #38bdf8;
+  --text-color: #ffffff;         /* white text for dark bg */
+  --bg-color: #01200c;           /* dark background */
+  --border-color: #475569;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
   </style>
+  
   <!-- 🌗 THEME TOGGLE -->
   <script src="js/global/theme-toggle.js"></script>
 </head>
 
 <body>
-  <!-- Noise Pollution Crisis Alert Banner -->
-  <div class="noise-crisis-alert-banner" id="noise-crisis-alert-banner" style="display: none;">
-    <div class="noise-crisis-alert-content">
-      <div class="noise-crisis-icon">
-        <i class="fas fa-volume-up noise-pulse"></i>
-      </div>
-      <div class="noise-crisis-text">
-        <div class="noise-crisis-level">LEVEL 3 EMERGENCY</div>
-        <div class="noise-crisis-title">Shipping Noise Pollution Crisis</div>
-        <div class="noise-crisis-action">Marine mammals face critical communication disruption</div>
-      </div>
-      <div class="noise-crisis-actions">
-        <a class="indigenous-crisis-btn" href="./pages/animals/indigenous-knowledge-loss.html">
-          <i class="fas fa-eye"></i> View Crisis Details
-        </a>
-        <button aria-label="Close crisis alert" class="noise-crisis-close" onclick="closeNoiseCrisisAlert()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+
 
   <!-- Indigenous Knowledge Loss Crisis Alert -->
   <div class="indigenous-crisis-alert-banner" id="indigenous-crisis-alert-banner" style="display: none;">
@@ -171,7 +318,8 @@
         <a class="indigenous-crisis-btn" href="js/indigenous-knowledge-loss.html">
           <i class="fas fa-eye"></i> View Crisis Details
         </a>
-        <button aria-label="Close crisis alert" class="indigenous-crisis-dismiss" onclick="closeIndigenousCrisisAlert()">
+        <button aria-label="Close crisis alert" class="indigenous-crisis-dismiss"
+          onclick="closeIndigenousCrisisAlert()">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -200,71 +348,40 @@
     </div>
   </div>
 
-  <!-- Fire Regime Crisis Alert -->
-  <div class="crisis-alert-banner" id="crisisAlert" style="display: none;">
-    <div class="crisis-alert-content">
-      <div class="crisis-icon">
-        <i class="fas fa-exclamation-triangle"></i>
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-level">🔥 LEVEL 3 CRISIS</span>
-        <span class="crisis-title">Fire Regime Shifts Causing Mass Wildlife Adaptation Failure</span>
-        <span class="crisis-action">400% increase in fire frequency - Immediate conservation action required</span>
-      </div>
-      <div class="crisis-actions">
-        <a class="crisis-btn" href="..//frontend/pages/environment/fire-regime-shifts.html">
-          <i class="fas fa-fire"></i> View Crisis Details
-        <span class="crisis-level">
-          🧊 LEVEL 3 CRISIS
-        </span>
-        <span class="crisis-title">
-          Polar Albedo Loss Accelerating Global Warming Feedback Loops
-        </span>
-        <span class="crisis-action">
-          Arctic warming is accelerating - urgent intervention needed before a Blue Ocean Event
-        </span>
-      </div>
-      <div class="crisis-actions">
-        <a class="crisis-btn" href="pages/environment/polar-albedo-feedback-loop.html">
-          <i class="fas fa-snowflake">
-          </i>
-          View Crisis Details
-        </a>
-        <button aria-label="Close crisis alert" class="crisis-close" onclick="closeCrisisAlert()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-    
+
+
   <!-- Permafrost Methane Crisis Alert Banner - Level 3 Emergency (#3128) -->
   <div class="noise-crisis-alert-banner" id="permafrost-crisis-alert-banner" style="display: none;">
     <div class="noise-crisis-alert-content">
       <div class="noise-crisis-icon">
         <i class="fas fa-snowflake noise-pulse"></i>
       </div>
-      <div class="noise-crisis-text">
-        <div class="noise-crisis-level">
-          LEVEL 3 EMERGENCY
-        </div>
-        <div class="noise-crisis-title">
-          Permafrost Thaw &amp; The Methane Time Bomb
-        </div>
-        <div class="noise-crisis-action">
-          1,500 billion tons of carbon releasing — devastating feedback loop accelerating
-        </div>
+      <div class="crisis-actions">
+        <a class="crisis-btn" href="..//frontend/pages/environment/fire-regime-shifts.html">
+          <i class="fas fa-fire"></i> View Crisis Details
+          <span class="crisis-level">
+            🧊 LEVEL 3 CRISIS
+          </span>
+          <span class="crisis-title">
+            Polar Albedo Loss Accelerating Global Warming Feedback Loops
+          </span>
+          <span class="crisis-action">
+            Arctic warming is accelerating - urgent intervention needed before a Blue Ocean Event
+          </span>
       </div>
       <div class="noise-crisis-actions">
         <a class="indigenous-crisis-btn" href="pages/environment/permafrost-methane-crisis.html">
           <i class="fas fa-eye"></i>
           View Crisis Details
         </a>
-        <button aria-label="Close crisis alert" class="noise-crisis-close" onclick="document.getElementById('permafrost-crisis-alert-banner').style.display='none'">
+        <button aria-label="Close crisis alert" class="noise-crisis-close"
+          onclick="document.getElementById('permafrost-crisis-alert-banner').style.display='none'">
           <i class="fas fa-times"></i>
         </button>
       </div>
     </div>
   </div>
+
 
   <!-- Skip Navigation Link for Keyboard Users -->
   <a class="skip-link" href="#main-content" id="skip-to-main">
@@ -273,7 +390,7 @@
   <!-- Live Regions for Screen Readers -->
   <div aria-atomic="true" aria-live="polite" class="live-region" id="status-messages"></div>
   <div aria-atomic="true" aria-live="assertive" class="live-region" id="error-messages"></div>
-  
+
   <!-- Background Animations -->
   <div aria-hidden="true" class="eco-sky">
     <div class="cloud cloud1"></div>
@@ -284,9 +401,10 @@
   <div aria-hidden="true" class="rain-layer"></div>
   <div aria-hidden="true" class="leaves-layer"></div>
   <div aria-hidden="true" class="sun-glow"></div>
-  
-  <div aria-label="Page scroll progress" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="scroll-progress" id="scrollProgress" role="progressbar"></div>
-  
+
+  <div aria-label="Page scroll progress" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="scroll-progress"
+    id="scrollProgress" role="progressbar"></div>
+
   <!-- Navbar -->
   <div id="navbar-container"></div>
   
@@ -295,12 +413,13 @@
     <!-- Hero Section -->
     <section aria-labelledby="hero-title" class="hero-section" id="home" role="banner">
       <div aria-hidden="true" class="hero-video">
-        <video autoplay class="hero-video-media" id="hero-background-video" loop muted playsinline poster="assets/images/others/Animal_Environment_Photo.jpg">
+        <video autoplay class="hero-video-media" id="hero-background-video" loop muted playsinline
+          poster="assets/images/others/Animal_Environment_Photo.jpg">
           <source src="assets/videos/hero-background.mp4" type="video/mp4" />
         </video>
       </div>
       <div aria-hidden="true" class="hero-video-overlay"></div>
-      
+
       <!-- Animated Background Elements -->
       <div aria-hidden="true" class="hero-bg-elements">
         <div class="floating-element leaf1"><i class="fa-solid fa-leaf"></i></div>
@@ -319,7 +438,8 @@
             <div class="avatars">
               <span class="avatar" style="background-image: url('assets/images/others/mentor1.jpg');"></span>
               <span class="avatar" style="background-image: url('assets/images/others/mentor2.jpg');"></span>
-              <span class="avatar" style="background-image: url('assets/images/others/Animal_Environment_Photo.jpg');"></span>
+              <span class="avatar"
+                style="background-image: url('assets/images/others/Animal_Environment_Photo.jpg');"></span>
             </div>
             <span class="hero-badge-text">Join <span class="highlight">50,000+</span> Eco Warriors</span>
           </div>
@@ -330,7 +450,8 @@
           </h1>
 
           <p class="hero-subtitle" data-i18n="hero.subtitle">
-            Join the global movement to save nature. Restore ecosystems, protect wildlife, and build a sustainable future together.
+            Join the global movement to save nature. Restore ecosystems, protect wildlife, and build a sustainable
+            future together.
           </p>
 
           <!-- Call to Action Buttons -->
@@ -351,17 +472,19 @@
 
       <!-- Scroll Indicator -->
       <div class="scroll-indicator">
-        <div class="mouse"><div class="wheel"></div></div>
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
         <span>Scroll To Explore</span>
       </div>
     </section>
 
     <!-- Daily Quote Section -->
-    <section class="daily-quote-section">
-      <div class="quote-container">
+    <section class="daily-quote-section" >
+      <div class="quote-container" >
         <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
         <div class="quote-content">
-          <blockquote class="quote-text" id="dailyQuote" data-i18n="quotes.default_quote">
+          <blockquote class="quote-text" id="dailyQuote" data-i18n="quotes.default_quote" >
             "The greatest threat to our planet is the belief that someone else will save it."
           </blockquote>
           <cite class="quote-author" id="quoteAuthor" data-i18n="quotes.default_author">— Robert Swan</cite>
@@ -371,15 +494,17 @@
     </section>
 
     <!-- About Section -->
-    <section class="about-section" id="about">
+    <section class="about-section" id="about" >
       <div class="section-container">
         <div class="about-content">
           <div class="about-images" data-aos="fade-right">
             <div class="about-img-main">
-              <img alt="About EcoLife" loading="lazy" src="https://i.pinimg.com/736x/24/5e/9a/245e9a9a9898728d21a978edd67b411b.jpg" />
+              <img alt="About EcoLife" loading="lazy"
+                src="https://i.pinimg.com/736x/24/5e/9a/245e9a9a9898728d21a978edd67b411b.jpg" />
             </div>
             <div class="about-img-secondary">
-              <img alt="Our Mission" loading="lazy" src="https://i.pinimg.com/736x/a8/e5/c5/a8e5c5f756ad1179e194bc3205d8b144.jpg" />
+              <img alt="Our Mission" loading="lazy"
+                src="https://i.pinimg.com/736x/a8/e5/c5/a8e5c5f756ad1179e194bc3205d8b144.jpg" />
             </div>
             <div class="about-experience">
               <span class="exp-number">10+</span>
@@ -389,7 +514,9 @@
           <div class="about-text" data-aos="fade-left">
             <span class="section-tag"><i class="fa-solid fa-leaf"></i><span data-i18n="about.tag">About Us</span></span>
             <h2 class="section-title" data-i18n="about.title">Making Earth a Better Place for All Living Beings</h2>
-            <p class="section-desc" data-i18n="about.description">EcoLife is a community-driven platform dedicated to environmental conservation and animal welfare. We believe that every small action counts towards creating a sustainable future.</p>
+            <p class="section-desc" data-i18n="about.description">EcoLife is a community-driven platform dedicated to
+              environmental conservation and animal welfare. We believe that every small action counts towards creating
+              a sustainable future.</p>
             <div class="about-features">
               <div class="about-feature">
                 <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
@@ -399,44 +526,49 @@
                 <div class="floating-element heart"><i class="fa-solid fa-heart"></i></div>
                 <div class="floating-element recycle"><i class="fa-solid fa-recycle"></i></div>
               </div>
-              
+
               <div aria-hidden="true" class="particles" id="particles-about"></div>
-              
+
               <div class="hero-container">
                 <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
                   <div class="social-proof-badge">
                     <div class="avatars">
                       <span class="avatar" style="background-image: url('assets/images/others/mentor1.jpg');"></span>
                       <span class="avatar" style="background-image: url('assets/images/others/mentor2.jpg');"></span>
-                      <span class="avatar" style="background-image: url('assets/images/others/Animal_Environment_Photo.jpg');"></span>
+                      <span class="avatar"
+                        style="background-image: url('assets/images/others/Animal_Environment_Photo.jpg');"></span>
                     </div>
                     <span class="hero-badge" role="status">Join 50,000+ Eco Warriors</span>
                   </div>
-                  
+
                   <!-- Page View Counter -->
                   <span aria-live="polite" class="hero-badge page-view-counter" id="page-view-counter" role="status">
                     <i aria-hidden="true" class="fa-solid fa-eye"></i>
                     <span id="page-view-count">0</span> Page Views
                   </span>
-                  
+
                   <h1 class="hero-title" id="hero-title-about">
                     Protect Our <span class="gradient-text">Planet</span> &amp; Animals
                   </h1>
                   <p class="hero-subtitle">Together we can save nature, help animals, and create a greener future.</p>
-                  
+
                   <!-- Call to Action Buttons -->
                   <div aria-label="Main actions" class="hero-cta" role="group">
                     <a aria-describedby="get-started-desc-about" class="btn btn-primary" href="#about">Get Started</a>
-                    <div class="sr-only" id="get-started-desc-about">Begin your journey to protect the environment and animals</div>
+                    <div class="sr-only" id="get-started-desc-about">Begin your journey to protect the environment and
+                      animals</div>
                     <a aria-describedby="learn-more-desc-about" class="btn btn-secondary" href="#animal">Learn More</a>
-                    <div class="sr-only" id="learn-more-desc-about">Discover more about animal protection and environmental conservation</div>
+                    <div class="sr-only" id="learn-more-desc-about">Discover more about animal protection and
+                      environmental conservation</div>
                   </div>
                 </div>
               </div>
-              
+
               <!-- Scroll Indicator -->
               <div class="scroll-indicator">
-                <div class="mouse"><div class="wheel"></div></div>
+                <div class="mouse">
+                  <div class="wheel"></div>
+                </div>
                 <span>Scroll Down</span>
               </div>
             </div>
@@ -446,7 +578,7 @@
     </section>
 
     <!-- Daily Quote Section (Second) - Fixed spacing -->
-    <section class="daily-quote-section">
+    <section class="daily-quote-section" >
       <div class="quote-container">
         <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
         <div class="quote-content">
@@ -460,15 +592,17 @@
     </section>
 
     <!-- About Section (Second) - Fixed spacing -->
-    <section class="about-section" id="about2">
+    <section class="about-section" id="about2" >
       <div class="section-container">
         <div class="about-content">
           <div class="about-images" data-aos="fade-right">
             <div class="about-img-main">
-              <img alt="About EcoLife" loading="lazy" src="https://i.pinimg.com/736x/24/5e/9a/245e9a9a9898728d21a978edd67b411b.jpg" />
+              <img alt="About EcoLife" loading="lazy"
+                src="https://i.pinimg.com/736x/24/5e/9a/245e9a9a9898728d21a978edd67b411b.jpg" />
             </div>
             <div class="about-img-secondary">
-              <img alt="Our Mission" loading="lazy" src="https://i.pinimg.com/736x/a8/e5/c5/a8e5c5f756ad1179e194bc3205d8b144.jpg" />
+              <img alt="Our Mission" loading="lazy"
+                src="https://i.pinimg.com/736x/a8/e5/c5/a8e5c5f756ad1179e194bc3205d8b144.jpg" />
             </div>
             <div class="about-experience">
               <span class="exp-number">10+</span>
@@ -478,7 +612,8 @@
           <div class="about-text" data-aos="fade-left">
             <span class="section-tag"><i class="fa-solid fa-leaf"></i>About Us</span>
             <h2 class="section-title">Making Earth a Better Place for All Living Beings</h2>
-            <p class="section-desc">EcoLife is a community-driven platform dedicated to environmental conservation and animal welfare. We believe that every small action counts towards creating a sustainable future.</p>
+            <p class="section-desc">EcoLife is a community-driven platform dedicated to environmental conservation and
+              animal welfare. We believe that every small action counts towards creating a sustainable future.</p>
             <div class="about-features">
               <div class="about-feature">
                 <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
@@ -496,7 +631,8 @@
               </div>
               <div class="about-feature">
                 <div class="feature-icon" style="background: none; width: 80px; height: 80px;">
-                  <img alt="Education" loading="lazy" src="assets/images/3d/building_eco_school.webp" style="width: 100%; height: 100%; object-fit: contain;" />
+                  <img alt="Education" loading="lazy" src="assets/images/3d/building_eco_school.webp"
+                    style="width: 100%; height: 100%; object-fit: contain;" />
                 </div>
                 <div class="feature-text">
                   <h4 data-i18n="about.education.title">Education & Awareness</h4>
@@ -527,14 +663,16 @@
                   <img alt="Animal Rescue" loading="lazy" src="assets/images/3d/building_animal_shelter.webp" />
                 </div>
                 <h3>Animal Rescue</h3>
-                <p>We rescue, treat, and rehabilitate injured and abandoned animals, giving them a second chance at life.</p>
+                <p>We rescue, treat, and rehabilitate injured and abandoned animals, giving them a second chance at
+                  life.</p>
               </div>
               <div class="service-card-back">
-                <a class="service-link open-modal-btn" data-id="animal-rescue" href="javascript:void(0)">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="service-link open-modal-btn" data-id="animal-rescue" href="javascript:void(0)">Learn More <i
+                    class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
-          
+
           <!-- Waste Management -->
           <article class="service-card" data-tilt="">
             <div class="service-card-inner">
@@ -546,11 +684,12 @@
                 <p>Promoting proper waste segregation, recycling, and reducing plastic usage in communities.</p>
               </div>
               <div class="service-card-back">
-                <a class="service-link open-modal-btn" data-id="waste-mgmt" href="javascript:void(0)">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="service-link open-modal-btn" data-id="waste-mgmt" href="javascript:void(0)">Learn More <i
+                    class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
-          
+
           <!-- Climate Action -->
           <article class="service-card" data-tilt="">
             <div class="service-card-inner">
@@ -558,11 +697,17 @@
                 <div class="service-icon-3d">
                   <img alt="Climate Action" loading="lazy" src="assets/images/3d/building_green_energy.webp" />
                 </div>
-                <h3>Climate Action <span class="crisis-urgent-text" style="color: #ff0000; font-size: 0.8rem; font-weight: 900; text-shadow: 0 0 10px #ff0000;">[LEVEL 3 CRISIS]</span></h3>
-                <p>Raising awareness about climate change and promoting sustainable lifestyle choices. <strong style="color: #ff4500; background: rgba(255,69,0,0.1); padding: 2px 6px; border-radius: 4px;">URGENT: Fire regime shifts causing wildlife adaptation failure.</strong></p>
+                <h3>Climate Action <span class="crisis-urgent-text"
+                    style="color: #ff0000; font-size: 0.8rem; font-weight: 900; text-shadow: 0 0 10px #ff0000;">[LEVEL 3
+                    CRISIS]</span></h3>
+                <p>Raising awareness about climate change and promoting sustainable lifestyle choices. <strong
+                    style="color: #ff4500; background: rgba(255,69,0,0.1); padding: 2px 6px; border-radius: 4px;">URGENT:
+                    Fire regime shifts causing wildlife adaptation failure.</strong></p>
               </div>
               <div class="service-card-back">
-                <a class="service-link" href="pages/environment/fire-regime-shifts.html" style="background: linear-gradient(45deg, #ff4500, #ff0000); color: white; font-weight: bold; text-shadow: 0 0 10px rgba(0,0,0,0.5);" title="View Level 3 Crisis Details">🔥 Crisis Level 3 <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="service-link" href="pages/environment/fire-regime-shifts.html"
+                  style="background: linear-gradient(45deg, #ff4500, #ff0000); color: white; font-weight: bold; text-shadow: 0 0 10px rgba(0,0,0,0.5);"
+                  title="View Level 3 Crisis Details">🔥 Crisis Level 3 <i class="fa-solid fa-arrow-right"></i></a>
                 <h3>
                   Climate Action
                   <span class="crisis-urgent-text"
@@ -598,15 +743,21 @@
                 <div class="service-icon-3d">
                   <i class="fa-solid fa-snowflake" style="font-size:3rem;color:#06b6d4;"></i>
                 </div>
-                <h3>Permafrost Crisis <span class="crisis-urgent-text" style="color: #ff0000; font-size: 0.8rem; font-weight: 900; text-shadow: 0 0 10px #ff0000;">[LEVEL 3 CRISIS]</span></h3>
-                <p>Permafrost thaw is releasing methane — a greenhouse gas 80× more potent than CO₂. <strong style="color: #ff4500; background: rgba(255,69,0,0.1); padding: 2px 6px; border-radius: 4px;">URGENT: 1,500 Gt carbon at risk</strong></p>
+                <h3>Permafrost Crisis <span class="crisis-urgent-text"
+                    style="color: #ff0000; font-size: 0.8rem; font-weight: 900; text-shadow: 0 0 10px #ff0000;">[LEVEL 3
+                    CRISIS]</span></h3>
+                <p>Permafrost thaw is releasing methane — a greenhouse gas 80× more potent than CO₂. <strong
+                    style="color: #ff4500; background: rgba(255,69,0,0.1); padding: 2px 6px; border-radius: 4px;">URGENT:
+                    1,500 Gt carbon at risk</strong></p>
               </div>
               <div class="service-card-back">
-                <a class="service-link" href="pages/environment/permafrost-methane-crisis.html" style="background: linear-gradient(45deg, #06b6d4, #3b82f6); color: white; font-weight: bold; text-shadow: 0 0 10px rgba(0,0,0,0.5);" title="View Level 3 Crisis Details">❄️ Crisis Level 3 <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="service-link" href="pages/environment/permafrost-methane-crisis.html"
+                  style="background: linear-gradient(45deg, #06b6d4, #3b82f6); color: white; font-weight: bold; text-shadow: 0 0 10px rgba(0,0,0,0.5);"
+                  title="View Level 3 Crisis Details">❄️ Crisis Level 3 <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
-          
+
           <!-- Tree Plantation -->
           <article class="service-card" data-tilt="">
             <div class="service-card-inner">
@@ -618,12 +769,13 @@
                 <p>Organizing community drives to plant trees and create urban green spaces.</p>
               </div>
               <div class="service-card-back">
-                <a class="service-link open-modal-btn" data-id="tree-plant" href="javascript:void(0)">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="service-link open-modal-btn" data-id="tree-plant" href="javascript:void(0)">Learn More <i
+                    class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
-          
-          <!-- Emergency Wildlife Help -->
+
+                    <!-- Emergency Wildlife Help -->
           <article class="service-card" data-tilt="">
             <div class="service-card-inner">
               <div class="service-card-front">
@@ -634,144 +786,244 @@
                 <p>24/7 emergency contacts and tips for injured wildlife and animal accidents.</p>
               </div>
               <div class="service-card-back">
-                <a class="service-link" href="pages/report/sos.html">Get Help <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="service-link" href="pages/report/sos.html">
+                  Get Help <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </article>
-        </div>
+
+          <!-- Wildlife Conservation -->
+<article class="service-card" data-tilt="">
+  <div class="service-card-inner">
+    <div class="service-card-front">
+      <div class="service-icon-3d">
+        <img alt="Wildlife Conservation" loading="lazy" src="https://static.vecteezy.com/system/resources/thumbnails/002/738/588/small_2x/wildlife-conservation-day-wild-animals-to-the-home-or-wildlife-protection-photo.jpg" />
       </div>
+      <h3>Wildlife Conservation</h3>
+      <p>Protecting endangered species and preserving natural habitats through awareness and conservation programs.</p>
+    </div>
+    <div class="service-card-back">
+      <a class="service-link open-modal-btn" data-id="wildlife-conservation" href="javascript:void(0)">
+        Learn More <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</article>
+
+<!-- Community Cleanups -->
+<article class="service-card" data-tilt="">
+  <div class="service-card-inner">
+    <div class="service-card-front">
+      <div class="service-icon-3d">
+        <img alt="Community Cleanup" loading="lazy" src="https://tse3.mm.bing.net/th/id/OIP.NKaeQwh1KDpaHEGrdO15RgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" />
+      </div>
+      <h3>Community Cleanups</h3>
+      <p>Organizing local cleanup drives to remove waste from parks, rivers, and public spaces.</p>
+    </div>
+    <div class="service-card-back">
+      <a class="service-link open-modal-btn" data-id="community-cleanup" href="javascript:void(0)">
+        Join Us <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</article>
+        </div> 
+      </div> 
     </section>
 
-    <!-- Donation Section -->
-    <section class="donation-section" id="donation">
-      <div class="donation-container">
-        <div class="donation-header">
-          <span class="section-tag">🌱 Eco-Fund</span>
-          <h2>Support Environmental Causes</h2>
-          <p>Help verified NGOs and community-driven environmental campaigns.</p>
+
+<!-- Donation Section -->
+<section class="donation-section" id="donation" style="background-color: var(--bg-color);">
+  <div class="donation-container" >
+    <div class="donation-header" >
+      <span class="section-tag" >🌱 Eco-Fund</span>
+      <h2 >Support Environmental Causes</h2>
+      <p >Help verified NGOs and community-driven environmental campaigns.</p>
+    </div>
+
+    <div class="campaigns-grid" id="campaigns-container" ></div>
+
+    <div class="donation-form" >
+      <h3 >Make a Donation</h3>
+
+      <form id="donation-form" >
+        <label >Select Campaign</label>
+        <select id="donation-campaign" required >
+          <option value="">Choose campaign...</option>
+        </select>
+
+        <label >Donation Amount ($)</label>
+
+        <div class="amount-buttons" >
+          <button type="button" class="amount-button" data-amount="10">$10</button>
+          <button type="button" class="amount-button" data-amount="25">$25</button>
+          <button type="button" class="amount-button" data-amount="50">$50</button>
+          <button type="button" class="amount-button" data-amount="100">$100</button>
         </div>
 
-        <!-- Campaign Cards -->
-        <div class="campaigns-grid" id="campaigns-container"></div>
+        <input type="number" id="donation-amount" placeholder="Enter custom amount" min="1" required>
 
-        <!-- Donation Form -->
-        <div class="donation-form">
-          <h3>Make a Donation</h3>
+        <label >Your Name (optional)</label>
+        <input type="text" id="donor-name" placeholder="Anonymous">
 
-          <form id="donation-form">
-            <label>Select Campaign</label>
-            <select id="donation-campaign" required>
-              <option value="">Choose campaign...</option>
-            </select>
+        <button class="donation-btn" type="submit">Donate Securely</button>
+      </form>
+    </div>
+  </div>
 
-            <label>Donation Amount ($)</label>
+  <div class="modal" id="donation-modal" >
+    <div class="modal-content" >
+      <span class="close-modal" id="close-donation-modal">&times;</span>
+      <h3>🎉 Thank You!</h3>
+      <p id="donation-thanks"></p>
+    </div>
+  </div>
+</section>
+<!-- Animal Section -->
+<section class="cards-section" id="animal">
+  <div class="section-container">
 
-            <div class="amount-buttons">
-              <button type="button" class="amount-button" data-amount="10">$10</button>
-              <button type="button" class="amount-button" data-amount="25">$25</button>
-              <button type="button" class="amount-button" data-amount="50">$50</button>
-              <button type="button" class="amount-button" data-amount="100">$100</button>
-            </div>
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">
+        <i class="fa-solid fa-paw"></i>Animal Welfare
+      </span>
 
-            <input type="number" id="donation-amount" placeholder="Enter custom amount" min="1" required>
+      <h2 class="section-title">Animal Protection &amp; Adoption</h2>
 
-            <label>Your Name (optional)</label>
-            <input type="text" id="donor-name" placeholder="Anonymous">
+      <p class="section-subtitle">
+        Help us save lives. Every animal deserves love, care, and a forever home.
+      </p>
+    </div>
 
-            <button class="donation-btn" type="submit">Donate Securely</button>
-          </form>
+    <div class="cards-grid">
+
+      <!-- Adopt Pets -->
+      <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="card-image">
+          <img src="assets/images/3d/adopt_pets.webp" alt="Adopt Pets" loading="lazy">
+
+          <div class="card-overlay">
+            <span class="card-tag">Adoption</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Modal -->
-      <div class="modal" id="donation-modal">
-        <div class="modal-content">
-          <span class="close-modal" id="close-donation-modal">&times;</span>
-          <h3>🎉 Thank You!</h3>
-          <p id="donation-thanks"></p>
-        </div>
-      </div>
-    </section>
+        <div class="card-content">
+          <h3>Adopt Pets</h3>
 
-    <!-- Animal Section -->
-    <section class="cards-section" id="animal">
-      <div class="section-container">
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag"><i class="fa-solid fa-paw"></i>Animal Welfare</span>
-          <h2 class="section-title">Animal Protection &amp; Adoption</h2>
-          <p class="section-subtitle">Help us save lives. Every animal deserves love, care, and a forever home.</p>
-        </div>
-        <div class="cards-grid">
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="card-image">
-              <img alt="Adopt Pets" loading="lazy" src="assets/images/3d/adopt_pets.webp" />
-              <div class="card-overlay"><span class="card-tag">Adoption</span></div>
-            </div>
-            <div class="card-content">
-              <h3>Adopt Pets</h3>
-              <p>Help stray animals find loving homes. Open your heart and home to a furry friend in need.</p>
-              <div class="card-footer">
-                <a class="card-btn" href="pages/animal-care/adoption-management.html">Adopt Now <i class="fa-solid fa-arrow-right"></i></a>
-                <div class="card-stats"><i class="fa-solid fa-heart"></i>1.2K adopted</div>
-              </div>
-            </div>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-image">
-              <img alt="Wildlife Protection" loading="lazy" src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg" />
-              <div class="card-overlay"><span class="card-tag">Conservation</span></div>
-            </div>
-            <div class="card-content">
-              <h3>Protect Wildlife</h3>
-              <p>Learn how to protect endangered species and preserve their natural habitats.</p>
-              <div class="card-footer">
-                <a class="card-btn" href="pages/animal-care/animal-welfare-education.html">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                <div class="card-stats"><i class="fa-solid fa-shield-heart"></i>500+ protected</div>
-              </div>
-            </div>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-image">
-              <img alt="Feed Animals" loading="lazy" src="assets/images/3d/feed_animals.webp" />
-              <div class="card-overlay"><span class="card-tag">Feeding</span></div>
-            </div>
-            <div class="card-content">
-              <h3>Feed Stray Animals</h3>
-              <p>Learn safe ways to feed stray animals and join our community feeding programs.</p>
-              <div class="card-footer">
-                <a class="card-btn" href="pages/animal-safety/animal-nutrition-feeding.html">Join Program <i class="fa-solid fa-arrow-right"></i></a>
-                <div class="card-stats"><i class="fa-solid fa-bowl-food"></i>5K+ fed daily</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+          <p>
+            Help stray animals find loving homes. Open your heart and home
+            to a furry friend in need.
+          </p>
 
-    <!-- Quiz Section -->
-    <section class="quiz-section" id="climate-quiz">
-      <h2 class="quiz-title">🌍 Climate Quiz Battle ⚔️</h2>
-      <p class="quiz-subtitle">Answer fast. Build combos. Beat the AI.</p>
-      <div class="quiz-card">
-        <div class="quiz-header">
-          <div>⏱️ <span id="timer">10</span> s</div>
-          <div>🔥 Combo: <span id="combo">0</span></div>
-          <div>⭐ Score: <span id="score">0</span></div>
-        </div>
-        <h3 id="question">Loading...</h3>
-        <div class="options">
-          <button class="option">A</button>
-          <button class="option">B</button>
-          <button class="option">C</button>
-          <button class="option">D</button>
-        </div>
-        <p class="ai-status">🤖 AI: <span id="ai-result">Thinking...</span></p>
-        <button class="next-btn" id="nextBtn">Next ➜</button>
-      </div>
-    </section>
+          <div class="card-footer">
+            <a href="pages/animal-care/adoption-management.html" class="card-btn">
+              Adopt Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
 
+            <div class="card-stats">
+              <i class="fa-solid fa-heart"></i> 1.2K adopted
+            </div>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- Wildlife Protection -->
+      <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-image">
+          <img
+            src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg"
+            alt="Wildlife Protection"
+            loading="lazy">
+
+          <div class="card-overlay">
+            <span class="card-tag">Conservation</span>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <h3>Protect Wildlife</h3>
+
+          <p>
+            Learn how to protect endangered species and preserve
+            their natural habitats.
+          </p>
+
+          <div class="card-footer">
+            <a href="pages/animal-care/animal-welfare-education.html" class="card-btn">
+              Learn More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="card-stats">
+              <i class="fa-solid fa-shield-heart"></i> 500+ protected
+            </div>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- Feed Animals -->
+      <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-image">
+          <img src="assets/images/3d/feed_animals.webp" alt="Feed Animals" loading="lazy">
+
+          <div class="card-overlay">
+            <span class="card-tag">Feeding</span>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <h3>Feed Stray Animals</h3>
+
+          <p>
+            Learn safe ways to feed stray animals and join our
+            community feeding programs.
+          </p>
+
+          <div class="card-footer">
+            <a href="pages/animal-safety/animal-nutrition-feeding.html" class="card-btn">
+              Join Program <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="card-stats">
+              <i class="fa-solid fa-bowl-food"></i> 5K+ fed daily
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+   <!-- Quiz Section -->
+<section class="quiz-section" id="climate-quiz" >
+  <h2 class="quiz-title" >🌍 Climate Quiz Battle ⚔️</h2>
+  <p class="quiz-subtitle" >Answer fast. Build combos. Beat the AI.</p>
+
+  <div class="quiz-card" >
+    <div class="quiz-header" >
+      <div >⏱️ <span id="timer">10</span> s</div>
+      <div >🔥 Combo: <span id="combo">0</span></div>
+      <div >⭐ Score: <span id="score">0</span></div>
+    </div>
+
+    <h3 id="question" >Loading...</h3>
+
+    <div class="options" >
+      <button class="option" >A</button>
+      <button class="option" >B</button>
+      <button class="option" >C</button>
+      <button class="option" >D</button>
+    </div>
+
+    <p class="ai-status" >
+      🤖 AI: <span id="ai-result">Thinking...</span>
+    </p>
+
+    <button class="next-btn" id="nextBtn" >Next ➜</button>
+  </div>
+</section>
     <!-- Environmental Conservation Section -->
     <section class="cards-section alt-bg" id="environment">
       <div class="section-container">
@@ -780,74 +1032,83 @@
           <h2 class="section-title">Environmental Conservation</h2>
           <p class="section-subtitle">Small changes lead to big impacts. Start your eco-friendly journey today.</p>
         </div>
-        <div class="cards-grid">
+        <div class="cards-grid" id="environmentCards">
           <!-- Card 1: Reduce Plastic -->
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="0" >
             <div class="card-3d-icon">
-              <img alt="3D Recycling Bin with Plastic" class="animate-float-3d" loading="lazy" src="assets/images/3d/recycling_bin.webp" />
+              <img alt="3D Recycling Bin with Plastic" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/recycling_bin.webp" />
               <div class="card-overlay"><span class="card-tag">Recycling</span></div>
             </div>
             <div class="card-content">
               <h3>Reduce Plastic</h3>
               <p>Learn how to reduce, reuse, and recycle waste. Say no to single-use plastics.</p>
               <div class="card-footer">
-                <a class="card-btn open-modal-btn" data-id="plastic" href="javascript:void(0)">Get Tips <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="card-btn open-modal-btn" data-id="plastic" href="javascript:void(0)">Get Tips <i
+                    class="fa-solid fa-arrow-right"></i></a>
                 <div class="card-stats"><i class="fa-solid fa-trash"></i>10T+ reduced</div>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 2: Save Energy -->
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="100" >
             <div class="card-3d-icon">
-              <img alt="3D Energy Saving Bulb" class="animate-float-3d" loading="lazy" src="assets/images/3d/energy_bulb.webp" />
+              <img alt="3D Energy Saving Bulb" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/energy_bulb.webp" />
               <div class="card-overlay"><span class="card-tag">Climate</span></div>
             </div>
             <div class="card-content">
               <h3>Save Energy</h3>
               <p>Simple ways to reduce carbon footprint daily. Every action counts!</p>
               <div class="card-footer">
-                <a class="card-btn open-modal-btn" data-id="energy" href="javascript:void(0)">Learn How <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="card-btn open-modal-btn" data-id="energy" href="javascript:void(0)">Learn How <i
+                    class="fa-solid fa-arrow-right"></i></a>
                 <div class="card-stats"><i class="fa-solid fa-bolt"></i>30% savings</div>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 3: Plant Trees -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
             <div class="card-3d-icon">
-              <img alt="3D Tree Planting" class="animate-float-3d" loading="lazy" src="assets/images/3d/planting_tree.webp" />
+              <img alt="3D Tree Planting" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/planting_tree.webp" />
               <div class="card-overlay"><span class="card-tag">Plantation</span></div>
             </div>
             <div class="card-content">
               <h3>Plant Trees</h3>
               <p>Participate in tree plantation drives. Help us create urban forests.</p>
               <div class="card-footer">
-                <a class="card-btn open-modal-btn" data-id="tree-drive" href="javascript:void(0)">Join Drive <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="card-btn open-modal-btn" data-id="tree-drive" href="javascript:void(0)">Join Drive <i
+                    class="fa-solid fa-arrow-right"></i></a>
                 <div class="card-stats"><i class="fa-solid fa-tree"></i>50K+ planted</div>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 4: Wet Waste -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
             <div class="card-3d-icon">
-              <img alt="3D Wet Waste Compost" class="animate-float-3d" loading="lazy" src="assets/images/3d/wet_waste.webp" />
+              <img alt="3D Wet Waste Compost" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/wet_waste.webp" />
               <div class="card-overlay"><span class="card-tag">Wet Waste</span></div>
             </div>
             <div class="card-content">
               <h3>Wet Waste</h3>
-              <p>Wet waste includes food scraps, vegetable peels, and leftover food. Always dispose of it in a green bin.</p>
+              <p>Wet waste includes food scraps, vegetable peels, and leftover food. Always dispose of it in a green
+                bin.</p>
               <div class="card-footer">
                 <div class="card-stats"><i class="fa-solid fa-apple-whole"></i>Organic waste</div>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 5: Dry Waste -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="400">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/dry_waste.webp" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/dry_waste.webp" />
               <div class="card-overlay"><span class="card-tag">Dry Waste</span></div>
             </div>
             <div class="card-content">
@@ -858,179 +1119,211 @@
               </div>
             </div>
           </article>
-          
+
           <!-- Card 6: Urban Tree Canopy Visualizer -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="450">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/canopytrees.jpg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/canopytrees.jpg" />
             </div>
             <div class="card-content">
               <h3>Urban Tree Canopy Visualizer</h3>
               <p>See your city's green cover, spot areas needing trees, and join local planting drives!</p>
               <div class="card-footer">
-                <a href="pages/education/urban/urban-tree-canopy-visualizer.html" class="btn btn-primary" style="margin-top:8px;">Explore Visualizer</a>
+                <a href="pages/education/urban/urban-tree-canopy-visualizer.html" class="btn btn-primary"
+                  style="margin-top:8px;">Explore Visualizer</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 7: Community Eco-Event Calendar -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="475">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/eco-calender.jpeg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/eco-calender.jpeg" />
             </div>
             <div class="card-content">
               <h3>Community Eco-Event Calendar</h3>
-              <p>Find, join, and create local eco-friendly events. RSVP and get reminders for cleanups, workshops, and more!</p>
+              <p>Find, join, and create local eco-friendly events. RSVP and get reminders for cleanups, workshops, and
+                more!</p>
               <div class="card-footer">
-                <a href="pages/eco-event-calendar.html" class="btn btn-primary" style="margin-top:8px;">Open Calendar</a>
+                <a href="pages/eco-event-calendar.html" class="btn btn-primary" style="margin-top:8px;">Open
+                  Calendar</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 8: Eco-Friendly Business Directory -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="500">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/business-dir.jpeg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/business-dir.jpeg" />
             </div>
             <div class="card-content">
               <h3>Eco-Friendly Business Directory</h3>
-              <p>Find, review, and support local green businesses. Search, map, and rate eco-friendly stores, cafes, and more!</p>
+              <p>Find, review, and support local green businesses. Search, map, and rate eco-friendly stores, cafes, and
+                more!</p>
               <div class="card-footer">
-                <a href="pages/eco-business-directory.html" class="btn btn-primary" style="margin-top:8px;">Browse Directory</a>
+                <a href="pages/eco-business-directory.html" class="btn btn-primary" style="margin-top:8px;">Browse
+                  Directory</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 9: Wildlife Sighting Tracker -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="525">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/wildlife-tracker.jpeg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/wildlife-tracker.jpeg" />
             </div>
             <div class="card-content">
               <h3>Wildlife Sighting Tracker</h3>
-              <p>Log and share wildlife sightings, upload photos, and explore recent observations on an interactive map!</p>
+              <p>Log and share wildlife sightings, upload photos, and explore recent observations on an interactive map!
+              </p>
               <div class="card-footer">
-                <a href="pages/wildlife-sighting-tracker.html" class="btn btn-primary" style="margin-top:8px;">Track Sightings</a>
+                <a href="pages/wildlife-sighting-tracker.html" class="btn btn-primary" style="margin-top:8px;">Track
+                  Sightings</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 10: Environmental News Feed -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="550">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/env-news.jpeg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/env-news.jpeg" />
             </div>
             <div class="card-content">
               <h3>Environmental News Feed</h3>
-              <p>Read the latest environmental news, research, and policy updates. Filter by topic and region, and bookmark articles!</p>
+              <p>Read the latest environmental news, research, and policy updates. Filter by topic and region, and
+                bookmark articles!</p>
               <div class="card-footer">
-                <a href="pages/environmental-news-feed.html" class="btn btn-primary" style="margin-top:8px;">View News Feed</a>
+                <a href="pages/environmental-news-feed.html" class="btn btn-primary" style="margin-top:8px;">View News
+                  Feed</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 11: Eco-Achievement Badges -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="575">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/eco-badges.webp" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/eco-badges.webp" />
             </div>
             <div class="card-content">
               <h3>Eco-Achievement Badges</h3>
-              <p>Earn badges for eco-friendly actions like events, sightings, and reviews. Show off your achievements on your profile!</p>
+              <p>Earn badges for eco-friendly actions like events, sightings, and reviews. Show off your achievements on
+                your profile!</p>
               <div class="card-footer">
                 <a href="pages/badges.html" class="btn btn-primary" style="margin-top:8px;">View My Badges</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 12: Water Footprint Calculator -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="600">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/water-footprint.webp" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/water-footprint.webp" />
             </div>
             <div class="card-content">
               <h3>Water Footprint Calculator</h3>
-              <p>Track your direct and indirect water use from daily activities, diet, and purchases. Get a detailed breakdown and tips!</p>
+              <p>Track your direct and indirect water use from daily activities, diet, and purchases. Get a detailed
+                breakdown and tips!</p>
               <div class="card-footer">
-                <a href="pages/water-footprint-calculator.html" class="btn btn-primary" style="margin-top:8px;">Calculate Now</a>
+                <a href="pages/water-footprint-calculator.html" class="btn btn-primary"
+                  style="margin-top:8px;">Calculate Now</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 13: Plastic Footprint Tracker -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="625">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/plastic-footprint.jpeg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/plastic-footprint.jpeg" />
             </div>
             <div class="card-content">
               <h3>Plastic Footprint Tracker</h3>
-              <p>Log your plastic use, visualize trends, and set reduction goals. Get tips to reduce your plastic footprint!</p>
+              <p>Log your plastic use, visualize trends, and set reduction goals. Get tips to reduce your plastic
+                footprint!</p>
               <div class="card-footer">
-                <a href="pages/plastic-footprint-tracker.html" class="btn btn-primary" style="margin-top:8px;">Track Plastic Use</a>
+                <a href="pages/plastic-footprint-tracker.html" class="btn btn-primary" style="margin-top:8px;">Track
+                  Plastic Use</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 14: Eco-Friendly Home Tips Hub -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="650">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/eco-friendly-home-tips.jpeg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/eco-friendly-home-tips.jpeg" />
             </div>
             <div class="card-content">
               <h3>Eco-Friendly Home Tips Hub</h3>
-              <p>Browse and save actionable tips for making your home more sustainable. Filter by category and search for ideas!</p>
+              <p>Browse and save actionable tips for making your home more sustainable. Filter by category and search
+                for ideas!</p>
               <div class="card-footer">
                 <a href="js/eco-home-tips-hub.html" class="btn btn-primary" style="margin-top:8px;">Explore Tips</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 15: Sustainable Shopping Guide -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="675">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/sus-shopping.jpeg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/sus-shopping.jpeg" />
             </div>
             <div class="card-content">
               <h3>Sustainable Shopping Guide</h3>
               <p>Find eco-friendly products, brands, and stores. Learn about eco-labels and bookmark your favorites!</p>
               <div class="card-footer">
-                <a href="js/sustainable-shopping-guide.html" class="btn btn-primary" style="margin-top:8px;">Shop Sustainably</a>
+                <a href="js/sustainable-shopping-guide.html" class="btn btn-primary" style="margin-top:8px;">Shop
+                  Sustainably</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 16: Community Green Projects Map -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="700">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/green-projects.jpeg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/green-projects.jpeg" />
             </div>
             <div class="card-content">
               <h3>Community Green Projects Map</h3>
               <p>Discover, join, or start local green projects. Post updates, photos, and track progress!</p>
               <div class="card-footer">
-                <a href="js/community-green-projects-map.html" class="btn btn-primary" style="margin-top:8px;">Explore Projects</a>
+                <a href="js/community-green-projects-map.html" class="btn btn-primary" style="margin-top:8px;">Explore
+                  Projects</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 17: Renewable Energy Tracker -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="725">
             <div class="card-3d-icon">
-              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy" src="assets/images/3d/renew-energy-tracker.jpeg" />
+              <img alt="3D Dry Waste Recycling" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/renew-energy-tracker.jpeg" />
             </div>
             <div class="card-content">
               <h3>Renewable Energy Tracker</h3>
-              <p>Log and visualize your renewable energy usage. Track savings, compare with local averages, and get tips to increase adoption!</p>
+              <p>Log and visualize your renewable energy usage. Track savings, compare with local averages, and get tips
+                to increase adoption!</p>
               <div class="card-footer">
-                <a href="pages/renewable-energy-tracker.html" class="btn btn-primary" style="margin-top:8px;">Track Energy</a>
+                <a href="pages/renewable-energy-tracker.html" class="btn btn-primary" style="margin-top:8px;">Track
+                  Energy</a>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 18: E-Waste -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="500">
             <div class="card-3d-icon">
-              <img alt="3D E-Waste Electronics" class="animate-float-3d" loading="lazy" src="assets/images/3d/ewaste.webp" />
+              <img alt="3D E-Waste Electronics" class="animate-float-3d" loading="lazy"
+                src="assets/images/3d/ewaste.webp" />
               <div class="card-overlay"><span class="card-tag">E-Waste</span></div>
             </div>
             <div class="card-content">
@@ -1041,31 +1334,35 @@
               </div>
             </div>
           </article>
-          
+
           <!-- Card 19: Rainwater Harvesting -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
             <div class="card-image">
-              <img alt="Rainwater Harvesting" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWI7ABOe4XpkvKpsUD6hX6TeCe7LNw2lPFqA&amp;s" />
+              <img alt="Rainwater Harvesting" loading="lazy"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWI7ABOe4XpkvKpsUD6hX6TeCe7LNw2lPFqA&amp;s" />
               <div class="card-overlay"><span class="card-tag">Rainwater Harvesting</span></div>
             </div>
             <div class="card-content">
               <h3>Rainwater Harvesting</h3>
-              <p>Collect and reuse rainwater to reduce groundwater depletion. We can store water into storage tank, or directing it to recharge groundwater through pits or wells.</p>
+              <p>Collect and reuse rainwater to reduce groundwater depletion. We can store water into storage tank, or
+                directing it to recharge groundwater through pits or wells.</p>
               <div class="card-footer">
                 <div class="card-stats"><i class="fa-solid fa-apple-whole"></i>40% savings</div>
               </div>
             </div>
           </article>
-          
+
           <!-- Card 20: Reduce, Reuse, Recycle -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
             <div class="card-image">
-              <img alt="Reduce, Reuse, Recycle" loading="lazy" src="https://www.casemed.com/media/k2/items/cache/157c6c6cd616f458d56a6caf427711f8_XL.jpg" />
+              <img alt="Reduce, Reuse, Recycle" loading="lazy"
+                src="https://www.casemed.com/media/k2/items/cache/157c6c6cd616f458d56a6caf427711f8_XL.jpg" />
               <div class="card-overlay"><span class="card-tag">Reduce,Reuse,Recycle</span></div>
             </div>
             <div class="card-content">
               <h3>Reduce, Reuse, Recycle</h3>
-              <p>Key sustainability principles for minimizing waste, promoting resource conservation, and lessening environmental impact.</p>
+              <p>Key sustainability principles for minimizing waste, promoting resource conservation, and lessening
+                environmental impact.</p>
               <li>Limit disposable items.</li>
               <li>Reuse containers, bags, and bottles.</li>
               <li>Sort waste for recycling (paper, plastic, metal, e-waste).</li>
@@ -1074,16 +1371,18 @@
               </div>
             </div>
           </article>
-          
+
           <!-- Card 21: Sustainable Agriculture -->
           <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
             <div class="card-image">
-              <img alt="Sustainable Agriculture" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgytNBE7Ss2DAjkzfNoW1cHZqCfS1FUq8ZcQ&amp;s" />
+              <img alt="Sustainable Agriculture" loading="lazy"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgytNBE7Ss2DAjkzfNoW1cHZqCfS1FUq8ZcQ&amp;s" />
               <div class="card-overlay"><span class="card-tag">Sustainable Agriculture</span></div>
             </div>
             <div class="card-content">
               <h3>Sustainable Agriculture</h3>
-              <p>Farming approach that meets present food needs without compromising future generations' ability to meet theirs.</p>
+              <p>Farming approach that meets present food needs without compromising future generations' ability to meet
+                theirs.</p>
               <li>Organic farming</li>
               <li>Reduce chemical fertilizers and pesticides</li>
               <li>Composting for soil quality improvement.</li>
@@ -1093,11 +1392,16 @@
             </div>
           </article>
         </div>
+        <div class="pagination-container">
+          <button id="prevPage" class="page-btn">Previous</button>   
+          <div id="pageNumbers" class="page-numbers"></div>    
+          <button id="nextPage" class="page-btn">Next</button>
+        </div>
       </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="how-it-works-section">
+    <section class="how-it-works-section"  >
       <div class="section-container">
         <div class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-route"></i>How It Works</span>
@@ -1111,14 +1415,16 @@
             <h3>Sign Up</h3>
             <p>Create your free account and join our community of eco warriors.</p>
           </article>
-          <div class="step-connector" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="step-connector" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-arrow-right"></i>
+          </div>
           <article class="step-card" data-aos="fade-up" data-aos-delay="200">
             <div class="step-number">02</div>
             <div class="step-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
             <h3>Choose Your Cause</h3>
             <p>Pick the causes you're passionate about - animals, climate, or environment.</p>
           </article>
-          <div class="step-connector" data-aos="fade-up" data-aos-delay="300"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="step-connector" data-aos="fade-up" data-aos-delay="300"><i class="fa-solid fa-arrow-right"></i>
+          </div>
           <article class="step-card" data-aos="fade-up" data-aos-delay="400">
             <div class="step-number">03</div>
             <div class="step-icon"><i class="fa-solid fa-earth-americas"></i></div>
@@ -1127,13 +1433,14 @@
           </article>
         </div>
         <div class="steps-cta" data-aos="fade-up" data-aos-delay="500">
-          <a class="btn btn-primary btn-lg" href="js/signup.html"><i class="fa-solid fa-rocket"></i>Start Your Journey Today</a>
+          <a class="btn btn-primary btn-lg" href="js/signup.html"><i class="fa-solid fa-rocket"></i>Start Your Journey
+            Today</a>
         </div>
       </div>
     </section>
 
     <!-- Eco Challenges Section -->
-    <section class="eco-challenges-section">
+    <section class="eco-challenges-section" >
       <div class="section-container">
         <div class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-seedling"></i>Eco Challenges</span>
@@ -1143,63 +1450,71 @@
         <div class="eco-challenges-grid">
           <!-- Card 1 -->
           <article class="eco-challenge-card" data-tilt="">
-            <div class="challenge-icon-3d"><img alt="Water Plant" loading="lazy" src="assets/images/3d/icon_water_plant.webp" /></div>
+            <div class="challenge-icon-3d"><img alt="Water Plant" loading="lazy"
+                src="assets/images/3d/icon_water_plant.webp" /></div>
             <h3>Water a Plant</h3>
             <p>Water at least one plant today.</p>
             <button class="challenge-btn">Mark as Done</button>
           </article>
-          
+
           <!-- Card 2 -->
           <article class="eco-challenge-card" data-tilt="">
-            <div class="challenge-icon-3d"><img alt="Save Energy" loading="lazy" src="assets/images/3d/icon_save_energy.webp" /></div>
+            <div class="challenge-icon-3d"><img alt="Save Energy" loading="lazy"
+                src="assets/images/3d/icon_save_energy.webp" /></div>
             <h3>Save Electricity</h3>
             <p>Turn off unused lights and fans.</p>
             <button class="challenge-btn">Mark as Done</button>
           </article>
-          
+
           <!-- Card 3 -->
           <article class="eco-challenge-card" data-tilt="">
-            <div class="challenge-icon-3d"><img alt="Feed Birds" loading="lazy" src="assets/images/3d/icon_feed_birds.webp" /></div>
+            <div class="challenge-icon-3d"><img alt="Feed Birds" loading="lazy"
+                src="assets/images/3d/icon_feed_birds.webp" /></div>
             <h3>Feed Birds</h3>
             <p>Place water or grains for birds.</p>
             <button class="challenge-btn">Mark as Done</button>
           </article>
-          
+
           <!-- Card 4 -->
           <article class="eco-challenge-card" data-tilt="">
-            <div class="challenge-icon-3d"><img alt="Avoid Plastic" loading="lazy" src="assets/images/3d/icon_no_plastic.webp" /></div>
+            <div class="challenge-icon-3d"><img alt="Avoid Plastic" loading="lazy"
+                src="assets/images/3d/icon_no_plastic.webp" /></div>
             <h3>Avoid Plastic</h3>
             <p>Say no to single-use plastic today.</p>
             <button class="challenge-btn">Mark as Done</button>
           </article>
-          
+
           <!-- Card 5 -->
           <article class="eco-challenge-card" data-tilt="">
-            <div class="challenge-icon-3d"><img alt="Plant Tree" loading="lazy" src="assets/images/3d/icon_plant_tree.webp" /></div>
+            <div class="challenge-icon-3d"><img alt="Plant Tree" loading="lazy"
+                src="assets/images/3d/icon_plant_tree.webp" /></div>
             <h3>Plant a Sapling</h3>
             <p>Plant or help plant a tree.</p>
             <button class="challenge-btn">Mark as Done</button>
           </article>
-          
+
           <!-- Card 6 -->
           <article class="eco-challenge-card" data-tilt="">
-            <div class="challenge-icon-3d"><img alt="Clean Area" loading="lazy" src="assets/images/3d/icon_clean_trash.webp" /></div>
+            <div class="challenge-icon-3d"><img alt="Clean Area" loading="lazy"
+                src="assets/images/3d/icon_clean_trash.webp" /></div>
             <h3>Clean Your Area</h3>
             <p>Pick up litter near your home.</p>
             <button class="challenge-btn">Mark as Done</button>
           </article>
-          
+
           <!-- Card 7 -->
           <article class="eco-challenge-card" data-tilt="">
-            <div class="challenge-icon-3d"><img alt="Save Water" loading="lazy" src="assets/images/3d/image.webp" /></div>
+            <div class="challenge-icon-3d"><img alt="Save Water" loading="lazy" src="assets/images/3d/image.webp" />
+            </div>
             <h3>Reduce Water Waste</h3>
             <p>Turn off taps when not in use.</p>
             <button class="challenge-btn">Mark as Done</button>
           </article>
-          
+
           <!-- Card 8 -->
           <article class="eco-challenge-card" data-tilt="">
-            <div class="challenge-icon-3d"><img alt="Reusable Shopping Bags" loading="lazy" src="assets/images/3d/reusable-bags.webp" /></div>
+            <div class="challenge-icon-3d"><img alt="Reusable Shopping Bags" loading="lazy"
+                src="assets/images/3d/reusable-bags.webp" /></div>
             <h3>Use Reusable Bags</h3>
             <p>Carry reusable bags for shopping.</p>
             <button class="challenge-btn">Mark as Done</button>
@@ -1209,57 +1524,62 @@
     </section>
 
     <!-- Plant Care Section -->
-    <section class="plant-care-section" id="plants">
+    <section class="plant-care-section" id="plants" >
       <div class="section-container">
         <div class="plant-care-content">
           <div class="plant-care-text" data-aos="fade-right">
             <span class="section-tag"><i class="fa-solid fa-seedling"></i>Plant Care</span>
-            <h2 class="section-title" >Grow Your Own Green Paradise</h2>
-            <p class="section-desc">Whether you have a small balcony or a large garden, we'll help you create your own green space. Learn tips, tricks, and sustainable gardening practices.</p>
+            <h2 class="section-title">Grow Your Own Green Paradise</h2>
+            <p class="section-desc">Whether you have a small balcony or a large garden, we'll help you create your own
+              green space. Learn tips, tricks, and sustainable gardening practices.</p>
             <div class="plant-features">
-              <div class="plant-feature"><i class="fa-solid fa-check-circle"></i><span>Expert gardening tips</span></div>
-              <div class="plant-feature"><i class="fa-solid fa-check-circle"></i><span>Indoor &amp; outdoor plants guide</span></div>
-              <div class="plant-feature"><i class="fa-solid fa-check-circle"></i><span>Organic composting tutorials</span></div>
-              <div class="plant-feature"><i class="fa-solid fa-check-circle"></i><span>Community garden programs</span></div>
+              <div class="plant-feature"><i class="fa-solid fa-check-circle"></i><span>Expert gardening tips</span>
+              </div>
+              <div class="plant-feature"><i class="fa-solid fa-check-circle"></i><span>Indoor &amp; outdoor plants
+                  guide</span></div>
+              <div class="plant-feature"><i class="fa-solid fa-check-circle"></i><span>Organic composting
+                  tutorials</span></div>
+              <div class="plant-feature"><i class="fa-solid fa-check-circle"></i><span>Community garden programs</span>
+              </div>
             </div>
             <div class="plant-cta">
               <a class="btn btn-primary" href="pages/plantcare.html">Explore Tips</a>
-              <a class="btn btn-outline" href="js/join-garden-drive.html"><i class="fa-solid fa-calendar"></i>Join Garden Drive</a>
+              <a class="btn btn-outline" href="js/join-garden-drive.html"><i class="fa-solid fa-calendar"></i>Join
+                Garden Drive</a>
             </div>
           </div>
-           <div style="flex: 1; min-width: 300px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-        
-        <div style="width: 250px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-          <img src="assets/images/3d/gardening_tips.webp" 
-               alt="Gardening Tips" 
-               loading="lazy"
-               style="width: 100%; height: auto; display: block;">
-        </div>
+          <div style="flex: 1; min-width: 300px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
 
-        <div style="width: 250px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-top: 40px;">
-          <img src="assets/images/3d/community_gardens.webp" 
-               alt="Community Gardens" 
-               loading="lazy"
-               style="width: 100%; height: auto; display: block;">
-        </div>
+            <div style="width: 250px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+              <img src="assets/images/3d/gardening_tips.webp" alt="Gardening Tips" loading="lazy"
+                style="width: 100%; height: auto; display: block;">
+            </div>
 
-      </div>
+            <div
+              style="width: 250px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-top: 40px;">
+              <img src="assets/images/3d/community_gardens.webp" alt="Community Gardens" loading="lazy"
+                style="width: 100%; height: auto; display: block;">
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Garden Game Section -->
-    <section class="garden-game" data-aos="fade-up">
+    <section class="garden-game" data-aos="fade-up" >
       <div class="garden-game-overlay reveal">
         <h2 data-aos="fade-up">Build Your Garden 🌱</h2>
         <p data-aos="fade-up">Drag plants into the garden to increase oxygen!</p>
-        
+
         <!-- Oxygen Meter -->
         <div class="oxygen-meter" data-aos="fade-left">
           <span>Oxygen Level</span>
-          <div class="meter-bg"><div class="meter-fill" id="oxygen-fill">0%</div></div>
+          <div class="meter-bg">
+            <div class="meter-fill" id="oxygen-fill">0%</div>
+          </div>
         </div>
-        
+
         <!-- Plant Palette -->
         <div class="plant-palette" data-aos="fade-right">
           <div class="plant" data-oxygen="5" draggable="true">🌷</div>
@@ -1268,151 +1588,184 @@
           <div class="plant" data-oxygen="3" draggable="true">🌵</div>
           <div class="plant" data-oxygen="8" draggable="true">🍀</div>
         </div>
-        
+
         <!-- Garden Area -->
-        <div class="garden-plot" data-aos="fade-up" id="garden-plot"><p>Drop plants here 🌼</p></div>
-      </div>
-    </section>
-
-    <!-- Kids Quiz Section -->
-    <section class="kids-quiz-section" id="quiz">
-      <div class="quiz-bg-elements">
-        <div class="quiz-shape shape-1"></div>
-        <div class="quiz-shape shape-2"></div>
-        <div class="quiz-shape shape-3"></div>
-      </div>
-
-      <div class="section-container">
-        <div class="quiz-content">
-          <!-- LEFT CONTENT -->
-          <div class="quiz-text" data-aos="fade-right">
-            <span class="quiz-badge"><i class="fa-solid fa-child"></i> For Kids</span>
-            <h2>Kids Quiz Zone 🎮</h2>
-            <p>A fun and interactive way for kids to learn about nature, animals, and the environment. Answer questions, earn badges, and become an eco-champion!</p>
-
-            <!-- FEATURES -->
-            <div class="quiz-features">
-              <div class="quiz-feature" data-tilt>
-                <div class="feature-icon-wrapper icon-game"><i class="fa-solid fa-gamepad"></i></div>
-                <span>Fun Games</span>
-              </div>
-
-              <div class="quiz-feature" data-tilt>
-                <div class="feature-icon-wrapper icon-trophy"><i class="fa-solid fa-trophy"></i></div>
-                <span>Win Badges</span>
-              </div>
-
-              <a href="js/learn-more.html" class="quiz-feature-link">
-                <div class="quiz-feature" data-tilt>
-                  <div class="feature-icon-wrapper icon-book"><i class="fa-solid fa-book-open"></i></div>
-                  <span>Learn Facts</span>
-                </div>
-              </a>
-            </div>
-
-            <!-- ACTION BUTTONS -->
-            <div class="quiz-actions">
-              <a href="js/quizzes/quiz.html" class="quiz-btn btn-primary-quiz"><i class="fa-solid fa-play"></i> Start Quiz Now</a>
-              <a href="js/games/waste-game.html" class="quiz-btn btn-secondary-quiz"><i class="fa-solid fa-gamepad"></i> Play Waste Game</a>
-              <a href="../frontend/pages/animal-safety/animal-first-aid.html" class="quiz-btn btn-primary-quiz">
-                <i class="fa-solid fa-play"></i> Start Quiz Now
-              </a>
-
-              <a href="../frontend/pages/games/waste-game.html" class="quiz-btn btn-secondary-quiz">
-                <i class="fa-solid fa-gamepad"></i> Play Waste Game
-              </a>
-            </div>
-          </div>
-
-          <!-- RIGHT IMAGE -->
-          <div class="quiz-image" data-aos="fade-left">
-            <div class="quiz-image-wrapper">
-              <img src="assets/images/3d/quiz_mascot.png" alt="Kids Learning" />
-              <div class="quiz-floating-badge badge-1"><i class="fa-solid fa-star"></i> Fun!</div>
-              <div class="quiz-floating-badge badge-2"><i class="fa-solid fa-lightbulb"></i> Learn</div>
-            </div>
-          </div>
+        <div class="garden-plot" data-aos="fade-up" id="garden-plot">
+          <p>Drop plants here 🌼</p>
         </div>
       </div>
     </section>
 
+    <!-- Kids Quiz Section -->
+<section class="kids-quiz-section" id="quiz">
+
+  <div class="quiz-bg-elements">
+    <div class="quiz-shape shape-1"></div>
+    <div class="quiz-shape shape-2"></div>
+    <div class="quiz-shape shape-3"></div>
+  </div>
+
+  <div class="section-container">
+
+    <!-- CENTER HEADING -->
+    <div class="quiz-header">
+      <span class="quiz-badge">
+        <i class="fa-solid fa-child"></i> For Kids
+      </span>
+
+      <h2>Kids Quiz Zone 🎮</h2>
+
+      <p>
+        A fun and interactive way for kids to learn about nature, animals, and
+        the environment. Answer questions, earn badges, and become an
+        eco-champion!
+      </p>
+    </div>
+
+    <div class="quiz-content">
+
+      <!-- LEFT SIDE -->
+      <div class="quiz-text" data-aos="fade-right">
+
+        <!-- FEATURES -->
+        <div class="quiz-features">
+
+          <div class="quiz-feature">
+            <div class="feature-icon-wrapper icon-game">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <span>Fun Games</span>
+          </div>
+
+          <div class="quiz-feature">
+            <div class="feature-icon-wrapper icon-trophy">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <span>Win Badges</span>
+          </div>
+
+          <a href="js/learn-more.html" class="quiz-feature">
+            <div class="feature-icon-wrapper icon-book">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <span>Learn Facts</span>
+          </a>
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="quiz-actions">
+          <a href="js/quizzes/quiz.html" class="quiz-btn primary">
+            <i class="fa-solid fa-play"></i> Start Quiz
+          </a>
+
+          <a href="js/games/waste-game.html" class="quiz-btn secondary">
+            <i class="fa-solid fa-gamepad"></i> Play Waste Game
+          </a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE IMAGE -->
+      <div class="quiz-image" data-aos="fade-left">
+
+        <div class="quiz-image-wrapper">
+
+          <img src="assets/images/3d/quiz_mascot.png" alt="Kids Quiz Panda" />
+
+          <div class="quiz-floating-badge badge-1">
+            <i class="fa-solid fa-star"></i> Fun
+          </div>
+
+          <div class="quiz-floating-badge badge-2">
+            <i class="fa-solid fa-lightbulb"></i> Learn
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
     <!-- Survival Score Section -->
     <style>
-.survival-score {
-  padding: 40px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
-  border-radius: 20px;
-  margin: 40px auto;
-  max-width: 900px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-}
+      .survival-score {
+        padding: 40px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        border-radius: 20px;
+        margin: 40px auto;
+        max-width: 900px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      }
 
-.survival-score h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
+      .survival-score h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
 
-.score-cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
+      .score-cards {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 25px;
+      }
 
-.score-card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 15px;
-  width: 250px;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
-}
+      .score-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        width: 250px;
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease;
+      }
 
-.score-card:hover {
-  transform: translateY(-5px);
-}
+      .score-card:hover {
+        transform: translateY(-5px);
+      }
 
-.score-card span {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
+      .score-card span {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
 
-.bar {
-  background: rgba(255,255,255,0.2);
-  border-radius: 50px;
-  overflow: hidden;
-  height: 25px;
-}
+      .bar {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        overflow: hidden;
+        height: 25px;
+      }
 
-.bar div {
-  height: 100%;
-  width: 0%;
-  border-radius: 50px;
-  text-align: center;
-  line-height: 25px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  transition: width 1.5s ease, background 0.5s ease;
-}
+      .bar div {
+        height: 100%;
+        width: 0%;
+        border-radius: 50px;
+        text-align: center;
+        line-height: 25px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: width 1.5s ease, background 0.5s ease;
+      }
 
-.final-score {
-  margin-top: 30px;
-}
+      .final-score {
+        margin-top: 30px;
+      }
 
-#finalScore {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-}
+      #finalScore {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+      }
 
-#scoreMessage {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-</style>
+      #scoreMessage {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+    </style>
 
     <section class="survival-score">
       <h2>Survival Score 🫁</h2>
@@ -1420,15 +1773,21 @@
       <div class="score-cards">
         <div class="score-card">
           <span>🌬️ Air Quality</span>
-          <div class="bar"><div id="airBar">0%</div></div>
+          <div class="bar">
+            <div id="airBar">0%</div>
+          </div>
         </div>
         <div class="score-card">
           <span>💧 Water</span>
-          <div class="bar"><div id="waterBar">0%</div></div>
+          <div class="bar">
+            <div id="waterBar">0%</div>
+          </div>
         </div>
         <div class="score-card">
           <span>🐾 Biodiversity</span>
-          <div class="bar"><div id="bioBar">0%</div></div>
+          <div class="bar">
+            <div id="bioBar">0%</div>
+          </div>
         </div>
       </div>
       <div class="final-score">
@@ -1438,66 +1797,68 @@
     </section>
 
     <script>
-function getRandomScore(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+      function getRandomScore(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
 
-function getColor(score) {
-  if (score > 70) return "linear-gradient(90deg, #00c853, #69f0ae)";
-  if (score > 40) return "linear-gradient(90deg, #ffab00, #ffd54f)";
-  return "linear-gradient(90deg, #d50000, #ff5252)";
-}
+      function getColor(score) {
+        if (score > 70) return "linear-gradient(90deg, #00c853, #69f0ae)";
+        if (score > 40) return "linear-gradient(90deg, #ffab00, #ffd54f)";
+        return "linear-gradient(90deg, #d50000, #ff5252)";
+      }
 
-function updateBar(id, score) {
-  const bar = document.getElementById(id);
-  bar.style.width = score + "%";
-  bar.style.background = getColor(score);
-  bar.textContent = score + "%";
-}
+      function updateBar(id, score) {
+        const bar = document.getElementById(id);
+        bar.style.width = score + "%";
+        bar.style.background = getColor(score);
+        bar.textContent = score + "%";
+      }
 
-function updateSurvivalScore() {
-  const air = getRandomScore(30, 95);
-  const water = getRandomScore(30, 95);
-  const bio = getRandomScore(30, 95);
+      function updateSurvivalScore() {
+        const air = getRandomScore(30, 95);
+        const water = getRandomScore(30, 95);
+        const bio = getRandomScore(30, 95);
 
-  updateBar("airBar", air);
-  updateBar("waterBar", water);
-  updateBar("bioBar", bio);
+        updateBar("airBar", air);
+        updateBar("waterBar", water);
+        updateBar("bioBar", bio);
 
-  const final = Math.floor((air + water + bio) / 3);
-  document.getElementById("finalScore").textContent = 
-    "Survival Score: " + final + "%";
+        const final = Math.floor((air + water + bio) / 3);
+        document.getElementById("finalScore").textContent =
+          "Survival Score: " + final + "%";
 
-  let message = "";
-  if (final > 70) {
-    message = "🌍 Earth is thriving! Keep protecting it.";
-  } else if (final > 40) {
-    message = "⚠️ Earth is stable but needs improvement.";
-  } else {
-    message = "🚨 Critical condition! Immediate action required.";
-  }
+        let message = "";
+        if (final > 70) {
+          message = "🌍 Earth is thriving! Keep protecting it.";
+        } else if (final > 40) {
+          message = "⚠️ Earth is stable but needs improvement.";
+        } else {
+          message = "🚨 Critical condition! Immediate action required.";
+        }
 
-  document.getElementById("scoreMessage").textContent = message;
-}
+        document.getElementById("scoreMessage").textContent = message;
+      }
 
-// Run on page load
-window.onload = updateSurvivalScore;
+      // Run on page load
+      window.onload = updateSurvivalScore;
 
-// Optional: Refresh score every 8 seconds
-setInterval(updateSurvivalScore, 8000);
-</script>
+      // Optional: Refresh score every 8 seconds
+      setInterval(updateSurvivalScore, 8000);
+    </script>
     <!-- Impact Calculator CTA Section -->
     <section class="calculator-cta-section">
       <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
         <div class="card-image">
-          <img alt="Impact Calculator" loading="lazy" src="https://i.pinimg.com/736x/de/0b/3a/de0b3a9531a93b36d25c78b3523307a0.jpg" />
+          <img alt="Impact Calculator" loading="lazy"
+            src="https://i.pinimg.com/736x/de/0b/3a/de0b3a9531a93b36d25c78b3523307a0.jpg" />
           <div class="card-overlay"><span class="card-tag">Calculator</span></div>
         </div>
         <div class="card-content">
           <h3>Impact Calculator</h3>
           <p>Calculate your personal environmental impact and get tips to reduce your carbon footprint.</p>
           <div class="card-footer">
-            <a class="card-btn" href="js/impact-calculator.html">Calculate Now <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="card-btn" href="js/impact-calculator.html">Calculate Now <i
+                class="fa-solid fa-arrow-right"></i></a>
             <div class="card-stats"><i class="fa-solid fa-calculator"></i>Free Tool</div>
           </div>
         </div>
@@ -1505,12 +1866,13 @@ setInterval(updateSurvivalScore, 8000);
     </section>
 
     <!-- Museum Preview Section -->
-    <section class="museum-preview">
+    <section class="museum-preview" >
       <div class="museum-banner" data-aos="fade-up">
         <div class="museum-text">
           <span class="tag">🏛️ Explore the Past</span>
           <h2>The Virtual Animal Museum</h2>
-          <p>Step into our immersive digital sanctuary. Explore exhibits of extinct, endangered, and recovering species through stunning visuals and interactive experiences.</p>
+          <p>Step into our immersive digital sanctuary. Explore exhibits of extinct, endangered, and recovering species
+            through stunning visuals and interactive experiences.</p>
           <div class="museum-features">
             <div class="feature-item"><i class="fas fa-eye"></i><span>Interactive Exhibits</span></div>
             <div class="feature-item"><i class="fas fa-filter"></i><span>Filter by Status</span></div>
@@ -1524,15 +1886,18 @@ setInterval(updateSurvivalScore, 8000);
         </div>
         <div class="museum-visuals">
           <div class="floating-card card-1">
-            <img alt="Bengal Tiger" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg" />
+            <img alt="Bengal Tiger" loading="lazy"
+              src="https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg" />
             <div class="card-label">Endangered</div>
           </div>
           <div class="floating-card card-2">
-            <img alt="Dodo Bird" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvn6lVUkTAw3IUwiw7eqsIL1qUKuROlnZeVfntDyPK_j-C-GYwC4Nf5RG3LtqyQ84VKEoHcG1s7Xl4ZiDMTa1Fojvb-ZfSBiyRk9yNCZPZXA&amp;s=10" />
+            <img alt="Dodo Bird" loading="lazy"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvn6lVUkTAw3IUwiw7eqsIL1qUKuROlnZeVfntDyPK_j-C-GYwC4Nf5RG3LtqyQ84VKEoHcG1s7Xl4ZiDMTa1Fojvb-ZfSBiyRk9yNCZPZXA&amp;s=10" />
             <div class="card-label">Extinct</div>
           </div>
           <div class="floating-card card-3">
-            <img alt="Giant Panda" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG" />
+            <img alt="Giant Panda" loading="lazy"
+              src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG" />
             <div class="card-label">Recovered</div>
           </div>
         </div>
@@ -1540,7 +1905,7 @@ setInterval(updateSurvivalScore, 8000);
     </section>
 
     <!-- Myth Fact Section -->
-    <section class="myth-fact-section">
+    <section class="myth-fact-section" >
       <div class="section-container" data-aos="fade-up" data-aos-delay="300">
         <div class="section-header">
           <span class="section-tag">🌱 Knowledge Roots</span>
@@ -1569,7 +1934,7 @@ setInterval(updateSurvivalScore, 8000);
               </div>
             </article>
           </div>
-          
+
           <div class="myth-card-wrapper">
             <article class="myth-card">
               <div class="card-face card-front">
@@ -1591,7 +1956,7 @@ setInterval(updateSurvivalScore, 8000);
               </div>
             </article>
           </div>
-          
+
           <div class="myth-card-wrapper">
             <article class="myth-card">
               <div class="card-face card-front">
@@ -1613,7 +1978,7 @@ setInterval(updateSurvivalScore, 8000);
               </div>
             </article>
           </div>
-          
+
           <div class="myth-card-wrapper">
             <article class="myth-card">
               <div class="card-face card-front">
@@ -1640,7 +2005,7 @@ setInterval(updateSurvivalScore, 8000);
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section">
+    <section class="testimonials-section" >
       <div class="section-container">
         <div class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-quote-left"></i>Testimonials</span>
@@ -1650,9 +2015,11 @@ setInterval(updateSurvivalScore, 8000);
         <div class="testimonials-slider" data-aos="fade-up" data-aos-delay="200">
           <article class="testimonial-card">
             <div class="testimonial-rating">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-            <p class="testimonial-text">"Joining EcoLife was the best decision I made. I've adopted two dogs and planted over 50 trees in my community. It feels amazing to make a difference!"</p>
+            <p class="testimonial-text">"Joining EcoLife was the best decision I made. I've adopted two dogs and planted
+              over 50 trees in my community. It feels amazing to make a difference!"</p>
             <div class="testimonial-author">
               <img alt="Priya Sharma" loading="lazy" src="https://randomuser.me/api/portraits/women/44.jpg" />
               <div class="author-info">
@@ -1661,12 +2028,14 @@ setInterval(updateSurvivalScore, 8000);
               </div>
             </div>
           </article>
-          
+
           <article class="testimonial-card">
             <div class="testimonial-rating">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-            <p class="testimonial-text">"The kids quiz zone is fantastic! My children have learned so much about environmental conservation while having fun. Highly recommend for all parents!"</p>
+            <p class="testimonial-text">"The kids quiz zone is fantastic! My children have learned so much about
+              environmental conservation while having fun. Highly recommend for all parents!"</p>
             <div class="testimonial-author">
               <img alt="Rahul Verma" loading="lazy" src="https://randomuser.me/api/portraits/men/32.jpg" />
               <div class="author-info">
@@ -1675,12 +2044,14 @@ setInterval(updateSurvivalScore, 8000);
               </div>
             </div>
           </article>
-          
+
           <article class="testimonial-card">
             <div class="testimonial-rating">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-            <p class="testimonial-text">"I reported illegal dumping in my area and the issue was resolved within a week! EcoLife truly cares about making our communities cleaner and safer."</p>
+            <p class="testimonial-text">"I reported illegal dumping in my area and the issue was resolved within a week!
+              EcoLife truly cares about making our communities cleaner and safer."</p>
             <div class="testimonial-author">
               <img alt="Ananya Singh" loading="lazy" src="https://randomuser.me/api/portraits/women/68.jpg" />
               <div class="author-info">
@@ -1694,33 +2065,39 @@ setInterval(updateSurvivalScore, 8000);
     </section>
 
     <!-- Report Section -->
-    <section class="report-section" id="report">
+    <section class="report-section" id="report" >
       <div class="section-container">
         <div class="report-content">
           <div class="report-info">
             <span class="section-tag"><i class="fa-solid fa-bullhorn"></i>Report Issues</span>
             <h2 class="section-title">Report Pollution &amp; Trash Dumping</h2>
-            <p class="section-desc">Spotted illegal dumping or pollution in your area? Report it here and we'll work with local authorities to resolve the issue.</p>
+            <p class="section-desc">Spotted illegal dumping or pollution in your area? Report it here and we'll work
+              with local authorities to resolve the issue.</p>
             <div class="report-stats">
               <div class="report-stat">
                 <i class="fa-solid fa-file-alt"></i>
-                <div><span class="stat-num" data-target="2500">0</span><span class="stat-text">Reports Filed</span></div>
+                <div><span class="stat-num" data-target="2500">0</span><span class="stat-text">Reports Filed</span>
+                </div>
               </div>
               <div class="report-stat">
                 <i class="fa-solid fa-check-circle"></i>
-                <div><span class="stat-num" data-target="85">0</span><span class="stat-text">Issues Resolved</span></div>
+                <div><span class="stat-num" data-target="85">0</span><span class="stat-text">Issues Resolved</span>
+                </div>
               </div>
             </div>
             <div class="recent-reports">
               <h4><i class="fa-solid fa-clock"></i>Recent Reports</h4>
               <ul class="report-list">
-                <li><span class="report-status resolved"></span>Trash dumped near River Park – <strong>Raj</strong><span class="report-badge">Resolved</span></li>
-                <li><span class="report-status pending"></span>Plastic waste at Main Street – <strong>Ananya</strong><span class="report-badge pending">In Progress</span></li>
-                <li><span class="report-status resolved"></span>Illegal dumping near school – <strong>Sneha</strong><span class="report-badge">Resolved</span></li>
+                <li><span class="report-status resolved"></span>Trash dumped near River Park – <strong>Raj</strong><span
+                    class="report-badge">Resolved</span></li>
+                <li><span class="report-status pending"></span>Plastic waste at Main Street –
+                  <strong>Ananya</strong><span class="report-badge pending">In Progress</span></li>
+                <li><span class="report-status resolved"></span>Illegal dumping near school –
+                  <strong>Sneha</strong><span class="report-badge">Resolved</span></li>
               </ul>
             </div>
           </div>
-          
+
           <div class="report-form-wrapper">
             <form class="report-form" id="reportForm">
               <h3><i class="fa-solid fa-pen-to-square"></i>Submit a Report</h3>
@@ -1750,13 +2127,15 @@ setInterval(updateSurvivalScore, 8000);
               </div>
               <div class="form-group">
                 <label for="description"><i class="fa-solid fa-message"></i>Description</label>
-                <textarea id="description" name="description" placeholder="Describe the issue in detail..." required="" rows="4"></textarea>
+                <textarea id="description" name="description" placeholder="Describe the issue in detail..." required=""
+                  rows="4"></textarea>
               </div>
               <div class="form-group">
                 <label for="photo"><i class="fa-solid fa-camera"></i>Upload Photo (Optional)</label>
                 <div class="file-upload" id="fileUpload">
                   <input accept="image/*" id="photo" name="photo" type="file" />
-                  <div class="file-upload-label"><i class="fa-solid fa-cloud-arrow-up"></i><span>Click to upload or drag and drop</span></div>
+                  <div class="file-upload-label"><i class="fa-solid fa-cloud-arrow-up"></i><span>Click to upload or drag
+                      and drop</span></div>
                 </div>
               </div>
               <button class="btn" type="submit"><i class="fa-solid fa-paper-plane"></i>Submit Report</button>
@@ -1772,7 +2151,8 @@ setInterval(updateSurvivalScore, 8000);
       <div class="cta-content" data-aos="fade-up">
         <span class="cta-tag">Community Driven</span>
         <h2>Powered by Passionate Developers</h2>
-        <p>EcoLife is an open-source initiative built by a global team of nature lovers and tech enthusiasts. See the faces behind the code.</p>
+        <p>EcoLife is an open-source initiative built by a global team of nature lovers and tech enthusiasts. See the
+          faces behind the code.</p>
         <a class="btn-glow" href="js/masthead.html">View Masthead <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </section>
@@ -1786,10 +2166,17 @@ setInterval(updateSurvivalScore, 8000);
         </div>
         <div class="partners-slider" data-aos="fade-up" data-aos-delay="100">
           <div class="partner-logo"><img alt="WWF" loading="lazy" src="https://pngimg.com/d/wwf_PNG9.png" /></div>
-          <div class="partner-logo"><img alt="Greenpeace" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Greenpeace_logo.svg/250px-Greenpeace_logo.svg.png" /></div>
-          <div class="partner-logo"><img alt="UNEP" loading="lazy" src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/UNEP_logo.svg/250px-UNEP_logo.svg.png" /></div>
-          <div class="partner-logo"><img alt="IUCN" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/IUCN_logo.svg/250px-IUCN_logo.svg.png" /></div>
-          <div class="partner-logo"><img alt="PETA" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Peta_logo.svg/250px-Peta_logo.svg.png" /></div>
+          <div class="partner-logo"><img alt="Greenpeace" loading="lazy"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Greenpeace_logo.svg/250px-Greenpeace_logo.svg.png" />
+          </div>
+          <div class="partner-logo"><img alt="UNEP" loading="lazy"
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/UNEP_logo.svg/250px-UNEP_logo.svg.png" /></div>
+          <div class="partner-logo"><img alt="IUCN" loading="lazy"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/IUCN_logo.svg/250px-IUCN_logo.svg.png" />
+          </div>
+          <div class="partner-logo"><img alt="PETA" loading="lazy"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Peta_logo.svg/250px-Peta_logo.svg.png" />
+          </div>
         </div>
       </div>
     </section>
@@ -1801,17 +2188,21 @@ setInterval(updateSurvivalScore, 8000);
   <!-- Floating Action Buttons Container -->
   <div class="fab-container">
     <!-- Mic Button (Eco Assistant) -->
-    <button aria-label="Eco Assistant" class="mic-btn" title="Voice Assistant"><i class="fa-solid fa-microphone"></i></button>
+    <button aria-label="Eco Assistant" class="mic-btn" title="Voice Assistant"><i
+        class="fa-solid fa-microphone"></i></button>
     <!-- Scroll to Top Button -->
-    <button aria-label="Back to Top" class="back-to-top" id="backToTop" title="Scroll to Top"><i class="fa-solid fa-arrow-up"></i></button>
+    <button aria-label="Back to Top" class="back-to-top" id="backToTop" title="Scroll to Top"><i
+        class="fa-solid fa-arrow-up"></i></button>
     <!-- Scroll to Bottom Button -->
-    <button aria-label="Scroll to Bottom" class="scroll-to-bottom" id="scrollToBottom" title="Scroll to Bottom"><i class="fa-solid fa-arrow-down"></i></button>
+    <button aria-label="Scroll to Bottom" class="scroll-to-bottom" id="scrollToBottom" title="Scroll to Bottom"><i
+        class="fa-solid fa-arrow-down"></i></button>
   </div>
 
   <!-- Info Modal -->
   <div class="custom-modal-overlay" id="infoModal">
     <div class="custom-modal-content">
-      <button aria-label="Close modal" class="custom-modal-close" onclick="closeInfoModal()"><i class="fa-solid fa-xmark"></i></button>
+      <button aria-label="Close modal" class="custom-modal-close" onclick="closeInfoModal()"><i
+          class="fa-solid fa-xmark"></i></button>
       <div class="modal-inner">
         <div class="modal-header-content" id="modalHeader"></div>
         <div class="modal-body-content" id="modalBody"></div>
@@ -1832,7 +2223,7 @@ setInterval(updateSurvivalScore, 8000);
   <script src="js/global/performance-monitor.js"></script>
   <script src="js/global/optimized-image-loader.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
+
   <script>
     AOS.init({
       once: true,
@@ -1856,14 +2247,14 @@ setInterval(updateSurvivalScore, 8000);
   <!-- Donation JS -->
   <script>
     const campaigns = [
-      { id:1, title:"Tree Plantation Drive", targetAmount:2000, currentAmount:1200, donors:["Eco Club","Local School","Green Org"] },
-      { id:2, title:"Ocean Cleanup Initiative", targetAmount:1500, currentAmount:850, donors:["Beach Volunteers","Surf Club"] },
-      { id:3, title:"Wildlife Protection Fund", targetAmount:2500, currentAmount:1400, donors:["Nature Group","Forest Team"] }
+      { id: 1, title: "Tree Plantation Drive", targetAmount: 2000, currentAmount: 1200, donors: ["Eco Club", "Local School", "Green Org"] },
+      { id: 2, title: "Ocean Cleanup Initiative", targetAmount: 1500, currentAmount: 850, donors: ["Beach Volunteers", "Surf Club"] },
+      { id: 3, title: "Wildlife Protection Fund", targetAmount: 2500, currentAmount: 1400, donors: ["Nature Group", "Forest Team"] }
     ];
 
     let donationModal, donationForm, donationAmountInput, donationCampaignSelect;
 
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       donationModal = document.getElementById("donation-modal");
       donationForm = document.getElementById("donation-form");
       donationAmountInput = document.getElementById("donation-amount");
@@ -1901,7 +2292,7 @@ setInterval(updateSurvivalScore, 8000);
 
     function setupEventListeners() {
       document.querySelectorAll(".amount-button").forEach(btn => {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function () {
           donationAmountInput.value = this.dataset.amount;
           document.querySelectorAll(".amount-button").forEach(b => b.classList.remove("active"));
           this.classList.add("active");
@@ -1913,7 +2304,7 @@ setInterval(updateSurvivalScore, 8000);
       });
 
       donationModal.addEventListener("click", (e) => {
-        if(e.target === donationModal) donationModal.classList.remove("active");
+        if (e.target === donationModal) donationModal.classList.remove("active");
       });
 
       donationForm.addEventListener("submit", handleDonationSubmit);
@@ -1926,7 +2317,7 @@ setInterval(updateSurvivalScore, 8000);
       const amount = parseFloat(donationAmountInput.value);
       const name = document.getElementById("donor-name").value || "Anonymous";
 
-      if(!campaignId || !amount || amount <= 0) {
+      if (!campaignId || !amount || amount <= 0) {
         alert("Please enter valid details");
         return;
       }
@@ -2169,67 +2560,45 @@ setInterval(updateSurvivalScore, 8000);
 
   <!-- Scroll Manager Script -->
   <script>
-    class ScrollManager {
-      constructor() {
-        this.scrollToBottomBtn = null;
-        this.backToTopBtn = null;
-        this.scrollHandler = null;
-      }
-
-      init() {
-        this.scrollToBottomBtn = document.getElementById("scrollToBottom");
-        this.backToTopBtn = document.getElementById("backToTop");
-
-        this.scrollHandler = this.throttle(() => {
-          const scrollTop = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight;
-          const winHeight = window.innerHeight;
-
-          if (this.backToTopBtn) {
-            this.backToTopBtn.style.display = scrollTop > 300 ? "flex" : "none";
-          }
-
-          if (this.scrollToBottomBtn) {
-            this.scrollToBottomBtn.style.display = scrollTop < docHeight - winHeight - 200 ? "flex" : "none";
-          }
-        }, 100);
-
-        window.addEventListener("scroll", this.scrollHandler);
-
-        if (this.scrollToBottomBtn) {
-          this.scrollToBottomBtn.addEventListener("click", () => {
-            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
-          });
+    document.addEventListener("DOMContentLoaded", function () {
+    
+      const scrollBtn = document.getElementById("scrollToggle");
+      const scrollIcon = document.getElementById("scrollIcon");
+    
+      function updateButton() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        const winHeight = window.innerHeight;
+      
+        if (scrollTop > 300) {
+          scrollBtn.style.display = "flex";
+        } else {
+          scrollBtn.style.display = "none";
         }
-
-        if (this.backToTopBtn) {
-          this.backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          });
+      
+        if (scrollTop < docHeight - winHeight - 200) {
+          scrollIcon.className = "fa-solid fa-arrow-down";
+          scrollBtn.title = "Scroll to Bottom";
+        } else {
+          scrollIcon.className = "fa-solid fa-arrow-up";
+          scrollBtn.title = "Scroll to Top";
         }
       }
-
-      throttle(func, limit) {
-        let inThrottle;
-        return function (...args) {
-          if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => (inThrottle = false), limit);
-          }
-        };
-      }
-
-      cleanup() {
-        if (this.scrollHandler) {
-          window.removeEventListener("scroll", this.scrollHandler);
+    
+      window.addEventListener("scroll", updateButton);
+    
+      scrollBtn.addEventListener("click", function () {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        const winHeight = window.innerHeight;
+      
+        if (scrollTop < docHeight - winHeight - 200) {
+          window.scrollTo({ top: docHeight, behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const scrollManager = new ScrollManager();
-      scrollManager.init();
+      });
+    
     });
   </script>
 
@@ -2375,11 +2744,112 @@ setInterval(updateSurvivalScore, 8000);
     document.addEventListener("DOMContentLoaded", () => {
       new EcoVoiceAssistant();
     });
+
+  
+  const body = document.getElementById('mainBody');
+  let currentTheme = 'light'; // default theme
+
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    if(currentTheme === 'light'){
+      document.documentElement.setAttribute('data-theme', 'dark');
+      currentTheme = 'dark';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      currentTheme = 'light';
+    }
+
+    // Inline body style update (important for inline priority)
+    body.style.backgroundColor = getComputedStyle(document.documentElement)
+                                  .getPropertyValue('--bg-color').trim();
+    body.style.color = getComputedStyle(document.documentElement)
+                       .getPropertyValue('--text-color').trim();
+  });
+function closeNoiseCrisisAlert() {
+  document.getElementById("noise-crisis-alert-banner").style.display = "none";
+}
+
+function closeIndigenousCrisisAlert() {
+  document.getElementById("indigenous-crisis-alert-banner").style.display = "none";
+}
+
+function closeCrisisAlert() {
+  document.getElementById("crisisAlert").style.display = "none";
+}
   </script>
 
   <!-- PWA Script -->
   <script src="js/pwa.js"></script>
   <!-- Eco Assistant Script -->
   <script src="js/components/eco-assistant.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+      const cards = document.querySelectorAll("#environmentCards .feature-card");
+      const cardsPerPage = 3;
+      const totalPages = Math.ceil(cards.length / cardsPerPage);
+    
+      let currentPage = 1;
+    
+      const pageNumbersContainer = document.getElementById("pageNumbers");
+      const prevBtn = document.getElementById("prevPage");
+      const nextBtn = document.getElementById("nextPage");
+    
+      function showPage(page) {
+        currentPage = page;
+      
+        // Hide all cards
+        cards.forEach(card => card.style.display = "none");
+      
+        // Show only 3 cards
+        const start = (page - 1) * cardsPerPage;
+        const end = start + cardsPerPage;
+      
+        for (let i = start; i < end && i < cards.length; i++) {
+          cards[i].style.display = "block";
+        }
+      
+        updatePaginationUI();
+      }
+    
+      function updatePaginationUI() {
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+      
+        document.querySelectorAll(".page-number").forEach(btn => {
+          btn.classList.remove("active");
+          if (parseInt(btn.textContent) === currentPage) {
+            btn.classList.add("active");
+          }
+        });
+      }
+    
+      function createPageNumbers() {
+        pageNumbersContainer.innerHTML = "";
+      
+        for (let i = 1; i <= totalPages; i++) {
+          const pageBtn = document.createElement("div");
+          pageBtn.textContent = i;
+          pageBtn.classList.add("page-number");
+        
+          pageBtn.addEventListener("click", () => showPage(i));
+        
+          pageNumbersContainer.appendChild(pageBtn);
+        }
+      }
+    
+      prevBtn.addEventListener("click", () => {
+        if (currentPage > 1) showPage(currentPage - 1);
+      });
+    
+      nextBtn.addEventListener("click", () => {
+        if (currentPage < totalPages) showPage(currentPage + 1);
+      });
+    
+      createPageNumbers();
+      showPage(1); // Show first 3 cards initially
+    
+    });
+  </script>
 </body>
+
 </html>

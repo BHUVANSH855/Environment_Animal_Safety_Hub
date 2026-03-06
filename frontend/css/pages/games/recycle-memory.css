@@ -5,7 +5,7 @@
 
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    
     background: #0f172a;
     background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 135, 0.08) 0%, transparent 80%);
     color: white;

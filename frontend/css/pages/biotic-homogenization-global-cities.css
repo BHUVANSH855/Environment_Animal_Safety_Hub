@@ -1,4 +1,4 @@
-/* Biotic Homogenization Across Global Cities Styles */
+﻿/* Biotic Homogenization Across Global Cities Styles */
 
 :root {
   --primary-color: #3498db;
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -194,7 +194,7 @@ body {
 }
 
 .driver-card li::before {
-  content: '✓';
+  content: 'âœ“';
   color: var(--secondary-color);
   font-weight: bold;
   position: absolute;
@@ -476,7 +476,7 @@ body {
 }
 
 .study-card li::before {
-  content: '•';
+  content: 'â€¢';
   color: var(--primary-color);
   font-weight: bold;
   position: absolute;
@@ -545,7 +545,7 @@ body {
 }
 
 .solution-card li::before {
-  content: '✓';
+  content: 'âœ“';
   color: var(--secondary-color);
   font-weight: bold;
   position: absolute;
