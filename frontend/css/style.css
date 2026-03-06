@@ -4892,14 +4892,6 @@ textarea:focus {
   50% { transform: translateY(-20px) rotate(10deg); }
 }
 
-/* ===========================================
-   END OF CSS
-   =========================================== */
-
-   /* ==========================================
-   Fix Issue #3218
-   Navbar alignment and spacing
-========================================== */
 
 .nav-container {
   display: flex;
