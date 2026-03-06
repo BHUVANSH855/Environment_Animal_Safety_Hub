@@ -1,111 +1,333 @@
-﻿/* Rental Housing Score Styles */
-body {
-    
-    background: linear-gradient(135deg, #e3f2fd 0%, #fffde7 100%);
-    color: #333;
-    margin: 0;
-    padding: 0;
+﻿*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
 }
-header {
-    background: #1976d2;
-    color: #fff;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 2px 8px rgba(25,118,210,0.1);
+
+body{
+background:#f3f8f4;
+color:#333;
 }
-header h1 {
-    margin: 0;
-    font-size: 2.2rem;
+
+
+/* HEADER */
+
+.page-header{
+
+background:linear-gradient(135deg,#2e7d32,#43a047);
+
+color:white;
+
+text-align:center;
+
+padding:50px 20px;
+
 }
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
-    display: flex;
-    gap: 1.5rem;
+
+.page-header h1{
+font-size:36px;
+margin-bottom:10px;
 }
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
+
+.page-header p{
+opacity:0.9;
+margin-bottom:20px;
 }
-nav a:hover {
-    color: #bbdefb;
+
+
+/* NAVIGATION */
+
+nav ul{
+list-style:none;
+display:flex;
+justify-content:center;
+gap:25px;
 }
-main {
-    max-width: 900px;
-    margin: 2rem auto;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(25,118,210,0.08);
-    padding: 2rem;
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.2s;
 }
-section {
-    margin-bottom: 2.5rem;
+
+nav a:hover{
+opacity:0.7;
 }
-section h2 {
-    color: #1976d2;
-    margin-bottom: 0.5rem;
+
+
+/* CONTAINER */
+
+.container{
+
+max-width:1000px;
+
+margin:auto;
+
+padding:40px 20px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
 }
-#assessment-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    background: #e3f2fd;
-    padding: 1rem;
-    border-radius: 8px;
+
+
+/* CARD */
+
+.card{
+
+background:linear-gradient(135deg,#ffffff,#f7fff9);
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+
+transition:0.3s;
+
 }
-#assessment-form label {
-    flex: 1 0 120px;
+
+.card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
+
 }
-#assessment-form input[type="text"], #assessment-form input[type="range"] {
-    flex: 2 0 180px;
-    padding: 0.5rem;
-    border: 1px solid #bbdefb;
-    border-radius: 4px;
+
+.card h2{
+
+color:#2e7d32;
+
+margin-bottom:15px;
+
 }
-button {
-    background: #1976d2;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
+
+
+/* FORM */
+
+#assessment-form{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+
 }
-button:hover {
-    background: #1565c0;
+
+.form-group{
+
+display:flex;
+
+flex-direction:column;
+
+gap:6px;
+
 }
-#score-summary {
-    background: #e0f7fa;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-top: 1rem;
+
+input[type="text"]{
+
+padding:8px;
+
+border-radius:6px;
+
+border:1px solid #ccc;
+
 }
-#risk-chart {
-    min-height: 220px;
-    background: #e3f2fd;
-    border-radius: 8px;
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+input[type="range"]{
+
+width:100%;
+
 }
-footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    background: #1976d2;
-    color: #fff;
-    border-radius: 0 0 12px 12px;
-    margin-top: 2rem;
+
+
+/* BUTTON */
+
+.btn-primary{
+
+background:#2e7d32;
+
+color:white;
+
+border:none;
+
+padding:10px 20px;
+
+border-radius:6px;
+
+cursor:pointer;
+
+transition:0.2s;
+
+grid-column:span 2;
+
 }
-@media (max-width: 600px) {
-    main {
-        padding: 1rem;
-    }
-    #assessment-form {
-        flex-direction: column;
-    }
+
+.btn-primary:hover{
+
+background:#1b5e20;
+
+transform:scale(1.05);
+
+}
+
+
+/* SUMMARY */
+
+#score-summary{
+
+margin-top:10px;
+
+padding:15px;
+
+background:#e8f5e9;
+
+border-radius:8px;
+
+}
+
+
+/* CHART */
+
+#risk-chart{
+
+margin-top:20px;
+
+background:#f1fff4;
+
+padding:20px;
+
+border-radius:8px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+
+/* RESOURCES */
+
+.resource-list{
+
+padding-left:18px;
+
+}
+
+.resource-list li{
+
+margin-bottom:10px;
+
+}
+
+.resource-list a{
+
+color:#2e7d32;
+
+text-decoration:none;
+
+}
+
+.resource-list a:hover{
+
+text-decoration:underline;
+
+}
+
+
+/* FOOTER */
+
+.page-footer{
+
+margin-top:40px;
+
+text-align:center;
+
+padding:20px;
+
+background:#2e7d32;
+
+color:white;
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+#assessment-form{
+
+grid-template-columns:1fr;
+
+}
+
+.btn-primary{
+
+grid-column:span 1;
+
+}
+
+}
+/* ===== GREEN THEME RANGE SLIDER ===== */
+
+input[type="range"]{
+  -webkit-appearance:none;
+  width:100%;
+  height:6px;
+  border-radius:6px;
+  background:#d6ead8;
+  outline:none;
+  transition:all 0.3s;
+}
+
+/* TRACK */
+input[type="range"]::-webkit-slider-runnable-track{
+  height:6px;
+  background:#81c784;
+  border-radius:6px;
+}
+
+/* THUMB */
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  appearance:none;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#2e7d32;
+  cursor:pointer;
+  border:2px solid #ffffff;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  margin-top:-5px;
+  transition:0.2s;
+}
+
+/* Hover animation */
+input[type="range"]::-webkit-slider-thumb:hover{
+  transform:scale(1.2);
+  background:#1b5e20;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track{
+  background:#81c784;
+  height:6px;
+  border-radius:6px;
+}
+
+input[type="range"]::-moz-range-thumb{
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#2e7d32;
+  border:none;
+  cursor:pointer;
 }

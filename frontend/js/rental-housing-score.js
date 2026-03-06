@@ -1,91 +1,184 @@
-// Rental Housing Score JS
+document.addEventListener("DOMContentLoaded",()=>{
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Assessment Form Logic
-    document.getElementById('calculate-score').addEventListener('click', (e) => {
-        e.preventDefault();
-        const address = document.getElementById('address').value.trim();
-        const heatSafety = parseInt(document.getElementById('heat-safety').value);
-        const floodExposure = parseInt(document.getElementById('flood-exposure').value);
-        const ventilation = parseInt(document.getElementById('ventilation').value);
-        const insulation = parseInt(document.getElementById('insulation').value);
-        const backupWater = parseInt(document.getElementById('backup-water').value);
-        const emergencyReadiness = parseInt(document.getElementById('emergency-readiness').value);
-        if (!address) return;
-        const scores = {
-            heatSafety,
-            floodExposure,
-            ventilation,
-            insulation,
-            backupWater,
-            emergencyReadiness
-        };
-        const totalScore = calculateTotalScore(scores);
-        renderScoreSummary(address, scores, totalScore);
-        renderRiskChart(scores);
-    });
-    function calculateTotalScore(scores) {
-        // Lower flood exposure is better, others higher is better
-        return Math.round((scores.heatSafety + (10 - scores.floodExposure) + scores.ventilation + scores.insulation + scores.backupWater + scores.emergencyReadiness) / 6);
-    }
-    function renderScoreSummary(address, scores, totalScore) {
-        const summaryDiv = document.getElementById('score-summary');
-        summaryDiv.innerHTML = `<strong>Rental Address:</strong> ${address}<br>
-            <strong>Heat Safety:</strong> ${scores.heatSafety}/10<br>
-            <strong>Flood Exposure:</strong> ${scores.floodExposure}/10<br>
-            <strong>Ventilation:</strong> ${scores.ventilation}/10<br>
-            <strong>Insulation:</strong> ${scores.insulation}/10<br>
-            <strong>Backup Water Access:</strong> ${scores.backupWater}/10<br>
-            <strong>Emergency Readiness:</strong> ${scores.emergencyReadiness}/10<br>
-            <hr>
-            <strong>Climate-Resilient Score:</strong> <span style="font-size:1.3em;color:#1976d2;">${totalScore}/10</span>`;
-    }
-    function renderRiskChart(scores) {
-        const chartDiv = document.getElementById('risk-chart');
-        chartDiv.innerHTML = '';
-        // Radar chart visualization
-        const canvas = document.createElement('canvas');
-        canvas.width = 400;
-        canvas.height = 220;
-        chartDiv.appendChild(canvas);
-        const ctx = canvas.getContext('2d');
-        const labels = ['Heat Safety', 'Flood Exposure', 'Ventilation', 'Insulation', 'Backup Water', 'Emergency Readiness'];
-        const values = [scores.heatSafety, 10 - scores.floodExposure, scores.ventilation, scores.insulation, scores.backupWater, scores.emergencyReadiness];
-        const centerX = 200, centerY = 110, radius = 80;
-        ctx.save();
-        ctx.translate(centerX, centerY);
-        // Draw axes
-        for (let i = 0; i < labels.length; i++) {
-            const angle = (Math.PI * 2 / labels.length) * i;
-            ctx.beginPath();
-            ctx.moveTo(0, 0);
-            ctx.lineTo(Math.cos(angle) * radius, Math.sin(angle) * radius);
-            ctx.strokeStyle = '#1976d2';
-            ctx.stroke();
-            // Label
-            ctx.save();
-            ctx.translate(Math.cos(angle) * (radius + 20), Math.sin(angle) * (radius + 20));
-            ctx.rotate(angle);
-            ctx.font = '13px Segoe UI';
-            ctx.fillStyle = '#333';
-            ctx.textAlign = 'center';
-            ctx.fillText(labels[i], 0, 0);
-            ctx.restore();
-        }
-        // Draw risk polygon
-        ctx.beginPath();
-        for (let i = 0; i < values.length; i++) {
-            const angle = (Math.PI * 2 / values.length) * i;
-            const r = values[i] / 10 * radius;
-            if (i === 0) ctx.moveTo(Math.cos(angle) * r, Math.sin(angle) * r);
-            else ctx.lineTo(Math.cos(angle) * r, Math.sin(angle) * r);
-        }
-        ctx.closePath();
-        ctx.fillStyle = 'rgba(25,118,210,0.2)';
-        ctx.fill();
-        ctx.strokeStyle = '#1976d2';
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        ctx.restore();
-    }
+const btn=document.getElementById("calculate-score");
+
+btn.addEventListener("click",(e)=>{
+
+e.preventDefault();
+
+const address=document.getElementById("address").value.trim();
+
+if(!address) return;
+
+
+const scores={
+
+heatSafety:+document.getElementById("heat-safety").value,
+
+floodExposure:+document.getElementById("flood-exposure").value,
+
+ventilation:+document.getElementById("ventilation").value,
+
+insulation:+document.getElementById("insulation").value,
+
+backupWater:+document.getElementById("backup-water").value,
+
+emergency:+document.getElementById("emergency-readiness").value
+
+};
+
+
+const total=Math.round(
+
+(scores.heatSafety+
+
+(10-scores.floodExposure)+
+
+scores.ventilation+
+
+scores.insulation+
+
+scores.backupWater+
+
+scores.emergency)/6
+
+);
+
+renderSummary(address,scores,total);
+
+renderChart(scores);
+
 });
+
+});
+
+
+function renderSummary(address,scores,total){
+
+document.getElementById("score-summary").innerHTML=`
+
+<b>Rental Address:</b> ${address}<br>
+
+Heat Safety: ${scores.heatSafety}/10<br>
+
+Flood Exposure: ${scores.floodExposure}/10<br>
+
+Ventilation: ${scores.ventilation}/10<br>
+
+Insulation: ${scores.insulation}/10<br>
+
+Backup Water: ${scores.backupWater}/10<br>
+
+Emergency Readiness: ${scores.emergency}/10
+
+<hr>
+
+<b>Climate Resilience Score:</b>
+
+<span style="font-size:20px;color:#2e7d32">${total}/10</span>
+
+`;
+
+}
+
+
+
+function renderChart(scores){
+
+const chart=document.getElementById("risk-chart");
+
+chart.innerHTML="";
+
+const canvas=document.createElement("canvas");
+
+canvas.width=400;
+
+canvas.height=220;
+
+chart.appendChild(canvas);
+
+const ctx=canvas.getContext("2d");
+
+const values=[
+
+scores.heatSafety,
+
+10-scores.floodExposure,
+
+scores.ventilation,
+
+scores.insulation,
+
+scores.backupWater,
+
+scores.emergency
+
+];
+
+const labels=[
+
+"Heat",
+
+"Flood",
+
+"Ventilation",
+
+"Insulation",
+
+"Water",
+
+"Emergency"
+
+];
+
+const cx=200;
+
+const cy=110;
+
+const radius=80;
+
+ctx.translate(cx,cy);
+
+for(let i=0;i<6;i++){
+
+const angle=(Math.PI*2/6)*i;
+
+ctx.beginPath();
+
+ctx.moveTo(0,0);
+
+ctx.lineTo(Math.cos(angle)*radius,Math.sin(angle)*radius);
+
+ctx.strokeStyle="#2e7d32";
+
+ctx.stroke();
+
+ctx.fillText(labels[i],Math.cos(angle)*(radius+20),Math.sin(angle)*(radius+20));
+
+}
+
+ctx.beginPath();
+
+for(let i=0;i<6;i++){
+
+const angle=(Math.PI*2/6)*i;
+
+const r=(values[i]/10)*radius;
+
+if(i===0) ctx.moveTo(Math.cos(angle)*r,Math.sin(angle)*r);
+
+else ctx.lineTo(Math.cos(angle)*r,Math.sin(angle)*r);
+
+}
+
+ctx.closePath();
+
+ctx.fillStyle="rgba(46,125,50,0.3)";
+
+ctx.fill();
+
+ctx.strokeStyle="#2e7d32";
+
+ctx.stroke();
+
+}
