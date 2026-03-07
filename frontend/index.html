@@ -224,6 +224,29 @@ body {
       background: #22c55e;
       color: white;
     }
+
+    /* Pagination Buttons */
+.page-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  background: #e5e7eb;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #22c55e;
+  color: white;
+}
+
+.page-btn:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
     .scroll-toggle-btn {
       position: fixed;
       right: 20px;
@@ -326,20 +349,20 @@ body {
   </div>
 
   <!-- Fire Regime Crisis Alert -->
-  <div class="crisis-alert-banner" id="crisisAlert" style="display:none;">
+<div class="crisis-alert-banner" id="crisisAlert" style="display:none;">
   <div class="crisis-alert-content">
 
     <div class="crisis-icon">
-      <i class="fas fa-fire"></i>
+      <i class="fas fa-exclamation-triangle"></i>
     </div>
 
     <div class="crisis-text">
       <span class="crisis-level">🔥 LEVEL 3 CRISIS</span>
       <span class="crisis-title">
-        Fire Regime Shifts Causing Wildlife Adaptation Failure
+        Fire Regime Shifts Causing Mass Wildlife Adaptation Failure
       </span>
       <span class="crisis-action">
-        400% increase in wildfire frequency – urgent conservation action required.
+        400% increase in fire frequency - Immediate conservation action required
       </span>
     </div>
 
@@ -347,27 +370,42 @@ body {
       <a class="crisis-btn" href="pages/environment/fire-regime-shifts.html">
         <i class="fas fa-fire"></i> View Crisis Details
       </a>
-
-      <button aria-label="Close crisis alert" class="crisis-close" onclick="closeCrisisAlert()">
+      <button class="crisis-close" onclick="closeCrisisAlert()" aria-label="Close crisis alert">
         <i class="fas fa-times"></i>
       </button>
     </div>
 
   </div>
 </div>
-      </div>
-      <div class="crisis-actions">
-        <a class="crisis-btn" href="pages/environment/polar-albedo-feedback-loop.html">
-          <i class="fas fa-snowflake">
-          </i>
-          View Crisis Details
-        </a>
-        <button aria-label="Close crisis alert" class="crisis-close" onclick="closeCrisisAlert()">
-          <i class="fas fa-times"></i>
-        </button>
+
+  <!-- Noise Pollution Crisis Alert -->
+<div class="noise-crisis-alert-banner" id="noise-crisis-alert-banner" style="display:none;">
+  <div class="noise-crisis-alert-content">
+
+    <div class="noise-crisis-icon">
+      <i class="fas fa-volume-up"></i>
+    </div>
+
+    <div class="noise-crisis-text">
+      <div class="noise-crisis-title">LEVEL 3 EMERGENCY</div>
+      <div class="noise-crisis-message">
+        Rising Noise Pollution Affecting Wildlife Communication
       </div>
     </div>
+
+    <div class="noise-crisis-actions">
+      <a class="noise-crisis-btn" href="pages/environment/noise-pollution-crisis.html">
+        <i class="fas fa-eye"></i> View Crisis Details
+      </a>
+
+      <button class="noise-crisis-close"
+        onclick="closeNoiseCrisisAlert()" aria-label="Close crisis alert">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
   </div>
+</div>
 
 
   <!-- Skip Navigation Link for Keyboard Users -->
@@ -884,35 +922,109 @@ body {
 
     <div class="cards-grid">
 
-      <!-- Adopt Pets -->
-      <article class="feature-card" data-aos="fade-up">
-        <div class="card-image">
-          <img src="assets/images/3d/adopt_pets.webp" alt="Adopt Pets">
-          <div class="card-overlay"><span class="card-tag">Adoption</span></div>
+  <!-- Adopt Pets -->
+  <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
+    <div class="card-image">
+      <img src="assets/images/3d/adopt_pets.webp" alt="Adopt Pets" loading="lazy">
+      <div class="card-overlay">
+        <span class="card-tag">Adoption</span>
+      </div>
+    </div>
+
+    <div class="card-content">
+      <h3>Adopt Pets</h3>
+      <p>
+        Help stray animals find loving homes. Open your heart and home
+        to a furry friend in need.
+      </p>
+
+      <div class="card-footer">
+        <a href="pages/animal-care/adoption-management.html" class="card-btn">
+          Adopt Now <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <div class="card-stats">
+          <i class="fa-solid fa-heart"></i> 1.2K adopted
         </div>
+      </div>
+    </div>
+  </article>
 
-        <div class="card-content">
-          <h3>Adopt Pets</h3>
-          <p>Help stray animals find loving homes.</p>
+  <!-- Wildlife Protection -->
+  <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="card-image">
+      <img
+        src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg"
+        alt="Wildlife Protection"
+        loading="lazy">
+      <div class="card-overlay">
+        <span class="card-tag">Conservation</span>
+      </div>
+    </div>
 
-          <div class="card-footer">
-            <a href="pages/animal-care/adoption-management.html" class="card-btn">
-              Adopt Now <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
+    <div class="card-content">
+      <h3>Protect Wildlife</h3>
+      <p>Learn how to protect endangered species and preserve their natural habitats.</p>
+
+      <div class="card-footer">
+        <a href="pages/animal-care/animal-welfare-education.html" class="card-btn">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <div class="card-stats">
+          <i class="fa-solid fa-shield-heart"></i> 500+ protected
         </div>
-      </article>
+      </div>
+    </div>
+  </article>
+        <div class="cards-grid">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-image">
+              <img alt="Adopt Pets" loading="lazy" src="assets/images/3d/adopt_pets.webp" />
+              <div class="card-overlay"><span class="card-tag">Adoption</span></div>
+            </div>
+            <div class="card-content">
+              <h3>Adopt Pets</h3>
+              <p>Help stray animals find loving homes. Open your heart and home to a furry friend in need.</p>
+              <div class="card-footer">
+                <a class="card-btn" href="pages/animal-care/adoption-management.html">Adopt Now <i
+                    class="fa-solid fa-arrow-right"></i></a>
+                <div class="card-stats"><i class="fa-solid fa-heart"></i>1.2K adopted</div>
+              </div>
+            </div>
+          </article>
 
-      <!-- Protect Wildlife -->
-      <article class="feature-card" data-aos="fade-up">
-        <div class="card-image">
-          <img src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg" alt="Wildlife">
-          <div class="card-overlay"><span class="card-tag">Conservation</span></div>
-        </div>
+          <!-- Wildlife Protection -->
+<article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+  <div class="card-image">
+    <img
+      src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg"
+      alt="Wildlife Protection"
+      loading="lazy">
 
-        <div class="card-content">
-          <h3>Protect Wildlife</h3>
-          <p>Learn how to protect endangered species and habitats.</p>
+    <div class="card-overlay">
+      <span class="card-tag">Conservation</span>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <h3>Protect Wildlife</h3>
+
+    <p>
+      Learn how to protect endangered species and preserve their natural habitats.
+    </p>
+
+    <div class="card-footer">
+      <a href="pages/animal-care/animal-welfare-education.html" class="card-btn">
+        Learn More <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <div class="card-stats">
+        <i class="fa-solid fa-shield-heart"></i> 500+ protected
+      </div>
+    </div>
+  </div>
+</article>
 
           <div class="card-footer">
             <a href="pages/animal-care/animal-welfare-education.html" class="card-btn">
@@ -969,7 +1081,7 @@ body {
       🤖 AI: <span id="ai-result">Thinking...</span>
     </p>
 
-    <button class="next-btn" id="nextBtn" >Next ➜</button>
+    <button class="next-btn" id="quizNextBtn">Next ➜</button>
   </div>
 </section>
     <!-- Environmental Conservation Section -->
@@ -2315,7 +2427,7 @@ body {
       const comboEl = document.getElementById("combo");
       const timerEl = document.getElementById("timer");
       const aiResult = document.getElementById("ai-result");
-      const nextBtn = document.getElementById("nextBtn");
+      const nextBtn = document.getElementById("quizNextBtn");
 
       function loadQuestion() {
         if (!question) return;
@@ -2709,7 +2821,7 @@ body {
     });
 
   
-  const body = document.getElementById('mainBody');
+  const body = document.body;
   let currentTheme = 'light'; // default theme
 
   document.getElementById('themeToggle').addEventListener('click', () => {
@@ -2768,7 +2880,7 @@ function closeCrisisAlert() {
         const end = start + cardsPerPage;
       
         for (let i = start; i < end && i < cards.length; i++) {
-          cards[i].style.display = "block";
+          cards[i].style.display = "flex";
         }
       
         updatePaginationUI();
@@ -2813,6 +2925,9 @@ function closeCrisisAlert() {
     
     });
   </script>
+  <button id="scrollToggle" class="scroll-toggle-btn">
+  <i id="scrollIcon" class="fa-solid fa-arrow-down"></i>
+</button>
 </body>
 
 </html>
