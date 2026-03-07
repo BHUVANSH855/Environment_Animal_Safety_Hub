@@ -280,9 +280,7 @@ body {
   <script src="js/global/theme-toggle.js"></script>
 </head>
 
-<body>
-
-
+<body id="mainBody">
   <!-- Indigenous Knowledge Loss Crisis Alert -->
   <div class="indigenous-crisis-alert-banner" id="indigenous-crisis-alert-banner" style="display: none;">
     <div class="indigenous-crisis-alert-content">
@@ -328,28 +326,35 @@ body {
   </div>
 
   <!-- Fire Regime Crisis Alert -->
-  <div class="crisis-alert-banner" id="crisisAlert" style="display: none;">
-    <div class="crisis-alert-content">
-      <div class="crisis-icon">
-        <i class="fas fa-exclamation-triangle"></i>
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-level">🔥 LEVEL 3 CRISIS</span>
-        <span class="crisis-title">Fire Regime Shifts Causing Mass Wildlife Adaptation Failure</span>
-        <span class="crisis-action">400% increase in fire frequency - Immediate conservation action required</span>
-      </div>
-      <div class="crisis-actions">
-        <a class="crisis-btn" href="..//frontend/pages/environment/fire-regime-shifts.html">
-          <i class="fas fa-fire"></i> View Crisis Details
-          <span class="crisis-level">
-            🧊 LEVEL 3 CRISIS
-          </span>
-          <span class="crisis-title">
-            Polar Albedo Loss Accelerating Global Warming Feedback Loops
-          </span>
-          <span class="crisis-action">
-            Arctic warming is accelerating - urgent intervention needed before a Blue Ocean Event
-          </span>
+  <div class="crisis-alert-banner" id="crisisAlert" style="display:none;">
+  <div class="crisis-alert-content">
+
+    <div class="crisis-icon">
+      <i class="fas fa-fire"></i>
+    </div>
+
+    <div class="crisis-text">
+      <span class="crisis-level">🔥 LEVEL 3 CRISIS</span>
+      <span class="crisis-title">
+        Fire Regime Shifts Causing Wildlife Adaptation Failure
+      </span>
+      <span class="crisis-action">
+        400% increase in wildfire frequency – urgent conservation action required.
+      </span>
+    </div>
+
+    <div class="crisis-actions">
+      <a class="crisis-btn" href="pages/environment/fire-regime-shifts.html">
+        <i class="fas fa-fire"></i> View Crisis Details
+      </a>
+
+      <button aria-label="Close crisis alert" class="crisis-close" onclick="closeCrisisAlert()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
       </div>
       <div class="crisis-actions">
         <a class="crisis-btn" href="pages/environment/polar-albedo-feedback-loop.html">
@@ -358,38 +363,6 @@ body {
           View Crisis Details
         </a>
         <button aria-label="Close crisis alert" class="crisis-close" onclick="closeCrisisAlert()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Permafrost Methane Crisis Alert Banner - Level 3 Emergency (#3128) -->
-  <div class="noise-crisis-alert-banner" id="permafrost-crisis-alert-banner" style="display: none;">
-    <div class="noise-crisis-alert-content">
-      <div class="noise-crisis-icon">
-        <i class="fas fa-snowflake noise-pulse"></i>
-      </div>
-      <div class="crisis-actions">
-        <a class="crisis-btn" href="..//frontend/pages/environment/fire-regime-shifts.html">
-          <i class="fas fa-fire"></i> View Crisis Details
-          <span class="crisis-level">
-            🧊 LEVEL 3 CRISIS
-          </span>
-          <span class="crisis-title">
-            Polar Albedo Loss Accelerating Global Warming Feedback Loops
-          </span>
-          <span class="crisis-action">
-            Arctic warming is accelerating - urgent intervention needed before a Blue Ocean Event
-          </span>
-      </div>
-      <div class="noise-crisis-actions">
-        <a class="indigenous-crisis-btn" href="pages/environment/permafrost-methane-crisis.html">
-          <i class="fas fa-eye"></i>
-          View Crisis Details
-        </a>
-        <button aria-label="Close crisis alert" class="noise-crisis-close"
-          onclick="document.getElementById('permafrost-crisis-alert-banner').style.display='none'">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -899,140 +872,71 @@ body {
 
     <div class="section-header" data-aos="fade-up">
       <span class="section-tag">
-        <i class="fa-solid fa-paw"></i>Animal Welfare
+        <i class="fa-solid fa-paw"></i> Animal Welfare
       </span>
 
-      <h2 class="section-title">Animal Protection &amp; Adoption</h2>
+      <h2 class="section-title">Animal Protection & Adoption</h2>
 
       <p class="section-subtitle">
-        Help us save lives. Every animal deserves love, care, and a forever home.
+        Help us save lives. Every animal deserves love and care.
       </p>
     </div>
 
     <div class="cards-grid">
 
       <!-- Adopt Pets -->
-      <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
+      <article class="feature-card" data-aos="fade-up">
         <div class="card-image">
-          <img src="assets/images/3d/adopt_pets.webp" alt="Adopt Pets" loading="lazy">
-
-          <div class="card-overlay">
-            <span class="card-tag">Adoption</span>
-          </div>
+          <img src="assets/images/3d/adopt_pets.webp" alt="Adopt Pets">
+          <div class="card-overlay"><span class="card-tag">Adoption</span></div>
         </div>
 
         <div class="card-content">
           <h3>Adopt Pets</h3>
-
-          <p>
-            Help stray animals find loving homes. Open your heart and home
-            to a furry friend in need.
-          </p>
+          <p>Help stray animals find loving homes.</p>
 
           <div class="card-footer">
             <a href="pages/animal-care/adoption-management.html" class="card-btn">
               Adopt Now <i class="fa-solid fa-arrow-right"></i>
             </a>
-
-            <div class="card-stats">
-              <i class="fa-solid fa-heart"></i> 1.2K adopted
-            </div>
           </div>
         </div>
       </article>
 
-
-      <!-- Wildlife Protection -->
-      <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+      <!-- Protect Wildlife -->
+      <article class="feature-card" data-aos="fade-up">
         <div class="card-image">
-          <img
-            src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg"
-            alt="Wildlife Protection"
-            loading="lazy">
-
-          <div class="card-overlay">
-            <span class="card-tag">Conservation</span>
-          </div>
+          <img src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg" alt="Wildlife">
+          <div class="card-overlay"><span class="card-tag">Conservation</span></div>
         </div>
-        <div class="cards-grid">
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="card-image">
-              <img alt="Adopt Pets" loading="lazy" src="assets/images/3d/adopt_pets.webp" />
-              <div class="card-overlay"><span class="card-tag">Adoption</span></div>
-            </div>
-            <div class="card-content">
-              <h3>Adopt Pets</h3>
-              <p>Help stray animals find loving homes. Open your heart and home to a furry friend in need.</p>
-              <div class="card-footer">
-                <a class="card-btn" href="pages/animal-care/adoption-management.html">Adopt Now <i
-                    class="fa-solid fa-arrow-right"></i></a>
-                <div class="card-stats"><i class="fa-solid fa-heart"></i>1.2K adopted</div>
-              </div>
-            </div>
-          </article>
 
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-image">
-              <img alt="Wildlife Protection" loading="lazy"
-                src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg" />
-              <div class="card-overlay"><span class="card-tag">Conservation</span></div>
-            </div>
-            <div class="card-content">
-              <h3>Protect Wildlife</h3>
-              <p>Learn how to protect endangered species and preserve their natural habitats.</p>
-              <div class="card-footer">
-                <a class="card-btn" href="pages/animal-care/animal-welfare-education.html">Learn More <i
-                    class="fa-solid fa-arrow-right"></i></a>
-                <div class="card-stats"><i class="fa-solid fa-shield-heart"></i>500+ protected</div>
-              </div>
-            </div>
-          </article>
+        <div class="card-content">
+          <h3>Protect Wildlife</h3>
+          <p>Learn how to protect endangered species and habitats.</p>
 
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-image">
-              <img alt="Feed Animals" loading="lazy" src="assets/images/3d/feed_animals.webp" />
-              <div class="card-overlay"><span class="card-tag">Feeding</span></div>
-            </div>
-            <div class="card-content">
-              <h3>Feed Stray Animals</h3>
-              <p>Learn safe ways to feed stray animals and join our community feeding programs.</p>
-              <div class="card-footer">
-                <a class="card-btn" href="pages/animal-safety/animal-nutrition-feeding.html">Join Program <i
-                    class="fa-solid fa-arrow-right"></i></a>
-                <div class="card-stats"><i class="fa-solid fa-bowl-food"></i>5K+ fed daily</div>
-              </div>
-            </div>
+          <div class="card-footer">
+            <a href="pages/animal-care/animal-welfare-education.html" class="card-btn">
+              Learn More <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </article>
-
 
       <!-- Feed Animals -->
-      <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
+      <article class="feature-card" data-aos="fade-up">
         <div class="card-image">
-          <img src="assets/images/3d/feed_animals.webp" alt="Feed Animals" loading="lazy">
-
-          <div class="card-overlay">
-            <span class="card-tag">Feeding</span>
-          </div>
+          <img src="assets/images/3d/feed_animals.webp" alt="Feed Animals">
+          <div class="card-overlay"><span class="card-tag">Feeding</span></div>
         </div>
 
         <div class="card-content">
           <h3>Feed Stray Animals</h3>
-
-          <p>
-            Learn safe ways to feed stray animals and join our
-            community feeding programs.
-          </p>
+          <p>Join community feeding programs for stray animals.</p>
 
           <div class="card-footer">
             <a href="pages/animal-safety/animal-nutrition-feeding.html" class="card-btn">
               Join Program <i class="fa-solid fa-arrow-right"></i>
             </a>
-
-            <div class="card-stats">
-              <i class="fa-solid fa-bowl-food"></i> 5K+ fed daily
-            </div>
           </div>
         </div>
       </article>
@@ -1643,112 +1547,63 @@ body {
     <!-- Kids Quiz Section -->
 <section class="kids-quiz-section" id="quiz">
 
-      <div class="section-container">
-        <div class="quiz-content">
-          <!-- LEFT CONTENT -->
-          <div class="quiz-text" data-aos="fade-right">
-            <span class="quiz-badge"><i class="fa-solid fa-child"></i> For Kids</span>
-            <h2>Kids Quiz Zone 🎮</h2>
-            <p>A fun and interactive way for kids to learn about nature, animals, and the environment. Answer questions,
-              earn badges, and become an eco-champion!</p>
-
-            <!-- FEATURES -->
-            <div class="quiz-features">
-              <div class="quiz-feature" data-tilt>
-                <div class="feature-icon-wrapper icon-game"><i class="fa-solid fa-gamepad"></i></div>
-                <span>Fun Games</span>
-              </div>
-
   <div class="section-container">
 
-    <!-- CENTER HEADING -->
     <div class="quiz-header">
       <span class="quiz-badge">
         <i class="fa-solid fa-child"></i> For Kids
       </span>
 
-            <!-- ACTION BUTTONS -->
-            <div class="quiz-actions">
-              <a href="js/quizzes/quiz.html" class="quiz-btn btn-primary-quiz"><i class="fa-solid fa-play"></i> Start
-                Quiz Now</a>
-              <a href="js/games/waste-game.html" class="quiz-btn btn-secondary-quiz"><i class="fa-solid fa-gamepad"></i>
-                Play Waste Game</a>
-              <a href="../frontend/pages/animal-safety/animal-first-aid.html" class="quiz-btn btn-primary-quiz">
-                <i class="fa-solid fa-play"></i> Start Quiz Now
-              </a>
+      <h2>Kids Quiz Zone 🎮</h2>
 
       <p>
-        A fun and interactive way for kids to learn about nature, animals, and
-        the environment. Answer questions, earn badges, and become an
-        eco-champion!
+        Learn about animals and the environment through fun quizzes and games.
       </p>
     </div>
 
     <div class="quiz-content">
 
-      <!-- LEFT SIDE -->
-      <div class="quiz-text" data-aos="fade-right">
+      <div class="quiz-text">
 
-        <!-- FEATURES -->
         <div class="quiz-features">
 
           <div class="quiz-feature">
-            <div class="feature-icon-wrapper icon-game">
-              <i class="fa-solid fa-gamepad"></i>
-            </div>
+            <i class="fa-solid fa-gamepad"></i>
             <span>Fun Games</span>
           </div>
 
           <div class="quiz-feature">
-            <div class="feature-icon-wrapper icon-trophy">
-              <i class="fa-solid fa-trophy"></i>
-            </div>
+            <i class="fa-solid fa-trophy"></i>
             <span>Win Badges</span>
           </div>
 
-          <a href="js/learn-more.html" class="quiz-feature">
-            <div class="feature-icon-wrapper icon-book">
-              <i class="fa-solid fa-book-open"></i>
-            </div>
+          <div class="quiz-feature">
+            <i class="fa-solid fa-book-open"></i>
             <span>Learn Facts</span>
-          </a>
+          </div>
 
         </div>
 
-        <!-- ACTION BUTTONS -->
         <div class="quiz-actions">
           <a href="js/quizzes/quiz.html" class="quiz-btn primary">
-            <i class="fa-solid fa-play"></i> Start Quiz
+            Start Quiz
           </a>
 
           <a href="js/games/waste-game.html" class="quiz-btn secondary">
-            <i class="fa-solid fa-gamepad"></i> Play Waste Game
+            Play Waste Game
           </a>
         </div>
 
       </div>
 
-      <!-- RIGHT SIDE IMAGE -->
-      <div class="quiz-image" data-aos="fade-left">
-
-        <div class="quiz-image-wrapper">
-
-          <img src="assets/images/3d/quiz_mascot.png" alt="Kids Quiz Panda" />
-
-          <div class="quiz-floating-badge badge-1">
-            <i class="fa-solid fa-star"></i> Fun
-          </div>
-
-          <div class="quiz-floating-badge badge-2">
-            <i class="fa-solid fa-lightbulb"></i> Learn
-          </div>
-
-        </div>
-
+      <div class="quiz-image">
+        <img src="assets/images/3d/quiz_mascot.png" alt="Quiz Mascot">
       </div>
 
     </div>
+
   </div>
+
 </section>
 
     <!-- Survival Score Section -->
