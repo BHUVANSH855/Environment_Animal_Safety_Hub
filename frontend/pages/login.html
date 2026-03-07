@@ -324,12 +324,163 @@ body {
     padding: 25px;
   }
 }
+/* ECO BACKGROUND */
 
+.eco-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+}
+
+/* gradient background */
+
+.gradient-layer{
+position:absolute;
+width:200%;
+height:200%;
+background:linear-gradient(
+120deg,
+#e8f5e9,
+#c8e6c9,
+#a5d6a7,
+#81c784,
+#66bb6a
+);
+animation:gradientMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMove{
+0%{transform:translate(-20%,-20%) scale(1);}
+50%{transform:translate(-25%,-15%) scale(1.1);}
+100%{transform:translate(-15%,-25%) scale(1);}
+}
+
+/* sunlight effect */
+
+.sun-ray{
+position:absolute;
+top:-50%;
+left:-30%;
+width:200%;
+height:200%;
+background:radial-gradient(circle at center,
+rgba(255,255,200,0.25),
+transparent 70%);
+animation:sunMove 14s ease-in-out infinite alternate;
+}
+
+@keyframes sunMove{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(15deg);}
+}
+
+/* leaves */
+
+.leaf{
+position:absolute;
+width:30px;
+height:30px;
+background: radial-gradient(circle at 30% 30%, #6bd66b, #2e7d32);
+border-radius:0 100% 0 100%;
+transform:rotate(45deg);
+opacity:0.85;
+animation:leafFall linear infinite;
+}
+
+.leaf::after{
+content:"";
+position:absolute;
+width:2px;
+height:18px;
+background:#1b5e20;
+left:14px;
+top:6px;
+transform:rotate(-45deg);
+}
+
+.leaf1{left:5%;animation-duration:7s;}
+.leaf2{left:25%;animation-duration:8s;}
+.leaf3{left:45%;animation-duration:6s;}
+.leaf4{left:65%;animation-duration:9s;}
+.leaf5{left:85%;animation-duration:7s;}
+
+.leaf6{ left:12%; animation-duration:8s; }
+.leaf7{ left:32%; animation-duration:7s; }
+.leaf8{ left:58%; animation-duration:9s; }
+.leaf9{ left:78%; animation-duration:6s; }
+.leaf10{ left:92%; animation-duration:8s; }
+
+@keyframes leafFall{
+
+0%{
+transform:translateY(-10vh) rotate(0deg);
+opacity:0;
+}
+
+10%{opacity:1;}
+
+25%{
+transform:translateY(20vh) translateX(40px) rotate(90deg);
+}
+
+50%{
+transform:translateY(50vh) translateX(-40px) rotate(180deg);
+}
+
+75%{
+transform:translateY(80vh) translateX(30px) rotate(270deg);
+}
+
+100%{
+transform:translateY(110vh) translateX(-30px) rotate(360deg);
+opacity:0;
+}
+
+/* particles canvas */
+
+}
+
+#particles{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+
+.leaf:nth-child(odd){
+transform: rotate(45deg) scale(0.8);
+}
+
+.leaf:nth-child(even){
+transform: rotate(45deg) scale(1.2);
+}
   </style>
 </head>
 
 <body>
+<div class="eco-bg">
 
+  <div class="gradient-layer"></div>
+  <div class="sun-ray"></div>
+<div class="leaf leaf1"></div>
+<div class="leaf leaf2"></div>
+<div class="leaf leaf3"></div>
+<div class="leaf leaf4"></div>
+<div class="leaf leaf5"></div>
+<div class="leaf leaf6"></div>
+<div class="leaf leaf7"></div>
+<div class="leaf leaf8"></div>
+<div class="leaf leaf9"></div>
+<div class="leaf leaf10"></div>
+
+  <canvas id="particles"></canvas>
+
+</div>
   <div id="cursor-container"></div>
 
 
@@ -416,7 +567,92 @@ body {
   </script>
   <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
+  
   <script src="js/components/component-loader.js"></script>
+  <script>
+    const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let mouse = {
+x: null,
+y: null,
+radius: 120
+};
+
+window.addEventListener("mousemove", function(event){
+mouse.x = event.x;
+mouse.y = event.y;
+});
+
+window.addEventListener("resize", function(){
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+init();
+});
+
+let particles = [];
+
+function init(){
+
+particles = [];
+
+for(let i = 0; i < 80; i++){
+
+particles.push({
+x: Math.random()*canvas.width,
+y: Math.random()*canvas.height,
+size: Math.random()*2+1,
+dx: (Math.random()-0.5)*0.4,
+dy: (Math.random()-0.5)*0.4
+});
+
+}
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p => {
+
+let dx = mouse.x - p.x;
+let dy = mouse.y - p.y;
+let distance = Math.sqrt(dx*dx + dy*dy);
+
+if(distance < mouse.radius){
+
+p.x -= dx/40;
+p.y -= dy/40;
+
+}else{
+
+p.x += p.dx;
+p.y += p.dy;
+
+}
+
+ctx.beginPath();
+
+ctx.shadowBlur = 18;
+ctx.shadowColor = "rgba(255,255,150,0.9)";
+ctx.fillStyle = "rgba(255,255,200,0.9)";
+
+ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+ctx.fill();
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+init();
+animate();
+  </script>
 </body>
 
 </html>
