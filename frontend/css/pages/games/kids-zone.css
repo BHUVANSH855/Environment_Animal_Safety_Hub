@@ -244,7 +244,7 @@
     .games-grid h2 {
       font-size: 2rem;
       font-weight: 700;
-      color: var(--text-primary);
+      color: var(--primary-dark);
       margin-left: 40px;
     }
     .learning-section, .quiz-section, .game-section {
