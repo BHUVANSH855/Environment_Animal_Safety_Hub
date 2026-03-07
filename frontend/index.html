@@ -924,49 +924,61 @@ body {
 
     <div class="cards-grid">
 
-      <!-- Adopt Pets -->
-      <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="card-image">
-          <img src="assets/images/3d/adopt_pets.webp" alt="Adopt Pets" loading="lazy">
+  <!-- Adopt Pets -->
+  <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
+    <div class="card-image">
+      <img src="assets/images/3d/adopt_pets.webp" alt="Adopt Pets" loading="lazy">
+      <div class="card-overlay">
+        <span class="card-tag">Adoption</span>
+      </div>
+    </div>
 
-          <div class="card-overlay">
-            <span class="card-tag">Adoption</span>
-          </div>
+    <div class="card-content">
+      <h3>Adopt Pets</h3>
+      <p>
+        Help stray animals find loving homes. Open your heart and home
+        to a furry friend in need.
+      </p>
+
+      <div class="card-footer">
+        <a href="pages/animal-care/adoption-management.html" class="card-btn">
+          Adopt Now <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <div class="card-stats">
+          <i class="fa-solid fa-heart"></i> 1.2K adopted
         </div>
+      </div>
+    </div>
+  </article>
 
-        <div class="card-content">
-          <h3>Adopt Pets</h3>
+  <!-- Wildlife Protection -->
+  <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="card-image">
+      <img
+        src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg"
+        alt="Wildlife Protection"
+        loading="lazy">
+      <div class="card-overlay">
+        <span class="card-tag">Conservation</span>
+      </div>
+    </div>
 
-          <p>
-            Help stray animals find loving homes. Open your heart and home
-            to a furry friend in need.
-          </p>
+    <div class="card-content">
+      <h3>Protect Wildlife</h3>
+      <p>Learn how to protect endangered species and preserve their natural habitats.</p>
 
-          <div class="card-footer">
-            <a href="pages/animal-care/adoption-management.html" class="card-btn">
-              Adopt Now <i class="fa-solid fa-arrow-right"></i>
-            </a>
+      <div class="card-footer">
+        <a href="pages/animal-care/animal-welfare-education.html" class="card-btn">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-            <div class="card-stats">
-              <i class="fa-solid fa-heart"></i> 1.2K adopted
-            </div>
-          </div>
+        <div class="card-stats">
+          <i class="fa-solid fa-shield-heart"></i> 500+ protected
         </div>
-      </article>
-
-
-      <!-- Wildlife Protection -->
-      <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="card-image">
-          <img
-            src="https://i.pinimg.com/736x/90/8e/da/908eda2e439e958f8a276a25d1a9cc6c.jpg"
-            alt="Wildlife Protection"
-            loading="lazy">
-
-          <div class="card-overlay">
-            <span class="card-tag">Conservation</span>
-          </div>
-        </div>
+      </div>
+    </div>
+  </article>
         <div class="cards-grid">
           <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
             <div class="card-image">
@@ -1093,7 +1105,7 @@ body {
       🤖 AI: <span id="ai-result">Thinking...</span>
     </p>
 
-    <button class="next-btn" id="nextBtn" >Next ➜</button>
+    <button class="next-btn" id="quizNextBtn">Next ➜</button>
   </div>
 </section>
     <!-- Environmental Conservation Section -->
@@ -2488,7 +2500,7 @@ body {
       const comboEl = document.getElementById("combo");
       const timerEl = document.getElementById("timer");
       const aiResult = document.getElementById("ai-result");
-      const nextBtn = document.getElementById("nextBtn");
+      const nextBtn = document.getElementById("quizNextBtn");
 
       function loadQuestion() {
         if (!question) return;
@@ -2941,7 +2953,7 @@ function closeCrisisAlert() {
         const end = start + cardsPerPage;
       
         for (let i = start; i < end && i < cards.length; i++) {
-          cards[i].style.display = "block";
+          cards[i].style.display = "flex";
         }
       
         updatePaginationUI();
